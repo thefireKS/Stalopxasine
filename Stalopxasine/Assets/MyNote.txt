@@ -1,0 +1,9 @@
+﻿
+Make momentum attack
+Dash melee attack
+Shoot series by mouse holding
+
+Rework movement at all
+Player swapping mechanic
+
+

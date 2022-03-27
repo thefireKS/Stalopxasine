@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82bb36dfa268bee4692540ed80f5d5f5, type: 3}
+  m_Name: Default Hierarchy Styles
+  m_EditorClassIdentifier: 
+  displayLabelType: 3
+  excludeDefault: 1
+  widthToShowLabels: 200
+  rightOffset: -40
+  textSize: 12
+  textAlign: 0
+  textStyle: 1
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  randomTextColor: 0
+  styles:
+  - headerTag: '#'
+    iconType: 4
+    widthToShowIcons: 200
+    iconOffset: 5
+    iconSize: 14
+    iconAlign: 2
+    iconColor: {r: 0.04330548, g: 0.0020024967, b: 0.4245283, a: 1}
+    randomIconColor: 0
+    leftOffset: 18
+    rightOffset: 0
+    backgroundHeight: 0.95
+    backgroundColor: {r: 0, g: 0.56078434, b: 1, a: 1}
+    randomBackgroundColor: 0
+    textSize: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    textAlignment: 3
+    textStyle: 1
+    useCaseScenario: 0
+  - headerTag: '%'
+    iconType: 2
+    widthToShowIcons: 200
+    iconOffset: 5
+    iconSize: 14
+    iconAlign: 1
+    iconColor: {r: 0.013977548, g: 0.4245283, b: 0, a: 1}
+    randomIconColor: 0
+    leftOffset: 18
+    rightOffset: 0
+    backgroundHeight: 0.95
+    backgroundColor: {r: 0.38714847, g: 0.5943396, b: 0.3224012, a: 1}
+    randomBackgroundColor: 0
+    textSize: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    textAlignment: 3
+    textStyle: 1
+    useCaseScenario: 0
+  - headerTag: $
+    iconType: 1
+    widthToShowIcons: 200
+    iconOffset: 5
+    iconSize: 14
+    iconAlign: 1
+    iconColor: {r: 0.8862745, g: 0.41896567, b: 0, a: 1}
+    randomIconColor: 0
+    leftOffset: 18
+    rightOffset: 0
+    backgroundHeight: 0.95
+    backgroundColor: {r: 0.92859495, g: 0.9607843, b: 0.16078433, a: 1}
+    randomBackgroundColor: 0
+    textSize: 0
+    textColor:
+      serializedVersion: 2
+      rgba: 4278190080
+    textAlignment: 3
+    textStyle: 1
+    useCaseScenario: 0

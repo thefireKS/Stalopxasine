@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
+  m_Name: Viseman
+  m_EditorClassIdentifier: 
+  MeleeAttack: 1
+  AttackTime: 0.25
+  Bullet: {fileID: 0}
+  Speed: 8
+  Acceleration: 5
+  Deceleration: 5
+  VelocityPower: 0.96
+  FrictionAmount: 0.22
+  JumpForce: 16
+  JumpCutMultiplier: 0.4
+  JumpCoyoteTime: 0.3
+  JumpBufferTime: 0.1
+  FallGravityMultiplier: 2
