@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
   m_Name: Caramello
   m_EditorClassIdentifier: 
-  MeleeAttack: 1
-  AttackTime: 0.25
-  Bullet: {fileID: 0}
-  Speed: 8
-  JumpForce: 16
-  JumpTime: 0
+  meleeAttack: 1
+  attackTime: 0.33
+  bullet: {fileID: 1123760533343461035, guid: 8abbba2251e27f44d8814bb144bf463b, type: 3}
+  speed: 18
+  acceleration: 28
+  deceleration: 36
+  jumpForce: 24
+  jumpCoyoteTime: 0.5
+  fallGravityMultiplier: 1.3

@@ -38,8 +38,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //Agression on Player 
-        float distToPlayer = Vector2.Distance(transform.position, PlayerPos.position);
- 
 
         if (CanSeePlayer(AgroRange))
         {

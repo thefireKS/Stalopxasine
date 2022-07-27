@@ -14,17 +14,12 @@ public class BulletFly : MonoBehaviour
         rbtd = GetComponent<Rigidbody2D>();
     }
 
-    public void Shooting(bool isFacingLeft)
+    private void Update()
     {
-        if (!isFacingLeft)
-            rbtd.velocity = new Vector2(speed, 0);
-        else
-        {
-            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
-            rbtd.velocity = new Vector2(-speed, 0);
-        }
-        Destroy(gameObject, seconds);
+        transform.position += transform.right * speed * Time.deltaTime;
+        Destroy(gameObject,seconds);
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ground"))

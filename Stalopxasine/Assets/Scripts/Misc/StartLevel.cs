@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class StartLevel : MonoBehaviour
 {
-    public GameObject position;
     public GameObject[] objects;
 
     public void Awake()

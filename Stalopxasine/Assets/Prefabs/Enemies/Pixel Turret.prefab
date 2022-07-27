@@ -433,10 +433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 756e6692cf7643440981078a3412905a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1123760533343461035, guid: c5481d983c9efe7449d231881cac6383, type: 3}
+  bullet: {fileID: 7155596471904509021, guid: c5481d983c9efe7449d231881cac6383, type: 3}
   BulletPosition: {fileID: 8650599223828209858}
   AttackTime: 2
-  isFacingLeft: 0
 --- !u!61 &3280692632720849884
 BoxCollider2D:
   m_ObjectHideFlags: 0

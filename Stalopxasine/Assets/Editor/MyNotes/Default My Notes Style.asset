@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Default My Notes Style
   m_EditorClassIdentifier: 
   style:
-    backgroundColor: {r: 1, g: 1, b: 1, a: 1}
+    backgroundColor: {r: 0.16470589, g: 0.16470589, b: 0.16470589, a: 1}
     randomBackgroundColor: 0
     headerColor: {r: 0.23529412, g: 0.23529412, b: 0.7058824, a: 1}
     randomHeaderColor: 0
     textSize: 14
     textColor:
       serializedVersion: 2
-      rgba: 4294966265
-    textAlignment: 4
+      rgba: 4294967295
+    textAlignment: 3
     textStyle: 1

@@ -11,24 +11,27 @@ public class CharacterHP : MonoBehaviour
     private SpriteRenderer sr;
     private Rigidbody2D rb2d;
     private PlayerController plc;
+    private Animator anim;
     
     private const float DamageCoolDown = 1f; //кд получения урона
     private float NextHitTime = 0; //таймер для образования кулдауна между получением урона
     public int HP;
     public int FullHP;
 
-    private WaitForSeconds Blinking = new WaitForSeconds(0.1f);
+    private WaitForSeconds Blinking = new WaitForSeconds(0.5f); //было 0.1
     private IEnumerator GotDamaged()
     {
         HP--;
-        rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.JumpForce);
-        sr.material = matDamaged;
+        anim.SetBool("isHitted",true);
+        rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.jumpForce/1.6f);
+        /*sr.material = matDamaged;
         yield return Blinking;
         sr.material = matDefault;
         yield return Blinking;
-        sr.material = matDamaged;
+        sr.material = matDamaged;*/
         yield return Blinking;
-        sr.material = matDefault;
+        //sr.material = matDefault;
+        anim.SetBool("isHitted",false);
     }
 
     private void Start()
@@ -36,6 +39,7 @@ public class CharacterHP : MonoBehaviour
         plc = GetComponent<PlayerController>();
         rb2d = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         matDamaged = Resources.Load("Damaged", typeof(Material)) as Material;
         matDefault = sr.material;
     }

@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
   m_Name: fireKS
   m_EditorClassIdentifier: 
-  MeleeAttack: 0
-  AttackTime: 0.5
-  Bullet: {fileID: 7155596471904509021, guid: 8abbba2251e27f44d8814bb144bf463b, type: 3}
-  Speed: 7.5
-  JumpForce: 16
-  JumpTime: 0
+  meleeAttack: 0
+  attackTime: 0.4
+  bullet: {fileID: 1123760533343461035, guid: 8abbba2251e27f44d8814bb144bf463b, type: 3}
+  speed: 14
+  acceleration: 24
+  deceleration: 32
+  jumpForce: 22
+  jumpCoyoteTime: 0.4
+  fallGravityMultiplier: 1.1

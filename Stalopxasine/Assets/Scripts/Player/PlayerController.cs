@@ -1,181 +1,193 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Unity.Mathematics;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
     [FormerlySerializedAs("data")]
     public PlayerData Data;
-    public Transform BulletPosition;
+    private Attack atck;
     private Animator animator;
     private Rigidbody2D rb2d;
-    private BoxCollider2D PlayerCollider;
+    private BoxCollider2D playerCollider;
 
     [Header("Collision Checkers")]
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private Transform groundCheckR, groundCheckL, groundChekEndR, groundChekEndL;
+    [SerializeField] private Transform groundCheckR, groundCheckL;
+    private float rayDistance = 0.1f;
 
     // Physics States
     private bool isFacingLeft;
-    private bool isGrounded;
-    private GameObject CurrentOneWayPlatform;
+    private GameObject currentOneWayPlatform;
     private float gravityScale;
 
     // Input State
-    private bool jumpPressed;
     private float moveX;
     private float moveY;
 
     // Player State
-    private bool isAttacking;
-    private bool isJumping;
     private bool isDropping;
-    private bool isJumpingOnce;
-    
-    // Timer Caches
-    private float lastGroundedTime;
-    private float lastJumpTime;
-    private WaitForSeconds DisablingCooldown;
-    private WaitForSeconds AttackTimer;
+    public bool canJump;
+    private bool jumpPressed;
+    private bool attacking;
 
+    public enum PlayerStates
+    {
+        Grounded,
+        Jumping,
+        Falling,
+    }
     
+    public PlayerStates state;
+
+    // Timer Caches
+    private float lastGroundedTime = -10;
+    private WaitForSeconds DisablingCooldown;
+    private WaitForSeconds AttackingCooldown;
+
     /// <summary>
     /// Use this to GetComponent cache stuff and most the expensive things.
     /// </summary>
     private void Awake()
     {
-        PlayerCollider = GetComponent<BoxCollider2D>();
+        playerCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
+        atck = GetComponent<Attack>();
         gravityScale = rb2d.gravityScale;
-
-        DisablingCooldown = new WaitForSeconds(0.4f);
-        AttackTimer = new WaitForSeconds(Data.AttackTime);
+        DisablingCooldown = new WaitForSeconds(0.2f);
+        AttackingCooldown = new WaitForSeconds(0.1f);
     }
 
     private void Update() 
     {
+        Debug.Log(canJump +"  "+jumpPressed + " " + state);
         if (!PlayerMeeting.DialogIsGoing)
         {
             // Input Method
             ProcessInput();
-
-            #region NewJumpingControls
-            // Jump
-            if(Input.GetKey("space"))
-                lastJumpTime = Data.JumpBufferTime;
-
-
-            if (Input.GetKeyUp("space"))
-                isJumpingOnce = true;
-
-            #endregion
             
-
-            // Dropping Down
-            isDropping = moveY < 0 && CurrentOneWayPlatform != null && !isAttacking && isGrounded;
-
-            // Jump State
-            isJumping = isGrounded && jumpPressed;
-
-            #region NewJumpingthings
-            //Coyote time time!
-            if (isGrounded)
-                lastGroundedTime = Data.JumpCoyoteTime;
-            if (rb2d.velocity.y <= 0 && jumpPressed)
-                isJumping = false;
+            ProcessAttack();
             
-            lastGroundedTime -= Time.deltaTime;
-            lastJumpTime -= Time.deltaTime;
-            #endregion
-            
-            // Animator
             ProcessAnimation();
+
+            isDropping = moveY < 0 && currentOneWayPlatform != null && !attacking && groundCheck();
         }
     }
 
     private void FixedUpdate()
     {
-        if (!PlayerMeeting.DialogIsGoing)
+        Controls();
+    }
+
+    private void Controls()
+    {
+        if (!attacking &&!PlayerMeeting.DialogIsGoing)
         {
-
-            isGrounded = Physics2D.Linecast(groundCheckR.position, groundChekEndR.position,
-                layerMask.value) || Physics2D.Linecast(groundCheckL.position, groundChekEndL.position,
-                layerMask.value);
-
-            // Jump State after Jump Key is pressed. 
-            if (isJumping && lastGroundedTime>0 && lastJumpTime > 0)
-            {
-                rb2d.velocity = new Vector2(rb2d.velocity.x, Data.JumpForce);
-                lastGroundedTime = 0;
-                lastJumpTime = 0;
-                isJumping = false;
-                jumpPressed = false;
-            }
-
-            //Separating Jumps so now you need to hold for higher jumping
-            if (isJumpingOnce && rb2d.velocity.y > 0)
-            {
-                rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y * (1 - Data.JumpCutMultiplier));
-                isJumping = false;
-                isJumpingOnce = false;
-                lastJumpTime = 0;
-            }
-
-            #region NewMovementThings
-            //calculate the direction we want to move in and our desired velocity
-            float targetSpeed = moveX * Data.Speed;
-            //calculate difference between current velocity and desired velocity
-            float speedDif = targetSpeed - rb2d.velocity.x;
-            //change acceleration rate depending on situation
-            float accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? Data.Acceleration : Data.Deceleration;
-            //applies acceleration to speed difference, the raises to a set power so acceleration increases with higher speeds
-            //finally multiplies by sign to reapply direction
-            float movement = Mathf.Pow(Mathf.Abs(speedDif) * accelRate, Data.VelocityPower) * Mathf.Sign(speedDif);
-            #endregion
-
-            // Move Physics
-            rb2d.velocity = new Vector2(movement, rb2d.velocity.y);
+            moving();
             
-            #region NewFrictionThing
-            if (lastGroundedTime > 0 && Mathf.Abs(moveX) < 0.01f) 
-            {
-                //then we use either the friction amount (~ 0.2) or our velocity
-                float amount = Mathf.Min(Mathf.Abs(rb2d.velocity.x), Mathf.Abs(Data.FrictionAmount));
-                //sets to movement direction
-                amount *= Mathf.Sign(rb2d.velocity.x);
-                //applies force against movement direction
-                rb2d.AddForce(Vector2.right * -amount, ForceMode2D.Impulse); 		
-            }
-            #endregion
+            if (state == PlayerStates.Grounded) grounded();
+            if (state == PlayerStates.Jumping) jumping();
+            if (state == PlayerStates.Falling) falling();
 
-            #region NewJumpingGravity
-
-            if (rb2d.velocity.y < 0 && lastGroundedTime <= 0)
+            if ( !PlayerMeeting.DialogIsGoing)
             {
-                rb2d.gravityScale = gravityScale * Data.FallGravityMultiplier;
+                if (Time.time > lastGroundedTime + Data.jumpCoyoteTime)
+                {
+                    canJump = false;
+                    jumpPressed = false;
+                }
+                else
+                    rb2d.gravityScale = gravityScale;
+
+
+                if (jumpPressed && canJump && state != PlayerStates.Grounded)
+                {
+                    rb2d.velocity = new Vector2(rb2d.velocity.x, Data.jumpForce);
+                    canJump = false;
+                    jumpPressed = false;
+                }
+
+                if (isDropping)
+                    StartCoroutine(DisableCollision());
             }
             else
             {
-                rb2d.gravityScale = gravityScale;
+                rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+                animator.SetBool("isGrounded", true);
+                animator.SetBool("isGoing", false);
             }
-
-            #endregion
-
-            if (isDropping)
-            {
-                StartCoroutine(DisableCollision());
-            }
-        }
-        else
-        {
-            rb2d.velocity = new Vector2(0,rb2d.velocity.y);
-            animator.SetBool("isGrounded",true);
-            animator.SetBool("isGoing",false);
         }
     }
+    
+    private void moving()
+    {
+        float targetSpeed = moveX * Data.speed;
+        float currentVelocity = rb2d.velocity.x;
+        float acc;
+        if (targetSpeed == 0)
+        { 
+            acc = Data.deceleration;
+        } else {
+            acc = Data.acceleration;
+        }
+        if (currentVelocity < targetSpeed)
+        {
+            currentVelocity += acc * Time.fixedDeltaTime; 
+            if (currentVelocity > targetSpeed)
+                currentVelocity = targetSpeed;
+        }
+        if (currentVelocity > targetSpeed)
+        {
+            currentVelocity -= acc * Time.fixedDeltaTime;
+            if (currentVelocity < targetSpeed) 
+                currentVelocity = targetSpeed;
+        }
+        rb2d.velocity = new Vector2(currentVelocity, rb2d.velocity.y);
+    }
+    
+    private void grounded()
+    {
+        rb2d.gravityScale = gravityScale;
+        if (groundCheck()) {
+            lastGroundedTime = Time.time;
+            canJump = true;
+            jumpPressed = false;
+        } else {
+            state = PlayerStates.Falling;
+        }
+    }
+    private void jumping()
+    {
+        if(rb2d.velocity.y < 0) {
+            state = PlayerStates.Falling; 
+        }
+    }
+    private void falling()
+    {
+        rb2d.gravityScale = gravityScale * Data.fallGravityMultiplier;
+        if (groundCheck())
+            state = PlayerStates.Grounded;
+    }
 
+    private void attackDirectionSetter()
+    {
+        Vector2 attackDirection = atck.AttackVector();
+        Vector2 attackingVector = new Vector2(attackDirection.x * Data.speed,attackDirection.y * Data.jumpForce);
+        if (state == PlayerStates.Grounded && attackingVector.y < 0)
+            attackingVector.y = 0;
+        rb2d.velocity = attackingVector;
+    }
+    private bool groundCheck()
+    {
+        return Physics2D.Raycast(groundCheckR.position, Vector2.down, rayDistance,
+            layerMask.value) || Physics2D.Raycast(groundCheckL.position, Vector2.down, rayDistance,
+            layerMask.value);
+    }
+    
     /// <summary>
     /// All the input manipulation happens here
     /// Call it in Update()
@@ -185,42 +197,12 @@ public class PlayerController : MonoBehaviour
         // Movement - From WASD separately, we now use unity's in built stuff to get 1 for right and -1 for left or up and down.
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");
-
-
-        // Attack
-        if (Input.GetButtonDown("Fire1") && !isAttacking)
+        
+        if (Input.GetKeyDown("space"))
         {
-            StartCoroutine(WaitForAttackToFinish());
+            jumpPressed = true;
+            state = PlayerStates.Jumping;
         }
-    }
-
-    /// <summary>
-    /// Attack Trigger and cooldown
-    /// Called in Update()
-    /// </summary>
-    private IEnumerator WaitForAttackToFinish()
-    {
-        isAttacking = true;
-        if (!Data.MeleeAttack)
-        {
-            BulletFly bulletObj = Instantiate(Data.Bullet);
-            bulletObj.Shooting(isFacingLeft);
-            bulletObj.transform.position = BulletPosition.transform.position;
-        }
-        yield return AttackTimer;
-        isAttacking = false;
-    }
-
-    /// <summary>
-    /// Disable Collision for One Way Platforms
-    /// </summary>
-    private IEnumerator DisableCollision()
-    {
-        BoxCollider2D platformCollider = CurrentOneWayPlatform.GetComponent<BoxCollider2D>();
-
-        Physics2D.IgnoreCollision(PlayerCollider, platformCollider);
-        yield return DisablingCooldown;
-        Physics2D.IgnoreCollision(PlayerCollider, platformCollider, false);
     }
 
     /// <summary>
@@ -231,47 +213,60 @@ public class PlayerController : MonoBehaviour
     {
         if (moveX != 0)
         {
-            transform.localScale = new Vector2(moveX, 1f);
-            isFacingLeft = moveX < 0;
+            float facingLeft = moveX > 0 ? 0 : -1;
+            if (moveX != 0)
+                transform.rotation = quaternion.RotateY(Mathf.PI*facingLeft);
         }
     }
-
-
+    
     /// <summary>
     /// Handling Animations in one place
     /// Call it in Update
     /// </summary>
     private void ProcessAnimation()
     {
-        // Set animation parameter to isGrounded, if its false it will go to jump animation first
-        animator.SetBool("isGrounded", isGrounded);
-
-        // Flip
+        animator.SetBool("isGrounded", groundCheck());
+        
         Flip();
-
-        // Move State to Idle State, it will be true if moveX is above or lower than 0 
-        // and on ground
-        animator.SetBool("isGoing", moveX != 0 && isGrounded);
-
-        // Attack State
-        animator.SetBool("isAttacking", isAttacking);
+        
+        animator.SetBool("isGoing", moveX != 0 && groundCheck());
+        
+        animator.SetBool("isAttacking", attacking);
     }
-
     
-
+    private void ProcessAttack()
+    {
+        if (Input.GetButton("Fire1")&&!attacking)
+            StartCoroutine(AttackOnClick());
+    }
+    
+    private IEnumerator DisableCollision()
+    {
+        BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
+        Physics2D.IgnoreCollision(playerCollider, platformCollider);
+        yield return DisablingCooldown;
+        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+    }
+    private IEnumerator AttackOnClick()
+    {
+        attacking = true;
+        atck.Attacking();
+        attackDirectionSetter();
+        yield return AttackingCooldown;
+        attacking = false;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("GroundPlatforms"))
         {
-            CurrentOneWayPlatform = collision.gameObject;
+            currentOneWayPlatform = collision.gameObject;
         }
     }
-
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("GroundPlatforms"))
         {
-            CurrentOneWayPlatform = null;
+            currentOneWayPlatform = null;
         }
     }
 }

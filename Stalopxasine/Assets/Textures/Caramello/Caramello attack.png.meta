@@ -20,6 +20,21 @@ TextureImporter:
   - first:
       213: -504241129610570226
     second: Caramello attack_5
+  - first:
+      213: 2017317254271802597
+    second: Caramello attack_6
+  - first:
+      213: -7712253611580591606
+    second: Caramello attack_7
+  - first:
+      213: 1456285248360036951
+    second: Caramello attack_8
+  - first:
+      213: -7983624162828719747
+    second: Caramello attack_9
+  - first:
+      213: -5400983108762152147
+    second: Caramello attack_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +94,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -91,7 +106,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 64
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -103,7 +118,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 64
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -121,11 +136,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 72
         width: 24
-        height: 16
+        height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.5}
+      pivot: {x: 0.625, y: 0.45833334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,11 +157,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 32
+        y: 72
         width: 24
-        height: 16
+        height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.5}
+      pivot: {x: 0.4166667, y: 0.4166667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,12 +177,12 @@ TextureImporter:
       name: Caramello attack_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 48
+        y: 72
         width: 24
-        height: 16
+        height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.5}
+      pivot: {x: 0.4166667, y: 0.4166667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -183,12 +198,12 @@ TextureImporter:
       name: Caramello attack_3
       rect:
         serializedVersion: 2
-        x: 24
-        y: 16
+        x: 0
+        y: 48
         width: 24
-        height: 16
+        height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.5}
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,12 +219,12 @@ TextureImporter:
       name: Caramello attack_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 24
+        y: 48
         width: 24
-        height: 16
+        height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.5}
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -225,12 +240,12 @@ TextureImporter:
       name: Caramello attack_5
       rect:
         serializedVersion: 2
-        x: 24
-        y: 0
+        x: 48
+        y: 48
         width: 24
-        height: 16
+        height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.5}
+      pivot: {x: 0.5, y: 0.5833334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,6 +253,111 @@ TextureImporter:
       bones: []
       spriteID: e069b6c3d539009f0800000000000000
       internalID: -504241129610570226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5, y: 0.625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec1324ca53fefb10800000000000000
+      internalID: 2017317254271802597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.375, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a02f308933298f490800000000000000
+      internalID: -7712253611580591606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a3428b7b3c53410800000000000000
+      internalID: 1456285248360036951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.375, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d796e5a7f18743190800000000000000
+      internalID: -7983624162828719747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.375, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23d85c6a7adb05b0800000000000000
+      internalID: -5400983108762152147
       vertices: []
       indices: 
       edges: []

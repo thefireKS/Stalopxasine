@@ -4,25 +4,19 @@
 public class PlayerData : ScriptableObject
 {
     [Header("Fighting")]
-    public bool MeleeAttack = true;
-    public float AttackTime = 0.4f;
-    public BulletFly Bullet;
+    public bool meleeAttack = true;
+    public float attackTime = 0.4f;
+    public GameObject bullet;
 
     [Header("Movement")]
-    public float Speed;
-    public float Acceleration;
-    public float Deceleration;
-    public float VelocityPower;
-    [Space(10)] 
-    public float FrictionAmount;
+    public float speed;
+    public float acceleration;
+    public float deceleration;
 
     [Header("Jumping")]
-    public float JumpForce;
-    [Range(0, 1)] 
-    public float JumpCutMultiplier;
+    public float jumpForce;
     [Space(10)] 
-    public float JumpCoyoteTime;
-    public float JumpBufferTime;
+    public float jumpCoyoteTime;
     [Space(10)] 
-    public float FallGravityMultiplier;
+    public float fallGravityMultiplier;
 }
