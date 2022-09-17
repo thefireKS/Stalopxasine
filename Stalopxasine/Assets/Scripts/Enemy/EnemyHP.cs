@@ -1,22 +1,32 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class EnemyHP : MonoBehaviour
 {
-    public bool HasKnockback;
+    [Header("Knockback")]
+    [SerializeField]
+    private bool HasKnockback;
+    [SerializeField] 
+    private float knockbackScale;
     
-    private Knockback knockback;
     private Enemy enemy;
     private EnemyAI enemyai;
     private UltimateEnergy ue;
+    private Rigidbody2D rb2d;
 
-    public int HP;
-    int fullHP;
+    [Header("Health")]
+    [SerializeField]
+    private int HP;
+    private int fullHP;
 
-    public HealthBar HealthBar;
-    public GameObject Bar;
+    [Header("GUI")]
+    [SerializeField]
+    private HealthBar HealthBar;
+    [SerializeField]
+    private GameObject Bar;
 
     private WaitForSeconds knockbackCD = new WaitForSeconds(0.33f);
     private IEnumerator Wait()
@@ -33,9 +43,9 @@ public class EnemyHP : MonoBehaviour
         ue = Globals.CreatedCharacter.GetComponentInChildren<UltimateEnergy>();
         fullHP = HP;
         HealthBar.SetMaxHealth(fullHP);
-        knockback = GetComponent<Knockback>();
         enemy = GetComponent<Enemy>();
         enemyai = GetComponent<EnemyAI>();
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -64,13 +74,13 @@ public class EnemyHP : MonoBehaviour
                 Destroy(collision.gameObject);
 
             HP--;
-            if (HasKnockback)
+            if (knockbackScale > 0)
             {
                 if(enemy!=null)
                     enemy.enabled = false;
                 if(enemyai!=null)
                     enemyai.enabled = false;
-                knockback.Knocking(collision.transform.position);
+                Knockback(collision.transform);
                 StartCoroutine(Wait());
             }
 
@@ -81,5 +91,11 @@ public class EnemyHP : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    private void Knockback(Transform attackedPosition)
+    {
+        Vector2 knockback = new Vector2(attackedPosition.position.x * knockbackScale * enemyai.speed,
+            attackedPosition.position.y * knockbackScale * enemyai.speed);
+        rb2d.velocity = knockback;
     }
 }

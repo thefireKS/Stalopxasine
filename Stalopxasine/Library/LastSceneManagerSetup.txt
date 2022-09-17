@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Character Selection.unity
+- path: Assets/Scenes/Caramello beggining.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

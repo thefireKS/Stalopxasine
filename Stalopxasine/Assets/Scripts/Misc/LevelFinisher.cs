@@ -11,7 +11,7 @@ public class LevelFinisher : MonoBehaviour
 
     private void Start()
     {
-        player = Globals.CreatedCharacter.GetComponentInChildren<Transform>();
+        player = Globals.CreatedCharacter.GetComponent<Transform>();
         gamemaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
         charHP = Globals.CreatedCharacter.GetComponentInChildren<CharacterHP>();
     }

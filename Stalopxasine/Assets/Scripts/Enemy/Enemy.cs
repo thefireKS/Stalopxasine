@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
     float AgroTime;
 
     Rigidbody2D rb2d;
-    Vector3 Scale;
     Vector2 endPos;
 
     private EnemyAI enemyai;
@@ -28,7 +27,6 @@ public class Enemy : MonoBehaviour
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
         enemyai = GetComponent<EnemyAI>();
-        Scale = transform.localScale;
     }
     private void Start()
     {
@@ -38,23 +36,12 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         //Agression on Player 
-
         if (CanSeePlayer(AgroRange))
+            isAgro = true;
+        else if (isAgro&&!isSearching)
         {
-             isAgro = true;
-
-        }
-        else
-        {
-            if (isAgro)
-            {
-
-                if (!isSearching)
-                {
-                    isSearching = true;
-                    Invoke("StopChasingPlayer", AgroTime);
-                }
-            }
+            isSearching = true;
+            Invoke("StopChasingPlayer", AgroTime);
         }
         if (isAgro)
             ChasePlayer();
@@ -63,26 +50,21 @@ public class Enemy : MonoBehaviour
     {
         enemyai.enabled = false;
 
-
         if (transform.position.x < PlayerPos.position.x)
         {
             sprite.flipX = false;
-            
             rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
             enemyai.Direction = "right";
-            
         }
         else
         {
             sprite.flipX = true;
-            
             rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
             enemyai.Direction = "left";
         }
 
         if (enemyai.isNearEdge())
             rb2d.velocity = new Vector2(rb2d.velocity.x,rb2d.velocity.y);
-
     }
 
     void StopChasingPlayer()
@@ -98,7 +80,6 @@ public class Enemy : MonoBehaviour
         bool value = false;
         float CastDistance = distance;
 
-        
         if (enemyai.Direction == "right")
             endPos = CastPos.position + Vector3.right * CastDistance;
         else if (enemyai.Direction == "left")
@@ -123,5 +104,4 @@ public class Enemy : MonoBehaviour
 
         return value;
     }
-
 }

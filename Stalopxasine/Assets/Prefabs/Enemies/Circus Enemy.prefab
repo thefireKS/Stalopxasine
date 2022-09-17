@@ -343,6 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HasKnockback: 0
+  knockbackScale: 0
   HP: 4
   HealthBar: {fileID: 6485641587609653544}
   Bar: {fileID: 3290303554868115134}

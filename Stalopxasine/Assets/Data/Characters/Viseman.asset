@@ -14,10 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeAttack: 1
   attackTime: 0.33
+  attackForceScale: 0.8
+  possibleAttacks: 1
   bullet: {fileID: 0}
   speed: 18
   acceleration: 28
   deceleration: 36
-  jumpForce: 24
+  jumpForce: 16
   jumpCoyoteTime: 0.5
+  jumpBufferTime: 0.4
   fallGravityMultiplier: 1.3

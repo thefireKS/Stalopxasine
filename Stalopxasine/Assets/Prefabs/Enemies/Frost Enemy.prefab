@@ -290,7 +290,6 @@ GameObject:
   - component: {fileID: 5560571315334572811}
   - component: {fileID: 6529036088585289501}
   - component: {fileID: 7599558559893051091}
-  - component: {fileID: 114528541518671042}
   - component: {fileID: 5560571315334572804}
   - component: {fileID: 7242553940981960893}
   m_Layer: 10
@@ -363,22 +362,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HasKnockback: 1
+  knockbackScale: 0
   HP: 6
   HealthBar: {fileID: 6485641587609653544}
   Bar: {fileID: 3290303554868115134}
---- !u!114 &114528541518671042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5560571315334572805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8abcb3bb66a4dd14eb25b94afd701451, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  force: 10000
 --- !u!61 &5560571315334572804
 BoxCollider2D:
   m_ObjectHideFlags: 0

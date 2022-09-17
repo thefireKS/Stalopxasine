@@ -361,7 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b176833e440c2b448ab374b346af8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasKnockback: 0
+  HasKnockback: 1
+  knockbackScale: 1.1
   HP: 4
   HealthBar: {fileID: 6485641587609653544}
   Bar: {fileID: 3290303554868115134}

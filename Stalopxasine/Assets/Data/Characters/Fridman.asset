@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
   m_Name: Fridman
   m_EditorClassIdentifier: 
-  meleeAttack: 1
+  meleeAttack: 0
   attackTime: 0.4
+  attackForceScale: 1.1
+  possibleAttacks: 1
   bullet: {fileID: 1123760533343461035, guid: 27aa5915d309fad43888c5fd25269b87, type: 3}
   speed: 14
   acceleration: 24
   deceleration: 32
-  jumpForce: 22
+  jumpForce: 14
   jumpCoyoteTime: 0.4
+  jumpBufferTime: 0.3
   fallGravityMultiplier: 1.1
