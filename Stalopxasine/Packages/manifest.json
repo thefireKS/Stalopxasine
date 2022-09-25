@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.kiltec.unitytools": "https://github.com/pwnedu/UnityTools.git",
     "com.unity.2d.animation": "3.2.18",
     "com.unity.2d.pixel-perfect": "2.1.0",
     "com.unity.2d.sprite": "1.0.0",

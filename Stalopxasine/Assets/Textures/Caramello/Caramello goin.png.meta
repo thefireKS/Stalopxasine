@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -6291724475433402470
     second: Caramello goin_2
+  - first:
+      213: -7270000066477591703
+    second: Caramello goin_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -166,6 +169,27 @@ TextureImporter:
       bones: []
       spriteID: a9f3921bced4fa8a0800000000000000
       internalID: -6291724475433402470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello goin_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96379882575cb1b90800000000000000
+      internalID: -7270000066477591703
       vertices: []
       indices: 
       edges: []

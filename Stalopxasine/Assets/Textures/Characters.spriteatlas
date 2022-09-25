@@ -109,6 +109,7 @@ SpriteAtlas:
   - {fileID: -7608822685298150308, guid: ee2ca5b2bdb8a7649865ea3a4314747d, type: 3}
   - {fileID: -3510500047157029489, guid: 4261d6e27d945b54cb432b1afb006e31, type: 3}
   - {fileID: -5897780560764706093, guid: 4261d6e27d945b54cb432b1afb006e31, type: 3}
+  - {fileID: -7270000066477591703, guid: 4261d6e27d945b54cb432b1afb006e31, type: 3}
   - {fileID: -6291724475433402470, guid: 4261d6e27d945b54cb432b1afb006e31, type: 3}
   - {fileID: 1438028949147625780, guid: a86ad8e33c9a8804e87c0eac973c7efc, type: 3}
   - {fileID: -8665045640350846515, guid: a86ad8e33c9a8804e87c0eac973c7efc, type: 3}
@@ -290,6 +291,10 @@ SpriteAtlas:
   - {fileID: -7018107975501382385, guid: 5d85c50b8edb94a469c1a7276c7d8fa6, type: 3}
   - {fileID: 2522897742493093942, guid: 5d85c50b8edb94a469c1a7276c7d8fa6, type: 3}
   - {fileID: 1995502061413896160, guid: 5d85c50b8edb94a469c1a7276c7d8fa6, type: 3}
+  - {fileID: 2984003930164137941, guid: 42f6ae2b22ff8034fb393b7bbd7a05fe, type: 3}
+  - {fileID: 3379828275120701663, guid: 42f6ae2b22ff8034fb393b7bbd7a05fe, type: 3}
+  - {fileID: -450475073758537646, guid: 42f6ae2b22ff8034fb393b7bbd7a05fe, type: 3}
+  - {fileID: 1538778512941954432, guid: 42f6ae2b22ff8034fb393b7bbd7a05fe, type: 3}
   - {fileID: 21300000, guid: b1f5743b6f59e474587c96b9813328f0, type: 3}
   - {fileID: -2008052030521303664, guid: 97e5214bca7e8a847b79374fcd3ba660, type: 3}
   - {fileID: -8616700163328297874, guid: 97e5214bca7e8a847b79374fcd3ba660, type: 3}
@@ -428,6 +433,7 @@ SpriteAtlas:
   - watermelon_7
   - Caramello goin_1
   - Caramello goin_0
+  - Caramello goin_3
   - Caramello goin_2
   - Enemies Bullets_3
   - Enemies Bullets_2
@@ -609,6 +615,10 @@ SpriteAtlas:
   - firekeks shoot_0
   - firekeks shoot_3
   - firekeks shoot_2
+  - Caramello swing_2
+  - Caramello swing_3
+  - Caramello swing_0
+  - Caramello swing_1
   - Viseman hit
   - firekeks goin_1
   - firekeks goin_0

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.kiltec.unitytools": {
+      "version": "https://github.com/pwnedu/UnityTools.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8d683f395795899d732820a4c414aa3f89e3c4ce"
+    },
     "com.unity.2d.animation": {
       "version": "3.2.18",
       "depth": 0,
