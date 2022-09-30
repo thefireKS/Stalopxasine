@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 182060096824178805}
   - component: {fileID: 5867434476316708491}
   - component: {fileID: 9177672030405214670}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: fire for guitar
   m_TagString: UltimateHitBox
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9017377719394355628}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fridman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: c1741bcd885134e46858fc99beabfabb, type: 2}
-  recoilMultiplier: 0.8
   bulletPositionRotation: {fileID: 3650419167610536884}
   actualBulletPosition: {fileID: 4605909147719066653}
 --- !u!95 &7980958060090728141
@@ -525,7 +524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3650419167610536884}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet Rotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,10 +555,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4605909147719066653}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet Position
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -571,7 +570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8197276173950069653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3650419167610536884}

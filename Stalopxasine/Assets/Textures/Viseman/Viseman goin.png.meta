@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -5954513300719393468
     second: Viseman goin_2
+  - first:
+      213: 8635177196134702871
+    second: Viseman goin_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -166,6 +169,27 @@ TextureImporter:
       bones: []
       spriteID: 445284c83b15d5da0800000000000000
       internalID: -5954513300719393468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viseman goin_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71f9924a8ef46d770800000000000000
+      internalID: 8635177196134702871
       vertices: []
       indices: 
       edges: []

@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheckR, groundCheckL;
     private float rayDistance = 0.1f;
     
-    public GameObject currentOneWayPlatform;
+    private GameObject currentOneWayPlatform;
     private float gravityScale;
     
     private bool isDropping;
@@ -228,15 +228,8 @@ public class PlayerController : MonoBehaviour
     private void attackDirectionSetter()
     {
         Vector2 attackDirection = atck.AttackVector();
-        Vector2 attackingVector = new Vector2(attackDirection.x * Data.speed,attackDirection.y * Data.jumpForce);
-        if (rb2d.velocity == Vector2.zero && attackingVector.y < 9f)
-        {
-            attackingVector.x *= 0.33f;
-            attackingVector.y *= 0.33f;
-        }
-        if (movementState == MovementStates.Grounded && currentOneWayPlatform == null && attackingVector.y < -9f)
-            attackingVector = Vector2.zero;
-        rb2d.velocity = attackingVector;
+        Vector2 attackingVector = new Vector2(attackDirection.x * Data.speed * 0.66f,attackDirection.y * Data.jumpForce * 0.66f);
+        rb2d.velocity = attackingVector; 
     }
     
     #endregion

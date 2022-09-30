@@ -21964,11 +21964,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E, \u0437\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439.
-    \n\u0423 \u043C\u0435\u043D\u044F \u0442\u0443\u0442 \u043D\u043E\u0432\u044B\u0439
-    \u043E\u0431\u044A\u0435\u043A\u0442 \u043D\u0430 \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u0435,
-    \n\u043D\u0430\u0434\u0435\u044E\u0441\u044C, \u0441\u043A\u043E\u0440\u043E
-    \u043C\u044B \u0447\u0442\u043E-\u0442\u043E \u0441\u043C\u043E\u0436\u0435\u043C
+  m_text: "\u041E, \u0437\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439.\n\u0423
+    \u043C\u0435\u043D\u044F \u0442\u0443\u0442 \u043D\u043E\u0432\u044B\u0439 \u043E\u0431\u044A\u0435\u043A\u0442
+    \u043D\u0430 \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u0435,\n\u043D\u0430\u0434\u0435\u044E\u0441\u044C,
+    \u0441\u043A\u043E\u0440\u043E \u043C\u044B \u0447\u0442\u043E-\u0442\u043E \u0441\u043C\u043E\u0436\u0435\u043C
     \u0443\u0437\u043D\u0430\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 57aa6a8e7827f9546bd1966c48a7acb1, type: 2}
@@ -22058,6 +22057,7 @@ GameObject:
   - component: {fileID: 3699460015739079447}
   - component: {fileID: 3699460015739079445}
   - component: {fileID: 3699460015739079444}
+  - component: {fileID: 3699460015739079448}
   m_Layer: 5
   m_Name: Text 1
   m_TagString: Untagged
@@ -22086,6 +22086,28 @@ RectTransform:
   m_AnchoredPosition: {x: 6.56, y: 0.000015258789}
   m_SizeDelta: {x: 1890, y: 199.99997}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3699460015739079448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699460015739079446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455b116cf04b90040bdba6aa03c1b7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  system: {fileID: 11400000, guid: 408608c3f0efcb4468ca1662bb79970a, type: 2}
+  tmp: {fileID: 3699460015739079444}
+  english: Oh, hello <br> I have a new subject to study, <br> and hopefully we'll
+    be able to learn something soon.
+  russian: "\u041E, \u0437\u0434\u0440\u0430\u0432\u0441\u0442\u0432\u0443\u0439. 
+    <br> \u0423 \u043C\u0435\u043D\u044F \u0442\u0443\u0442 \u043D\u043E\u0432\u044B\u0439
+    \u043E\u0431\u044A\u0435\u043A\u0442 \u043D\u0430 \u0438\u0437\u0443\u0447\u0435\u043D\u0438\u0435,
+    <br> \u043D\u0430\u0434\u0435\u044E\u0441\u044C, \u0441\u043A\u043E\u0440\u043E
+    \u043C\u044B \u0447\u0442\u043E-\u0442\u043E \u0441\u043C\u043E\u0436\u0435\u043C
+    \u0443\u0437\u043D\u0430\u0442\u044C <br>"
 --- !u!114 &3699460015773891428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22892,6 +22914,7 @@ GameObject:
   - component: {fileID: 3699460016272136281}
   - component: {fileID: 3699460016272136287}
   - component: {fileID: 3699460016272136286}
+  - component: {fileID: 3699460016272136282}
   m_Layer: 5
   m_Name: Text 2
   m_TagString: Untagged
@@ -22920,6 +22943,23 @@ RectTransform:
   m_AnchoredPosition: {x: 6.5599976, y: -0.000015258789}
   m_SizeDelta: {x: 1890, y: 199.99997}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3699460016272136282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699460016272136280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 455b116cf04b90040bdba6aa03c1b7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  system: {fileID: 11400000, guid: 408608c3f0efcb4468ca1662bb79970a, type: 2}
+  tmp: {fileID: 3699460016272136286}
+  english: Good luck on your journey! <br> Don't get lost on the road...
+  russian: "\u0423\u0434\u0430\u0447\u0438 \u0442\u0435\u0431\u0435 \u0432 \u043F\u0443\u0442\u0438!
+    <br> \u041D\u0435 \u043F\u0440\u043E\u043F\u0430\u0434\u0438 \u043F\u043E \u0434\u043E\u0440\u043E\u0433\u0435..."
 --- !u!114 &3699460016272136286
 MonoBehaviour:
   m_ObjectHideFlags: 0

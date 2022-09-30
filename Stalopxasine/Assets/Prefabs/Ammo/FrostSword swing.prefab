@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1133308443672011135}
   m_Layer: 0
   m_Name: FrostSword swing
-  m_TagString: RangedHitBox
+  m_TagString: MeleeHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

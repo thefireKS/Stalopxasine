@@ -11,6 +11,9 @@ TextureImporter:
   - first:
       213: -8464523863742860533
     second: Fridman goin_2
+  - first:
+      213: -7082123693652218052
+    second: Fridman goin_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -166,6 +169,27 @@ TextureImporter:
       bones: []
       spriteID: b033ac49468f78a80800000000000000
       internalID: -8464523863742860533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fridman goin_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f6b78f50e37bd90800000000000000
+      internalID: -7082123693652218052
       vertices: []
       indices: 
       edges: []
