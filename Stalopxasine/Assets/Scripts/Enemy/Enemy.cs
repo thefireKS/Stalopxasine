@@ -5,103 +5,69 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    SpriteRenderer sprite;
+    
+    [SerializeField]
+    private Transform CastPos;
+    [SerializeField]
+    private float moveSpeed;
+    [SerializeField]
+    private float AgroTime;
+    
+    
 
-    Transform PlayerPos;
-    [SerializeField]
-    Transform CastPos;
-    [SerializeField]
-    float AgroRange;
-    [SerializeField]
-    float moveSpeed;
-    [SerializeField]
-    float AgroTime;
+    private Rigidbody2D rb2d;
 
-    Rigidbody2D rb2d;
-    Vector2 endPos;
+    private Collider2D agroVision;
 
     private EnemyAI enemyai;
-    bool isAgro;
-    bool isSearching;
+    private Transform player;
+
+    private WaitForSeconds agressionPeriod;
+
+    [HideInInspector] public bool canSeePlayer;
+    private bool isSearching;
+    private bool isAgro;
+    private float rotateCoolDown = 0;
     private void Awake()
     {
-        sprite = GetComponentInChildren<SpriteRenderer>();
         enemyai = GetComponent<EnemyAI>();
+        agressionPeriod = new WaitForSeconds(AgroTime);
     }
     private void Start()
     {
-        PlayerPos = Globals.CreatedCharacter.transform;
         rb2d = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
-        //Agression on Player 
-        if (CanSeePlayer(AgroRange))
+        if (canSeePlayer)
             isAgro = true;
+
         else if (isAgro&&!isSearching)
         {
             isSearching = true;
-            Invoke("StopChasingPlayer", AgroTime);
+            StartCoroutine(StopChasingPlayer());
         }
+
         if (isAgro)
             ChasePlayer();
+
+        rotateCoolDown += Time.deltaTime;
     }
     void ChasePlayer()
     {
-        enemyai.enabled = false;
-
-        if (transform.position.x < PlayerPos.position.x)
+        if (!canSeePlayer && rotateCoolDown > 0.5f)
         {
-            sprite.flipX = false;
-            rb2d.velocity = new Vector2(moveSpeed, rb2d.velocity.y);
-            enemyai.Direction = "right";
+            rotateCoolDown = 0f;
+            enemyai.ChangeFacingDirection();
+            int dir = enemyai.isFacingLeft ? 1 : -1;
+            rb2d.velocity = new Vector2(moveSpeed * dir, rb2d.velocity.y);
         }
-        else
-        {
-            sprite.flipX = true;
-            rb2d.velocity = new Vector2(-moveSpeed, rb2d.velocity.y);
-            enemyai.Direction = "left";
-        }
-
-        if (enemyai.isNearEdge())
-            rb2d.velocity = new Vector2(rb2d.velocity.x,rb2d.velocity.y);
     }
 
-    void StopChasingPlayer()
+    private IEnumerator StopChasingPlayer()
     {
+        yield return agressionPeriod;
         isSearching = false;
         isAgro = false;
-        rb2d.velocity = new Vector2(rb2d.velocity.x, rb2d.velocity.y);
-        enemyai.enabled = true;
-    }
-
-    bool CanSeePlayer(float distance)
-    {
-        bool value = false;
-        float CastDistance = distance;
-
-        if (enemyai.Direction == "right")
-            endPos = CastPos.position + Vector3.right * CastDistance;
-        else if (enemyai.Direction == "left")
-            endPos = CastPos.position + Vector3.left * CastDistance;
-
-        RaycastHit2D hit = Physics2D.Linecast(CastPos.position, endPos, 1 << LayerMask.NameToLayer("Action"));
-
-        if (hit.collider != null)
-        {
-            if (hit.collider.gameObject.CompareTag("Player"))
-            {
-                value = true;
-            }
-            else
-            {
-                value = false;
-            }
-            Debug.DrawLine(CastPos.position, hit.point, Color.green);
-        }
-        else
-            Debug.DrawLine(CastPos.position, endPos, Color.red);
-
-        return value;
     }
 }

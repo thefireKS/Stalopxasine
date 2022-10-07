@@ -67,8 +67,6 @@ public class PlayerMeeting : MonoBehaviour
         }
         if(inZone && !DialogIsGoing)
             anim.Play(afkAnimName);
-        
-        Debug.Log(DialogIsGoing);
     }
 
     private void OnTriggerExit2D(Collider2D other)

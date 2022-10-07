@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    SpriteRenderer sprite;
-    bool isFacingLeft;
-    Rigidbody2D rb2d;
-    public string Direction = "right";
+    private SpriteRenderer sprite;
+    private Rigidbody2D rb2d;
+    [HideInInspector] public bool isFacingLeft = false;
 
     [SerializeField]
     public float speed;
     [SerializeField]
-    Transform CastPos;
+    private Transform CastPos;
 
-    public float baseCastDistance;
+    private const float baseCastDistance = 0.15f;
 
     private void Start()
     {
@@ -26,37 +25,31 @@ public class EnemyAI : MonoBehaviour
     {
         float velocityX = speed;
 
-        if (Direction == "left")
+        if (isFacingLeft)
             velocityX = -speed;
-        rb2d.velocity = new Vector2(velocityX, rb2d.velocity.y);
 
-        if (isHittingWall() || isNearEdge())
-        {
-            if (Direction == "left")
-                ChangeFacingDirection("right");
-            else if(Direction == "right")
-                ChangeFacingDirection("left");
-        }
+        if(isNearEdge()|| isHittingWall())
+            ChangeFacingDirection();
+
+        rb2d.velocity = new Vector2(velocityX, rb2d.velocity.y);
     }
 
-    void ChangeFacingDirection (string newDirection)
+    public void ChangeFacingDirection ()
     {
-        if (newDirection == "left")
-            sprite.flipX = true;
-        else if(newDirection == "right")
+        if (isFacingLeft)
             sprite.flipX = false;
+        else
+            sprite.flipX = true;
 
-        Direction = newDirection;
+        isFacingLeft = !isFacingLeft;
     }
 
     bool isHittingWall()
     {
-        Vector3 castPosition;
-
         bool value = false;
         float castDistance = baseCastDistance;
-        castPosition = transform.TransformPoint(CastPos.localPosition.x, CastPos.localPosition.y, CastPos.localPosition.z);
-        if (Direction == "left")
+        var castPosition = transform.TransformPoint(CastPos.localPosition.x, CastPos.localPosition.y, CastPos.localPosition.z);
+        if (isFacingLeft)
         {
             castDistance = -baseCastDistance;
             castPosition = transform.TransformPoint(-CastPos.localPosition.x, CastPos.localPosition.y, CastPos.localPosition.z);
@@ -76,14 +69,11 @@ public class EnemyAI : MonoBehaviour
 
     public bool isNearEdge()
     {
-        Vector3 castPosition;
         bool value = true;
         float castDistance = baseCastDistance;
-        castPosition = transform.TransformPoint(CastPos.localPosition.x, CastPos.localPosition.y, CastPos.localPosition.z);
-        if (Direction == "left")
-        {
+        var castPosition = transform.TransformPoint(CastPos.localPosition.x, CastPos.localPosition.y, CastPos.localPosition.z);
+        if (isFacingLeft)
             castPosition = transform.TransformPoint(-CastPos.localPosition.x, CastPos.localPosition.y, CastPos.localPosition.z);
-        }
 
         Vector3 targetPos = castPosition;
         targetPos.y -= castDistance;

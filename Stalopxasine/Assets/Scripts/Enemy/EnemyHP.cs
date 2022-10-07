@@ -94,8 +94,8 @@ public class EnemyHP : MonoBehaviour
     }
     private void Knockback(Transform attackedPosition)
     {
-        Vector2 knockback = new Vector2(attackedPosition.position.x * knockbackScale * enemyai.speed,
-            attackedPosition.position.y * knockbackScale * enemyai.speed);
+        Vector2 knockback = new Vector2(attackedPosition.localPosition.x * knockbackScale * enemyai.speed /2 ,
+            attackedPosition.localPosition.y * knockbackScale * enemyai.speed / 2);
         rb2d.velocity = knockback;
     }
 }
