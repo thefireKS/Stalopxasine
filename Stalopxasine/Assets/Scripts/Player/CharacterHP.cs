@@ -8,7 +8,6 @@ public class CharacterHP : MonoBehaviour
 {
     private Material matDamaged;
     private Material matDefault;
-    private SpriteRenderer sr;
     private Rigidbody2D rb2d;
     private PlayerController plc;
     private Animator anim;
@@ -19,35 +18,19 @@ public class CharacterHP : MonoBehaviour
     public int FullHP;
 
     private WaitForSeconds Blinking = new WaitForSeconds(0.5f); //было 0.1
-    private IEnumerator GotDamaged()
-    {
-        HP--;
-        anim.SetBool("isHitted",true);
-        rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.jumpForce/1.6f);
-        /*sr.material = matDamaged;
-        yield return Blinking;
-        sr.material = matDefault;
-        yield return Blinking;
-        sr.material = matDamaged;*/
-        yield return Blinking;
-        //sr.material = matDefault;
-        anim.SetBool("isHitted",false);
-    }
-
+    
     private void Start()
     {
         plc = GetComponent<PlayerController>();
         rb2d = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         matDamaged = Resources.Load("Damaged", typeof(Material)) as Material;
-        matDefault = sr.material;
     }
 
     private void Update()
     {
         if (HP <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//restart
         if (HP > FullHP)
             HP = FullHP;
     }
@@ -73,5 +56,19 @@ public class CharacterHP : MonoBehaviour
               NextHitTime = Time.time + DamageCoolDown;
             }
         }
+    }
+    private IEnumerator GotDamaged()
+    {
+        HP--;
+        anim.SetBool("isHitted",true);
+        rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.jumpForce/1.6f);
+        /*sr.material = matDamaged;
+        yield return Blinking;
+        sr.material = matDefault;
+        yield return Blinking;
+        sr.material = matDamaged;*/
+        yield return Blinking;
+        //sr.material = matDefault;
+        anim.SetBool("isHitted",false);
     }
 }

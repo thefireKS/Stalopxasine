@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb2d;
     private BoxCollider2D playerCollider;
+    private SpriteRenderer sr;
     
     [Header("Collision Checkers")]
     [SerializeField] private LayerMask layerMask;
@@ -46,7 +47,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerCollider = GetComponent<BoxCollider2D>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
+        sr = GetComponentInChildren<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
         atck = GetComponent<Attack>();
         gravityScale = rb2d.gravityScale;
@@ -142,10 +144,8 @@ public class PlayerController : MonoBehaviour
     }
     private void Flip()
     {
-        if (moveX < 0) 
-            transform.localScale = new Vector3(-1, 1, 1);
-        else if (moveX > 0)
-            transform.localScale = new Vector3(1, 1, 1);
+        if (moveX != 0)
+            sr.flipX = moveX < 0;
     } 
     private bool groundCheck()
     {

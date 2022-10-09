@@ -14,20 +14,10 @@ public class UltimateEnergy : MonoBehaviour
     public int Energy = 2;
     public int FullEnergy = 8;
 
-    IEnumerator UltimateWorks()
-    {
-        plc.enabled = false;
-        anim.SetTrigger("isUlting");
-        rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
-        yield return new WaitForSeconds(AnimationTime);
-        rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
-        plc.enabled = true;
-    }
-
     private void Start()
     {
         plc = GetComponent<PlayerController>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -45,5 +35,15 @@ public class UltimateEnergy : MonoBehaviour
                 Energy = 0;
             }
         }
+    }
+    
+    IEnumerator UltimateWorks()
+    {
+        plc.enabled = false;
+        anim.SetTrigger("isUlting");
+        rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        yield return new WaitForSeconds(AnimationTime);
+        rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+        plc.enabled = true;
     }
 }

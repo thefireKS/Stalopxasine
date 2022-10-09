@@ -11,10 +11,11 @@ public class Attack : MonoBehaviour
     [SerializeField] private Transform actualBulletPosition;
     
     private Animator anim;
+    private SpriteRenderer sr;
     
     private bool isAttacking;
 
-    private float look = -1f; //Left or Right
+    private bool look;
     private int high = -1; //-2 - down, -1 - 45 deg down, 0 - middle, 1 - 45 deg up, 2 - up
     private float meleeDetection;
 
@@ -22,7 +23,8 @@ public class Attack : MonoBehaviour
     private void Awake()
     {
         meleeDetection = Data.meleeAttack ? 1 : -1;
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
+        sr = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -37,7 +39,7 @@ public class Attack : MonoBehaviour
         anim.speed = 0.375f / Data.attackTime;  
         Debug.Log(anim.speed);
         Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
-        transform.localScale = new Vector3(1 * look, 1, 1);
+        sr.flipX = look;
     }
 
     public Vector2 AttackVector()
@@ -70,9 +72,9 @@ public class Attack : MonoBehaviour
         float rotation = bulletPositionRotation.transform.eulerAngles.z;
 
         if (rotation >= 90f && rotation < 270f)
-            look = -1f;
+            look = true;
         else
-            look = 1f;
+            look = false;
         
         if (rotation < 288f && rotation >= 252f)
             high = -2;
