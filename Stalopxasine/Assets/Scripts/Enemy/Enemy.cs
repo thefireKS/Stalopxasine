@@ -2,18 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
-    
     [SerializeField]
-    private Transform CastPos;
-    [SerializeField]
-    private float moveSpeed;
+    private float extraSpeed;
     [SerializeField]
     private float AgroTime;
-    
-    
 
     private Rigidbody2D rb2d;
 
@@ -27,7 +23,6 @@ public class Enemy : MonoBehaviour
     [HideInInspector] public bool canSeePlayer;
     private bool isSearching;
     private bool isAgro;
-    private float rotateCoolDown = 0;
     private void Awake()
     {
         enemyai = GetComponent<EnemyAI>();
@@ -37,7 +32,7 @@ public class Enemy : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
     }
-    void Update()
+    private void Update()
     {
         if (canSeePlayer)
             isAgro = true;
@@ -50,23 +45,19 @@ public class Enemy : MonoBehaviour
 
         if (isAgro)
             ChasePlayer();
-
-        rotateCoolDown += Time.deltaTime;
     }
-    void ChasePlayer()
+
+    private void ChasePlayer()
     {
-        if (!canSeePlayer && rotateCoolDown > 0.5f)
-        {
-            rotateCoolDown = 0f;
-            enemyai.ChangeFacingDirection();
-            int dir = enemyai.isFacingLeft ? 1 : -1;
-            rb2d.velocity = new Vector2(moveSpeed * dir, rb2d.velocity.y);
-        }
+        enemyai.enabled = false;
+        int dir = enemyai.isFacingLeft ? -1 : 1;
+        rb2d.velocity = new Vector2(extraSpeed * dir, rb2d.velocity.y);
     }
 
     private IEnumerator StopChasingPlayer()
     {
         yield return agressionPeriod;
+        enemyai.enabled = true;
         isSearching = false;
         isAgro = false;
     }

@@ -80,22 +80,20 @@ public class EnemyHP : MonoBehaviour
                     enemy.enabled = false;
                 if(enemyai!=null)
                     enemyai.enabled = false;
-                Knockback(collision.transform);
+                //Knockback(collision.transform);
                 StartCoroutine(Wait());
             }
 
-            if (HP <= 0)
-            {
-                ue.Energy++;
-                LevelLock.killedEnemies++;
-                Destroy(gameObject);
-            }
+            if (HP > 0) return;
+            ue.Energy++;
+            LevelLock.killedEnemies++;
+            Destroy(gameObject);
         }
     }
-    private void Knockback(Transform attackedPosition)
+    /*private void Knockback(Transform attackedPosition)
     {
-        Vector2 knockback = new Vector2(attackedPosition.position.x * knockbackScale * enemyai.speed /2 ,
+        var knockback = new Vector2(attackedPosition.position.x * knockbackScale * enemyai.speed /2 ,
             attackedPosition.position.y * knockbackScale * enemyai.speed / 2);
         rb2d.velocity = knockback;
-    }
+    } */
 }

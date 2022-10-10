@@ -36,11 +36,7 @@ public class EnemyAI : MonoBehaviour
 
     public void ChangeFacingDirection ()
     {
-        if (isFacingLeft)
-            sprite.flipX = false;
-        else
-            sprite.flipX = true;
-
+        sprite.flipX = !isFacingLeft;
         isFacingLeft = !isFacingLeft;
     }
 
@@ -67,7 +63,7 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    public bool isNearEdge()
+    private bool isNearEdge()
     {
         bool value = true;
         float castDistance = baseCastDistance;

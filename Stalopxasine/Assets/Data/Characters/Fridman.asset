@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeAttack: 0
   attackTime: 0.4
-  attackForceScale: 1.1
+  attackForceScale: 1
   possibleAttacks: 1
   bullet: {fileID: 1123760533343461035, guid: 27aa5915d309fad43888c5fd25269b87, type: 3}
   speed: 14

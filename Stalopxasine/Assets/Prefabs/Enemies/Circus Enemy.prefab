@@ -310,8 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deac5eaf4e0d2c44a8be4848a82185b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CastPos: {fileID: 4744923473748149832}
-  moveSpeed: 1.5
+  extraSpeed: 2
   AgroTime: 3
   canSeePlayer: 0
 --- !u!114 &6529036088585289501
@@ -343,7 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasKnockback: 0
   knockbackScale: 0
-  HP: 4
+  HP: 2
   HealthBar: {fileID: 6485641587609653544}
   Bar: {fileID: 3290303554868115134}
 --- !u!61 &5560571315334572804
@@ -423,7 +422,7 @@ GameObject:
   - component: {fileID: 4744923473748149832}
   - component: {fileID: 6391193956624802978}
   - component: {fileID: 1832899483621699863}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: CastPointForAgro
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
