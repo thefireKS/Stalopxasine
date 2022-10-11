@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UltimateEnergy : MonoBehaviour
 {
     private Animator anim;
+    private SpriteRenderer spr;
     private Rigidbody2D rb2d;
     private PlayerController plc;
 
@@ -18,6 +19,7 @@ public class UltimateEnergy : MonoBehaviour
     {
         plc = GetComponent<PlayerController>();
         anim = GetComponentInChildren<Animator>();
+        spr = GetComponentInChildren<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 

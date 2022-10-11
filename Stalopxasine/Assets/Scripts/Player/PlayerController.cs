@@ -74,7 +74,6 @@ public class PlayerController : MonoBehaviour
         
         ProcessAnimation();
     }
-
     private void FixedUpdate()
     {
         if (PlayerMeeting.DialogIsGoing)
@@ -82,7 +81,6 @@ public class PlayerController : MonoBehaviour
         
         Controls();
     }
-    
     private void Controls()
     {
         if (actionState == ActionStates.Attacking)
@@ -227,8 +225,9 @@ public class PlayerController : MonoBehaviour
     }
     private void attackDirectionSetter()
     {
+        float groundCoefficient = groundCheck() ? 0.5f : 1f;
         Vector2 attackDirection = atck.AttackVector();
-        Vector2 attackingVector = new Vector2(attackDirection.x * Data.speed * 0.66f,attackDirection.y * Data.jumpForce * 0.66f);
+        Vector2 attackingVector = new Vector2(attackDirection.x * Data.speed * groundCoefficient, attackDirection.y * Data.jumpForce * groundCoefficient);
         rb2d.velocity = attackingVector; 
     }
     

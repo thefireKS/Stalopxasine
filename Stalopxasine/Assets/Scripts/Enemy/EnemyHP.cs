@@ -70,9 +70,8 @@ public class EnemyHP : MonoBehaviour
         
         if (collision.CompareTag("RangedHitBox") || collision.CompareTag("MeleeHitBox"))
         {
-            if (collision.CompareTag("RangedHitBox"))
-                Destroy(collision.gameObject);
-
+            Destroy(collision.gameObject, 0.1f);
+            
             HP--;
             if (knockbackScale > 0)
             {

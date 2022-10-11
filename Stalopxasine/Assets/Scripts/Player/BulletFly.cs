@@ -23,6 +23,6 @@ public class BulletFly : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ground"))
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject);
     }
 }
