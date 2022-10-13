@@ -2,14 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public string SceneName;
-    public int NumberCharacter; //1-Caramello, 2-fireKS, 3-Fridman, 4-Viseman
+    public Image showing;
+    private PlayerData data;
+    private CharacterSelectionData selectionData;
+
     public void LoadScene()
     {
-        Globals.Character = NumberCharacter;
-        SceneManager.LoadScene(SceneName);
+        selectionData.selectedCharacter = data;
+        SceneManager.LoadScene(data.sceneName);
+    }
+
+    public void Setup(PlayerData playerData, CharacterSelectionData csData)
+    {
+        data = playerData;
+        selectionData = csData;
+        GetComponent<Image>().color = data.color;
+        showing.sprite = data.characterSprite;
     }
 }

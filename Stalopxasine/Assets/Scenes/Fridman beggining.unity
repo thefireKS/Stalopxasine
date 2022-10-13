@@ -815,7 +815,6 @@ GameObject:
   - component: {fileID: 30586913}
   - component: {fileID: 30586914}
   - component: {fileID: 30586912}
-  - component: {fileID: 30586915}
   m_Layer: 0
   m_Name: Level 1 Start
   m_TagString: Untagged
@@ -835,6 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb15828eb31e21c49af5e3d973e51470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!4 &30586913
 Transform:
   m_ObjectHideFlags: 0
@@ -847,7 +847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1597985227}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &30586914
 MonoBehaviour:
@@ -861,23 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3217e27fe1b0a6b4fb441e17de8b7980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objects:
-  - {fileID: 4986971684823470180, guid: d92186654f0cb4746b77253902c5c914, type: 3}
-  - {fileID: 5943065303811168740, guid: 60fc268150ec84e47a6a46b2d72f690f, type: 3}
-  - {fileID: 3045586685101704632, guid: 6270cbb224c9c8d46b928b6863841179, type: 3}
-  - {fileID: 151745410589795453, guid: e80ab45d643d8ec4597d34a3205605a3, type: 3}
---- !u!114 &30586915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30586911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4913b1276cb50ff428b17caf88562e6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
 --- !u!1001 &51149264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6705,7 +6689,7 @@ Transform:
   - {fileID: 423379831}
   - {fileID: 147636255}
   m_Father: {fileID: 1597985227}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1190392678
 GameObject:
@@ -10809,7 +10793,7 @@ Transform:
   - {fileID: 1360709812}
   - {fileID: 849704078}
   m_Father: {fileID: 1597985227}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455596459
 GameObject:
@@ -11011,6 +10995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2b7b7ffe1a674aa5bb6e420406464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   newLevelPosition: {fileID: 565932703}
 --- !u!61 &1461028212
 BoxCollider2D:
@@ -11085,8 +11070,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a87f63b8964544e8e6244ee587eaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   FirstLevelPosition: {fileID: 30586913}
-  EndingNumber: 3
 --- !u!212 &1468328607
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15390,11 +15375,11 @@ Transform:
   m_Children:
   - {fileID: 1475846378}
   - {fileID: 500936216}
+  - {fileID: 1069307127}
   - {fileID: 30586913}
   - {fileID: 3157627372519597218}
-  - {fileID: 1069307127}
-  - {fileID: 2202666050051087169}
   - {fileID: 1431306084}
+  - {fileID: 2202666050051087169}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16888,7 +16873,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1597985227}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2202666050051087180
 GameObject:
@@ -17147,6 +17132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2b7b7ffe1a674aa5bb6e420406464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   newLevelPosition: {fileID: 542118853}
 --- !u!212 &3157627372519597217
 SpriteRenderer:
@@ -17211,7 +17197,7 @@ Transform:
   m_Children:
   - {fileID: 3157627374134862781}
   m_Father: {fileID: 1597985227}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3157627372519597219
 BoxCollider2D:
@@ -18472,6 +18458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0bcd49612e0d44a85e5cbe038c65c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   NumberOfHearts: 3
   hearts:
   - {fileID: 3699460015773891428}
@@ -18721,6 +18708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd10a767a4c38d459c12a995bb3afdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   bar: {fileID: 3699460016215825080}
 --- !u!1 &3699460016271313944
 GameObject:
@@ -20397,6 +20385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b176833e440c2b448ab374b346af8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
   HasKnockback: 0
   knockbackScale: 0
   HP: 10

@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class HeartsGUI : MonoBehaviour
 {
-    int health;
+    public CharacterSelectionData data;
+    
+    private int health;
+    
     public int NumberOfHearts;
 
     CharacterHP characterHP;
@@ -16,7 +19,7 @@ public class HeartsGUI : MonoBehaviour
 
     private void Start()
     {
-        characterHP = Globals.CreatedCharacter.GetComponentInChildren<CharacterHP>();
+        characterHP =  data.spawnedCharacter.GetComponent<CharacterHP>();
     }
     private void Update()
     {

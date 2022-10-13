@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EnergyGUI : MonoBehaviour
 {
+    public CharacterSelectionData data;
+    
     [SerializeField]
     private Image bar;
 
@@ -12,7 +14,7 @@ public class EnergyGUI : MonoBehaviour
     
     void Start()
     {
-        ue = Globals.CreatedCharacter.GetComponentInChildren<UltimateEnergy>();
+        ue = data.spawnedCharacter.GetComponent<UltimateEnergy>();
     }
     void Update()
     {

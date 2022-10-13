@@ -534,7 +534,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b176833e440c2b448ab374b346af8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   HasKnockback: 0
+  knockbackScale: 0
   HP: 1
   HealthBar: {fileID: 8349390837676479331}
   Bar: {fileID: 0}

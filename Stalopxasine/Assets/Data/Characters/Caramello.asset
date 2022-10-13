@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
   m_Name: Caramello
   m_EditorClassIdentifier: 
+  prefab: {fileID: 4986971684823470180, guid: d92186654f0cb4746b77253902c5c914, type: 3}
+  sceneName: Caramello beggining
+  color: {r: 0, g: 0.5882353, b: 0.8745099, a: 1}
+  characterSprite: {fileID: 21300000, guid: a6407461e32edc845af38ec9956bc604, type: 3}
   meleeAttack: 1
   attackTime: 0.33
   attackForceScale: 0.6

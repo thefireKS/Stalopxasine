@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
   m_Name: fireKS
   m_EditorClassIdentifier: 
+  prefab: {fileID: 5943065303811168740, guid: 60fc268150ec84e47a6a46b2d72f690f, type: 3}
+  sceneName: fireKS beggining
+  color: {r: 0.19215688, g: 0.77647066, b: 0.1254902, a: 1}
+  characterSprite: {fileID: 21300000, guid: 4ed0ccfcc8acc6549ada7bd56ca563c8, type: 3}
   meleeAttack: 0
   attackTime: 0.4
   attackForceScale: 0.6

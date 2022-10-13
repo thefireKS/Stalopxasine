@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Die : MonoBehaviour
 {
+    public CharacterSelectionData data;
     private CharacterHP characterHP;
-    private void Start()
+    private void Awake()
     {
-        characterHP = Globals.CreatedCharacter.GetComponentInChildren<CharacterHP>();
+        characterHP = data.spawnedCharacter.GetComponent<CharacterHP>();
     }
     void OnTriggerEnter2D(Collider2D other)
     {

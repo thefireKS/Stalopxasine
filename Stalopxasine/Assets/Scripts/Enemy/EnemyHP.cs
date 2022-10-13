@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class EnemyHP : MonoBehaviour
 {
+    public CharacterSelectionData data;
+    
     [Header("Knockback")]
     [SerializeField]
     private bool HasKnockback;
@@ -40,7 +42,7 @@ public class EnemyHP : MonoBehaviour
     
     private void Start()
     {
-        ue = Globals.CreatedCharacter.GetComponent<UltimateEnergy>();
+        ue = data.spawnedCharacter.GetComponent<UltimateEnergy>();
         fullHP = HP;
         HealthBar.SetMaxHealth(fullHP);
         enemy = GetComponent<Enemy>();
