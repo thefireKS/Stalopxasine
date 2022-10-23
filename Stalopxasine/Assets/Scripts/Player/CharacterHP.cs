@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,19 +11,34 @@ public class CharacterHP : MonoBehaviour
     private PlayerController plc;
     private Animator anim;
     
-    private const float DamageCoolDown = 1f; //кд получения урона
-    private float NextHitTime = 0; //таймер для образования кулдауна между получением урона
-    public int HP;
-    public int FullHP;
+    private const float DamageCoolDown = 1f; //damage getting cd
+    private float NextHitTime = 0; //timer to cd of damage
+    [SerializeField] private int HP;
+    [SerializeField] private int FullHP;
 
-    private WaitForSeconds Blinking = new WaitForSeconds(0.5f); //было 0.1
+    public static event Action<int> OnHealthChanged;
+
+    private WaitForSeconds Blinking = new WaitForSeconds(0.5f);
     
     private void Start()
     {
+        OnHealthChanged?.Invoke(FullHP);
         plc = GetComponent<PlayerController>();
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         matDamaged = Resources.Load("Damaged", typeof(Material)) as Material;
+    }
+
+    private void OnEnable()
+    {
+        LevelFinisher.SetMaxHealth += GetMaxHealth;
+        Dieline.SetZeroHealth += GetZeroHealth;
+    }
+
+    private void OnDisable()
+    {
+        LevelFinisher.SetMaxHealth -= GetMaxHealth;
+        Dieline.SetZeroHealth -= GetZeroHealth;
     }
 
     private void Update()
@@ -45,6 +59,16 @@ public class CharacterHP : MonoBehaviour
             }
         }
     }
+    private void GetMaxHealth()
+    {
+        HP = FullHP;
+        OnHealthChanged?.Invoke(HP);
+    }
+    private void GetZeroHealth()
+    {
+        HP = 0;
+        OnHealthChanged?.Invoke(HP);
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("EnemyBullet"))
@@ -60,8 +84,9 @@ public class CharacterHP : MonoBehaviour
     private IEnumerator GotDamaged()
     {
         HP--;
+        OnHealthChanged?.Invoke(HP);
         anim.SetBool("isHitted",true);
-        rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.jumpForce/1.6f);
+        //rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.jumpForce/1.6f);
         /*sr.material = matDamaged;
         yield return Blinking;
         sr.material = matDefault;

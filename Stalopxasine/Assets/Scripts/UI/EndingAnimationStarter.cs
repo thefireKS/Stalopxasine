@@ -8,7 +8,6 @@ public class EndingAnimationStarter : MonoBehaviour
     public float AnimTime;
     public string AnimName;
     public Animator anim;
-    public int EndingNumber;
     public void Start()
     {
         anim = GetComponent<Animator>();

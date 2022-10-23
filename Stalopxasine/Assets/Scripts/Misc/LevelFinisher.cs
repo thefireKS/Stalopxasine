@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,24 +9,23 @@ public class LevelFinisher : MonoBehaviour
     private Transform player;
     public Transform newLevelPosition;
     private GameMaster gamemaster;
-    private CharacterHP charHP;
+
+    public static event Action SetMaxHealth;
 
     private void Start()
     {
         player = data.spawnedCharacter.GetComponent<Transform>();
         gamemaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
-        charHP = data.spawnedCharacter.GetComponent<CharacterHP>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
-        {
+        { 
+            SetMaxHealth?.Invoke();
            gamemaster.lastCheckPointPosition = newLevelPosition.position;
-           
            player.position = newLevelPosition.position;
-          Globals.CharPositions[data.selectedCharacter] = newLevelPosition.position;
-           charHP.HP = charHP.FullHP;
+           Globals.CharPositions[data.selectedCharacter] = newLevelPosition.position;
            LevelLock.killedEnemies = 0;
            
         }

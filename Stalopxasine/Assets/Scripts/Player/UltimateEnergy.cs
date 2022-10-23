@@ -15,20 +15,20 @@ public class UltimateEnergy : MonoBehaviour
     public int Energy = 2;
     public int FullEnergy = 8;
 
+    public static Action<int, int> OnEnergyChanged;
     private void Start()
     {
+        OnEnergyChanged?.Invoke(Energy, FullEnergy);
         plc = GetComponent<PlayerController>();
         anim = GetComponentInChildren<Animator>();
         spr = GetComponentInChildren<SpriteRenderer>();
         rb2d = GetComponent<Rigidbody2D>();
     }
+    private void OnEnable() => EnemyHP.GiveEnergy += SetEnergy;
+    private void OnDisable() => EnemyHP.GiveEnergy -= SetEnergy;
 
     private void Update()
     {
-        if (Energy > FullEnergy)
-        {
-            Energy = FullEnergy;
-        }
         if (Energy == FullEnergy)
         {
             if (Input.GetKeyDown("x")&&!PlayerMeeting.DialogIsGoing)
@@ -36,6 +36,15 @@ public class UltimateEnergy : MonoBehaviour
                 StartCoroutine(UltimateWorks());
                 Energy = 0;
             }
+        }
+    }
+    private void SetEnergy()
+    {
+        Energy++;
+        OnEnergyChanged?.Invoke(Energy, FullEnergy);
+        if (Energy > FullEnergy)
+        {
+            Energy = FullEnergy;
         }
     }
     

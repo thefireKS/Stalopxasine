@@ -1,29 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EnergyGUI : MonoBehaviour
 {
-    public CharacterSelectionData data;
-    
     [SerializeField]
     private Image bar;
 
-    private UltimateEnergy ue;
+    private void OnEnable() => UltimateEnergy.OnEnergyChanged += GetCurrentFill;
     
-    void Start()
+    private void OnDisable() => UltimateEnergy.OnEnergyChanged -= GetCurrentFill;
+    void GetCurrentFill(int energy, int fullEnergy)
     {
-        ue = data.spawnedCharacter.GetComponent<UltimateEnergy>();
-    }
-    void Update()
-    {
-        GetCurrentFill();
-    }
-    
-    void GetCurrentFill()
-    {
-        float fillAmount = (float) ue.Energy / (float) ue.FullEnergy;
+        float fillAmount = (float) energy / (float) fullEnergy;
         bar.fillAmount = fillAmount;
     }
 }

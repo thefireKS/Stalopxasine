@@ -1,29 +1,22 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HeartsGUI : MonoBehaviour
 {
-    public CharacterSelectionData data;
-    
-    private int health;
-    
     public int NumberOfHearts;
 
-    CharacterHP characterHP;
+    //CharacterHP characterHP;
 
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
-
-    private void Start()
+    [SerializeField] private Image[] hearts;
+    [SerializeField] private Sprite fullHeart;
+    [SerializeField] private Sprite emptyHeart;
+    private void OnEnable() => CharacterHP.OnHealthChanged += UpdateHearts;
+    private void OnDisable() => CharacterHP.OnHealthChanged -= UpdateHearts;
+    private void UpdateHearts(int health)
     {
-        characterHP =  data.spawnedCharacter.GetComponent<CharacterHP>();
-    }
-    private void Update()
-    {
-        health = characterHP.HP;
         if (health > NumberOfHearts)
             health = NumberOfHearts;
         for(int i = 0; i < hearts.Length; i++)

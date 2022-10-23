@@ -6,17 +6,14 @@ using UnityEngine;
 
 public class EnemyHP : MonoBehaviour
 {
-    public CharacterSelectionData data;
-    
     [Header("Knockback")]
     [SerializeField]
     private bool HasKnockback;
-    [SerializeField] 
+    [SerializeField]
     private float knockbackScale;
     
     private Enemy enemy;
     private EnemyAI enemyai;
-    private UltimateEnergy ue;
     private Rigidbody2D rb2d;
 
     [Header("Health")]
@@ -29,7 +26,8 @@ public class EnemyHP : MonoBehaviour
     private HealthBar HealthBar;
     [SerializeField]
     private GameObject Bar;
-
+    
+    public static Action GiveEnergy;
     private WaitForSeconds knockbackCD = new WaitForSeconds(0.33f);
     private IEnumerator Wait()
     {
@@ -42,7 +40,6 @@ public class EnemyHP : MonoBehaviour
     
     private void Start()
     {
-        ue = data.spawnedCharacter.GetComponent<UltimateEnergy>();
         fullHP = HP;
         HealthBar.SetMaxHealth(fullHP);
         enemy = GetComponent<Enemy>();
@@ -64,7 +61,7 @@ public class EnemyHP : MonoBehaviour
             HP -= 4;
             if (HP <= 0)
             {
-                ue.Energy++;
+                GiveEnergy?.Invoke();
                 LevelLock.killedEnemies++;
                 Destroy(gameObject);
             }
@@ -72,8 +69,7 @@ public class EnemyHP : MonoBehaviour
         
         if (collision.CompareTag("RangedHitBox") || collision.CompareTag("MeleeHitBox"))
         {
-            Destroy(collision.gameObject, 0.1f);
-            
+            Destroy(collision.gameObject, 0.2f);
             HP--;
             if (knockbackScale > 0)
             {
@@ -86,7 +82,7 @@ public class EnemyHP : MonoBehaviour
             }
 
             if (HP > 0) return;
-            ue.Energy++;
+            GiveEnergy?.Invoke();
             LevelLock.killedEnemies++;
             Destroy(gameObject);
         }

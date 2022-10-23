@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb15828eb31e21c49af5e3d973e51470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
 --- !u!4 &30586913
 Transform:
   m_ObjectHideFlags: 0
@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2b7b7ffe1a674aa5bb6e420406464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   newLevelPosition: {fileID: 182212701}
 --- !u!61 &180984293
 BoxCollider2D:
@@ -1638,7 +1638,7 @@ Transform:
   m_Children:
   - {fileID: 1020728518}
   m_Father: {fileID: 184489090}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &182212700
 GameObject:
@@ -1668,7 +1668,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1004159998}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &184489089
 GameObject:
@@ -1701,8 +1701,8 @@ Transform:
   - {fileID: 1845361362}
   - {fileID: 1731800464}
   - {fileID: 172050301}
-  - {fileID: 180984294}
   - {fileID: 2050364677}
+  - {fileID: 180984294}
   - {fileID: 1659663721}
   - {fileID: 959706364}
   m_Father: {fileID: 0}
@@ -2256,7 +2256,7 @@ GameObject:
   - component: {fileID: 487354687}
   - component: {fileID: 487354686}
   m_Layer: 0
-  m_Name: Viseman parallax Clouds (1)
+  m_Name: Viseman parallax Clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2271,7 +2271,7 @@ Transform:
   m_GameObject: {fileID: 487354684}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 3.5792503, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1155293816}
   m_RootOrder: 4
@@ -2335,7 +2335,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3295,8 +3295,8 @@ Transform:
   - {fileID: 2081798696}
   - {fileID: 1327055597}
   - {fileID: 1111779134}
-  - {fileID: 1011417007}
   - {fileID: 182212701}
+  - {fileID: 1011417007}
   - {fileID: 692689146}
   - {fileID: 5517067547164355286}
   m_Father: {fileID: 0}
@@ -3384,7 +3384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a87f63b8964544e8e6244ee587eaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   FirstLevelPosition: {fileID: 30586913}
 --- !u!114 &1011417005
 MonoBehaviour:
@@ -3440,7 +3440,7 @@ Transform:
   m_Children:
   - {fileID: 119402053}
   m_Father: {fileID: 1004159998}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1020728517
 GameObject:
@@ -3867,8 +3867,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154497915}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.9230003, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 3.705, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1155293816}
   m_RootOrder: 1
@@ -3932,7 +3932,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8191,8 +8191,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534013955}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.86, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -3.62, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1053700349}
   m_RootOrder: 1
@@ -8256,7 +8256,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8621,7 +8621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11a9bc8521bbfca49b2ecb2b1e59106c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
 --- !u!4 &1659663721
 Transform:
   m_ObjectHideFlags: 0
@@ -11751,7 +11750,7 @@ Transform:
   m_GameObject: {fileID: 2018049433}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.642, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1053700349}
   m_RootOrder: 4
@@ -11815,7 +11814,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -11918,7 +11917,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 184489090}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2081798695
 GameObject:
@@ -15595,7 +15594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2b7b7ffe1a674aa5bb6e420406464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   newLevelPosition: {fileID: 2050364677}
 --- !u!212 &3157627373240046695
 SpriteRenderer:
@@ -16726,9 +16725,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimTime: 4
-  AnimName: Fridman Ending
+  AnimName: Viseman Ending
   anim: {fileID: 3699460016115472272}
-  EndingNumber: 3
 --- !u!223 &3699460016115472274
 Canvas:
   m_ObjectHideFlags: 0
@@ -16823,7 +16821,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0bcd49612e0d44a85e5cbe038c65c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   NumberOfHearts: 4
   hearts:
   - {fileID: 3699460015773891428}
@@ -17073,7 +17070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd10a767a4c38d459c12a995bb3afdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
   bar: {fileID: 3699460016215825080}
 --- !u!1 &3699460016271313944
 GameObject:

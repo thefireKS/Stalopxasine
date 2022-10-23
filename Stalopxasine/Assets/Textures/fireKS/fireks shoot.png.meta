@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 97e5214bca7e8a847b79374fcd3ba660
+guid: 5c96aa8f5a9f62940aeef4b4ab5a8681
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8616700163328297874
-    second: firekeks goin_0
+      213: -8068474894005236674
+    second: fireks shoot_0
   - first:
-      213: -2008052030521303664
-    second: firekeks goin_1
+      213: 248162349798865570
+    second: fireks shoot_1
   - first:
-      213: -6048332576139929227
-    second: firekeks goin_2
+      213: 7193638906508155274
+    second: fireks shoot_2
   - first:
-      213: -9033292153956244946
-    second: firekeks goin_3
+      213: -7791747857004223952
+    second: fireks shoot_3
+  - first:
+      213: 5362343273322768801
+    second: fireks shoot_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -48,7 +51,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -73,7 +76,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -85,7 +88,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -97,7 +100,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -111,7 +114,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: firekeks goin_0
+      name: fireks shoot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c09af15d4070090800000000000000
+      internalID: -8068474894005236674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireks shoot_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa3362a756a17300800000000000000
+      internalID: 248162349798865570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireks shoot_2
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +170,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6434cccad45b6880800000000000000
-      internalID: -8616700163328297874
+      spriteID: a8919d0d870f4d360800000000000000
+      internalID: 7193638906508155274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: firekeks goin_1
+      name: fireks shoot_3
       rect:
         serializedVersion: 2
         x: 16
@@ -146,14 +191,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09d964e3157f124e0800000000000000
-      internalID: -2008052030521303664
+      spriteID: 0322ad34b962ed390800000000000000
+      internalID: -7791747857004223952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: firekeks goin_2
+      name: fireks shoot_4
       rect:
         serializedVersion: 2
         x: 0
@@ -167,29 +212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57991c34191001ca0800000000000000
-      internalID: -6048332576139929227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: firekeks goin_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e226d1b75ac43a280800000000000000
-      internalID: -9033292153956244946
+      spriteID: 1a9eb12dbceda6a40800000000000000
+      internalID: 5362343273322768801
       vertices: []
       indices: 
       edges: []

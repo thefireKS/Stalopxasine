@@ -2592,7 +2592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb15828eb31e21c49af5e3d973e51470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
 --- !u!4 &30586913
 Transform:
   m_ObjectHideFlags: 0
@@ -2801,8 +2801,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221741497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.8899999, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 3.68, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 262122730}
   m_RootOrder: 1
@@ -2866,7 +2866,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -3912,8 +3912,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613774240}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.8599997, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 3.68, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 262122730}
   m_RootOrder: 4
@@ -3977,7 +3977,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 1
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4634,7 +4634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763747246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.4400005, z: 1}
+  m_LocalPosition: {x: 0, y: -4.44, z: 1}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1156628393}
@@ -8736,8 +8736,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049742146}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.85, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -3.64, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1156628393}
   m_RootOrder: 4
@@ -8801,7 +8801,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8971,7 +8971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2b7b7ffe1a674aa5bb6e420406464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   newLevelPosition: {fileID: 585204901}
 --- !u!61 &1132995520
 BoxCollider2D:
@@ -13703,8 +13703,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893524939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.8800004, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: -3.63, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1156628393}
   m_RootOrder: 1
@@ -13768,7 +13768,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 50, y: 1}
+  m_Size: {x: 25, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -14030,7 +14030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a87f63b8964544e8e6244ee587eaa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   FirstLevelPosition: {fileID: 30586913}
 --- !u!212 &2042599944
 SpriteRenderer:
@@ -14639,7 +14639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f2b7b7ffe1a674aa5bb6e420406464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   newLevelPosition: {fileID: 131471763}
 --- !u!212 &3157627373196323107
 SpriteRenderer:
@@ -15844,7 +15844,6 @@ MonoBehaviour:
   AnimTime: 4
   AnimName: fireKS Ending
   anim: {fileID: 3699460016115472272}
-  EndingNumber: 2
 --- !u!223 &3699460016115472274
 Canvas:
   m_ObjectHideFlags: 0
@@ -15939,7 +15938,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0bcd49612e0d44a85e5cbe038c65c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
   NumberOfHearts: 3
   hearts:
   - {fileID: 3699460015773891428}
@@ -16189,7 +16187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd10a767a4c38d459c12a995bb3afdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
   bar: {fileID: 3699460016215825080}
 --- !u!1 &3699460016271313944
 GameObject:
@@ -17976,7 +17973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b176833e440c2b448ab374b346af8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}
   HasKnockback: 0
   knockbackScale: 0
   HP: 10
