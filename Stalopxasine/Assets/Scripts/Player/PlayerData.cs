@@ -8,13 +8,16 @@ public class PlayerData : ScriptableObject
     public string sceneName;
     public Color color;
     public Sprite characterSprite;
-    
+
     [Header("Fighting")]
     public bool meleeAttack = true;
     public float attackTime = 0.4f;
     public float attackForceScale = 0.6f;
     public int possibleAttacks = 1;
     public GameObject bullet;
+
+    [Header("Ultimate")] 
+    public float ultimateTime = 8f;
 
     [Header("Movement")]
     public float speed;

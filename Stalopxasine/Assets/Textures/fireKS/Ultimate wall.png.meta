@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: a39034bfb7e0d0e42b31a129030d1219
+guid: f81b37759c02631469e8557df3da68a8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1354682176000685125
-    second: Fridman ulti jump_0
+      213: -9004308322588327803
+    second: Ultimate wall_0
   - first:
-      213: 3396547230375080984
-    second: Fridman ulti jump_1
+      213: -6428606263903520250
+    second: Ultimate wall_1
   - first:
-      213: 216529989822390673
-    second: Fridman ulti jump_2
+      213: 4825117370144818706
+    second: Ultimate wall_2
   - first:
-      213: 6325634890005351158
-    second: Fridman ulti jump_3
+      213: -8493491311262288642
+    second: Ultimate wall_3
   - first:
-      213: 2294877071263104302
-    second: Fridman ulti jump_4
+      213: -2167183085855558796
+    second: Ultimate wall_4
   - first:
-      213: 8515524606210484152
-    second: Fridman ulti jump_5
+      213: 1069384416729331671
+    second: Ultimate wall_5
+  - first:
+      213: 4992600522133331732
+    second: Ultimate wall_6
+  - first:
+      213: 8543890338283877139
+    second: Ultimate wall_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -54,7 +60,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -79,7 +85,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -91,7 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -103,7 +109,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 64
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,127 +123,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fridman ulti jump_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 544f21cf24cccc210800000000000000
-      internalID: 1354682176000685125
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti jump_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 814f759d5b5f22f20800000000000000
-      internalID: 3396547230375080984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti jump_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1912596e0e4410300800000000000000
-      internalID: 216529989822390673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti jump_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6fa0695fa6b29c750800000000000000
-      internalID: 6325634890005351158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti jump_4
+      name: Ultimate wall_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 16
-        height: 16
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2d73db998a09df10800000000000000
-      internalID: 2294877071263104302
+      spriteID: 580870899454a0380800000000000000
+      internalID: -9004308322588327803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fridman ulti jump_5
+      name: Ultimate wall_1
       rect:
         serializedVersion: 2
         x: 16
         y: 0
         width: 16
-        height: 16
+        height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b7264d13883d2670800000000000000
-      internalID: 8515524606210484152
+      spriteID: 60afd27c9a009c6a0800000000000000
+      internalID: -6428606263903520250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate wall_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2168c0ffea246f240800000000000000
+      internalID: 4825117370144818706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate wall_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4385127ae012a80800000000000000
+      internalID: -8493491311262288642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate wall_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4733854377e9ce1e0800000000000000
+      internalID: -2167183085855558796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate wall_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d77d7f067737de00800000000000000
+      internalID: 1069384416729331671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate wall_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41fdf2319b7494540800000000000000
+      internalID: 4992600522133331732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ultimate wall_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3137d45cefef19670800000000000000
+      internalID: 8543890338283877139
       vertices: []
       indices: 
       edges: []
@@ -245,7 +293,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: b8e4661f655cecf45b0193a5fd6e154b
     internalID: 0
     vertices: []
     indices: 

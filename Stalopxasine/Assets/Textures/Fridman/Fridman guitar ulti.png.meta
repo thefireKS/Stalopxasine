@@ -14,6 +14,18 @@ TextureImporter:
   - first:
       213: 4239139289045217581
     second: Fridman guitar ulti_3
+  - first:
+      213: 3643516790054555284
+    second: Fridman guitar ulti_4
+  - first:
+      213: 113232496955352180
+    second: Fridman guitar ulti_5
+  - first:
+      213: -1138066229691289027
+    second: Fridman guitar ulti_6
+  - first:
+      213: -2950372082119628163
+    second: Fridman guitar ulti_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,7 +127,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -136,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -156,8 +168,8 @@ TextureImporter:
       name: Fridman guitar ulti_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 32
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -177,8 +189,8 @@ TextureImporter:
       name: Fridman guitar ulti_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -190,6 +202,90 @@ TextureImporter:
       bones: []
       spriteID: d2131f439b274da30800000000000000
       internalID: 4239139289045217581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fridman guitar ulti_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e8f54673f509230800000000000000
+      internalID: 3643516790054555284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fridman guitar ulti_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474ed062b58429100800000000000000
+      internalID: 113232496955352180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fridman guitar ulti_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32f1683bc6c430f0800000000000000
+      internalID: -1138066229691289027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fridman guitar ulti_7
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7aa70a193c2e07d0800000000000000
+      internalID: -2950372082119628163
       vertices: []
       indices: 
       edges: []

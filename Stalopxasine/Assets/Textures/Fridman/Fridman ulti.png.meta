@@ -133,7 +133,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -154,7 +154,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 48
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -174,8 +174,8 @@ TextureImporter:
       name: Fridman ulti_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -195,8 +195,8 @@ TextureImporter:
       name: Fridman ulti_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -208,132 +208,6 @@ TextureImporter:
       bones: []
       spriteID: ab0dfae854ed40790800000000000000
       internalID: -7564677083747594054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd92696a8a76a2bf0800000000000000
-      internalID: -348352047120766501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f56067b1568aa960800000000000000
-      internalID: 7614045805550265844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f4586207e285bb60800000000000000
-      internalID: 7761253461532366067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e58e4e99527a2e40800000000000000
-      internalID: 5632440013213828581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti_8
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b34df70734e54830800000000000000
-      internalID: 4054897964525372342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fridman ulti_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4644fd45872e4b980800000000000000
-      internalID: -8523939188257635228
       vertices: []
       indices: 
       edges: []

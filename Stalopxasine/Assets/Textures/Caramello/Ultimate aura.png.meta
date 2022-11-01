@@ -1,43 +1,31 @@
 fileFormatVersion: 2
-guid: d63bae569dbcf41419b5baee24daffda
+guid: a284fc7e691dea54ca8f9bab4ad80b55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4712711539890661358
-    second: Holy-mello aura_0
+      213: 2909205951266446403
+    second: Ultimate aura_0
   - first:
-      213: 5378883602289751452
-    second: Holy-mello aura_1
+      213: -9134002979503084725
+    second: Ultimate aura_1
   - first:
-      213: -3926471960107236063
-    second: Holy-mello aura_2
+      213: 8446256957858756629
+    second: Ultimate aura_2
   - first:
-      213: -7387316015837223456
-    second: Holy-mello aura_3
+      213: -7201350208296185009
+    second: Ultimate aura_3
   - first:
-      213: -2891150143721387087
-    second: Holy-mello aura_4
+      213: -4543470238885340969
+    second: Ultimate aura_4
   - first:
-      213: -5333937664023080371
-    second: Holy-mello aura_5
+      213: -1576991809922814179
+    second: Ultimate aura_5
   - first:
-      213: -8601182162416142626
-    second: Holy-mello aura_6
+      213: 7764995318247084436
+    second: Ultimate aura_6
   - first:
-      213: -438074491974047512
-    second: Holy-mello aura_7
-  - first:
-      213: -7266586112111256390
-    second: Holy-mello aura_8
-  - first:
-      213: -1869608372585829293
-    second: Holy-mello aura_9
-  - first:
-      213: 2478619408150823806
-    second: Holy-mello aura_10
-  - first:
-      213: 1647094043505707961
-    second: Holy-mello aura_11
+      213: 800494466865442223
+    second: Ultimate aura_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -72,7 +60,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -97,7 +85,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -109,7 +97,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 64
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -121,7 +109,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 64
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -135,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Holy-mello aura_0
+      name: Ultimate aura_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 16
-        height: 16
+        y: 216
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee721103d2ae66140800000000000000
-      internalID: 4712711539890661358
+      spriteID: 34c50b726639f5820800000000000000
+      internalID: 2909205951266446403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Holy-mello aura_1
+      name: Ultimate aura_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
+        x: 108
+        y: 216
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9577a24322a5aa40800000000000000
-      internalID: 5378883602289751452
+      spriteID: b4beb552fa08d3180800000000000000
+      internalID: -9134002979503084725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Holy-mello aura_2
+      name: Ultimate aura_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
+        x: 216
+        y: 216
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,83 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 125c64d3e8e5289c0800000000000000
-      internalID: -3926471960107236063
+      spriteID: 518b7d6f3f1273570800000000000000
+      internalID: 8446256957858756629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Holy-mello aura_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e5e778293bfa7990800000000000000
-      internalID: -7387316015837223456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Holy-mello aura_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1bbca23234290e7d0800000000000000
-      internalID: -2891150143721387087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Holy-mello aura_5
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d42d3d974fb0af5b0800000000000000
-      internalID: -5333937664023080371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Holy-mello aura_6
+      name: Ultimate aura_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
+        y: 108
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed672c0f46672a880800000000000000
-      internalID: -8601182162416142626
+      spriteID: f431253d32aaf0c90800000000000000
+      internalID: -7201350208296185009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Holy-mello aura_7
+      name: Ultimate aura_4
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
+        x: 108
+        y: 108
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e82ab01295abe9f0800000000000000
-      internalID: -438074491974047512
+      spriteID: 7d81eabd3e952f0c0800000000000000
+      internalID: -4543470238885340969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Holy-mello aura_8
+      name: Ultimate aura_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
+        x: 216
+        y: 108
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abc52d95e66e72b90800000000000000
-      internalID: -7266586112111256390
+      spriteID: d1fa9dbdd466d1ae0800000000000000
+      internalID: -1576991809922814179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Holy-mello aura_9
+      name: Ultimate aura_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -338,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35cecea3711dd06e0800000000000000
-      internalID: -1869608372585829293
+      spriteID: 49150bae91ec2cb60800000000000000
+      internalID: 7764995318247084436
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Holy-mello aura_10
+      name: Ultimate aura_7
       rect:
         serializedVersion: 2
-        x: 16
+        x: 108
         y: 0
-        width: 16
-        height: 16
+        width: 108
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,29 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e73083c2833d56220800000000000000
-      internalID: 2478619408150823806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Holy-mello aura_11
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9bbc1de4e47abd610800000000000000
-      internalID: 1647094043505707961
+      spriteID: fad2e26f97deb1b00800000000000000
+      internalID: 800494466865442223
       vertices: []
       indices: 
       edges: []
@@ -389,7 +293,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 0b6fab9339c2276498cec0eabfdb29dc
     internalID: 0
     vertices: []
     indices: 

@@ -21,6 +21,7 @@ MonoBehaviour:
   attackForceScale: 0.6
   possibleAttacks: 1
   bullet: {fileID: 1123760533343461035, guid: a28b6fca4c123c14598f6deebee5f848, type: 3}
+  ultimateTime: 5
   speed: 18
   acceleration: 28
   deceleration: 36

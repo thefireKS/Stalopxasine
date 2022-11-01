@@ -5,15 +5,8 @@ using UnityEngine;
 
 public class BulletFly : MonoBehaviour
 {
-    Rigidbody2D rbtd;
     public float speed;
     public float seconds;
-
-    private void Awake()
-    {
-        rbtd = GetComponent<Rigidbody2D>();
-    }
-
     private void Update()
     {
         transform.position += transform.right * speed * Time.deltaTime;

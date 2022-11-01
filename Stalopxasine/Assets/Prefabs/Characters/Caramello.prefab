@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 8171220658184985716}
   - component: {fileID: 8855645334609925737}
   - component: {fileID: 2556443750895107622}
+  - component: {fileID: 8114456726865498634}
+  - component: {fileID: 6741315418056129247}
   m_Layer: 9
-  m_Name: Ultimate thing
+  m_Name: Ultimate aura
   m_TagString: UltimateHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,11 +27,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095773370593068553}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1611112673989478949}
+  m_Father: {fileID: 6954348799926365092}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8855645334609925737
@@ -70,13 +72,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 6.75, y: 6.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -97,7 +99,42 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.1
+--- !u!95 &8114456726865498634
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095773370593068553}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1abdb019900a5d54c949c24020524e8f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6741315418056129247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095773370593068553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27c6c748c14bb445a43d1d60b7e2b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipCanvas: {fileID: 2611349198678153688, guid: 29dbdb04305e36d46b3fdcbdb08665a8,
+    type: 3}
+  mouseTrail: {fileID: 3561812497721297402, guid: 94315252e3487024eb343a0f45029e4f,
+    type: 3}
 --- !u!1 &1611112672819256112
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1611112673989478949}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611112673770953662
 GameObject:
@@ -156,7 +193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1611112673989478949}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611112673989478951
 GameObject:
@@ -187,11 +224,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8171220658184985716}
   - {fileID: 1611112673770953661}
   - {fileID: 1611112672819256079}
   m_Father: {fileID: 6954348799926365092}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1611112673989478950
 SpriteRenderer:
@@ -321,7 +357,7 @@ Transform:
   m_Children:
   - {fileID: 1518662032010473645}
   m_Father: {fileID: 6954348799926365092}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4986971684823470180
 GameObject:
@@ -357,6 +393,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8171220658184985716}
   - {fileID: 1611112673989478949}
   - {fileID: 3488338525899114378}
   m_Father: {fileID: 0}
@@ -468,9 +505,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86cebee15e87694e8149182dc207388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationTime: 4
-  Energy: 2
-  FullEnergy: 8
+  Data: {fileID: 11400000, guid: 66f1e7b600e14ca4bbcbd414e0c01923, type: 2}
+  ultimateAbility: {fileID: 1095773370593068553}
+  FullEnergy: 4
+  canEndEarlier: 0
 --- !u!114 &5989365602303655308
 MonoBehaviour:
   m_ObjectHideFlags: 0

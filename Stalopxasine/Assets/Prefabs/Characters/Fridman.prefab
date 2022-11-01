@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 182060096824178805}
   - component: {fileID: 5867434476316708491}
-  - component: {fileID: 9177672030405214670}
   m_Layer: 9
   m_Name: fire for guitar
-  m_TagString: UltimateHitBox
-  m_Icon: {fileID: 0}
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2655966287157098260}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.062, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5844806814182644220}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5867434476316708491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76,38 +75,12 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.125, y: 1.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &9177672030405214670
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2655966287157098260}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.27060875, y: -0.08328861}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.447602, y: 0.7807354}
-  m_EdgeRadius: 0
 --- !u!1 &3045586685101704632
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +115,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 5844806814182644220}
   - {fileID: 7980958060090728137}
   - {fileID: 3650419167610536884}
   m_Father: {fileID: 0}
@@ -253,9 +227,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86cebee15e87694e8149182dc207388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimationTime: 2.375
-  Energy: 1
+  Data: {fileID: 11400000, guid: c1741bcd885134e46858fc99beabfabb, type: 2}
+  ultimateAbility: {fileID: 7980655791934108545}
   FullEnergy: 4
+  canEndEarlier: 0
 --- !u!114 &4775878272130801007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,6 +254,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5844806814182644220}
   - component: {fileID: 5892445887491647078}
+  - component: {fileID: 9197456872687380141}
+  - component: {fileID: 425620229282914244}
   m_Layer: 9
   m_Name: Ult Guitar
   m_TagString: Untagged
@@ -298,8 +275,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 182060096824178805}
-  m_Father: {fileID: 7980958060090728137}
-  m_RootOrder: 2
+  m_Father: {fileID: 9017377719394355628}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5892445887491647078
 SpriteRenderer:
@@ -339,8 +316,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 2827200106974502756, guid: 7cdb27cb19d76d548a0651fd2398187e,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -348,9 +326,43 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &9197456872687380141
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7980655791934108545}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b40bb449ccd90ed4ca5b95025f983172, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &425620229282914244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7980655791934108545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f00329bcdec37943af90011dd3e0c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleAttacks: 6
+  attackPoint: {fileID: 182060096824178805}
+  flame: {fileID: 1123760533343461035, guid: 45179ce44fda5934b9a2eb1bd8147ba5, type: 3}
 --- !u!1 &7980958060090728139
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,9 +394,8 @@ Transform:
   m_Children:
   - {fileID: 7980958061319671779}
   - {fileID: 7980958060401463121}
-  - {fileID: 5844806814182644220}
   m_Father: {fileID: 9017377719394355628}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7980958060090728138
 SpriteRenderer:
@@ -545,7 +556,7 @@ Transform:
   m_Children:
   - {fileID: 4605909147719066653}
   m_Father: {fileID: 9017377719394355628}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8197276173950069653
 GameObject:
