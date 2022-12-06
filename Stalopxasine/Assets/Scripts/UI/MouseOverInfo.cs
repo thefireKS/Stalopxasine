@@ -12,7 +12,6 @@ public class MouseOverInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-
         showing.SetActive(true);
     }
     public void OnPointerExit(PointerEventData eventData)
