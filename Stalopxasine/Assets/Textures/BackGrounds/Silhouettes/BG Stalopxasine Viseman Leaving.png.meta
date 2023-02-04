@@ -1,57 +1,57 @@
 fileFormatVersion: 2
-guid: e0540e2ef1671aa41a33cd12faa4d34c
+guid: 3931e25bcc536b44cbae91620d0eeda9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4986020030096430249
-    second: BG Stalopxasine fireKS Leaving_0
+      213: 6389282182646065465
+    second: BG Stalopxasine Viseman Leaving_0
   - first:
-      213: 7220513618998605507
-    second: BG Stalopxasine fireKS Leaving_1
+      213: 2158169671994209838
+    second: BG Stalopxasine Viseman Leaving_1
   - first:
-      213: 2578716030826115483
-    second: BG Stalopxasine fireKS Leaving_2
+      213: 8897757905505166923
+    second: BG Stalopxasine Viseman Leaving_2
   - first:
-      213: 1970815872521385343
-    second: BG Stalopxasine fireKS Leaving_3
+      213: 4272341305132709706
+    second: BG Stalopxasine Viseman Leaving_3
   - first:
-      213: 8145607617272503529
-    second: BG Stalopxasine fireKS Leaving_4
+      213: 6860158173206160475
+    second: BG Stalopxasine Viseman Leaving_4
   - first:
-      213: 8330653382501356958
-    second: BG Stalopxasine fireKS Leaving_5
+      213: 1016521252402586677
+    second: BG Stalopxasine Viseman Leaving_5
   - first:
-      213: -2675385053826263701
-    second: BG Stalopxasine fireKS Leaving_6
+      213: -9158293605267029429
+    second: BG Stalopxasine Viseman Leaving_6
   - first:
-      213: -8160045048233012216
-    second: BG Stalopxasine fireKS Leaving_7
+      213: 1070909438485162239
+    second: BG Stalopxasine Viseman Leaving_7
   - first:
-      213: -3648878934845860660
-    second: BG Stalopxasine fireKS Leaving_8
+      213: 6083251068441318953
+    second: BG Stalopxasine Viseman Leaving_8
   - first:
-      213: -8454256346365452426
-    second: BG Stalopxasine fireKS Leaving_9
+      213: -4841476919960271271
+    second: BG Stalopxasine Viseman Leaving_9
   - first:
-      213: 3581520604148437332
-    second: BG Stalopxasine fireKS Leaving_10
+      213: 8219931581318940015
+    second: BG Stalopxasine Viseman Leaving_10
   - first:
-      213: -1495644456948764082
-    second: BG Stalopxasine fireKS Leaving_11
+      213: 1148858313500965030
+    second: BG Stalopxasine Viseman Leaving_11
   - first:
-      213: 8956515893133884037
-    second: BG Stalopxasine fireKS Leaving_12
+      213: 529580301208756905
+    second: BG Stalopxasine Viseman Leaving_12
   - first:
-      213: 1972739040872486232
-    second: BG Stalopxasine fireKS Leaving_13
+      213: 4415288281238466782
+    second: BG Stalopxasine Viseman Leaving_13
   - first:
-      213: 972960799810440004
-    second: BG Stalopxasine fireKS Leaving_14
+      213: -2465318020638662151
+    second: BG Stalopxasine Viseman Leaving_14
   - first:
-      213: -3451876598819915442
-    second: BG Stalopxasine fireKS Leaving_15
+      213: -7257625303580483026
+    second: BG Stalopxasine Viseman Leaving_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -71,6 +71,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -102,10 +104,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -143,11 +149,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 64
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_0
+      name: BG Stalopxasine Viseman Leaving_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,20 +173,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a451e0ecc6e13540800000000000000
-      internalID: 4986020030096430249
+      spriteID: 939e9521b4a4ba850800000000000000
+      internalID: 6389282182646065465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_1
+      name: BG Stalopxasine Viseman Leaving_1
       rect:
         serializedVersion: 2
         x: 16
@@ -176,20 +194,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c6384c61ea643460800000000000000
-      internalID: 7220513618998605507
+      spriteID: e267c38d1eb53fd10800000000000000
+      internalID: 2158169671994209838
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_2
+      name: BG Stalopxasine Viseman Leaving_2
       rect:
         serializedVersion: 2
         x: 32
@@ -197,20 +215,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b91fef1419079c320800000000000000
-      internalID: 2578716030826115483
+      spriteID: b462f073caf2b7b70800000000000000
+      internalID: 8897757905505166923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_3
+      name: BG Stalopxasine Viseman Leaving_3
       rect:
         serializedVersion: 2
         x: 48
@@ -218,20 +236,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f75b65f189eb95b10800000000000000
-      internalID: 1970815872521385343
+      spriteID: a47f9abf7c76a4b30800000000000000
+      internalID: 4272341305132709706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_4
+      name: BG Stalopxasine Viseman Leaving_4
       rect:
         serializedVersion: 2
         x: 0
@@ -239,20 +257,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ec5e3b78f20b0170800000000000000
-      internalID: 8145607617272503529
+      spriteID: b5422f8038d243f50800000000000000
+      internalID: 6860158173206160475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_5
+      name: BG Stalopxasine Viseman Leaving_5
       rect:
         serializedVersion: 2
         x: 16
@@ -260,20 +278,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9556ea1d1d6c9370800000000000000
-      internalID: 8330653382501356958
+      spriteID: 534671c71b86b1e00800000000000000
+      internalID: 1016521252402586677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_6
+      name: BG Stalopxasine Viseman Leaving_6
       rect:
         serializedVersion: 2
         x: 32
@@ -281,20 +299,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b65db45e77f1fdad0800000000000000
-      internalID: -2675385053826263701
+      spriteID: b42c35d1d7437e080800000000000000
+      internalID: -9158293605267029429
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_7
+      name: BG Stalopxasine Viseman Leaving_7
       rect:
         serializedVersion: 2
         x: 48
@@ -302,20 +320,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 804d2ec2342b1ce80800000000000000
-      internalID: -8160045048233012216
+      spriteID: ff8658bd572acde00800000000000000
+      internalID: 1070909438485162239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_8
+      name: BG Stalopxasine Viseman Leaving_8
       rect:
         serializedVersion: 2
         x: 0
@@ -323,20 +341,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc45b1cf0f39c5dc0800000000000000
-      internalID: -3648878934845860660
+      spriteID: 926d5f5cd9c0c6450800000000000000
+      internalID: 6083251068441318953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_9
+      name: BG Stalopxasine Viseman Leaving_9
       rect:
         serializedVersion: 2
         x: 16
@@ -344,20 +362,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67f9bc245a27caa80800000000000000
-      internalID: -8454256346365452426
+      spriteID: 956048d746e9fccb0800000000000000
+      internalID: -4841476919960271271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_10
+      name: BG Stalopxasine Viseman Leaving_10
       rect:
         serializedVersion: 2
         x: 32
@@ -365,20 +383,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4519206830e14b130800000000000000
-      internalID: 3581520604148437332
+      spriteID: f65c78ed830131270800000000000000
+      internalID: 8219931581318940015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_11
+      name: BG Stalopxasine Viseman Leaving_11
       rect:
         serializedVersion: 2
         x: 48
@@ -386,20 +404,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4279496a476e3be0800000000000000
-      internalID: -1495644456948764082
+      spriteID: 6a8ba799c8091ff00800000000000000
+      internalID: 1148858313500965030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_12
+      name: BG Stalopxasine Viseman Leaving_12
       rect:
         serializedVersion: 2
         x: 0
@@ -407,20 +425,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58ab26b40cfeb4c70800000000000000
-      internalID: 8956515893133884037
+      spriteID: 9a2a7956a72795700800000000000000
+      internalID: 529580301208756905
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_13
+      name: BG Stalopxasine Viseman Leaving_13
       rect:
         serializedVersion: 2
         x: 16
@@ -428,20 +446,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 855dfb5a4b3906b10800000000000000
-      internalID: 1972739040872486232
+      spriteID: ed0f9207c41464d30800000000000000
+      internalID: 4415288281238466782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_14
+      name: BG Stalopxasine Viseman Leaving_14
       rect:
         serializedVersion: 2
         x: 32
@@ -449,20 +467,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44bc41541b6a08d00800000000000000
-      internalID: 972960799810440004
+      spriteID: 9f1a671725e69cdd0800000000000000
+      internalID: -2465318020638662151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine fireKS Leaving_15
+      name: BG Stalopxasine Viseman Leaving_15
       rect:
         serializedVersion: 2
         x: 48
@@ -470,14 +488,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e49fadea5887810d0800000000000000
-      internalID: -3451876598819915442
+      spriteID: e22e23b2d3cb74b90800000000000000
+      internalID: -7257625303580483026
       vertices: []
       indices: 
       edges: []
@@ -492,6 +510,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BG Stalopxasine Viseman Leaving_3: 4272341305132709706
+      BG Stalopxasine Viseman Leaving_12: 529580301208756905
+      BG Stalopxasine Viseman Leaving_9: -4841476919960271271
+      BG Stalopxasine Viseman Leaving_1: 2158169671994209838
+      BG Stalopxasine Viseman Leaving_14: -2465318020638662151
+      BG Stalopxasine Viseman Leaving_4: 6860158173206160475
+      BG Stalopxasine Viseman Leaving_11: 1148858313500965030
+      BG Stalopxasine Viseman Leaving_8: 6083251068441318953
+      BG Stalopxasine Viseman Leaving_10: 8219931581318940015
+      BG Stalopxasine Viseman Leaving_0: 6389282182646065465
+      BG Stalopxasine Viseman Leaving_13: 4415288281238466782
+      BG Stalopxasine Viseman Leaving_2: 8897757905505166923
+      BG Stalopxasine Viseman Leaving_6: -9158293605267029429
+      BG Stalopxasine Viseman Leaving_15: -7257625303580483026
+      BG Stalopxasine Viseman Leaving_5: 1016521252402586677
+      BG Stalopxasine Viseman Leaving_7: 1070909438485162239
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

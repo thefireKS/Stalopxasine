@@ -37,7 +37,7 @@ MonoBehaviour:
     textColor:
       serializedVersion: 2
       rgba: 4294967295
-    textAlignment: 0
+    textAlignment: 4
     textStyle: 1
   - folderOrFileName: Scripts
     iconType: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
     textColor:
       serializedVersion: 2
       rgba: 4294967295
-    textAlignment: 0
+    textAlignment: 4
     textStyle: 1
   - folderOrFileName: Scenes
     iconType: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     textColor:
       serializedVersion: 2
       rgba: 4294967295
-    textAlignment: 0
+    textAlignment: 4
     textStyle: 1
   - folderOrFileName: Textures
     iconType: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
     textColor:
       serializedVersion: 2
       rgba: 4294967295
-    textAlignment: 0
+    textAlignment: 4
     textStyle: 1
   - folderOrFileName: Data
     iconType: 0
@@ -109,5 +109,23 @@ MonoBehaviour:
     textColor:
       serializedVersion: 2
       rgba: 4294967295
-    textAlignment: 0
+    textAlignment: 4
+    textStyle: 1
+  - folderOrFileName: Shaders
+    iconType: 0
+    widthToShowIcons: 0
+    iconOffset: 0
+    iconSize: 0
+    iconAlign: 0
+    iconColor: {r: 0, g: 0, b: 0, a: 0}
+    randomIconColor: 0
+    rightOffset: 0
+    backgroundHeight: 1
+    backgroundColor: {r: 0.764151, g: 0.7142473, b: 0.26961553, a: 1}
+    randomBackgroundColor: 0
+    textSize: 14
+    textColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    textAlignment: 4
     textStyle: 1

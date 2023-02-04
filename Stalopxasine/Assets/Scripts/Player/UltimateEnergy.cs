@@ -62,6 +62,7 @@ public class UltimateEnergy : MonoBehaviour
 
     IEnumerator UltimateWorks()
     {
+        Cursor.visible = false;
         plc.enabled = false;
         anim.SetTrigger("isUlting");
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -80,6 +81,8 @@ public class UltimateEnergy : MonoBehaviour
         anim.speed = 1f;
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         plc.enabled = true;
+        Cursor.visible = true;
         canEndEarlier = false;
     }
+    
 }

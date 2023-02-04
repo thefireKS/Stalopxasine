@@ -348,7 +348,7 @@ TextureImporter:
       213: -1432481654654733417
     second: tilemap corners_114
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -368,6 +368,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -399,10 +401,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -430,6 +436,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2868,6 +2886,122 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      tilemap corners_6: -8159337624116055993
+      tilemap corners_17: 883789240923922049
+      tilemap corners_61: -5777949525553241448
+      tilemap corners_37: -6541139545534518156
+      tilemap corners_27: 6540657980384115513
+      tilemap corners_31: 6481518374244907787
+      tilemap corners_55: 6444605381788258018
+      tilemap corners_101: -394046949653472463
+      tilemap corners_74: -7341993293549823755
+      tilemap corners_50: -8009552009677339642
+      tilemap corners_83: 4700731557819995373
+      tilemap corners_38: -7404385515149255061
+      tilemap corners_73: -8978937946425839887
+      tilemap corners_89: 5359167214734758720
+      tilemap corners_96: -7979853567261946008
+      tilemap corners_91: -4176726680463934371
+      tilemap corners_93: 3480245836544095012
+      tilemap corners_41: -5908054524183677937
+      tilemap corners_70: 8106153921322658801
+      tilemap corners_87: 886354840646810879
+      tilemap corners_51: 342716236288165688
+      tilemap corners_5: 6653618718573411319
+      tilemap corners_8: -6427511631721234429
+      tilemap corners_29: -5594214039049584532
+      tilemap corners_45: 369570272003861464
+      tilemap corners_86: -5632433652580549148
+      tilemap corners_107: -645246297589502415
+      tilemap corners_103: 7736808277373458541
+      tilemap corners_108: 8772279139873026682
+      tilemap corners_9: 750153585682445969
+      tilemap corners_25: -4253899596863287178
+      tilemap corners_113: -7017577451996110198
+      tilemap corners_49: 4488686818911058563
+      tilemap corners_28: 6176474516462589627
+      tilemap corners_23: -6601349162395103856
+      tilemap corners_88: 6236277726185770920
+      tilemap corners_68: 2472247799995538413
+      tilemap corners_22: -1026037404799506369
+      tilemap corners_48: 4753360802793030926
+      tilemap corners_19: 8955683860440643920
+      tilemap corners_32: -2953745009955544513
+      tilemap corners_98: -4664328185778921777
+      tilemap corners_92: -3480384920390527174
+      tilemap corners_4: -1236812989775434224
+      tilemap corners_104: -9021792977689855880
+      tilemap corners_43: 2681262949603347636
+      tilemap corners_3: 3117358120265099624
+      tilemap corners_0: -4682217426729754866
+      tilemap corners_90: 719547446922930094
+      tilemap corners_66: -6745677560289786771
+      tilemap corners_105: -4817796007331407924
+      tilemap corners_109: 3844026140691086649
+      tilemap corners_21: -6738987017037777121
+      tilemap corners_112: -4211855285317303576
+      tilemap corners_110: 1266514910230573191
+      tilemap corners_102: -4723551862880784983
+      tilemap corners_35: -1714419343860963352
+      tilemap corners_13: 7213892781166899873
+      tilemap corners_30: 41032148084190710
+      tilemap corners_77: 1552676988825071257
+      tilemap corners_11: -218366950614291122
+      tilemap corners_67: -1660454709021890568
+      tilemap corners_69: -8044209429412879252
+      tilemap corners_95: 4015575002036257805
+      tilemap corners_85: 2302124786087610348
+      tilemap corners_79: -7544309248117466800
+      tilemap corners_39: 2772145064554313813
+      tilemap corners_100: -2751986655096964276
+      tilemap corners_40: -4537730084123319605
+      tilemap corners_94: -3674165046655896412
+      tilemap corners_2: -3085078331122825792
+      tilemap corners_33: -9048852140031647951
+      tilemap corners_1: 906133515599347909
+      tilemap corners_111: 2861675979404452618
+      tilemap corners_44: -7935713972264405994
+      tilemap corners_57: 9191998798369647971
+      tilemap corners_20: -2048424221395626420
+      tilemap corners_14: 4788663909928444468
+      tilemap corners_34: 8090969742734831901
+      tilemap corners_60: 154563118473141120
+      tilemap corners_64: -1009341597943046728
+      tilemap corners_16: -7536794747733347239
+      tilemap corners_26: -3086955552376125206
+      tilemap corners_53: 6088012786529451478
+      tilemap corners_47: 52148644837108073
+      tilemap corners_97: -4742752765852589871
+      tilemap corners_42: -8116493186660263041
+      tilemap corners_12: 7418252892061454111
+      tilemap corners_72: 3735428920248991709
+      tilemap corners_56: -3702910180225162849
+      tilemap corners_106: -9032878742886113287
+      tilemap corners_18: 2877742115100370105
+      tilemap corners_99: 283311182721810576
+      tilemap corners_7: -3109672179437262180
+      tilemap corners_114: -1432481654654733417
+      tilemap corners_71: -963090079427061174
+      tilemap corners_65: 1293754366914389246
+      tilemap corners_82: -1347039600244213085
+      tilemap corners_62: -9077079806498159310
+      tilemap corners_10: 4854251456778005359
+      tilemap corners_24: 6027643244050665760
+      tilemap corners_78: 970367940367577749
+      tilemap corners_81: -4221508825477558781
+      tilemap corners_52: -6913978714948591277
+      tilemap corners_54: -2985508485226487258
+      tilemap corners_76: 2137377320874984433
+      tilemap corners_58: 1563974653323003174
+      tilemap corners_75: -8737219274930906942
+      tilemap corners_59: -6086923061013535226
+      tilemap corners_84: 502108536733462160
+      tilemap corners_63: 6833312679090559103
+      tilemap corners_36: -8665336616591840333
+      tilemap corners_15: 7030296327102750741
+      tilemap corners_46: 1661495363815299214
+      tilemap corners_80: -5068773107056962268
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

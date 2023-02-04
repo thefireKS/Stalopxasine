@@ -1,57 +1,57 @@
 fileFormatVersion: 2
-guid: 3931e25bcc536b44cbae91620d0eeda9
+guid: 4023cf610c3ba1e47a08f649356031ea
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6389282182646065465
-    second: BG Stalopxasine Viseman Leaving_0
+      213: 1777058604129460446
+    second: BG Stalopxasine Fridman Leaving_0
   - first:
-      213: 2158169671994209838
-    second: BG Stalopxasine Viseman Leaving_1
+      213: -373220646904186009
+    second: BG Stalopxasine Fridman Leaving_1
   - first:
-      213: 8897757905505166923
-    second: BG Stalopxasine Viseman Leaving_2
+      213: 6638425099712607616
+    second: BG Stalopxasine Fridman Leaving_2
   - first:
-      213: 4272341305132709706
-    second: BG Stalopxasine Viseman Leaving_3
+      213: 4864652627801459865
+    second: BG Stalopxasine Fridman Leaving_3
   - first:
-      213: 6860158173206160475
-    second: BG Stalopxasine Viseman Leaving_4
+      213: 6488864903511249570
+    second: BG Stalopxasine Fridman Leaving_4
   - first:
-      213: 1016521252402586677
-    second: BG Stalopxasine Viseman Leaving_5
+      213: -1357343609348638891
+    second: BG Stalopxasine Fridman Leaving_5
   - first:
-      213: -9158293605267029429
-    second: BG Stalopxasine Viseman Leaving_6
+      213: 3662357346078338786
+    second: BG Stalopxasine Fridman Leaving_6
   - first:
-      213: 1070909438485162239
-    second: BG Stalopxasine Viseman Leaving_7
+      213: -2759322095472617728
+    second: BG Stalopxasine Fridman Leaving_7
   - first:
-      213: 6083251068441318953
-    second: BG Stalopxasine Viseman Leaving_8
+      213: -4668147880964556397
+    second: BG Stalopxasine Fridman Leaving_8
   - first:
-      213: -4841476919960271271
-    second: BG Stalopxasine Viseman Leaving_9
+      213: -3958064244258043085
+    second: BG Stalopxasine Fridman Leaving_9
   - first:
-      213: 8219931581318940015
-    second: BG Stalopxasine Viseman Leaving_10
+      213: -7937920459062039107
+    second: BG Stalopxasine Fridman Leaving_10
   - first:
-      213: 1148858313500965030
-    second: BG Stalopxasine Viseman Leaving_11
+      213: -3776103894601337870
+    second: BG Stalopxasine Fridman Leaving_11
   - first:
-      213: 529580301208756905
-    second: BG Stalopxasine Viseman Leaving_12
+      213: -5199323257005594732
+    second: BG Stalopxasine Fridman Leaving_12
   - first:
-      213: 4415288281238466782
-    second: BG Stalopxasine Viseman Leaving_13
+      213: -6617623976957519525
+    second: BG Stalopxasine Fridman Leaving_13
   - first:
-      213: -2465318020638662151
-    second: BG Stalopxasine Viseman Leaving_14
+      213: 128789260881498123
+    second: BG Stalopxasine Fridman Leaving_14
   - first:
-      213: -7257625303580483026
-    second: BG Stalopxasine Viseman Leaving_15
+      213: 5372679454423685328
+    second: BG Stalopxasine Fridman Leaving_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -71,6 +71,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -102,10 +104,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -143,11 +149,23 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 64
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_0
+      name: BG Stalopxasine Fridman Leaving_0
       rect:
         serializedVersion: 2
         x: 0
@@ -155,20 +173,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 939e9521b4a4ba850800000000000000
-      internalID: 6389282182646065465
+      spriteID: ed0203c926169a810800000000000000
+      internalID: 1777058604129460446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_1
+      name: BG Stalopxasine Fridman Leaving_1
       rect:
         serializedVersion: 2
         x: 16
@@ -176,20 +194,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e267c38d1eb53fd10800000000000000
-      internalID: 2158169671994209838
+      spriteID: 76b3f6e8ccd02daf0800000000000000
+      internalID: -373220646904186009
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_2
+      name: BG Stalopxasine Fridman Leaving_2
       rect:
         serializedVersion: 2
         x: 32
@@ -197,20 +215,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b462f073caf2b7b70800000000000000
-      internalID: 8897757905505166923
+      spriteID: 0853860d47c602c50800000000000000
+      internalID: 6638425099712607616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_3
+      name: BG Stalopxasine Fridman Leaving_3
       rect:
         serializedVersion: 2
         x: 48
@@ -218,20 +236,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a47f9abf7c76a4b30800000000000000
-      internalID: 4272341305132709706
+      spriteID: 99cc6cb7ac7b28340800000000000000
+      internalID: 4864652627801459865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_4
+      name: BG Stalopxasine Fridman Leaving_4
       rect:
         serializedVersion: 2
         x: 0
@@ -239,20 +257,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5422f8038d243f50800000000000000
-      internalID: 6860158173206160475
+      spriteID: 2a2994110441d0a50800000000000000
+      internalID: 6488864903511249570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_5
+      name: BG Stalopxasine Fridman Leaving_5
       rect:
         serializedVersion: 2
         x: 16
@@ -260,20 +278,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 534671c71b86b1e00800000000000000
-      internalID: 1016521252402586677
+      spriteID: 557b0a6cd2fb92de0800000000000000
+      internalID: -1357343609348638891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_6
+      name: BG Stalopxasine Fridman Leaving_6
       rect:
         serializedVersion: 2
         x: 32
@@ -281,20 +299,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b42c35d1d7437e080800000000000000
-      internalID: -9158293605267029429
+      spriteID: 2eeaa8d2a9e43d230800000000000000
+      internalID: 3662357346078338786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_7
+      name: BG Stalopxasine Fridman Leaving_7
       rect:
         serializedVersion: 2
         x: 48
@@ -302,20 +320,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff8658bd572acde00800000000000000
-      internalID: 1070909438485162239
+      spriteID: 007d7767c2be4b9d0800000000000000
+      internalID: -2759322095472617728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_8
+      name: BG Stalopxasine Fridman Leaving_8
       rect:
         serializedVersion: 2
         x: 0
@@ -323,20 +341,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926d5f5cd9c0c6450800000000000000
-      internalID: 6083251068441318953
+      spriteID: 3997d143c38673fb0800000000000000
+      internalID: -4668147880964556397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_9
+      name: BG Stalopxasine Fridman Leaving_9
       rect:
         serializedVersion: 2
         x: 16
@@ -344,20 +362,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 956048d746e9fccb0800000000000000
-      internalID: -4841476919960271271
+      spriteID: 33b03d26a812219c0800000000000000
+      internalID: -3958064244258043085
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_10
+      name: BG Stalopxasine Fridman Leaving_10
       rect:
         serializedVersion: 2
         x: 32
@@ -365,20 +383,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f65c78ed830131270800000000000000
-      internalID: 8219931581318940015
+      spriteID: dbd2d4e3667d6d190800000000000000
+      internalID: -7937920459062039107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_11
+      name: BG Stalopxasine Fridman Leaving_11
       rect:
         serializedVersion: 2
         x: 48
@@ -386,20 +404,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a8ba799c8091ff00800000000000000
-      internalID: 1148858313500965030
+      spriteID: 2f37157b385989bc0800000000000000
+      internalID: -3776103894601337870
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_12
+      name: BG Stalopxasine Fridman Leaving_12
       rect:
         serializedVersion: 2
         x: 0
@@ -407,20 +425,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a2a7956a72795700800000000000000
-      internalID: 529580301208756905
+      spriteID: 49721c18b0b48d7b0800000000000000
+      internalID: -5199323257005594732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_13
+      name: BG Stalopxasine Fridman Leaving_13
       rect:
         serializedVersion: 2
         x: 16
@@ -428,20 +446,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed0f9207c41464d30800000000000000
-      internalID: 4415288281238466782
+      spriteID: b59d65cfd0a7924a0800000000000000
+      internalID: -6617623976957519525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_14
+      name: BG Stalopxasine Fridman Leaving_14
       rect:
         serializedVersion: 2
         x: 32
@@ -449,20 +467,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f1a671725e69cdd0800000000000000
-      internalID: -2465318020638662151
+      spriteID: b001ab1862d89c100800000000000000
+      internalID: 128789260881498123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BG Stalopxasine Viseman Leaving_15
+      name: BG Stalopxasine Fridman Leaving_15
       rect:
         serializedVersion: 2
         x: 48
@@ -470,14 +488,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e22e23b2d3cb74b90800000000000000
-      internalID: -7257625303580483026
+      spriteID: 0d896f48f779f8a40800000000000000
+      internalID: 5372679454423685328
       vertices: []
       indices: 
       edges: []
@@ -492,6 +510,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BG Stalopxasine Fridman Leaving_12: -5199323257005594732
+      BG Stalopxasine Fridman Leaving_11: -3776103894601337870
+      BG Stalopxasine Fridman Leaving_13: -6617623976957519525
+      BG Stalopxasine Fridman Leaving_1: -373220646904186009
+      BG Stalopxasine Fridman Leaving_0: 1777058604129460446
+      BG Stalopxasine Fridman Leaving_3: 4864652627801459865
+      BG Stalopxasine Fridman Leaving_7: -2759322095472617728
+      BG Stalopxasine Fridman Leaving_6: 3662357346078338786
+      BG Stalopxasine Fridman Leaving_14: 128789260881498123
+      BG Stalopxasine Fridman Leaving_9: -3958064244258043085
+      BG Stalopxasine Fridman Leaving_8: -4668147880964556397
+      BG Stalopxasine Fridman Leaving_15: 5372679454423685328
+      BG Stalopxasine Fridman Leaving_10: -7937920459062039107
+      BG Stalopxasine Fridman Leaving_2: 6638425099712607616
+      BG Stalopxasine Fridman Leaving_4: 6488864903511249570
+      BG Stalopxasine Fridman Leaving_5: -1357343609348638891
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

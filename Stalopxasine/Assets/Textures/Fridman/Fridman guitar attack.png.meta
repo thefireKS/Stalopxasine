@@ -72,7 +72,7 @@ TextureImporter:
       213: -7808928939094929707
     second: Fridman guitar attack_22
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -92,6 +92,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -118,15 +120,19 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 1
+  alphaIsTransparency: 0
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -154,6 +160,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 128
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
@@ -660,6 +678,30 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Fridman guitar attack_6: 8241077995066644702
+      Fridman guitar attack_13: -3634767376551980860
+      Fridman guitar attack_21: -4683864802161218534
+      Fridman guitar attack_9: -717744401140638527
+      Fridman guitar attack_10: 2338476909792591130
+      Fridman guitar attack_17: -5953784883056239674
+      Fridman guitar attack_20: 6614570493543863832
+      Fridman guitar attack_8: -8170474161937801369
+      Fridman guitar attack_7: -6330633929842243698
+      Fridman guitar attack_22: -7808928939094929707
+      Fridman guitar attack_2: -3141455683259006898
+      Fridman guitar attack_12: -2701936601342356113
+      Fridman guitar attack_1: 197238145395267508
+      Fridman guitar attack_14: 2078586179374715781
+      Fridman guitar attack_18: -8487340922161956041
+      Fridman guitar attack_19: 6081140635089709394
+      Fridman guitar attack_0: -6197174354274376137
+      Fridman guitar attack_11: -3964643183016446743
+      Fridman guitar attack_15: -4549545074416729790
+      Fridman guitar attack_16: 459360871190676775
+      Fridman guitar attack_3: 2919788331894660464
+      Fridman guitar attack_4: -6483296270612681238
+      Fridman guitar attack_5: 6372178201179385738
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
