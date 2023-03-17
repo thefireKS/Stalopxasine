@@ -30,17 +30,20 @@ public class FridmanFlameThrower : MonoBehaviour
     private void Update()
     {
         SetPosition();
+
         if (Input.GetMouseButton(0) && currentAttacks < possibleAttacks && attacksSpace > 0.33f)
         {
+            Debug.Log(currentAttacks);
             attacksSpace = 0f;
-            Instantiate(flame, attackPoint.position, Quaternion.Euler(0,0,attackPoint.rotation.eulerAngles.z + 45f));
+            var _flame = Instantiate(flame, attackPoint.position, Quaternion.Euler(0,0,attackPoint.rotation.eulerAngles.z + 45f));
+            _flame.GetComponentInChildren<Animator>().SetFloat("Angle", _flame.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
             currentAttacks++;
         }
 
         if (currentAttacks == possibleAttacks)
             ue.canEndEarlier = true;
 
-        attacksSpace += Time.deltaTime;
+        attacksSpace += Time.unscaledDeltaTime;
     }
 
     private void SetPosition()

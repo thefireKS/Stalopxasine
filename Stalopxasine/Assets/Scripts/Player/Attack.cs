@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Unity.Mathematics;
 
 public class Attack : MonoBehaviour
@@ -12,14 +10,10 @@ public class Attack : MonoBehaviour
     
     private Animator anim;
     private SpriteRenderer sr;
-    
-    private bool isAttacking;
 
     private bool look;
     private int high = -1; //-2 - down, -1 - 45 deg down, 0 - middle, 1 - 45 deg up, 2 - up
     private float meleeDetection;
-
-
     private void Awake()
     {
         meleeDetection = Data.meleeAttack ? 1 : -1;
@@ -37,8 +31,8 @@ public class Attack : MonoBehaviour
     {
         anim.SetFloat("attackDir",high);
         anim.speed = 0.375f / Data.attackTime;  
-        Debug.Log(anim.speed);
-        Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
+        var bullet = Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
+        bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
         sr.flipX = look;
     }
 
@@ -59,12 +53,12 @@ public class Attack : MonoBehaviour
     {
         Vector2Int _halfScreenDims = new Vector2Int(Screen.width / 2, Screen.height / 2);
         Vector2 mouseDirection = new Vector2(Input.mousePosition.x - _halfScreenDims.x, Input.mousePosition.y - _halfScreenDims.y);
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-        
-        Debug.DrawLine( mousePosition, transform.position, Color.green);
+
+        var angle = new Vector3(0, 0, Vector3.SignedAngle(Vector3.right, mouseDirection, Vector3.forward));
+        var coef = Mathf.Round(angle.z / 45);
         
         bulletPositionRotation.transform.position = new Vector3(transform.position.x,transform.position.y, 0);
-        bulletPositionRotation.transform.localEulerAngles = new Vector3(0, 0, Vector3.SignedAngle(Vector3.right, mouseDirection , Vector3.forward));
+        bulletPositionRotation.transform.localEulerAngles = new Vector3(0,0,coef * 45);
     }
 
     private void DirectionCheck()

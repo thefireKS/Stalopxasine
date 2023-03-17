@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Replicas_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 616137e6b2b7e9446aa714ad7d6df8df, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 61929046016
+    m_Localized: Oh, hello <br> I have a new subject to study, <br> and hopefully
+      we'll be able to learn something soon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2322289803264
+    m_Localized: Good luck on your journey! <br> Don't get lost on the road...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2400933003264
+    m_Localized: O-ow, hello! <br> Can you help me to find a kitten?..
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2468373217280
+    m_Localized: Oh, wait! <br> Kitten - is me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2767590670336
+    m_Localized: Op-pa, found me after all! <br> Be careful, there are some strange
+      guys walking around...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2941968859136
+    m_Localized: They steal everything they can get their hands on. <br> And whatever
+      they can't get their hands on, I've already stolen! HA!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3227080867840
+    m_Localized: IKIKIKIKIK (Hello) <br> IKIKIKIKIKIKIKIKIK? (How is the mission
+      going?)
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3319305224192
+    m_Localized: '*You hope you got it right* <br> *We all have to go through this*'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

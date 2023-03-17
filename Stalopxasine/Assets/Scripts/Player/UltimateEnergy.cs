@@ -16,9 +16,11 @@ public class UltimateEnergy : MonoBehaviour
     [SerializeField] private int FullEnergy = 4;
     [HideInInspector] public bool canEndEarlier = false;
 
-    private readonly WaitForSecondsRealtime animationStop = new WaitForSecondsRealtime(1f);
-    private WaitForSecondsRealtime ultimateTime;
-    private Coroutine currentUltimate;
+    private float animationStop = 1f;
+    private float ultimateTime;
+    private bool currentUltimateExists;
+
+    private float timer = 0f;
 
     public static Action<int, int> OnEnergyChanged;
     private void Start()
@@ -27,27 +29,26 @@ public class UltimateEnergy : MonoBehaviour
         plc = GetComponent<PlayerController>();
         anim = GetComponentInChildren<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-        ultimateTime = new WaitForSecondsRealtime(Data.ultimateTime);
+        ultimateTime = Data.ultimateTime;
     }
     private void OnEnable() => EnemyHP.GiveEnergy += SetEnergy;
     private void OnDisable() => EnemyHP.GiveEnergy -= SetEnergy;
 
     private void Update()
     {
-        Debug.Log(canEndEarlier);
+        if (currentUltimateExists)
+            UltimateChecks();
+        
         if (Energy == FullEnergy)
         {
-            if (Input.GetKeyDown("x")&&!PlayerMeeting.DialogIsGoing)
+            if (Input.GetKeyDown("x")&&!PlayerMeeting.DialogIsGoing&&!currentUltimateExists)
             {
                 Energy = 0;
                 OnEnergyChanged?.Invoke(Energy, FullEnergy);
-                currentUltimate = StartCoroutine(UltimateWorks());
+                timer = 0f;
+                UltimateWorks();
+                currentUltimateExists = true;
             }
-        }
-        if (canEndEarlier)
-        {
-            Ending();
-            StopCoroutine(currentUltimate);
         }
     }
     private void SetEnergy()
@@ -60,18 +61,27 @@ public class UltimateEnergy : MonoBehaviour
         OnEnergyChanged?.Invoke(Energy, FullEnergy);
     }
 
-    IEnumerator UltimateWorks()
+    private void UltimateWorks()
     {
         Cursor.visible = false;
         plc.enabled = false;
         anim.SetTrigger("isUlting");
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
         ultimateAbility.gameObject.SetActive(true);
-        yield return animationStop;
-        anim.speed = 0;
-        Time.timeScale = 0.25f;
-        yield return ultimateTime;
-        Ending();
+    }
+
+    private void UltimateChecks()
+    {
+        timer += Time.unscaledDeltaTime;
+
+        if (timer > animationStop)
+        {
+            anim.speed = 0;
+            Time.timeScale = 0.25f;
+        }
+
+        if (timer > ultimateTime || canEndEarlier)
+            Ending();
     }
 
     private void Ending()
@@ -83,6 +93,8 @@ public class UltimateEnergy : MonoBehaviour
         plc.enabled = true;
         Cursor.visible = true;
         canEndEarlier = false;
+        currentUltimateExists = false;
+        timer = 0f;
     }
     
 }

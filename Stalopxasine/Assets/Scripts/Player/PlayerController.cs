@@ -119,6 +119,8 @@ public class PlayerController : MonoBehaviour
     }
     private void ProcessInput()
     {
+        if (Time.timeScale < 0.2f) return;
+
         // Movement - From WASD separately, we now use unity's in built stuff to get 1 for right and -1 for left or up and down.
         moveX = Input.GetAxisRaw("Horizontal");
         moveY = Input.GetAxisRaw("Vertical");

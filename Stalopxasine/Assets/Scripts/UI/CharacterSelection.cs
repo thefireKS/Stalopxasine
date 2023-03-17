@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CharacterSelection : MonoBehaviour
 {
-    public Image showing;
+    [SerializeField] private Image showing;
     private PlayerData data;
     private CharacterSelectionData selectionData;
 

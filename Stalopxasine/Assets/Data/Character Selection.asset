@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e6eaef128aeef48b4f15f26e8504b8, type: 3}
   m_Name: Character Selection
   m_EditorClassIdentifier: 
-  selectedCharacter: {fileID: 11400000, guid: 66f1e7b600e14ca4bbcbd414e0c01923, type: 2}
+  spawnedCharacter: {fileID: 0}
+  selectedCharacter: {fileID: 11400000, guid: c1741bcd885134e46858fc99beabfabb, type: 2}
   characters:
   - {fileID: 11400000, guid: 66f1e7b600e14ca4bbcbd414e0c01923, type: 2}
   - {fileID: 11400000, guid: a081b1054a6d91f4dae79a09ff60064c, type: 2}

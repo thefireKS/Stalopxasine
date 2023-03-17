@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class AutoShooting : MonoBehaviour
 {
-    public BulletFly bullet;
-    public Transform BulletPosition;
-    public float AttackTime;
-    bool isAttacking = false;
+    [SerializeField] private BulletFly bullet;
+    [SerializeField] private Transform BulletPosition;
+    [SerializeField] private float AttackTime;
+
+    private float timer = 0f;
+    private float randomAttackCoefficient = 0f;
 
     private void Update()
     {
-        if (!isAttacking)
-            StartCoroutine(Wait());
+        timer += Time.deltaTime;
+
+        if (timer < AttackTime + randomAttackCoefficient) return;
+        
+        Attack();
     }
 
-    IEnumerator Wait()
+    private void Attack()
     {
-        isAttacking = true;
+        timer = 0f;
+        randomAttackCoefficient = Random.Range(0.1f, 0.3f);
         Instantiate(bullet,BulletPosition.position, BulletPosition.rotation);
-        yield return new WaitForSeconds(AttackTime); //rotate turret to rotate bullet
-        isAttacking = false;
+        //rotate turret to rotate bullet
     }
 }

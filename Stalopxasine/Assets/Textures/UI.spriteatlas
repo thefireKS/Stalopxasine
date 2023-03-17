@@ -99,6 +99,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e2cac7e56978b1a46a21ba1566e5b4b6, type: 3}
   - {fileID: 21300000, guid: 0c918967e1d570c429ec4dd84fb62445, type: 3}
   - {fileID: 21300000, guid: b996ca67b07476e47ad50ac25029a935, type: 3}
+  - {fileID: 21300000, guid: 1dacfb180f5873c40be576f119879868, type: 3}
   - {fileID: 21300000, guid: 53cf288808764a448a82c01dd16f2f5c, type: 3}
   - {fileID: 21300000, guid: c2ab9419e04fad24294f5342987864b2, type: 3}
   - {fileID: 21300000, guid: e05c79995c780564c9ecdfeabc381ef7, type: 3}
@@ -181,7 +182,7 @@ SpriteAtlas:
   - Fridman Heart
   - Viseman Heart
   - fireKS Heart
-  - HeroSelectionButtonClick
+  - ButtonRect
   - firekeks
   - BG Stalopxasine Fridman
   - Energy Bar
@@ -191,6 +192,7 @@ SpriteAtlas:
   - Fill
   - E
   - Caramello Heart
+  - ButtonSquare
   - BG Stalopxasine Viseman
   - HeroSelectionButtonRight
   - Empty Heart

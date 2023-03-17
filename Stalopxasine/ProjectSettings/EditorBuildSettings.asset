@@ -23,4 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Secret Level.unity
     guid: f7d08b66250d7ac43978faced96ad697
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 2f78e9cfd796b664bb90f0bfab567794,
+      type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: 4d3731f7afe54a94a8886339bf20dc4e,
+      type: 2}

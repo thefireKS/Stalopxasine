@@ -35,8 +35,8 @@ public class VisemanSoulGirl : MonoBehaviour
             attacksSpace = 0f;
             for (int t = 0; t < positions.Length; t++)
             {
-                Debug.Log(positions[t].gameObject.name);
-                Instantiate(swingAttack, positions[t].position, Quaternion.Euler(0,0,positions[t].rotation.eulerAngles.z));
+                var _swingAttack = Instantiate(swingAttack, positions[t].position, Quaternion.Euler(0,0,positions[t].rotation.eulerAngles.z));
+                _swingAttack.GetComponentInChildren<Animator>().SetFloat("Angle", _swingAttack.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
             }
             currentAttacks++;
         }
@@ -44,7 +44,7 @@ public class VisemanSoulGirl : MonoBehaviour
         if (currentAttacks == possibleAttacks)
             ue.canEndEarlier = true;
 
-        attacksSpace += Time.deltaTime;
+        attacksSpace += Time.unscaledDeltaTime;
     }
     
     private void SetPosition()

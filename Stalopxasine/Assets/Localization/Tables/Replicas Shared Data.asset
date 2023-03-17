@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Replicas Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Replicas
+  m_TableCollectionNameGuidString: 616137e6b2b7e9446aa714ad7d6df8df
+  m_Entries:
+  - m_Id: 61929046016
+    m_Key: Miha replica 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2322289803264
+    m_Key: Miha replica 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2400933003264
+    m_Key: Milen replica 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2468373217280
+    m_Key: Milen replica 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2767590670336
+    m_Key: Dudka replica 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2941968859136
+    m_Key: Dudka replica 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3227080867840
+    m_Key: Watermelon replica 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3319305224192
+    m_Key: Watermelon replica 2
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8884343707577876510
+  references:
+    version: 2
+    RefIds:
+    - rid: 8884343707577876510
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1677352249136

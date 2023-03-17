@@ -7,6 +7,14 @@ public class BulletFly : MonoBehaviour
 {
     public float speed;
     public float seconds;
+
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponentInChildren<Animator>();
+    }
+
     private void Update()
     {
         transform.position += transform.right * speed * Time.deltaTime;
