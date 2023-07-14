@@ -1,6 +1,6 @@
 # GAME DESIGN DOCUMENT
 
-<img title="" src="file:///C:/Users/Кирилл/Downloads/Stalopxasine.png" alt="" data-align="center">
+<img title="" src="https://github.com/thefireKS/Stalopxasine/assets/91114680/765ddc39-8512-4d87-a15c-5502939bbfdb" alt="" data-align="center">
 
 ## Жанр игры
 
@@ -112,7 +112,7 @@
 
 - После выбора "стартового" уровня, остальные "скручиваются в улитку" по часовой стрелке (см. схему)
   
-  ![](C:\Users\Кирилл\Downloads\level.png)
+  ![](https://github.com/thefireKS/Stalopxasine/assets/91114680/299172c1-2762-4915-a323-0c916787ce7f)
   
   *//Направление по часовой стрелке выбрано в качестве метафоры, что "время идёт вперёд", это можно будет использовать в возможных DLC с предысториями и направлять уровни против часовой, потому что действия происходят в прошлом*
 
@@ -182,7 +182,7 @@
 
 Приложение: скетчи боссов-противников (расположены в соответствии с таблицей)
 
-![](C:\Users\Кирилл\Downloads\Boss%20sketch.png)
+![](https://github.com/thefireKS/Stalopxasine/assets/91114680/71eb4967-e012-431a-9c6b-9c7c9d02eb08)
 
 ### Ультимативные способности
 
