@@ -1,6 +1,6 @@
 # GAME DESIGN DOCUMENT
 
-<img title="" src="https://github.com/thefireKS/Stalopxasine/assets/91114680/765ddc39-8512-4d87-a15c-5502939bbfdb" alt="" data-align="center">
+<img title="" src="https://private-user-images.githubusercontent.com/91114680/253638311-765ddc39-8512-4d87-a15c-5502939bbfdb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzMTEtNzY1ZGRjMzktODUxMi00ZDg3LWExNWMtNTUwMjkzOWJiZmRiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIzNzI3YTAwNmEyYjNiZjY4ZWRkODY4MWNjOWYyZTIyNGNhOTA5N2RhNjQxZmQzZDg4MjI0YzI4ZmZiNGJlMGQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.uD4LfTUe8kEuXHspLuL2dzPNxpPHxAhogoP5W3gKaCo" alt="" data-align="center">
 
 ## Жанр игры
 
@@ -58,13 +58,13 @@
 
 - **Луч** - Снаряд, не имеющей ограничений по длине. Не уничтожается при столкновении с игроком или противниками. Ограничивается по длине при столкновении с объектами. По истечению определенного "времени жизни" уничтожается.
 
+- **Особый** - вид/элемент механики для определенных сюжетных уровней.
+
 # Стиль игры
 
-Художественный стиль — **pixel art**, стандартный размер спрайтов - 16x16 пкс., ограничение палитры — **150** цветов. Рабочее название палитры: "Stxalopxasine150"
+Художественный стиль — **pixel art**, стандартный размер спрайтов - 16x16 пкс., ограничение палитры — **150** цветов. Рабочее название палитры: "Stalopxasine150"
 
 Стандартный размер интерфейса, задних фонов, изображений на весь экран - **128х72**
-
-![](C:\Stalopxasine\Assets\Textures\Caramello\Caramello.png)![](C:\Stalopxasine\Assets\Textures\fireKS\fireks.png)![](C:\Stalopxasine\Assets\Textures\Fridman\Fridman.png)![](C:\Stalopxasine\Assets\Textures\Viseman\Viseman.png)
 
 Игровой стиль — **игра поделена на уровни**, перейти на другой уровень можно через главное меню. Уровень - кластер из 4 лабиринтов, наполненных NPC, противниками, подбираемыми предметами и "точками интереса", с головоломками и побочными заданиями.
 
@@ -109,10 +109,10 @@
 ### Система повествования "Улитка"
 
 - В меню выбора уровней игрок может выбрать 1 из 4 "стартовых" уровней.
-
-- После выбора "стартового" уровня, остальные "скручиваются в улитку" по часовой стрелке (см. схему)
   
-  ![](https://github.com/thefireKS/Stalopxasine/assets/91114680/299172c1-2762-4915-a323-0c916787ce7f)
+  После выбора "стартового" уровня, остальные "скручиваются в улитку" по часовой стрелке (см. схему)
+  
+  ![](https://private-user-images.githubusercontent.com/91114680/253638331-299172c1-2762-4915-a323-0c916787ce7f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzMzEtMjk5MTcyYzEtMjc2Mi00OTE1LWEzMjMtMGM5MTY3ODdjZTdmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMzNmJkNzQ0ZTViMGE5NjI4Y2ZmNThjOWY5OWVlNzA0ZDZmNzZhYWI0ZDU4YTA1MzRjYmExYmRkMThjNzcwZmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.GRYiudvaaWpsCixNz8jyTcPX8gZBzzHBCA1G4XMStEM)
   
   *//Направление по часовой стрелке выбрано в качестве метафоры, что "время идёт вперёд", это можно будет использовать в возможных DLC с предысториями и направлять уровни против часовой, потому что действия происходят в прошлом*
 
@@ -169,7 +169,11 @@
 | Преследующий        | Как только видит игрока, то начинает преследовать его. Следует за игроком до определенного расстояния между собой и игроком. По достижении игрока атакуют игрока. По окончании преследования начинает патрулировать зону, в которой находится. | 3                                          |
 | Летающий            | Перемещается в воздухе.                                                                                                                                                                                                                        | 2                                          |
 
-Допустимый уровень сложности - это кол-во у.е. сложности, при которых может появиться противник с этим свойством
+*Допустимый уровень сложности - это кол-во у.е. сложности, при которых может появиться противник с этим свойством*
+
+Схема поведения основных типов противников
+
+![](https://private-user-images.githubusercontent.com/91114680/254568406-d4df75ba-00bd-47f0-b10c-8c193ac3d811.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTQ1Njg0MDYtZDRkZjc1YmEtMDBiZC00N2YwLWIxMGMtOGMxOTNhYzNkODExLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE5M2ZmNDFlMDY4MDFiYzI0NjUwNjhkMWU1YzNhNDMzOTY5MGRhOWJmNTFjYjhjMzA1ZmRmMzY5ZDViYTI1N2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.Rucsp_CnzGpiyGejPep7hCFIKhaBpgcQ8aE4MOebTiM)
 
 ### Боссы-противники
 
@@ -179,10 +183,11 @@
 | ЛЕДЯНОЙ БУЙВОЛ | Босс персонажа К.К. Имеет свойство противника **Сверло**. Может подпрыгивать и вызывать ударную волну. **Со стенкой** сверху.                                                                                    | Можно добавить QTE на "родео" с буйволом, успешное прохождение оглушит босса на определенное время                      |
 | ГОРЯЩЕЕ ЧУЧЕЛО | Босс персонажа Вайсман. Может создавать несколько копий себя для отвлечения игрока. Может вызывать пламя на полу.                                                                                                | Можно добавить в качестве разрушаемых объектов на арене надгробия, из которых будут появляться патрулирующие противники |
 | АДСКИЙ ЦИРК    | Босс персонажа Фридман. Атакует игрока в ближнем бою щупальцами. Может призывать патрулирующих противников.                                                                                                      | Есть особая атака - выпускает большую сферу-снаряд                                                                      |
+| СТАЛОПХА       | *WIP*                                                                                                                                                                                                            | *WIP*                                                                                                                   |
 
 Приложение: скетчи боссов-противников (расположены в соответствии с таблицей)
 
-![](https://github.com/thefireKS/Stalopxasine/assets/91114680/71eb4967-e012-431a-9c6b-9c7c9d02eb08)
+![](https://private-user-images.githubusercontent.com/91114680/253638343-71eb4967-e012-431a-9c6b-9c7c9d02eb08.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzNDMtNzFlYjQ5NjctZTAxMi00MzFhLTljNmItOWM3YzlkMDJlYjA4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNhM2M5YTdjNWRjOWUwZTBkYTM4YzZjYWU0ZmJmNWFlYzVjYzkwY2IxN2JjZTFiYzlkNzAzZWM5YzBmMGU2Y2MmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.Vhf0Elh_qBt3sLf0Dfy0zLmx9FCxGfvAUmFsGPwBUJM)
 
 ### Ультимативные способности
 
@@ -193,7 +198,17 @@
 | Фридман  | Вы получаете под контроль гитару-огнемёт. У гитары-огнемёта есть uX атак. Гитара-огнемёт может атаковать в 8 направлениях. | Управление гитарой-огнемётом осуществаляется через КЛП. Для ускоренного перемещения по экрану можно зажать КЛВП. Гитара-огнемёт изменяет направление атаки сама, поэтому для атаки необходимо нажать КЛД в выбранном направлении |
 | Вайсман  | Вы получаете под контроль духа-девушку. Дух-девушка имеет uX/2 атак. Дух-девушка атакует в 4 диагональных направлениях.    | Управление духом-девушкой осуществаляется через КЛП. Для ускоренного перемещения по экрану можно зажать КЛВП. Для атаки необходимо нажать КЛД в выбранном месте                                                                  |
 
-Все ультимативные способности наносят в 4 раза больше урона, чем стандартные снаряды.
+Все ультимативные способности наносят uD урона.
+
+### Дополнительные способы перемещения
+
+- Робот-меха: в несколько раз больше игрока, медленнее перемещается и не может прыгать. Может выпускать снаряды в трёх направлениях, не может разворачиваться назад. **Особый**.
+
+- Канатная дорога: игрок должен подойти к началу канатной дороги и нажать КЛД, после чего он будет перемещаться по ней. Во времея перемещения игрок может подпрыгнуть, чтобы покинуть канатную дорогу, а также может стандартно атаковать.
+
+- Шар-арбуз: перемещение не контроллируется игроком. Игрок может только "подпрыгнуть" с помощью КЛВП. Во время движения шар-арбуз невозможно остановить. Столкновение с противниками наносит урон как шару-арбузу, так и противникам. **Особый**.
+
+- 5-ти местная машина: перемещение контроллируется КЛП. Не может подпрыгивать. Самостоятельно выпускает снаряды в 4 диагональных направлениях, при зажатой КЛД выпускает снаряды в 2 параллельных линии. **Особый**.
 
 ### Неигровые персонажи
 
@@ -228,6 +243,8 @@
 
 **uX** - Количество зарядов ультиимативной способности для ультимативных способностей с несколькими зарядами/возможностями атаковать. Стандартное значение на данный момент - 4.
 
+**uD** - Урон ультимативной способности в единицах урона. На данный момент - 4.
+
 # Дизайн
 
 Для дизайна уровней можно использовать Кривую Гилберта и Кривую Госпера в качестве основы, которую необходимо модифицировать различными комнатами и коридорами, которые нарушают основной узор кривых. Изучить стандартные техники построения лабиринтов для создания уровней.
@@ -240,9 +257,27 @@
 
 Игрок проходит уровни (см. систему повествования "Улитка"), по окончанию стартовых уровней игрок получает дополнительную информацию об истории игры через катсцены.
 
+### Бэктрекинг
+
+На уровнях есть специальные "блоки", помеченные цветами определенных персонажей. Если игрок уже прошёл уровень за персонажа данного цвета, он может нажать КЛД и активировать "призыв напарника", что откроет дополнительный путь на уровне, новый предмет, или сюжетный элемент.
+
+### Трофеи
+
+При прохождении уровня за определенного героя на максимальном уровне сложности (т.е. после прохождения уровня за этого героя, следующий уровень - финальный) в меню игрок увидит статуэтку с данным персонажем.
+
 # Интерфейс
 
-В разработке.
+### Главное меню
+
+- Заглавный экран, кнопки: "играть", "настройки", "галерея".  Трофеи.
+
+- Меню "играть" с выбором уровня игры.
+
+- Меню "настройки" с выбором языка, дополнительными возможностями и настройками громкости.
+
+- Меню "галерея" с возможностью просмотра разблокированных катсцен
+
+### Внутрииигровой интерфейс
 
 Здоровье игрока отображается в виде "сердечек" в правом верхнем углу.
 
