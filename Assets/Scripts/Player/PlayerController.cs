@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
@@ -17,6 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Transform groundCheckR, groundCheckL;
     private float rayDistance = 0.1f;
+
+    private PlayerControls _playerControls;
     
     private GameObject currentOneWayPlatform;
     private float gravityScale;
@@ -46,6 +50,9 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
+        _playerControls = new PlayerControls();
+        _playerControls.Enable();
+        
         playerCollider = GetComponent<BoxCollider2D>();
         animator = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -54,6 +61,18 @@ public class PlayerController : MonoBehaviour
         gravityScale = rb2d.gravityScale;
         DisablingCooldown = new WaitForSeconds(0.2f);
         PlayerMeeting.DialogIsGoing = false;
+    }
+
+    private void OnEnable()
+    {
+        _playerControls.Player.Jump.started += Jump;
+        _playerControls.Player.Attack.started += Attack;
+    }
+
+    private void OnDisable()
+    {
+        _playerControls.Player.Jump.started -= Jump;
+        _playerControls.Player.Attack.started -= Attack;
     }
 
     private void Update()
@@ -123,14 +142,16 @@ public class PlayerController : MonoBehaviour
         if (Time.timeScale < 0.2f) return;
 
         // Movement - From WASD separately, we now use unity's in built stuff to get 1 for right and -1 for left or up and down.
-        moveX = Input.GetAxisRaw("Horizontal");
-        moveY = Input.GetAxisRaw("Vertical");
+        var movement = _playerControls.Player.Move.ReadValue<Vector2>();
+        
+        moveX = movement.x;
+        moveY = movement.y;
 
-        if (Input.GetKeyDown("space"))
-            bufferTimer = Data.jumpBufferTime;
+        /*if (Input.GetKeyDown("space"))
+            bufferTimer = Data.jumpBufferTime;*/
 
-        if (Input.GetButtonDown("Fire1") && attacksCounter > 0 && actionState == ActionStates.Idle)
-            StartCoroutine(AttackOnClick());
+        /*if (Input.GetButtonDown("Fire1") && attacksCounter > 0 && actionState == ActionStates.Idle)
+            StartCoroutine(AttackOnClick());*/
     }
     
     private void ProcessAnimation()
@@ -153,6 +174,21 @@ public class PlayerController : MonoBehaviour
         return Physics2D.Raycast(groundCheckR.position, Vector2.down, rayDistance,
             layerMask.value) || Physics2D.Raycast(groundCheckL.position, Vector2.down, rayDistance,
             layerMask.value);
+    }
+
+    private void Jump(InputAction.CallbackContext context)
+    {
+        if (Time.timeScale < 0.2f) return;
+        bufferTimer = Data.jumpBufferTime;
+    }
+
+    private void Attack(InputAction.CallbackContext context)
+    {
+        if (Time.timeScale < 0.2f) return;
+        if (attacksCounter > 0 && actionState == ActionStates.Idle)
+        {
+            StartCoroutine(AttackOnClick());
+        }
     }
     
     #region States
