@@ -255,7 +255,7 @@ public class PlayerController : MonoBehaviour
         actionState = ActionStates.Attacking;
 
         atck.Attacking();
-        attackDirectionSetter();
+        //attackDirectionSetter();
 
         yield return new WaitForSeconds(Data.attackTime);
         attacksCounter-=1;
