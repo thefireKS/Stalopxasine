@@ -25,7 +25,7 @@ MonoBehaviour:
   speed: 18
   acceleration: 28
   deceleration: 36
-  jumpForce: 17
+  jumpForce: 11
   jumpCoyoteTime: 0.5
   jumpBufferTime: 0.4
   fallGravityMultiplier: 1.3

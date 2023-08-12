@@ -170,7 +170,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""351c806c-b9d5-4387-a98e-32169ae6aead"",
                     ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=0.33)"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
