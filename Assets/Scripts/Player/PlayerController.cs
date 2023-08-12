@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     // TODO: delete animator
     private Animator animator;
     
-    private Rigidbody2D rb2d;
+    private Rigidbody2D _rb2d;
     private BoxCollider2D playerCollider;
     private SpriteRenderer sr;
     
@@ -33,7 +33,16 @@ public class PlayerController : MonoBehaviour
     private float moveX;
     private float moveY;
 
+    [SerializeField] private float longJumpDelay = 0.1f;
+    [SerializeField] private float jumpTimer = 0.3f;
+    [SerializeField] private float jumpModif = 0.33f;
+    [SerializeField] private float jumpModifDec = 1f;
+    private float _currentJumpModif;
+    private float _currentJumpTimer;
+    
+    // After groundCheck = false
     private float coyoteTimer = 0f;
+    // Time to jump after press
     private float bufferTimer = 0f;
     private WaitForSeconds DisablingCooldown;
     private enum MovementStates
@@ -58,22 +67,24 @@ public class PlayerController : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
         animator = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
-        rb2d = GetComponent<Rigidbody2D>();
+        _rb2d = GetComponent<Rigidbody2D>();
         atck = GetComponent<Attack>();
-        gravityScale = rb2d.gravityScale;
+        gravityScale = _rb2d.gravityScale;
         DisablingCooldown = new WaitForSeconds(0.2f);
         PlayerMeeting.DialogIsGoing = false;
     }
 
     private void OnEnable()
     {
-        _playerControls.Player.Jump.started += Jump;
+        _playerControls.Player.Jump.started += UpdateJumpTimer;
+        _playerControls.Player.Jump.canceled += JumpCancel;
         _playerControls.Player.Attack.started += Attack;
     }
 
     private void OnDisable()
     {
-        _playerControls.Player.Jump.started -= Jump;
+        _playerControls.Player.Jump.started -= UpdateJumpTimer;
+        _playerControls.Player.Jump.canceled -= JumpCancel;
         _playerControls.Player.Attack.started -= Attack;
     }
 
@@ -84,6 +95,10 @@ public class PlayerController : MonoBehaviour
 
         coyoteTimer -= Time.deltaTime;
         bufferTimer -= Time.deltaTime;
+        
+        if(_currentJumpTimer>0) _currentJumpTimer -= Time.deltaTime;
+
+        if(_playerControls.Player.Jump.IsPressed()) Jump();
 
         ProcessInput();
         
@@ -99,7 +114,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (PlayerMeeting.DialogIsGoing)
-            rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+            _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
         
         Controls();
     }
@@ -117,7 +132,11 @@ public class PlayerController : MonoBehaviour
     private void moving()
     {
         float targetSpeed = moveX * Data.speed;
-        float currentVelocity = rb2d.velocity.x;
+        float currentVelocity = _rb2d.velocity.x;
+        if (targetSpeed * currentVelocity < 0)
+        {
+            _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
+        }
         float acc;
         
         if (Mathf.Approximately(targetSpeed, 0f))
@@ -137,7 +156,7 @@ public class PlayerController : MonoBehaviour
             if (currentVelocity < targetSpeed) 
                 currentVelocity = targetSpeed;
         }
-        rb2d.velocity = new Vector2(currentVelocity, rb2d.velocity.y);
+        _rb2d.velocity = new Vector2(currentVelocity, _rb2d.velocity.y);
     }
     private void ProcessInput()
     {
@@ -148,7 +167,12 @@ public class PlayerController : MonoBehaviour
         
         moveX = movement.x;
         moveY = movement.y;
-        
+
+        if (_playerControls.Player.Jump.IsPressed())
+        {
+            Jump();
+        }
+
         /*if (Input.GetKeyDown("space"))
             bufferTimer = Data.jumpBufferTime;*/
 
@@ -178,10 +202,28 @@ public class PlayerController : MonoBehaviour
             layerMask.value);
     }
 
-    private void Jump(InputAction.CallbackContext context)
+    private void Jump()
     {
-        if (Time.timeScale < 0.2f) return;
-        bufferTimer = Data.jumpBufferTime;
+        if (_currentJumpTimer > 0 && _currentJumpTimer < jumpTimer)
+        {
+            _rb2d.AddForce(Vector2.up * (Data.jumpForce * _currentJumpModif * Time.fixedDeltaTime), ForceMode2D.Impulse);
+            _currentJumpModif -= jumpModifDec * Time.fixedDeltaTime;
+        }
+    }
+
+    private void UpdateJumpTimer(InputAction.CallbackContext context)
+    {
+        if (groundCheck())
+        {
+            _currentJumpTimer = jumpTimer + longJumpDelay;
+            _currentJumpModif = jumpModif;
+            _rb2d.AddForce(Vector2.up * Data.jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    private void JumpCancel(InputAction.CallbackContext context)
+    {
+        _currentJumpTimer = 0f;
     }
 
     private void Attack(InputAction.CallbackContext context)
@@ -211,11 +253,12 @@ public class PlayerController : MonoBehaviour
     }
     private void falling()
     {
-        rb2d.gravityScale = gravityScale * Data.fallGravityMultiplier;
+        _rb2d.gravityScale = gravityScale * Data.fallGravityMultiplier;
+        
         if (coyoteTimer > 0 && bufferTimer>0)
         {
             movementState = MovementStates.Jumping;
-            rb2d.velocity = new Vector2(rb2d.velocity.x, Data.jumpForce);
+            _rb2d.velocity = new Vector2(_rb2d.velocity.x, Data.jumpForce);
             bufferTimer = 0f;
         }
 
@@ -225,7 +268,7 @@ public class PlayerController : MonoBehaviour
 
     private void grounded()
     {
-        rb2d.gravityScale = gravityScale;
+        _rb2d.gravityScale = gravityScale;
         attacksCounter = Data.possibleAttacks;
 
         if (groundCheck())
@@ -233,7 +276,7 @@ public class PlayerController : MonoBehaviour
             if (bufferTimer>0)
             {
                 movementState = MovementStates.Jumping;
-                rb2d.velocity = new Vector2(rb2d.velocity.x, Data.jumpForce);
+                _rb2d.velocity = new Vector2(_rb2d.velocity.x, Data.jumpForce);
                 bufferTimer = 0f;
             }
         }
@@ -246,7 +289,7 @@ public class PlayerController : MonoBehaviour
     }
     private void jumping()
     {
-        if(rb2d.velocity.y < 0)
+        if(_rb2d.velocity.y < 0)
             movementState = MovementStates.Falling;
     }
     #endregion
