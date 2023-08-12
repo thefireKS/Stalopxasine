@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -10,13 +9,16 @@ public class PlayerController : MonoBehaviour
     [FormerlySerializedAs("data")]
     public PlayerData Data;
     private Attack atck;
+    // TODO: delete animator
     private Animator animator;
+    
     private Rigidbody2D rb2d;
     private BoxCollider2D playerCollider;
     private SpriteRenderer sr;
     
     [Header("Collision Checkers")]
     [SerializeField] private LayerMask layerMask;
+    // TODO: ground check with BB (BB - bounding box)
     [SerializeField] private Transform groundCheckR, groundCheckL;
     private float rayDistance = 0.1f;
 
@@ -146,7 +148,7 @@ public class PlayerController : MonoBehaviour
         
         moveX = movement.x;
         moveY = movement.y;
-
+        
         /*if (Input.GetKeyDown("space"))
             bufferTimer = Data.jumpBufferTime;*/
 
@@ -262,13 +264,14 @@ public class PlayerController : MonoBehaviour
         animator.speed = 1;
         actionState = ActionStates.Idle;
     }
-    private void attackDirectionSetter()
+    
+    /*private void attackDirectionSetter()
     {
         float groundCoefficient = groundCheck() ? 0.5f : 1f;
         Vector2 attackDirection = atck.AttackVector();
         Vector2 attackingVector = new Vector2(attackDirection.x * Data.speed * groundCoefficient, attackDirection.y * Data.jumpForce * groundCoefficient);
         rb2d.velocity = attackingVector; 
-    }
+    }*/
     
     #endregion
 
