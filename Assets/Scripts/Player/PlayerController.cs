@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     private float _currentJumpTimer;
     */
 
+    private bool _autoFire;
+
     private bool isJumpPressed;
     
     // After groundCheck = false
@@ -83,7 +85,10 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.Jump.started += JumpStart;
         _playerControls.Player.Jump.performed += JumpPerform;
         _playerControls.Player.Jump.canceled += JumpCancel;
+        
         _playerControls.Player.Attack.started += Attack;
+
+        _playerControls.Player.AutoAttack.started += SwitchAuto;
     }
 
     private void OnDisable()
@@ -91,7 +96,10 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.Jump.started -= JumpStart;
         _playerControls.Player.Jump.performed -= JumpPerform;
         _playerControls.Player.Jump.canceled -= JumpCancel;
+        
         _playerControls.Player.Attack.started -= Attack;
+        
+        _playerControls.Player.AutoAttack.started -= SwitchAuto;
     }
 
     private void Update()
@@ -99,14 +107,13 @@ public class PlayerController : MonoBehaviour
         if (PlayerMeeting.DialogIsGoing)
             return;
 
-
-        if(_currentJumpTimer>0) _currentJumpTimer -= Time.deltaTime;
-
         //if(_playerControls.Player.Jump.IsPressed()) Jump();
 
         ProcessInput();
         
         StateSwapper();
+
+        if (_autoFire) Attack();
         
         if (actionState != ActionStates.Attacking)
             isDropping = moveY < 0 && currentOneWayPlatform != null && groundCheck();
@@ -224,6 +231,7 @@ public class PlayerController : MonoBehaviour
         bufferTimer = Data.jumpBufferTime;
 
         if (!groundCheck() && coyoteTimer < 0) return;
+        coyoteTimer = 0;
         if (bufferTimer < 0) return;
         
         Debug.Log("Jump started");
@@ -254,10 +262,29 @@ public class PlayerController : MonoBehaviour
     private void Attack(InputAction.CallbackContext context)
     {
         if (Time.timeScale < 0.2f) return;
-        if (attacksCounter > 0 && actionState == ActionStates.Idle)
+        if (CanAttack() && !_autoFire)
         {
             StartCoroutine(AttackOnClick());
         }
+    }
+    
+    private void Attack()
+    {
+        if (Time.timeScale < 0.2f) return;
+        if (CanAttack())
+        {
+            StartCoroutine(AttackOnClick());
+        }
+    }
+
+    private bool CanAttack()
+    {
+        return attacksCounter > 0 && actionState == ActionStates.Idle;
+    }
+
+    private void SwitchAuto(InputAction.CallbackContext context)
+    {
+        _autoFire = !_autoFire;
     }
     
     #region States
