@@ -26,6 +26,7 @@ public class CaramelloHolyAura : MonoBehaviour
 
     private void OnEnable()
     {
+        ultimateSize = 0;
         cachedCanvas = Instantiate(tipCanvas);
         cachedMouseTrail = Instantiate(mouseTrail);
     }

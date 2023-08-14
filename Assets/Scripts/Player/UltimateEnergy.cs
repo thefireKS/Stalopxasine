@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UltimateEnergy : MonoBehaviour
 {
@@ -15,19 +12,18 @@ public class UltimateEnergy : MonoBehaviour
     private int Energy = 1;
     [SerializeField] private int FullEnergy = 4;
     [HideInInspector] public bool canEndEarlier = false;
-
-    private float animationStop = 1f;
+    
     private float ultimateTime;
     private bool currentUltimateExists;
 
-    private float timer = 0f;
+    private float realTimeElapsed = 0f;
 
     public static Action<int, int> OnEnergyChanged;
     private void Start()
     {
         OnEnergyChanged?.Invoke(Energy, FullEnergy);
         plc = GetComponent<PlayerController>();
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         ultimateTime = Data.ultimateTime;
     }
@@ -45,9 +41,7 @@ public class UltimateEnergy : MonoBehaviour
             {
                 Energy = 0;
                 OnEnergyChanged?.Invoke(Energy, FullEnergy);
-                timer = 0f;
-                UltimateWorks();
-                currentUltimateExists = true;
+                StartUltimate();
             }
         }
     }
@@ -61,40 +55,48 @@ public class UltimateEnergy : MonoBehaviour
         OnEnergyChanged?.Invoke(Energy, FullEnergy);
     }
 
-    private void UltimateWorks()
+    private void StartUltimate()
     {
-        Cursor.visible = false;
-        plc.enabled = false;
-        anim.SetTrigger("isUlting");
+        Debug.Log("Ult called");
+        anim.SetBool("isUlting",true);
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+        plc.enabled = false;
+    }
+
+    public void EnableQuickTimeEvent()
+    {
+        if(currentUltimateExists) return;
+        Debug.Log("QTE enabled");
+        currentUltimateExists = true;
+        realTimeElapsed = 0f;
+        Time.timeScale = 0.25f;
+        Cursor.visible = false;
         ultimateAbility.gameObject.SetActive(true);
     }
 
     private void UltimateChecks()
     {
-        timer += Time.unscaledDeltaTime;
+        realTimeElapsed += Time.unscaledDeltaTime;
 
-        if (timer > animationStop)
+        if (realTimeElapsed > ultimateTime || canEndEarlier)
         {
-            anim.speed = 0;
-            Time.timeScale = 0.25f;
+            EndUltimate();
+            Debug.Log("Earlyend was called");
         }
-
-        if (timer > ultimateTime || canEndEarlier)
-            Ending();
     }
 
-    private void Ending()
+    private void EndUltimate()
     {
-        ultimateAbility.gameObject.SetActive(false);
+        Debug.Log("End");
         Time.timeScale = 1f;
-        anim.speed = 1f;
+        anim.SetBool("isUlting",false);
+        ultimateAbility.gameObject.SetActive(false);
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         plc.enabled = true;
         Cursor.visible = true;
         canEndEarlier = false;
         currentUltimateExists = false;
-        timer = 0f;
+        realTimeElapsed = 0f;
     }
     
 }
