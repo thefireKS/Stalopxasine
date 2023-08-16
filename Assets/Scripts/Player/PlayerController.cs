@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     [FormerlySerializedAs("data")]
     public PlayerData Data;
-    private Attack atck;
+    private PlayerAttack atck;
     // TODO: delete animator
     private Animator animator;
     
@@ -59,24 +59,23 @@ public class PlayerController : MonoBehaviour
         Falling,
     }
     private MovementStates movementState = MovementStates.Falling;
-    private enum ActionStates
+    public enum ActionStates
     {
         Idle,
         Attacking
     }
-    private ActionStates actionState = ActionStates.Idle;
+    public ActionStates actionState = ActionStates.Idle;
     
     private void Awake()
     {
-        _playerControls = new PlayerControls();
-        _playerControls.Enable();
-        
+        _playerControls = PlayerInputHandler.playerControls;
+
         playerCollider = GetComponent<BoxCollider2D>();
         animator = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
         _rb2d = GetComponent<Rigidbody2D>();
         _playerInputHandler = GetComponent<PlayerInputHandler>();
-        atck = GetComponent<Attack>();
+        atck = GetComponent<PlayerAttack>();
         gravityScale = _rb2d.gravityScale;
         DisablingCooldown = new WaitForSeconds(0.2f);
         PlayerMeeting.DialogIsGoing = false;
@@ -88,7 +87,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.Jump.performed += JumpEnd;
         _playerControls.Player.Jump.canceled += JumpEnd;
         
-        _playerControls.Player.Attack.started += Attack;
+        //_playerControls.Player.Attack.started += Attack;
 
         _playerControls.Player.AutoAttack.started += SwitchAuto;
     }
@@ -99,7 +98,7 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.Jump.performed -= JumpEnd;
         _playerControls.Player.Jump.canceled -= JumpEnd;
         
-        _playerControls.Player.Attack.started -= Attack;
+        //_playerControls.Player.Attack.started -= Attack;
         
         _playerControls.Player.AutoAttack.started -= SwitchAuto;
     }
@@ -115,7 +114,7 @@ public class PlayerController : MonoBehaviour
         
         MovementStateSwapper();
 
-        if (_autoFire) Attack();
+        //if (_autoFire) Attack();
         
         if (actionState != ActionStates.Attacking)
             isDropping = moveY < 0 && currentOneWayPlatform != null && groundCheck();
@@ -229,7 +228,7 @@ public class PlayerController : MonoBehaviour
         coyoteTimer = 0;
         if (bufferTimer < 0) return;
         
-        Debug.Log("Jump started");
+        //Debug.Log("Jump started");
         isJumpPressed = true;
         movementState = MovementStates.Jumping;
     }
@@ -242,12 +241,12 @@ public class PlayerController : MonoBehaviour
 
     private void JumpEnd(InputAction.CallbackContext context)
     {
-        Debug.Log("Jump canceled");
+        //Debug.Log("Jump canceled");
         isJumpPressed = false;
         movementState = MovementStates.Falling;
     }
 
-    private void Attack(InputAction.CallbackContext context)
+    /*private void Attack(InputAction.CallbackContext context)
     {
         if (Time.timeScale < 0.2f) return;
         if (CanAttack() && !_autoFire)
@@ -263,7 +262,7 @@ public class PlayerController : MonoBehaviour
         {
             StartCoroutine(AttackOnClick());
         }
-    }
+    }*/
 
     private bool CanAttack()
     {
@@ -335,18 +334,16 @@ public class PlayerController : MonoBehaviour
     #endregion
 
     #region Attack
-    private IEnumerator AttackOnClick()
+    /*private IEnumerator AttackOnClick()
     {
         actionState = ActionStates.Attacking;
 
-        atck.Attacking();
+        //atck.PerformAttack();
         //attackDirectionSetter();
-
         yield return new WaitForSeconds(Data.attackTime);
-        //attacksCounter-=1;
-        animator.speed = 1;
+        
         actionState = ActionStates.Idle;
-    }
+    }*/
     
     /*private void attackDirectionSetter()
     {
