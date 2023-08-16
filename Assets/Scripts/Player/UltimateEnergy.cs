@@ -10,9 +10,9 @@ public class UltimateEnergy : MonoBehaviour
     [SerializeField] private GameObject ultimateAbility;
     
     private int Energy = 1;
-    [SerializeField] private int FullEnergy = 4;
     [HideInInspector] public bool canEndEarlier = false;
     
+    private int FullEnergy = 4;
     private float ultimateTime;
     private bool currentUltimateExists;
 
@@ -21,12 +21,15 @@ public class UltimateEnergy : MonoBehaviour
     public static Action<int, int> OnEnergyChanged;
     private void Start()
     {
+        ultimateTime = Data.ultimateTime;
+        FullEnergy = Data.fullEnergy;
+        
         OnEnergyChanged?.Invoke(Energy, FullEnergy);
         plc = GetComponent<PlayerController>();
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-        ultimateTime = Data.ultimateTime;
     }
+    
     private void OnEnable() => EnemyHP.GiveEnergy += SetEnergy;
     private void OnDisable() => EnemyHP.GiveEnergy -= SetEnergy;
 

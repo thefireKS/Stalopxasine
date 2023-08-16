@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 7743614962208700057}
   - component: {fileID: 3709983292487096856}
   - component: {fileID: 1013042885873140285}
+  - component: {fileID: 8182940013058849285}
   - component: {fileID: 1151812808677557457}
   - component: {fileID: 1699310878529221024}
   - component: {fileID: 7465069119485338716}
@@ -498,6 +499,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 4
   FullHP: 4
+--- !u!114 &8182940013058849285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4986971684823470180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e644530621ac67247b59f8e9d87a2bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1151812808677557457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,7 +558,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data: {fileID: 11400000, guid: 66f1e7b600e14ca4bbcbd414e0c01923, type: 2}
   ultimateAbility: {fileID: 1095773370593068553}
-  FullEnergy: 1
   canEndEarlier: 0
 --- !u!114 &5989365602303655308
 MonoBehaviour:

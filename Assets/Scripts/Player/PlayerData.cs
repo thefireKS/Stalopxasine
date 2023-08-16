@@ -17,6 +17,7 @@ public class PlayerData : ScriptableObject
     public GameObject bullet;
 
     [Header("Ultimate")] 
+    public int fullEnergy = 4;
     public float ultimateTime = 8f;
 
     [Header("Movement")]

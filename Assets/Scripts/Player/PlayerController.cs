@@ -23,12 +23,13 @@ public class PlayerController : MonoBehaviour
     private float rayDistance = 0.1f;
 
     private PlayerControls _playerControls;
-    
+    private PlayerInputHandler _playerInputHandler;
+        
     private GameObject currentOneWayPlatform;
     private float gravityScale;
     
     private bool isDropping;
-    private int attacksCounter;
+    //private int attacksCounter;
 
     private float moveX;
     private float moveY;
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
         _rb2d = GetComponent<Rigidbody2D>();
+        _playerInputHandler = GetComponent<PlayerInputHandler>();
         atck = GetComponent<Attack>();
         gravityScale = _rb2d.gravityScale;
         DisablingCooldown = new WaitForSeconds(0.2f);
@@ -83,8 +85,8 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         _playerControls.Player.Jump.started += JumpStart;
-        _playerControls.Player.Jump.performed += JumpPerform;
-        _playerControls.Player.Jump.canceled += JumpCancel;
+        _playerControls.Player.Jump.performed += JumpEnd;
+        _playerControls.Player.Jump.canceled += JumpEnd;
         
         _playerControls.Player.Attack.started += Attack;
 
@@ -94,8 +96,8 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         _playerControls.Player.Jump.started -= JumpStart;
-        _playerControls.Player.Jump.performed -= JumpPerform;
-        _playerControls.Player.Jump.canceled -= JumpCancel;
+        _playerControls.Player.Jump.performed -= JumpEnd;
+        _playerControls.Player.Jump.canceled -= JumpEnd;
         
         _playerControls.Player.Attack.started -= Attack;
         
@@ -111,7 +113,7 @@ public class PlayerController : MonoBehaviour
 
         ProcessInput();
         
-        StateSwapper();
+        MovementStateSwapper();
 
         if (_autoFire) Attack();
         
@@ -131,29 +133,22 @@ public class PlayerController : MonoBehaviour
     }
     private void Controls()
     {
-        if (actionState == ActionStates.Attacking)
-            return;
-        
-        moving();
+        Moving(_playerInputHandler.MoveInput());
 
         if (isDropping)
             StartCoroutine(DisableCollision());
     }
     
-    private void moving()
+    private void Moving(Vector2 inputMovement)
     {
-        float targetSpeed = moveX * Data.speed;
+        float targetSpeed = inputMovement.x * Data.speed;
         float currentVelocity = _rb2d.velocity.x;
         if (targetSpeed * currentVelocity < 0)
         {
             _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
         }
-        float acc;
-        
-        if (Mathf.Approximately(targetSpeed, 0f))
-            acc = Data.deceleration;
-        else
-            acc = Data.acceleration;
+
+        var acc = Mathf.Approximately(targetSpeed, 0f) ? Data.deceleration : Data.acceleration;
         
         if (currentVelocity < targetSpeed)
         {
@@ -209,7 +204,7 @@ public class PlayerController : MonoBehaviour
     {
         if (moveX != 0)
             sr.flipX = moveX < 0;
-    } 
+    }
     private bool groundCheck()
     {
         return Physics2D.Raycast(groundCheckR.position, Vector2.down, rayDistance,
@@ -245,14 +240,7 @@ public class PlayerController : MonoBehaviour
         _rb2d.velocity = new Vector2(_rb2d.velocity.x, Data.jumpForce);
     }
 
-    private void JumpPerform(InputAction.CallbackContext context)
-    {
-        Debug.Log("Jump performed");
-        isJumpPressed = false;
-        movementState = MovementStates.Falling;
-    }
-
-    private void JumpCancel(InputAction.CallbackContext context)
+    private void JumpEnd(InputAction.CallbackContext context)
     {
         Debug.Log("Jump canceled");
         isJumpPressed = false;
@@ -279,7 +267,7 @@ public class PlayerController : MonoBehaviour
 
     private bool CanAttack()
     {
-        return attacksCounter > 0 && actionState == ActionStates.Idle;
+        return /*attacksCounter > 0 &&*/ actionState == ActionStates.Idle;
     }
 
     private void SwitchAuto(InputAction.CallbackContext context)
@@ -288,7 +276,7 @@ public class PlayerController : MonoBehaviour
     }
     
     #region States
-    private void StateSwapper()
+    private void MovementStateSwapper()
     {
         switch (movementState)
         {
@@ -322,7 +310,7 @@ public class PlayerController : MonoBehaviour
     private void grounded()
     {
         _rb2d.gravityScale = gravityScale;
-        attacksCounter = Data.possibleAttacks;
+        //attacksCounter = Data.possibleAttacks;
         coyoteTimer = Data.jumpCoyoteTime;
         
         if (groundCheck())
@@ -355,7 +343,7 @@ public class PlayerController : MonoBehaviour
         //attackDirectionSetter();
 
         yield return new WaitForSeconds(Data.attackTime);
-        attacksCounter-=1;
+        //attacksCounter-=1;
         animator.speed = 1;
         actionState = ActionStates.Idle;
     }
