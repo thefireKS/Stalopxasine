@@ -10,22 +10,22 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform actualBulletPosition;
     
     private Animator anim;
-    private SpriteRenderer sr;
+    //private SpriteRenderer sr;
     private PlayerControls _playerControls;
     private PlayerController _playerController;
 
     private bool isLookingLeft;
     private int high = 0; //-2 - down, -1 - 45 deg down, 0 - middle, 1 - 45 deg up, 2 - up
 
-    private float angle = 0f;
+    private float angle;
     
-    private bool autoAttack;
+    private bool isAutoAttacking;
     //private float meleeDetection;
     private void Awake()
     {
         //meleeDetection = Data.meleeAttack ? 1 : -1;
         anim = GetComponentInChildren<Animator>();
-        sr = GetComponentInChildren<SpriteRenderer>();
+        //sr = GetComponentInChildren<SpriteRenderer>();
 
         _playerController = GetComponent<PlayerController>();
         _playerControls = PlayerInputHandler.playerControls;
@@ -51,13 +51,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-        if (autoAttack)
+        if (isAutoAttacking)
             PerformAttack();
     }
 
     private void EnableAutoAttack(InputAction.CallbackContext context)
     {
-        autoAttack = !autoAttack;
+        isAutoAttacking = !isAutoAttacking;
     }
     
     private void PerformAttack()
@@ -68,7 +68,6 @@ public class PlayerAttack : MonoBehaviour
         anim.SetFloat("attackDir",high);
         var bullet = Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
         bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
-        sr.flipX = isLookingLeft;
     }
     
     private void PerformAttack(InputAction.CallbackContext context)
@@ -79,7 +78,6 @@ public class PlayerAttack : MonoBehaviour
         anim.SetFloat("attackDir",high);
         var bullet = Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
         bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
-        sr.flipX = isLookingLeft;
     }
 
     private IEnumerator Attack()
@@ -110,7 +108,7 @@ public class PlayerAttack : MonoBehaviour
         Vector2 mouseDirection = new Vector2(Input.mousePosition.x - _halfScreenDims.x, Input.mousePosition.y - _halfScreenDims.y);
 
         var angle = new Vector3(0, 0, Vector3.SignedAngle(Vector3.right, mouseDirection, Vector3.forward));
-        var coef = Mathf.Round(angle.z / 45);
+        var coefficient = Mathf.Round(angle.z / 45);
         */
 
         //Debug.Log(angle);
@@ -119,16 +117,22 @@ public class PlayerAttack : MonoBehaviour
         
         //if (inputAttack.magnitude >= 0)
         angle = Mathf.Atan2(inputVector.y,inputVector.x) * Mathf.Rad2Deg;
-        DirectionCheck(angle);
+        SetDirectionForAnimator(angle);
+
+
+        var bulletPositionTransform = bulletPositionRotation.transform;
         
-        bulletPositionRotation.transform.position = new Vector3(transform.position.x,transform.position.y, 0);
-        bulletPositionRotation.transform.localEulerAngles = new Vector3(0,0,angle);
+        bulletPositionTransform.position = new Vector3(transform.position.x,transform.position.y, 0);
+        bulletPositionTransform.localEulerAngles = new Vector3(0,0,angle);
     }
 
-    private void DirectionCheck(float shootingPointAngle)
+    // TODO : Move this function to animator controller 
+    private void SetDirectionForAnimator(float shootingPointAngle)
     {
-        isLookingLeft = Mathf.Abs(shootingPointAngle) > 90f;
         high = Mathf.RoundToInt(Mathf.Sin(shootingPointAngle * Mathf.Deg2Rad)* 2);
+        //isLookingLeft = Mathf.Abs(shootingPointAngle) > 90f && Mathf.Abs(high) < 2;
+
+        //sr.flipX = isLookingLeft;
 
         /*var rotation = bulletPositionRotation.transform.eulerAngles.z;
 
