@@ -1,6 +1,6 @@
 # GAME DESIGN DOCUMENT
 
-<img title="" src="https://private-user-images.githubusercontent.com/91114680/253638311-765ddc39-8512-4d87-a15c-5502939bbfdb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE4NDM0NTcsIm5iZiI6MTY5MTg0MzE1NywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzMTEtNzY1ZGRjMzktODUxMi00ZDg3LWExNWMtNTUwMjkzOWJiZmRiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA4MTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwODEyVDEyMjU1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWUyNmI1ZTY4ZWU0ZWYxZjNlZTdkMmJmODhiNDc0Y2VjYWI3ZWM0NDczN2Y0ODI2NWZlMzU0YjZiYjA4YjBhY2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.5bIpdlYcCyLNNXkFoR1G8zIKdLTG4y4nQhovcEGKN4Y" alt="" data-align="center">
+<img title="" src="https://private-user-images.githubusercontent.com/91114680/253638311-765ddc39-8512-4d87-a15c-5502939bbfdb.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzMTEtNzY1ZGRjMzktODUxMi00ZDg3LWExNWMtNTUwMjkzOWJiZmRiLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIzNzI3YTAwNmEyYjNiZjY4ZWRkODY4MWNjOWYyZTIyNGNhOTA5N2RhNjQxZmQzZDg4MjI0YzI4ZmZiNGJlMGQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.uD4LfTUe8kEuXHspLuL2dzPNxpPHxAhogoP5W3gKaCo" alt="" data-align="center">
 
 ## Жанр игры
 
@@ -10,13 +10,13 @@
 
 ## Синопсис
 
-    Благодаря развитию технологий, люди повсеместно используют "виртуальность", так называемую систему осязаемых голограмм. С помощью этой технологии люди могут воплощать в жизнь любые их идеи, исключая оружие, поскольку "виртуальность" запрограммирована не причинять вреда.
+Благодаря развитию технологий, люди повсеместно используют "виртуальность", так называемую систему осязаемых голограмм. С помощью этой технологии люди могут воплощать в жизнь любые их идеи, исключая оружие, поскольку "виртуальность" запрограммирована не причинять вреда.
 
-    Однако, в 1501 год в новом мире начинается переворот, поскольку предыдущий вождь-машина сломался. Из числа простых людей был собран отряд по устранению проблем и решению конфликтов с властью, именуемый "Первым отрядом".
+Однако, в 1501 год в новом мире начинается переворот, поскольку предыдущий вождь-машина сломался. Из числа простых людей был собран отряд по устранению проблем и решению конфликтов с властью, именуемый "Первым отрядом".
 
-    Вскоре, после восстановления порядка, члены "Первого отряда" разошлись по своим жизненным путям. Главнокомандующий первого отряда, мастер Сталопха, основал фармацевтическую компанию, которая в кратчайшие сроки разрослась до гиперкорпорации. Со временем, люди употреблявшие основной продукт "Stalopxa inc", сталопхасин, стали терять рассудок и создавали с помощью виртуальности объекты, вредящие жизни людей.
+Вскоре, после восстановления порядка, члены "Первого отряда" разошлись по своим жизненным путям. Главнокомандующий первого отряда, мастер Сталопха, основал фармацевтическую компанию, которая в кратчайшие сроки разрослась до гиперкорпорации. Со временем, люди употреблявшие основной продукт "Stalopxa inc", сталопхасин, стали терять рассудок и создавали с помощью виртуальности объекты, вредящие жизни людей.
 
-    Несколько бывших членов Первого Отряда, независимо друг от друга, решают встретиться со Сталопхой лично и узнать, в чём дело.
+Несколько бывших членов Первого Отряда, независимо друг от друга, решают встретиться со Сталопхой лично и узнать, в чём дело.
 
 # Управление
 
@@ -84,7 +84,7 @@
 
 - В зависимости от персонажа, у игрока может быть дальняя, либо ближняя атака. **Атака** — выпуск игроком снаряда в выбранном направлении. Снаряды ближней атаки гораздо больше, чем снаряды дальней атаки, что увеличивает площадь поражения, а также, снаряды ближней атаки могут уничтожать снаряды противников, соприкасающиеся с ними.
 
-- Для выбора направления атаки игроку необходимо зажать данные КЛП, т.е. для атаки "по диагонали вверх" ему необходимо зажать КЛП "вверх" и КЛП направления, "влево" или "вправо".
+- Для выбора направления атаки игроку необходимо зажать данные КЛП, т.е. для атаки "по диагонали вверх" ему необходимо зажать КЛП "вверх" и КЛП направления, "влево" или "вправо". Если игрок отпускает КЛП, то направление атаки фиксируется на последнем направлении атаки, заданном игроком.
 
 - У атак есть время между атаками, во время которого игрок не может атаковать. Время между атаками начинает отсчёт самостоятельно, после каждой атаки игрока. Как только время после последней атаки игрока становится больше, чем время между атаками, игрок может снова атаковать.
 
@@ -112,11 +112,11 @@
   
   После выбора "стартового" уровня, остальные "скручиваются в улитку" по часовой стрелке (см. схему)
   
-  ![](https://private-user-images.githubusercontent.com/91114680/253638331-299172c1-2762-4915-a323-0c916787ce7f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE4NDM0NTcsIm5iZiI6MTY5MTg0MzE1NywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzMzEtMjk5MTcyYzEtMjc2Mi00OTE1LWEzMjMtMGM5MTY3ODdjZTdmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA4MTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwODEyVDEyMjU1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWI2NDVhN2M2YjMxNzZhMDJmODdlMDI2ZmZiOTAzMDMxZDM4ZGNlNzJhYjQxZDBiNjJiMjEyMWVmYmY0MGY5NTYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.HMgzPCRufnT_-92YxdVhdc3tSa50q2WDV5BLvaTDUmg)
+  ![](https://private-user-images.githubusercontent.com/91114680/253638331-299172c1-2762-4915-a323-0c916787ce7f.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzMzEtMjk5MTcyYzEtMjc2Mi00OTE1LWEzMjMtMGM5MTY3ODdjZTdmLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWMzNmJkNzQ0ZTViMGE5NjI4Y2ZmNThjOWY5OWVlNzA0ZDZmNzZhYWI0ZDU4YTA1MzRjYmExYmRkMThjNzcwZmYmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.GRYiudvaaWpsCixNz8jyTcPX8gZBzzHBCA1G4XMStEM)
   
   *//Направление по часовой стрелке выбрано в качестве метафоры, что "время идёт вперёд", это можно будет использовать в возможных DLC с предысториями и направлять уровни против часовой, потому что действия происходят в прошлом*
 
-- Стартовые уровни обозначают смену игрового персонажа
+- Стартовые уровни обозначают смену игрового персонажа. Стартовый уровень состоит из 4 уровней-этапов.
   
   - SL1 - К.К.
   
@@ -126,7 +126,28 @@
   
   - SL4 - Вайсман
 
-- На промежуточном уровне игрок играет за того персонажа, которым он играл предыдущий стартовый уровень *(на примере схемы выше, уровень ILx проходится за Пикселя, а ILw за К.К.)* 
+- На промежуточном уровне игрок играет за случайного сюжетного персонажа; Промежуточные уровни выбираются случайно и состоят из 1 этапа за неосновного персонажа. Таблица возможных промежуточных уровней представлена ниже:
+  
+  | Персонаж  | Описание персонажа                                                                                                                                                                                                                          | Краткое описание уровня                                                                                                                                                                                                                      | Доступно на сложности |
+  |:---------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------:|
+  | Мика      | Девочка-фенек. Ближнего боя. Не имеет ультимативной способности. Несколько ударов, нанесённых подряд по одной цели, наносят ей больше урона.                                                                                                | Плоский по строению уровень. Большое количество толпящихся противников. Цель - дойти до выхода уровня.                                                                                                                                       | 3-4                   |
+  | W-L0N     | Арбуз с лицом на механических ногах. Ультимативная способность не тратит энергии. Не может атаковать. При нажатии КЛУС сворачивается  в шар, движется быстрее, подпрыгивает гораздо ниже.                                                   | Уровень - оммаж на игры Sonic с SEGA. Кольца, наклонные поверхности, шипы. Цель - умереть. Игрок должен проиграть, чтобы победить. Буквально.                                                                                                | 2-3                   |
+  | Мистер L  | Человек с кошачьими ушами в длинном жёлтом пальто.                                                                                                                                                                                          | Я не придумал.                                                                                                                                                                                                                               | 0                     |
+  | F1C-US    | Фикус в бассейне на маленьких механических ногах. Вместо прыжка - вытягивается в высоту. Атака - дальняя, на очень короткую дистанцию.                                                                                                      | Аналог игры "Волк и яйца". Необходимо выбирать источник воды, подходить к нему и опционально "дотягиваться" до него. Цель - набрать определенное кол-во очков                                                                                | 1-2                   |
+  | Док. Панц | Существо с головой птицы в защитных очках и мед. халате. Ближнего боя. Ультимативная способность стоит 1 ед. энергии. При активации становится дальнего боя, атаки мгновенно убивают противников.                                           | Стелс-уровень. Цель -  дойти до точки на уровне, не оказавшись замеченным N раз. Также необходимо достичь 2-ой цели и провзаимодейстовать с нею                                                                                              | 3-4                   |
+  | Игнис     | //*См. пересписку Тимур Адилов* Бармен из андертейла. Дальнего боя. Не имеет ультимативной способности. Кидается огненными коктейлями как артиллерия.                                                                                       | Цель - уничтожить "всё" на уровне (*75-90%*) за определенное время. На уровне минимальное количество нейтральных противников, большое количество окружения, при попадании снарядом по которому оно начинает гореть и считается уничтоженным. | 2-3                   |
+  | Big M.G.  | //*См. пересписку Михаил Гончаров* Большой лебовский. Не атакует. Не прыгает. Не имеет ультимативной способности.                                                                                                                           | Цель - купить хлеб. Найдите хлеб и купите его, можете просто выйти из магазина с ним. Получите хлеб. ХЛЕБ.                                                                                                                                   | 1-2                   |
+  | D-DOOT    | Синдикатовец со снайперкой. Дальнего боя. Ультимативная способность не требует зарядов. При зажатии КЛУС персонаж стоит на месте, но на КЛД движется камера в выбранном направлении. Игрок также всё ещё может атаковать, при зажатой КЛУС. | Цель - защитить определенную персону. Вы находитесь на крыше, можете перемещаться по крышам, должны сражаться с противниками на крышах, пока персона идёт от точки А в точку Б. На персону могут нападать и люди снизу.                      | 3-4                   |
+  | Гиляров   |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+  | Пасечник  |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+  | Соболев   |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+  | Коробко   |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+  | Никуленко |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+  | Ефремов?  |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+  | Троценко? |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+  | Навир?    |                                                                                                                                                                                                                                             |                                                                                                                                                                                                                                              |                       |
+
+- У промежуточных уровней также присутсвует система "проверки на уникальность", т.е. при генерации "улитки" уровней для игрока, промежуточные уровни выбираются из тех, что ещё не были пройдены игроком
 
 - Сложность уровней увеличивается на 1 у.е. при прохождении каждого стартового уровня
 
@@ -136,21 +157,13 @@
   
   - Типы противников
   
-  - Количество наград на уровне
+  - Количество дополнительных участков уровня
+    
+    - Дополнительные участки уровня могут выполнять роль сокращения пути, или содержать дополнительные награды. Дополнительные участки не должны быть ключевыми элементами уровня и без данных участков уровень должен оставаться полноценным.
 
 ### Система последовательного повествования
 
-При переходе на новый стартовый уровень игроку демонстрируется "катсцена". Каждая катсцена имеет 4 дополнительных фрагмента, и в зависимости от прогресса игрока будет демонстрироваться определенное количество дополнительных фрагментов.
-
-| Количество пройденных стартовых уровней | Количество доп. фрагментов в "катсцене" |
-|:---------------------------------------:|:---------------------------------------:|
-| 0                                       | 0                                       |
-| 1                                       | 1                                       |
-| 2                                       | 2                                       |
-| 3                                       | 3                                       |
-| 4                                       | 4                                       |
-
-*//Очень непонятно, проще реализовать и потом описать* 
+Прохождение стартового уровня на сложности X награждает игрока X-ым томом комикса-истории о персонаже, стартовый уровень которого был пройден. Т.е., при условных 4-ёх томах комикса-истории для персонажа, игроку необходимо пройти стартовый уровень этого персонажа на 4 различных сложностях.
 
 # Механики игры
 
@@ -173,7 +186,7 @@
 
 Схема поведения основных типов противников
 
-![](https://private-user-images.githubusercontent.com/91114680/254568406-d4df75ba-00bd-47f0-b10c-8c193ac3d811.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE4NDM0NTcsIm5iZiI6MTY5MTg0MzE1NywicGF0aCI6Ii85MTExNDY4MC8yNTQ1Njg0MDYtZDRkZjc1YmEtMDBiZC00N2YwLWIxMGMtOGMxOTNhYzNkODExLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA4MTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwODEyVDEyMjU1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWZlYTQyYTc0Y2M0MTNkZTI4ZWVhZTdhZmMzNjAwMzQ0ZDFhODA1NmU0ZjNmMjUzYzIxNDRiYTNkNDZkYjk5OTcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.fzMb_rRZtUsH1HgwusGlEf4AQ2XYGlWAMejqjJSkRVM)
+![](https://private-user-images.githubusercontent.com/91114680/254568406-d4df75ba-00bd-47f0-b10c-8c193ac3d811.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTQ1Njg0MDYtZDRkZjc1YmEtMDBiZC00N2YwLWIxMGMtOGMxOTNhYzNkODExLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTE5M2ZmNDFlMDY4MDFiYzI0NjUwNjhkMWU1YzNhNDMzOTY5MGRhOWJmNTFjYjhjMzA1ZmRmMzY5ZDViYTI1N2YmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.Rucsp_CnzGpiyGejPep7hCFIKhaBpgcQ8aE4MOebTiM)
 
 ### Боссы-противники
 
@@ -187,7 +200,7 @@
 
 Приложение: скетчи боссов-противников (расположены в соответствии с таблицей)
 
-![](https://private-user-images.githubusercontent.com/91114680/253638343-71eb4967-e012-431a-9c6b-9c7c9d02eb08.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTE4NDM0NTcsIm5iZiI6MTY5MTg0MzE1NywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzNDMtNzFlYjQ5NjctZTAxMi00MzFhLTljNmItOWM3YzlkMDJlYjA4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA4MTIlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwODEyVDEyMjU1N1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTQxNDMwMzA4MWNjNmQxNDhjNzI1MzY0NjIyYTFmMjNhZGFhN2M0M2I1ZTVlMmRjYWIwNTY1MDJhYmM0ZWJhN2UmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.R_t-dbRnJHyHsp3lyLmreZvDnVB6iAF3rKVzcw4ilus)
+![](https://private-user-images.githubusercontent.com/91114680/253638343-71eb4967-e012-431a-9c6b-9c7c9d02eb08.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2ODk3Njg5MzcsIm5iZiI6MTY4OTc2ODYzNywicGF0aCI6Ii85MTExNDY4MC8yNTM2MzgzNDMtNzFlYjQ5NjctZTAxMi00MzFhLTljNmItOWM3YzlkMDJlYjA4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFJV05KWUFYNENTVkVINTNBJTJGMjAyMzA3MTklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjMwNzE5VDEyMTAzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWNhM2M5YTdjNWRjOWUwZTBkYTM4YzZjYWU0ZmJmNWFlYzVjYzkwY2IxN2JjZTFiYzlkNzAzZWM5YzBmMGU2Y2MmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.Vhf0Elh_qBt3sLf0Dfy0zLmx9FCxGfvAUmFsGPwBUJM)
 
 ### Ультимативные способности
 
@@ -206,8 +219,6 @@
 
 - Канатная дорога: игрок должен подойти к началу канатной дороги и нажать КЛД, после чего он будет перемещаться по ней. Во времея перемещения игрок может подпрыгнуть, чтобы покинуть канатную дорогу, а также может стандартно атаковать.
 
-- Шар-арбуз: перемещение не контроллируется игроком. Игрок может только "подпрыгнуть" с помощью КЛВП. Во время движения шар-арбуз невозможно остановить. Столкновение с противниками наносит урон как шару-арбузу, так и противникам. **Особый**.
-
 - 5-ти местная машина: перемещение контроллируется КЛП. Не может подпрыгивать. Самостоятельно выпускает снаряды в 4 диагональных направлениях, при зажатой КЛД выпускает снаряды в 2 параллельных линии. **Особый**.
 
 ### Неигровые персонажи
@@ -216,28 +227,36 @@
 
 - Во время диалога с неигровыми персонажами игрок неуязвим, но также не может самостоятельно двигаться, пока диалог не закончится.
 
-- По окончанию диалога с неигровыми персонажами можно "согласиться" помочь им, что активирует мини-игру (см. далее) Успешное прохождение мини-игры в будущем даёт преимущества в игре. 
+- По окончанию диалога с неигровыми персонажами можно "согласиться" помочь им, что даёт игроку неактивированный слот памяти (см. далее) Активация слота памяти в будущем даёт преимущества в игре.
 
-- Неигровые персонажи могут "наградить" игрока предметом (см. далее)
+- Если неигровой персонаж уже "отдал" и "активировал" свой слот памяти, то на уровне он может восстановить здоровье/заряды ульт. способности игрока или предложить заменить слоты памяти.
 
-### Мини-игры неигровых персонажей
+### Слоты памяти
 
-| Имя персонажа | Мини-игра (коротко) | Что даёт |
-|:-------------:|:-------------------:|:--------:|
-|               |                     |          |
-|               |                     |          |
-|               |                     |          |
-|               |                     |          |
+У игрока есть 5 ячеек для активированных слотов памяти, которые он может иметь при себе. Установка слотов памяти происходит в специальных местах, или в начале "Новой Игры +"
 
-### Предметы
+Для активации слота памяти необходимо выполнить условие для его активации, а также поговорить с неигровым персонажем, который выдал данный слот памяти игроку, если таковой имеется
 
-| Название предмета | Какой эффект даёт | Способ получения |
-|:-----------------:|:-----------------:|:----------------:|
-|                   |                   |                  |
-|                   |                   |                  |
-|                   |                   |                  |
-|                   |                   |                  |
-|                   |                   |                  |
+| Имя персонажа | Слот памяти | Описание                                                                                                   | Размер (в ячейках) | Способ активации                           |
+|:-------------:|:-----------:|:----------------------------------------------------------------------------------------------------------:|:------------------:|:------------------------------------------:|
+| -             | СТАЛОПХАСИН | +1 к здоровью, +1 к урону, прийдя на сражение со Сталопхой с данным слотом памяти, он будет побеждён сразу | 5                  | Пройти уровни КАЖДОГО члена первого отряда |
+|               |             |                                                                                                            |                    |                                            |
+|               |             |                                                                                                            |                    |                                            |
+|               |             |                                                                                                            |                    |                                            |
+
+### Дополнительные предметы на уровнях
+
+На уровнях могут находиться "блоки дополнительного движения" при атаке которых игрок получит большой импульс движения в противоположную атаке сторону
+
+На уровнях могут находиться "вендинговые автоматы" трёх типов:
+
+1. Восстанавливающие здоровье игрока
+
+2. Восстанавливающие заряды энергии игрока
+
+3. Позволяющие открыть меню замены слотов памяти игрока
+
+На уровнях могут находиться "заброшенные компьютеры" с файлами, которые можно просмотреть в главном меню (файлы носят только сюжетный характер)
 
 # Параметры
 
@@ -263,7 +282,7 @@
 
 ### Трофеи
 
-При прохождении уровня за определенного героя на максимальном уровне сложности (т.е. после прохождения уровня за этого героя, следующий уровень - финальный) в меню игрок увидит статуэтку с данным персонажем.
+При прохождении уровня за определенного героя на ВСЕХ сложностях в меню игрок увидит статуэтку с данным персонажем.
 
 # Интерфейс
 
