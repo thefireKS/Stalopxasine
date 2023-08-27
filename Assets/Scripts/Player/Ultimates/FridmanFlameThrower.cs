@@ -10,7 +10,7 @@ public class FridmanFlameThrower : MonoBehaviour
     [SerializeField] private Transform attackPoint;
     [SerializeField] private GameObject flame;
     
-    private UltimateEnergy ue;
+    private PlayerUltimateSystem ue;
     private int currentAttacks = 0;
     private float attacksSpace = 0f;
 
@@ -18,7 +18,7 @@ public class FridmanFlameThrower : MonoBehaviour
 
     private void Start()
     {
-        ue = GetComponentInParent<UltimateEnergy>();
+        ue = GetComponentInParent<PlayerUltimateSystem>();
     }
 
     private void OnEnable()
