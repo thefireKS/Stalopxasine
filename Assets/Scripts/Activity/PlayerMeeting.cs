@@ -1,81 +1,148 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.U2D;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
+using UnityEngine.InputSystem;
 
 public class PlayerMeeting : MonoBehaviour
 {
-    private Animator anim;
-    private bool inZone=false;
+    [SerializeField] private string afkAnimName;
+    [SerializeField] private string GreetingAnimName;
+    
     public static bool DialogIsGoing=false;
 
-    public GameObject Ebutton;
-    public GameObject DialogWindow;
-    public GameObject FirstTextWindow;
+    [SerializeField] private GameObject DialogWindow;
+    [Space(10)] 
+    [SerializeField] private TextMeshProUGUI _dialogueText;
+    [SerializeField] private LocalizeStringEvent _localizeStringEvent;
+    [SerializeField] private LocalizedString[] replicas;
+
+    private Animator _animator;
+    private Camera mainCamera;
+    private PlayerControls _playerControls;
     
-    private Camera cam;
-    private float memcam;
+    private float originalCameraSize;
+    private bool inZone=false;
+    private int currentReplica = 0;
 
-    [SerializeField] 
-    private string afkAnimName;
+    private readonly float typingSpeed = 0.04f;
+    private GameObject player;
+    private Coroutine displayTextCoroutine;
 
-    [SerializeField] 
-    private string GreetingAnimName;
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+        _playerControls = PlayerInputHandler.playerControls;
+    }
 
     private void Start()
     {
-        cam = Camera.main;
-        anim = GetComponent<Animator>();
-        memcam = cam.orthographicSize;
+        mainCamera = Camera.main;
+        originalCameraSize = mainCamera.orthographicSize;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void CameraZoom()
-    {
-        if(cam.orthographicSize == memcam)
-            cam.orthographicSize = cam.orthographicSize / 2;
-        else
-            cam.orthographicSize = cam.orthographicSize * 2;
-    }
+    private void OnEnable() => _playerControls.Player.Interact.performed += DialogueInteraction;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnDisable() => _playerControls.Player.Interact.performed -= DialogueInteraction;
+
+    private void Update()
     {
-        if (other.CompareTag("Player"))
+        if(inZone && !DialogIsGoing)
+            _animator.Play(afkAnimName);
+    }
+
+    #region Dialogue System
+
+    private void DialogueInteraction(InputAction.CallbackContext context)
+    {
+        if (!inZone) return;
+
+        if (!DialogIsGoing)
         {
-            Ebutton.SetActive(true);
-            inZone = true;
+            DialogIsGoing = true;
+            _animator.Play(GreetingAnimName);
+            DialogWindow.SetActive(true);
+            _localizeStringEvent.StringReference = replicas[currentReplica];
+            displayTextCoroutine = StartCoroutine(DisplayLine());
+            CameraZoom();
         }
+        else
+        {
+            if (displayTextCoroutine != null)
+            {
+                StopCoroutine(displayTextCoroutine);
+                _dialogueText.maxVisibleCharacters = _dialogueText.text.Length;
+                displayTextCoroutine = null;
+                return;
+            }
+
+            currentReplica++;
+            if (currentReplica >= replicas.Length)
+                currentReplica = 0;
+
+            _localizeStringEvent.StringReference = replicas[currentReplica];
+            displayTextCoroutine = StartCoroutine(DisplayLine());
+        }
+    }
+
+    private IEnumerator DisplayLine()
+    {
+        _dialogueText.maxVisibleCharacters = 0;
+        
+        var isAddingRichTextTag = false;
+
+        foreach (var letter in _dialogueText.text.ToCharArray())
+        {
+            if (letter == '<' || isAddingRichTextTag) 
+            {
+                isAddingRichTextTag = true;
+                if (letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+                _dialogueText.maxVisibleCharacters++;
+            }
+            else
+            {
+                _dialogueText.maxVisibleCharacters++;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+        }
+
+        displayTextCoroutine = null;
     }
 
     public void DialogEnd()
     {
         DialogIsGoing = false;
-        Ebutton.SetActive(true);
         CameraZoom();
     }
-
-    private void Update()
+    
+    #endregion
+    
+    private void CameraZoom()
     {
-        if (Input.GetKeyDown("e") && inZone && !DialogIsGoing)
-        {
-            DialogIsGoing = true;
-            anim.Play(GreetingAnimName);
-            Ebutton.SetActive(false);
-            DialogWindow.SetActive(true);
-            FirstTextWindow.SetActive(true);
-            CameraZoom();
-        }
-        if(inZone && !DialogIsGoing)
-            anim.Play(afkAnimName);
+        if(mainCamera.orthographicSize == originalCameraSize)
+            mainCamera.orthographicSize /= 2;
+        else
+            mainCamera.orthographicSize *= 2;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject != player) return;
+        inZone = true;
+        _playerControls.Player.Attack.Disable();
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            inZone = false;
-            Ebutton.SetActive(false);
-            anim.Play(afkAnimName);
-        }
+        if (other.gameObject != player) return;
+        inZone = false;
+        _animator.Play(afkAnimName);
+        _playerControls.Player.Attack.Enable();
     }
 }

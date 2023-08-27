@@ -82,6 +82,8 @@ public class PlayerAttack : MonoBehaviour
 
     private IEnumerator Attack()
     {
+        if (PlayerMeeting.DialogIsGoing) yield break;
+        
         _playerController.actionState = PlayerController.ActionStates.Attacking;
         
         PerformAttack();
