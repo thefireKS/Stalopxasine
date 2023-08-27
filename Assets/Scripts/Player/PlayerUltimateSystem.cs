@@ -1,52 +1,56 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class UltimateEnergy : MonoBehaviour
+public class PlayerUltimateSystem : MonoBehaviour
 {
     public PlayerData Data;
     private Animator anim;
     private Rigidbody2D rb2d;
-    private PlayerController plc;
+    private PlayerControls _playerControls;
     [SerializeField] private GameObject ultimateAbility;
     
     private int Energy = 1;
     [HideInInspector] public bool canEndEarlier = false;
     
-    private int FullEnergy = 4;
+    private int FullEnergy = 1;
     private float ultimateTime;
     private bool currentUltimateExists;
 
     private float realTimeElapsed = 0f;
 
     public static Action<int, int> OnEnergyChanged;
+    private void Awake()
+    {
+        _playerControls = PlayerInputHandler.playerControls;
+        anim = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
+    }
+
     private void Start()
     {
         ultimateTime = Data.ultimateTime;
         FullEnergy = Data.fullEnergy;
         
         OnEnergyChanged?.Invoke(Energy, FullEnergy);
-        plc = GetComponent<PlayerController>();
-        anim = GetComponent<Animator>();
-        rb2d = GetComponent<Rigidbody2D>();
     }
-    
-    private void OnEnable() => EnemyHP.GiveEnergy += SetEnergy;
-    private void OnDisable() => EnemyHP.GiveEnergy -= SetEnergy;
+
+    private void OnEnable()
+    {
+        EnemyHP.GiveEnergy += SetEnergy;
+        _playerControls.Player.UltimateSkill.started += StartUltimate;
+    }
+
+    private void OnDisable()
+    {
+        EnemyHP.GiveEnergy -= SetEnergy;
+        _playerControls.Player.UltimateSkill.started -= StartUltimate;
+    }
 
     private void Update()
     {
         if (currentUltimateExists)
             UltimateChecks();
-        
-        if (Energy == FullEnergy)
-        {
-            if (Input.GetKeyDown("x")&&!PlayerMeeting.DialogIsGoing&&!currentUltimateExists)
-            {
-                Energy = 0;
-                OnEnergyChanged?.Invoke(Energy, FullEnergy);
-                StartUltimate();
-            }
-        }
     }
     private void SetEnergy()
     {
@@ -58,17 +62,21 @@ public class UltimateEnergy : MonoBehaviour
         OnEnergyChanged?.Invoke(Energy, FullEnergy);
     }
 
-    private void StartUltimate()
+    private void StartUltimate(InputAction.CallbackContext context)
     {
-        Debug.Log("Ult called");
+        if (Energy < FullEnergy || PlayerMeeting.DialogIsGoing || currentUltimateExists) return;
+        
+        OnEnergyChanged?.Invoke(Energy = 0, FullEnergy);
+        
+        Debug.Log(Energy);
         anim.SetBool("isUlting",true);
         rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
-        plc.enabled = false;
+        _playerControls.Player.Disable();
     }
 
-    public void EnableQuickTimeEvent()
+    public void EnableQuickTimeEvent() //Used in UltimateStart animation
     {
-        if(currentUltimateExists) return;
+        //if(currentUltimateExists) return;
         Debug.Log("QTE enabled");
         currentUltimateExists = true;
         realTimeElapsed = 0f;
@@ -84,7 +92,6 @@ public class UltimateEnergy : MonoBehaviour
         if (realTimeElapsed > ultimateTime || canEndEarlier)
         {
             EndUltimate();
-            Debug.Log("Earlyend was called");
         }
     }
 
@@ -93,9 +100,13 @@ public class UltimateEnergy : MonoBehaviour
         Debug.Log("End");
         Time.timeScale = 1f;
         anim.SetBool("isUlting",false);
+    }
+
+    public void DisableQuickTimeEvent() //Used in UltimateEnd animation
+    {
         ultimateAbility.gameObject.SetActive(false);
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
-        plc.enabled = true;
+        _playerControls.Player.Enable();
         Cursor.visible = true;
         canEndEarlier = false;
         currentUltimateExists = false;

@@ -7,7 +7,7 @@ public class VisemanSoulGirl : MonoBehaviour
     public int possibleAttacks = 3;
     [SerializeField] private GameObject swingAttack;
     
-    private UltimateEnergy ue;
+    private PlayerUltimateSystem ue;
     
     private int currentAttacks = 0;
     private float attacksSpace = 0f;
@@ -17,7 +17,7 @@ public class VisemanSoulGirl : MonoBehaviour
     private float oldCamSize;
     private void Start()
     {
-        ue = GetComponentInParent<UltimateEnergy>();
+        ue = GetComponentInParent<PlayerUltimateSystem>();
     }
     
     private void OnEnable()

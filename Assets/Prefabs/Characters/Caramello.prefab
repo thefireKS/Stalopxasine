@@ -529,6 +529,7 @@ MonoBehaviour:
     m_Bits: 256
   groundCheckR: {fileID: 1611112672819256079}
   groundCheckL: {fileID: 1611112673770953661}
+  actionState: 0
 --- !u!114 &1699310878529221024
 MonoBehaviour:
   m_ObjectHideFlags: 0

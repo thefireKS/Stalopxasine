@@ -10,7 +10,7 @@ public class fireKSWall : MonoBehaviour
     [SerializeField] private GameObject ultimateWall;
     [SerializeField] private SpriteRenderer sr;
     
-    private UltimateEnergy ue;
+    private PlayerUltimateSystem ue;
 
     private float height = Screen.height;
     private float width = Screen.width;
@@ -31,7 +31,7 @@ public class fireKSWall : MonoBehaviour
     private void Start()
     {
         //parentPosition = GetComponentInParent<Transform>();
-        ue = GetComponentInParent<UltimateEnergy>();
+        ue = GetComponentInParent<PlayerUltimateSystem>();
     }
     private void OnEnable()
     {

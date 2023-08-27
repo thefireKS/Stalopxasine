@@ -8,7 +8,7 @@ public class CaramelloHolyAura : MonoBehaviour
     [SerializeField] private GameObject tipCanvas;
     [SerializeField] private GameObject mouseTrail;
     private Animator anim;
-    private UltimateEnergy ue;
+    private PlayerUltimateSystem ue;
 
     private float width = Screen.width;
     private bool nextLeft;
@@ -20,7 +20,7 @@ public class CaramelloHolyAura : MonoBehaviour
     public static event Action ChangeSide;
     private void Start()
     {
-        ue = GetComponentInParent<UltimateEnergy>();
+        ue = GetComponentInParent<PlayerUltimateSystem>();
         anim = GetComponent<Animator>();
     }
 

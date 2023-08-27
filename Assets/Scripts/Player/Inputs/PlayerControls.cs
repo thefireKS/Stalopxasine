@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UltimateSkill"",
+                    ""type"": ""Button"",
+                    ""id"": ""458c0e94-9154-44d8-90c3-222ee6ca0935"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -295,6 +304,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""AutoAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e3f4439-ebe1-43cd-96ab-25c5a496fd53"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UltimateSkill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""228b3d95-eea0-4049-8372-e4016b350dc4"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UltimateSkill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -319,6 +350,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_AutoAttack = m_Player.FindAction("AutoAttack", throwIfNotFound: true);
+        m_Player_UltimateSkill = m_Player.FindAction("UltimateSkill", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -384,6 +416,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_AutoAttack;
+    private readonly InputAction m_Player_UltimateSkill;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -392,6 +425,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @AutoAttack => m_Wrapper.m_Player_AutoAttack;
+        public InputAction @UltimateSkill => m_Wrapper.m_Player_UltimateSkill;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -413,6 +447,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AutoAttack.started += instance.OnAutoAttack;
             @AutoAttack.performed += instance.OnAutoAttack;
             @AutoAttack.canceled += instance.OnAutoAttack;
+            @UltimateSkill.started += instance.OnUltimateSkill;
+            @UltimateSkill.performed += instance.OnUltimateSkill;
+            @UltimateSkill.canceled += instance.OnUltimateSkill;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -429,6 +466,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AutoAttack.started -= instance.OnAutoAttack;
             @AutoAttack.performed -= instance.OnAutoAttack;
             @AutoAttack.canceled -= instance.OnAutoAttack;
+            @UltimateSkill.started -= instance.OnUltimateSkill;
+            @UltimateSkill.performed -= instance.OnUltimateSkill;
+            @UltimateSkill.canceled -= instance.OnUltimateSkill;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -461,5 +501,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnAutoAttack(InputAction.CallbackContext context);
+        void OnUltimateSkill(InputAction.CallbackContext context);
     }
 }
