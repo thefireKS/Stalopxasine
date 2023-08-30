@@ -359,6 +359,188 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Ultimates"",
+            ""id"": ""7b98ee17-c303-426e-8b45-6e4382489def"",
+            ""actions"": [
+                {
+                    ""name"": ""HolyAura"",
+                    ""type"": ""Value"",
+                    ""id"": ""cdbbe370-83f7-4c0a-ae3c-bc7a377e2e22"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""3a4c57aa-1989-4dc5-851e-2b5acf432014"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""469bfb0f-5714-4157-acf2-199b4cc7972a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""9af366f5-b17f-46e5-9bb3-0e90ea4a7660"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""bc07295c-e425-4287-8b9d-f872c05aa188"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""058d43a8-33d6-411d-bbe3-352700119b16"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""D-Pad"",
+                    ""id"": ""4083642d-752f-495a-93bc-dcf387749fab"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d80cb608-a0ec-45c1-a0c3-0be772228cc3"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""47b65d38-cd7e-4bcc-b576-d1efe82b6d4c"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9ca44d00-c54f-4cb2-8722-4db9ae2d1762"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""091cda18-b28d-4b86-8b0f-07e8bd334d4d"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""id"": ""18b96038-0303-4b32-8519-fe002233fad8"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""b2db4d02-e019-4a0e-9bc0-c50238483e26"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c53c9e21-01ca-49d0-9d97-b2087bc0c210"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""339bdf90-2320-4e2a-b495-94143c565c91"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""2e90e668-1690-4435-928d-c0c8bc0bb884"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HolyAura"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -383,6 +565,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_AutoAttack = m_Player.FindAction("AutoAttack", throwIfNotFound: true);
         m_Player_UltimateSkill = m_Player.FindAction("UltimateSkill", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        // Ultimates
+        m_Ultimates = asset.FindActionMap("Ultimates", throwIfNotFound: true);
+        m_Ultimates_HolyAura = m_Ultimates.FindAction("HolyAura", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -526,6 +711,52 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Ultimates
+    private readonly InputActionMap m_Ultimates;
+    private List<IUltimatesActions> m_UltimatesActionsCallbackInterfaces = new List<IUltimatesActions>();
+    private readonly InputAction m_Ultimates_HolyAura;
+    public struct UltimatesActions
+    {
+        private @PlayerControls m_Wrapper;
+        public UltimatesActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @HolyAura => m_Wrapper.m_Ultimates_HolyAura;
+        public InputActionMap Get() { return m_Wrapper.m_Ultimates; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UltimatesActions set) { return set.Get(); }
+        public void AddCallbacks(IUltimatesActions instance)
+        {
+            if (instance == null || m_Wrapper.m_UltimatesActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_UltimatesActionsCallbackInterfaces.Add(instance);
+            @HolyAura.started += instance.OnHolyAura;
+            @HolyAura.performed += instance.OnHolyAura;
+            @HolyAura.canceled += instance.OnHolyAura;
+        }
+
+        private void UnregisterCallbacks(IUltimatesActions instance)
+        {
+            @HolyAura.started -= instance.OnHolyAura;
+            @HolyAura.performed -= instance.OnHolyAura;
+            @HolyAura.canceled -= instance.OnHolyAura;
+        }
+
+        public void RemoveCallbacks(IUltimatesActions instance)
+        {
+            if (m_Wrapper.m_UltimatesActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IUltimatesActions instance)
+        {
+            foreach (var item in m_Wrapper.m_UltimatesActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_UltimatesActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public UltimatesActions @Ultimates => new UltimatesActions(this);
     private int m_NewcontrolschemeSchemeIndex = -1;
     public InputControlScheme NewcontrolschemeScheme
     {
@@ -543,5 +774,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnAutoAttack(InputAction.CallbackContext context);
         void OnUltimateSkill(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IUltimatesActions
+    {
+        void OnHolyAura(InputAction.CallbackContext context);
     }
 }

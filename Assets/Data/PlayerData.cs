@@ -15,11 +15,13 @@ public class PlayerData : ScriptableObject
     public float attackForceScale = 0.6f;
     public int possibleAttacks = 1;
     public GameObject bullet;
-
+/*
     [Header("Ultimate")] 
     public int fullEnergy = 4;
     public float ultimateTime = 8f;
-
+*/
+    public GameObject ultimateObject;
+    
     [Header("Movement")]
     public float speed;
     public float acceleration;
@@ -37,6 +39,7 @@ public class PlayerData : ScriptableObject
     public GameObject Spawn(Transform transform)
     {
         GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
+        Instantiate(ultimateObject, obj.transform);
         return obj;
     }
 }
