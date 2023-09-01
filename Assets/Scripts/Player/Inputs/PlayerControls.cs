@@ -372,6 +372,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PixelWall"",
+                    ""type"": ""Value"",
+                    ""id"": ""49683f40-c089-4f13-ae14-fc2af219f341"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -539,6 +548,171 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""HolyAura"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""id"": ""2212e548-6db6-4ee3-8e55-27f1e97ffc4c"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""ec7e258c-7778-4c30-869d-508a94582d6d"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""953456bf-5c24-4036-afb5-474e83f2234f"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""2173a463-1a98-41a5-b89b-180b3832edb8"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4fc55233-e74c-4e59-8852-cac079a7c8ba"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""D-Pad"",
+                    ""id"": ""e9b23130-8f36-458d-a8f6-307647a44d20"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""7a2a7fef-b8d0-4242-ae46-3724c3c9ce5d"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""92d46293-84e9-4c89-95f9-ac862a8329a2"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""4b21bb69-52ab-4f3a-9d62-e3b92ce6bf29"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""4111fbe2-e3a0-461e-a98f-2e9c8209e0f9"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""d535594a-509f-4f91-9e2d-0ce977ae1340"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8d9aa4b9-def4-4a99-9a29-0bf048d54f4f"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""b8b709df-814a-4878-a217-ce608492a101"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""29fa1b61-2b60-4a70-bcfd-514e9be56a26"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""13443176-bc64-459a-8e24-075f0a077e03"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PixelWall"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -568,6 +742,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Ultimates
         m_Ultimates = asset.FindActionMap("Ultimates", throwIfNotFound: true);
         m_Ultimates_HolyAura = m_Ultimates.FindAction("HolyAura", throwIfNotFound: true);
+        m_Ultimates_PixelWall = m_Ultimates.FindAction("PixelWall", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -716,11 +891,13 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Ultimates;
     private List<IUltimatesActions> m_UltimatesActionsCallbackInterfaces = new List<IUltimatesActions>();
     private readonly InputAction m_Ultimates_HolyAura;
+    private readonly InputAction m_Ultimates_PixelWall;
     public struct UltimatesActions
     {
         private @PlayerControls m_Wrapper;
         public UltimatesActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @HolyAura => m_Wrapper.m_Ultimates_HolyAura;
+        public InputAction @PixelWall => m_Wrapper.m_Ultimates_PixelWall;
         public InputActionMap Get() { return m_Wrapper.m_Ultimates; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -733,6 +910,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @HolyAura.started += instance.OnHolyAura;
             @HolyAura.performed += instance.OnHolyAura;
             @HolyAura.canceled += instance.OnHolyAura;
+            @PixelWall.started += instance.OnPixelWall;
+            @PixelWall.performed += instance.OnPixelWall;
+            @PixelWall.canceled += instance.OnPixelWall;
         }
 
         private void UnregisterCallbacks(IUltimatesActions instance)
@@ -740,6 +920,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @HolyAura.started -= instance.OnHolyAura;
             @HolyAura.performed -= instance.OnHolyAura;
             @HolyAura.canceled -= instance.OnHolyAura;
+            @PixelWall.started -= instance.OnPixelWall;
+            @PixelWall.performed -= instance.OnPixelWall;
+            @PixelWall.canceled -= instance.OnPixelWall;
         }
 
         public void RemoveCallbacks(IUltimatesActions instance)
@@ -778,5 +961,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IUltimatesActions
     {
         void OnHolyAura(InputAction.CallbackContext context);
+        void OnPixelWall(InputAction.CallbackContext context);
     }
 }

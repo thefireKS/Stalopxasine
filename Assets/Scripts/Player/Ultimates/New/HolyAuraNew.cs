@@ -5,7 +5,7 @@ using UnityEngine;
 public class HolyAuraNew : UltimateAbility
 {
     [SerializeField] private Animator auraAnimator;
-    [SerializeField] private int maximumUltimateSize = 7;
+    [SerializeField] private int maximumUltimateSize = 8;
 
     private int ultimateSize = 0;
 
@@ -38,8 +38,6 @@ public class HolyAuraNew : UltimateAbility
 
     public override void Activate()
     {
-        _playerControls.Ultimates.Enable();
-        
         ultimateSize = 0;
 
         _playerAnimator.SetBool("isUlting",true);
@@ -62,7 +60,7 @@ public class HolyAuraNew : UltimateAbility
     {
         Time.timeScale = 1f;
         _playerAnimator.SetBool("isUlting",false);
-        yield return new WaitForSeconds(0.875f);
+        yield return new WaitForSeconds(0.875f); //default animation length
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         _playerControls.Player.Enable();
         _playerControls.Ultimates.Disable();
@@ -82,12 +80,9 @@ public class HolyAuraNew : UltimateAbility
             ultimateSize++;
         
         auraAnimator.SetInteger("ultimateSize",ultimateSize);
-        
-        Debug.Log(ultimateSize);
 
         if (ultimateSize < maximumUltimateSize) return;
         
-        Debug.Log("faststop");
         StopCoroutine(currentAuraCoroutine);
         StartCoroutine(Deactivate());
     }

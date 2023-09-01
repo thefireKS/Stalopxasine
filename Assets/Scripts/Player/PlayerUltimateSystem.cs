@@ -23,20 +23,21 @@ public class PlayerUltimateSystem : MonoBehaviour
     private void Awake()
     {
         _playerControls = PlayerInputHandler.playerControls;
+        _playerControls.Ultimates.Disable();
     }
 
     private void OnEnable()
     {
         EnemyHP.GiveEnergy += SetEnergy;
         _playerControls.Player.UltimateSkill.started += StartUltimate;
-
-        
     }
 
     private void Start()
     {
         _ultimateAbility = GetComponentInChildren<UltimateAbility>();
         fullEnergy = _ultimateAbility.fullEnergy;
+        
+        Debug.Log(_ultimateAbility);
         
         _ultimateAbility.Initialize();
         SetEnergy(currentEnergy);
