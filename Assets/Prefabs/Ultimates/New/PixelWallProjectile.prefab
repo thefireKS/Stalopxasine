@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 9054775430781870857}
   - component: {fileID: 1840937089089426322}
   m_Layer: 9
-  m_Name: fireKS Ultimate Wall
+  m_Name: PixelWallProjectile
   m_TagString: UltimateHitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
