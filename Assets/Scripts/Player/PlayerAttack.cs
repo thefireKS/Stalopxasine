@@ -67,7 +67,7 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
         var bullet = Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
-        bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
+        //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
     
     private void PerformAttack(InputAction.CallbackContext context)
@@ -77,7 +77,7 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
         var bullet = Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
-        bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
+        //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
 
     private IEnumerator Attack()
@@ -113,7 +113,7 @@ public class PlayerAttack : MonoBehaviour
         var coefficient = Mathf.Round(angle.z / 45);
         */
 
-        //Debug.Log(angle);
+        Debug.Log(angle);
 
         var inputVector = context.ReadValue<Vector2>();
         

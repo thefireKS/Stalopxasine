@@ -13,6 +13,7 @@ public class BulletFly : MonoBehaviour
     private void Start()
     {
         _animator = GetComponentInChildren<Animator>();
+        _animator?.SetFloat("Angle", transform.eulerAngles.z % 5 == 0 ? 0 : 1);
     }
 
     private void Update()

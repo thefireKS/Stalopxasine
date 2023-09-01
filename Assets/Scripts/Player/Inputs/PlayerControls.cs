@@ -381,6 +381,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SoulGirl"",
+                    ""type"": ""Value"",
+                    ""id"": ""c07c045e-990d-4298-ae78-bdad808c1f32"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SoulGirlAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""335a0a02-4b31-474a-9ffd-070599d4131a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -713,6 +731,193 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""PixelWall"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""69ed094b-e4e6-4755-8b2a-9e16ab54be69"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f644f34d-b326-406b-8c5a-3778d9d734d0"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""78e226fe-5c31-412c-980b-3ea1ebaa704c"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8e0ac51f-b9ec-4a9e-9947-eb34472d15ef"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""369515a4-99f6-4dc8-b52b-ccef1aab3e89"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""D-Pad"",
+                    ""id"": ""572bdecf-53d2-4cc2-b498-010ed36b4294"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c07af020-ee1c-4c2b-82ee-010ac14680b6"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""777ce3e9-ad72-483a-83fc-cfec67c9e546"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""9e609426-3d4e-4173-9933-628e514acfc5"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""639f0f21-6861-4ca7-b0ad-d0b714db8d93"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Joystick"",
+                    ""id"": ""aa66fb0a-a8b2-46e0-aea9-180949029af7"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a84003e7-5bd0-4d32-adb0-1df10d05908e"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""a7e465ad-0582-4b76-9a71-6acf080cc6d4"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""7f858960-8600-4c3f-a11c-3b53457f4689"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""49b6fcd8-af05-4821-8b22-d78de14fee63"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirl"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a415f99e-8661-4881-951a-cb1b63196006"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirlAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6152a3a8-ca4d-45b4-86db-9ba14a2df11c"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SoulGirlAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -743,6 +948,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Ultimates = asset.FindActionMap("Ultimates", throwIfNotFound: true);
         m_Ultimates_HolyAura = m_Ultimates.FindAction("HolyAura", throwIfNotFound: true);
         m_Ultimates_PixelWall = m_Ultimates.FindAction("PixelWall", throwIfNotFound: true);
+        m_Ultimates_SoulGirl = m_Ultimates.FindAction("SoulGirl", throwIfNotFound: true);
+        m_Ultimates_SoulGirlAttack = m_Ultimates.FindAction("SoulGirlAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -892,12 +1099,16 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private List<IUltimatesActions> m_UltimatesActionsCallbackInterfaces = new List<IUltimatesActions>();
     private readonly InputAction m_Ultimates_HolyAura;
     private readonly InputAction m_Ultimates_PixelWall;
+    private readonly InputAction m_Ultimates_SoulGirl;
+    private readonly InputAction m_Ultimates_SoulGirlAttack;
     public struct UltimatesActions
     {
         private @PlayerControls m_Wrapper;
         public UltimatesActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @HolyAura => m_Wrapper.m_Ultimates_HolyAura;
         public InputAction @PixelWall => m_Wrapper.m_Ultimates_PixelWall;
+        public InputAction @SoulGirl => m_Wrapper.m_Ultimates_SoulGirl;
+        public InputAction @SoulGirlAttack => m_Wrapper.m_Ultimates_SoulGirlAttack;
         public InputActionMap Get() { return m_Wrapper.m_Ultimates; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -913,6 +1124,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @PixelWall.started += instance.OnPixelWall;
             @PixelWall.performed += instance.OnPixelWall;
             @PixelWall.canceled += instance.OnPixelWall;
+            @SoulGirl.started += instance.OnSoulGirl;
+            @SoulGirl.performed += instance.OnSoulGirl;
+            @SoulGirl.canceled += instance.OnSoulGirl;
+            @SoulGirlAttack.started += instance.OnSoulGirlAttack;
+            @SoulGirlAttack.performed += instance.OnSoulGirlAttack;
+            @SoulGirlAttack.canceled += instance.OnSoulGirlAttack;
         }
 
         private void UnregisterCallbacks(IUltimatesActions instance)
@@ -923,6 +1140,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @PixelWall.started -= instance.OnPixelWall;
             @PixelWall.performed -= instance.OnPixelWall;
             @PixelWall.canceled -= instance.OnPixelWall;
+            @SoulGirl.started -= instance.OnSoulGirl;
+            @SoulGirl.performed -= instance.OnSoulGirl;
+            @SoulGirl.canceled -= instance.OnSoulGirl;
+            @SoulGirlAttack.started -= instance.OnSoulGirlAttack;
+            @SoulGirlAttack.performed -= instance.OnSoulGirlAttack;
+            @SoulGirlAttack.canceled -= instance.OnSoulGirlAttack;
         }
 
         public void RemoveCallbacks(IUltimatesActions instance)
@@ -962,5 +1185,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     {
         void OnHolyAura(InputAction.CallbackContext context);
         void OnPixelWall(InputAction.CallbackContext context);
+        void OnSoulGirl(InputAction.CallbackContext context);
+        void OnSoulGirlAttack(InputAction.CallbackContext context);
     }
 }
