@@ -112,9 +112,6 @@ public class PlayerAttack : MonoBehaviour
         var angle = new Vector3(0, 0, Vector3.SignedAngle(Vector3.right, mouseDirection, Vector3.forward));
         var coefficient = Mathf.Round(angle.z / 45);
         */
-
-        Debug.Log(angle);
-
         var inputVector = context.ReadValue<Vector2>();
         
         //if (inputAttack.magnitude >= 0)

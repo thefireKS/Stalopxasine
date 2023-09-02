@@ -10,8 +10,9 @@ public class BulletFly : MonoBehaviour
 
     private Animator _animator;
 
-    private void Start()
+    private void OnEnable()
     {
+        Debug.Log(transform.eulerAngles.z);
         _animator = GetComponentInChildren<Animator>();
         _animator?.SetFloat("Angle", transform.eulerAngles.z % 5 == 0 ? 0 : 1);
     }
