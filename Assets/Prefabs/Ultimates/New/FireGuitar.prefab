@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4607136295363533566}
-  - component: {fileID: 7482589164990825764}
+  - component: {fileID: 7469189380102929416}
   m_Layer: 0
-  m_Name: PixelWall
+  m_Name: FireGuitar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7482589164990825764
+--- !u!114 &7469189380102929416
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,13 +41,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3555862907523863139}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 729f933b4ca1c664682b88cbeaccb68b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e44758087bc9c04eaa8c3c0a1555759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullEnergy: 4
-  ultimateEventTime: 3
-  wallObject: {fileID: 3356064313509271090, guid: a0da02f2bfcdf78438053252f8dc1324,
+  fullEnergy: 1
+  ultimateEventTime: 8
+  fireGuitar: {fileID: 443269489176464486, guid: 4ff1d9e4ac64b9e44b7ee55ea385ec8f,
     type: 3}
-  wallProjectileFlyingTime: 3
-  wallProjectileSpeed: 5
-  maximumUltimateSize: 8
+  fireGuitarSpeed: 5
+  fireGuitarProjectile: {fileID: 1123760533343461035, guid: 45179ce44fda5934b9a2eb1bd8147ba5,
+    type: 3}
+  fireGuitarAttackCooldown: 0.5
+  fireGuitarMaximumAttackCount: 6

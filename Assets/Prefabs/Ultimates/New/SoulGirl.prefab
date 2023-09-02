@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69c7fb7a4d533da4085688375ce0bf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullEnergy: 1
+  fullEnergy: 4
   ultimateEventTime: 8
   soulGirlObject: {fileID: 5059600372363778621, guid: 9557140a9d9e0314eab232b1f61eef5e,
     type: 3}

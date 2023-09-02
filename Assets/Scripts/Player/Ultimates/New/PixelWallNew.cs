@@ -118,8 +118,7 @@ public class PixelWallNew : UltimateAbility
         }
         
         cachedWallObject.transform.position = new Vector3(positionX,_parentTransform.position.y);
-
-        Debug.Log($"isWallTurnedLeft: {isWallTurnedLeft}");
+        
         var angleZ = isWallTurnedLeft ? 180f : 0f;
         
         cachedWallObject.transform.rotation = Quaternion.Euler(0, 0, angleZ);

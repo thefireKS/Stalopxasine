@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Linq;
 using Cinemachine;
 using Unity.Mathematics;
 using UnityEngine;
@@ -32,15 +30,11 @@ public class SoulGirlNew : UltimateAbility
     private void OnEnable()
     {
         _playerControls = PlayerInputHandler.playerControls;
-        //_playerControls.Ultimates.SoulGirl.started += SoulGirlMovement;
-        //_playerControls.Ultimates.SoulGirl.performed += SoulGirlMovement;
         _playerControls.Ultimates.SoulGirlAttack.performed += SoulGirlAttack;
     }
 
     private void OnDisable()
     {
-        //_playerControls.Ultimates.SoulGirl.started -= SoulGirlMovement;
-        //_playerControls.Ultimates.SoulGirl.performed -= SoulGirlMovement;
         _playerControls.Ultimates.SoulGirlAttack.performed -= SoulGirlAttack;
     }
 
@@ -52,7 +46,7 @@ public class SoulGirlNew : UltimateAbility
         if (Camera.main != null) _cinemachineMainVirtualCamera = Camera.main.GetComponent<CinemachineVirtualCamera>();
         _playerFollow = transform;
 
-        cachedSoulGirlObject = Instantiate(soulGirlObject, transform.position, quaternion.identity);
+        cachedSoulGirlObject = Instantiate(soulGirlObject, transform.position, Quaternion.identity);
 
         soulGirlSpriteRenderer = cachedSoulGirlObject.GetComponent<SpriteRenderer>();
         soulGirlAttackPositions = cachedSoulGirlObject.GetComponentsInChildren<Transform>()[1..5];
@@ -85,6 +79,8 @@ public class SoulGirlNew : UltimateAbility
 
     private IEnumerator Deactivate()
     {
+        if (soulGirlAttacksLeft == 0)
+            yield return new WaitForSecondsRealtime(soulGirlAttackCooldown);
         Time.timeScale = 1f;
         isAbleToMove = false;
         _cinemachineMainVirtualCamera.Follow = _playerFollow;
@@ -108,7 +104,12 @@ public class SoulGirlNew : UltimateAbility
         cachedSoulGirlObject.transform.position +=
             new Vector3(inputVector.x * soulGirlSpeed * Time.unscaledDeltaTime, inputVector.y * soulGirlSpeed * Time.unscaledDeltaTime);
 
-        soulGirlSpriteRenderer.flipX = inputVector.x < 0;
+        soulGirlSpriteRenderer.flipX = inputVector.x switch
+        {
+            < 0 => true,
+            > 0 => false,
+            _ => soulGirlSpriteRenderer.flipX
+        };
     }
     
     private void SoulGirlAttack(InputAction.CallbackContext context)
@@ -132,7 +133,7 @@ public class SoulGirlNew : UltimateAbility
             StartCoroutine(Deactivate());
         }
         
-        yield return new WaitForSeconds(soulGirlAttackCooldown);
+        yield return new WaitForSecondsRealtime(soulGirlAttackCooldown);
         cachedAttackCoroutine = null;
     }
 }

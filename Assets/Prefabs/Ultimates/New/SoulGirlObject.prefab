@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 957394666775655637}
   - component: {fileID: 695080573822767534}
   m_Layer: 9
-  m_Name: SoulGirlProjectile
+  m_Name: SoulGirlObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
