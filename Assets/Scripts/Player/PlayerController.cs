@@ -1,25 +1,62 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("References")]
-    [FormerlySerializedAs("data")]
-    public PlayerData Data;
     private PlayerAttack atck;
     // TODO: delete animator
     private Animator animator;
+
+    private float _speed;
+    public void SetSpeed(float speed)
+    {
+        this._speed = speed;
+    }
+
+    private float _acceleration;
+    public void SetAcceleration(float acceleration)
+    {
+        _acceleration = acceleration;
+    }
+
+    private float _deceleration;
+    public void SetDeceleration(float deceleration)
+    {
+        _deceleration = deceleration;
+    }
+
+    private float _jumpBufferTime;
+    public void SetJumpBufferTime(float jumpBufferTime)
+    {
+        _jumpBufferTime = jumpBufferTime;
+    }
+
+    private float _jumpForce;
+    public void SetJumpForce(float jumpForce)
+    {
+        _jumpForce = jumpForce;
+    }
+
+    private float _fallGravityMultiplier;
+    public void SetFallGravityMultiplier(float fallGravityMultiplier)
+    {
+        _fallGravityMultiplier = fallGravityMultiplier;
+    }
+
+    private float _jumpCoyoteTime;
+    public void SetJumpCoyoteTime(float jumpCoyoteTime)
+    {
+        _jumpCoyoteTime = jumpCoyoteTime;
+    }
     
     private Rigidbody2D _rb2d;
     private BoxCollider2D playerCollider;
     private SpriteRenderer sr;
     
     [Header("Collision Checkers")]
-    [SerializeField] private LayerMask layerMask;
-    // TODO: ground check with BB (BB - bounding box)
-    [SerializeField] private Transform groundCheckR, groundCheckL;
+    private LayerMask layerMask;
     private float rayDistance = 0.1f;
 
     private PlayerControls _playerControls;
@@ -64,7 +101,7 @@ public class PlayerController : MonoBehaviour
         Idle,
         Attacking
     }
-    public ActionStates actionState = ActionStates.Idle;
+    [HideInInspector] public ActionStates actionState = ActionStates.Idle;
     
     private void Awake()
     {
@@ -137,17 +174,22 @@ public class PlayerController : MonoBehaviour
         if (isDropping)
             StartCoroutine(DisableCollision());
     }
+
+    public void SetLayerMask(LayerMask layerMask)
+    {
+        this.layerMask = layerMask;
+    }
     
     private void Moving(Vector2 inputMovement)
     {
-        float targetSpeed = inputMovement.x * Data.speed;
+        float targetSpeed = inputMovement.x * _speed;
         float currentVelocity = _rb2d.velocity.x;
         if (targetSpeed * currentVelocity < 0)
         {
             _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
         }
 
-        var acc = Mathf.Approximately(targetSpeed, 0f) ? Data.deceleration : Data.acceleration;
+        var acc = Mathf.Approximately(targetSpeed, 0f) ? _deceleration : _acceleration;
         
         if (currentVelocity < targetSpeed)
         {
@@ -206,8 +248,13 @@ public class PlayerController : MonoBehaviour
     }
     private bool groundCheck()
     {
-        return Physics2D.Raycast(groundCheckR.position, Vector2.down, rayDistance,
-            layerMask.value) || Physics2D.Raycast(groundCheckL.position, Vector2.down, rayDistance,
+        var bounds = playerCollider.bounds;
+        Vector2 leftCorner = bounds.min;
+        Vector2 rightCorner = bounds.max;
+        rightCorner.y -= bounds.size.y;
+        
+        return Physics2D.Raycast(rightCorner, Vector2.down, rayDistance,
+            layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, rayDistance,
             layerMask.value);
     }
 
@@ -222,7 +269,7 @@ public class PlayerController : MonoBehaviour
 
     private void JumpStart(InputAction.CallbackContext context)
     {
-        bufferTimer = Data.jumpBufferTime;
+        bufferTimer = _jumpBufferTime;
 
         if (!groundCheck() && coyoteTimer < 0) return;
         coyoteTimer = 0;
@@ -236,7 +283,7 @@ public class PlayerController : MonoBehaviour
     private void AddJumpHeight()
     {
         bufferTimer -= Time.deltaTime;
-        _rb2d.velocity = new Vector2(_rb2d.velocity.x, Data.jumpForce);
+        _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
     }
 
     private void JumpEnd(InputAction.CallbackContext context)
@@ -292,7 +339,7 @@ public class PlayerController : MonoBehaviour
     }
     private void falling()
     {
-        _rb2d.gravityScale = gravityScale * Data.fallGravityMultiplier;
+        _rb2d.gravityScale = gravityScale * _fallGravityMultiplier;
         bufferTimer -= Time.deltaTime;
         coyoteTimer -= Time.deltaTime;
 
@@ -310,7 +357,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb2d.gravityScale = gravityScale;
         //attacksCounter = Data.possibleAttacks;
-        coyoteTimer = Data.jumpCoyoteTime;
+        coyoteTimer = _jumpCoyoteTime;
         
         if (groundCheck())
         {

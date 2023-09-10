@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 public class StartLevel : MonoBehaviour
 {
     public CharacterSelectionData data;
 
-    public void Awake()
+    /*public void Awake()
     {
         data.spawnedCharacter = data.selectedCharacter.Spawn(transform);
-    }
+    }*/
 }

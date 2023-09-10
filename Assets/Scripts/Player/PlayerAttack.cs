@@ -4,10 +4,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public PlayerData Data;
     [Space(10)]
-    [SerializeField] private Transform bulletPositionRotation;
-    [SerializeField] private Transform actualBulletPosition;
+    private Transform _bulletPositionRotation;
+    private Transform _actualBulletPosition;
+    public void SetBulletPositionAndRotation()
+    {
+        _bulletPositionRotation = GameObject.Find("Bullet Rotation").transform;
+        _actualBulletPosition = GameObject.Find("Bullet Position").transform;
+    }
+
+    private GameObject _bullet;
+    public void SetBullet(GameObject bullet)
+    {
+        _bullet = bullet;
+    }
+
+    private float _attackTime;
+
+    public void SetAttackTime(float attackTime)
+    {
+        _attackTime = attackTime;
+    }
     
     private Animator anim;
     //private SpriteRenderer sr;
@@ -66,7 +83,7 @@ public class PlayerAttack : MonoBehaviour
         
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
     
@@ -76,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
 
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(Data.bullet, actualBulletPosition.position, bulletPositionRotation.rotation);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
 
@@ -87,7 +104,7 @@ public class PlayerAttack : MonoBehaviour
         _playerController.actionState = PlayerController.ActionStates.Attacking;
         
         PerformAttack();
-        yield return new WaitForSeconds(Data.attackTime);
+        yield return new WaitForSeconds(_attackTime);
         _playerController.actionState = PlayerController.ActionStates.Idle;
     }
     
@@ -119,7 +136,7 @@ public class PlayerAttack : MonoBehaviour
         SetDirectionForAnimator(angle);
 
 
-        var bulletPositionTransform = bulletPositionRotation.transform;
+        var bulletPositionTransform = _bulletPositionRotation.transform;
         
         bulletPositionTransform.position = new Vector3(transform.position.x,transform.position.y, 0);
         bulletPositionTransform.localEulerAngles = new Vector3(0,0,angle);

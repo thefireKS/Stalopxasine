@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Animations;
+using UnityEngine;
 
 [CreateAssetMenu(menuName = "Game/Characters/Data")]
 public class PlayerData : ScriptableObject
 {
     [Header("Profile Data")]
-    public GameObject prefab;
+    public int maxHealth;
     public string sceneName;
     public Color color;
     public Sprite characterSprite;
+    public LayerMask layerMask;
+    public AnimatorController controller;
 
     [Header("Fighting")]
     public bool meleeAttack = true;
@@ -20,6 +23,7 @@ public class PlayerData : ScriptableObject
     public int fullEnergy = 4;
     public float ultimateTime = 8f;
 */
+
     public GameObject ultimateObject;
     
     [Header("Movement")]
@@ -36,10 +40,10 @@ public class PlayerData : ScriptableObject
     [Space(10)] 
     public float fallGravityMultiplier;
     
-    public GameObject Spawn(Transform transform)
+    /*public GameObject Spawn(Transform transform)
     {
         GameObject obj = Instantiate(prefab, transform.position, Quaternion.identity);
         Instantiate(ultimateObject, obj.transform);
         return obj;
-    }
+    }*/
 }

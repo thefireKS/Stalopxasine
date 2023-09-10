@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterHP : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     private Material matDamaged;
     private Material matDefault;
@@ -13,8 +13,12 @@ public class CharacterHP : MonoBehaviour
     
     private const float DamageCoolDown = 1f; //damage getting cd
     private float NextHitTime = 0; //timer to cd of damage
-    [SerializeField] private int HP;
-    [SerializeField] private int FullHP;
+    private int _currentHealth;
+    private int _maxHealth;
+    public void SetMaxHealth(int maxHealth)
+    {
+        _maxHealth = maxHealth;
+    }
 
     public static event Action<int> OnHealthChanged;
 
@@ -22,7 +26,8 @@ public class CharacterHP : MonoBehaviour
     
     private void Start()
     {
-        OnHealthChanged?.Invoke(FullHP);
+        GetMaxHealth();
+        OnHealthChanged?.Invoke(_maxHealth);
         plc = GetComponent<PlayerController>();
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
@@ -43,10 +48,10 @@ public class CharacterHP : MonoBehaviour
 
     private void Update()
     {
-        if (HP <= 0)
+        if (_currentHealth <= 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//restart
-        if (HP > FullHP)
-            HP = FullHP;
+        if (_currentHealth > _maxHealth)
+            _currentHealth = _maxHealth;
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -61,14 +66,14 @@ public class CharacterHP : MonoBehaviour
     }
     private void GetMaxHealth()
     {
-        HP = FullHP;
-        OnHealthChanged?.Invoke(HP);
+        _currentHealth = _maxHealth;
+        OnHealthChanged?.Invoke(_currentHealth);
     }
     
     private void GetZeroHealth()
     {
-        HP = 0;
-        OnHealthChanged?.Invoke(HP);
+        _currentHealth = 0;
+        OnHealthChanged?.Invoke(_currentHealth);
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -84,8 +89,8 @@ public class CharacterHP : MonoBehaviour
     }
     private IEnumerator GotDamaged()
     {
-        HP--;
-        OnHealthChanged?.Invoke(HP);
+        _currentHealth--;
+        OnHealthChanged?.Invoke(_currentHealth);
         anim.SetBool("isHitted",true);
         //rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.jumpForce/1.6f);
         /*sr.material = matDamaged;
