@@ -3287,8 +3287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec4b136aa50dc84fa4d6f19156944eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 4
-  FullHP: 4
 --- !u!4 &1485425355484739762
 Transform:
   m_ObjectHideFlags: 0
@@ -3372,7 +3370,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: a6407461e32edc845af38ec9956bc604, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3380,7 +3378,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1611112674086941309
@@ -3728,7 +3726,6 @@ GameObject:
   - component: {fileID: 1117200900808067618}
   - component: {fileID: 1592936516310350271}
   - component: {fileID: 7356442799378836547}
-  - component: {fileID: 5949419105623569811}
   - component: {fileID: 7420167261804722714}
   m_Layer: 9
   m_Name: Caramello
@@ -3757,19 +3754,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5949419105623569811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4952654730641299579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb15828eb31e21c49af5e3d973e51470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
 --- !u!4 &6954348800023942142
 Transform:
   m_ObjectHideFlags: 0
@@ -3816,7 +3800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86cebee15e87694e8149182dc207388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultimateAbility: {fileID: 0}
   canEndEarlier: 0
 --- !u!95 &7420167261804722714
 Animator:
@@ -3917,7 +3900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffb0246d728a874bbe71945a4af3ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterData: {fileID: 11400000, guid: 66f1e7b600e14ca4bbcbd414e0c01923, type: 2}
+  characterData: {fileID: 11400000, guid: 66f1e7b600e14ca4bbcbd414e0c01923, type: 2}
 --- !u!114 &8070927693474837018
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,16 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
   m_Name: Fridman
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3045586685101704632, guid: 6270cbb224c9c8d46b928b6863841179, type: 3}
+  maxHealth: 4
   sceneName: Fridman beggining
   color: {r: 0.70980394, g: 0.039215688, b: 0.1137255, a: 1}
   characterSprite: {fileID: 21300000, guid: 06e281722827be9418d26c9e12b99c2c, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  controller: {fileID: 9100000, guid: 53730c4a10b91e4489dc6aec90ead4f2, type: 2}
   meleeAttack: 0
   attackTime: 0.4
   attackForceScale: 0.6
   possibleAttacks: 1
   bullet: {fileID: 1123760533343461035, guid: 27aa5915d309fad43888c5fd25269b87, type: 3}
-  ultimateTime: 6
+  ultimateObject: {fileID: 3555862907523863139, guid: 557180cda0a79734f872b89a9a56181b,
+    type: 3}
   speed: 9
   acceleration: 20
   deceleration: 50
