@@ -28,15 +28,9 @@ namespace Player
         private Task InitializePlayerController(PlayerData playerData)
         {
             var playerController = gameObject.AddComponent<PlayerController>();
-            playerController.SetSpeed(playerData.speed);
-            playerController.SetAcceleration(playerData.acceleration);
-            playerController.SetDeceleration(playerData.deceleration);
-            playerController.SetJumpBufferTime(playerData.jumpBufferTime);
-            playerController.SetJumpForce(playerData.jumpForce);
-            playerController.SetFallGravityMultiplier(playerData.fallGravityMultiplier);
-            playerController.SetJumpCoyoteTime(playerData.jumpCoyoteTime);
-            
-            playerController.SetLayerMask(playerData.layerMask);
+
+            playerController.PlayerControllerInitialize(playerData.speed, playerData.jumpBufferTime, playerData.jumpForce, playerData.fallGravityMultiplier, playerData.jumpCoyoteTime, playerData.layerMask);
+
             Debug.Log("Initialize: Initialize PlayerController complete!");
             return Task.CompletedTask;
         }

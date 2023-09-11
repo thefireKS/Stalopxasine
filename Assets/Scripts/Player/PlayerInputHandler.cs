@@ -36,10 +36,4 @@ public class PlayerInputHandler : MonoBehaviour
         
         //_playerControls.Player.AutoAttack.started -= SwitchAuto;
     }
-
-    public Vector2 MoveInput()
-    {
-        //Debug.Log(playerControls.Player.Move.ReadValue<Vector2>());
-        return PlayerControls.Player.Move.ReadValue<Vector2>();
-    }
 }
