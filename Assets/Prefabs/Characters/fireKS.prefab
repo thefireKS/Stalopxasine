@@ -103,7 +103,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2291561091470381362}
   - component: {fileID: 2291561091470381361}
-  - component: {fileID: 2291561091470381366}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -180,27 +179,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2291561091470381366
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2291561091470381360}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac21280677e92f54aa63ae2a9e699644, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4173956509348176820
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,6 +227,7 @@ GameObject:
   - component: {fileID: 5112237390209053743}
   - component: {fileID: 85171882242208426}
   - component: {fileID: 4227066797836130055}
+  - component: {fileID: 4486906149725000464}
   m_Layer: 0
   m_Name: fireKS
   m_TagString: Player
@@ -357,8 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec4b136aa50dc84fa4d6f19156944eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
-  FullHP: 3
 --- !u!114 &4494203290640204243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,12 +348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce56b9d4bec1c4648ba2cd8e7ef1472d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: a081b1054a6d91f4dae79a09ff60064c, type: 2}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  groundCheckR: {fileID: 2291561090174320664}
-  groundCheckL: {fileID: 2291561091119464618}
   actionState: 0
 --- !u!114 &5112237390209053743
 MonoBehaviour:
@@ -390,9 +361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7acdef1f691d41a70a9651664f76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: a081b1054a6d91f4dae79a09ff60064c, type: 2}
-  bulletPositionRotation: {fileID: 4693720644435113344}
-  actualBulletPosition: {fileID: 7045775636019983057}
 --- !u!114 &85171882242208426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86cebee15e87694e8149182dc207388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultimateAbility: {fileID: 0}
   canEndEarlier: 0
 --- !u!114 &4227066797836130055
 MonoBehaviour:
@@ -420,3 +387,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
+--- !u!95 &4486906149725000464
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5943065303811168740}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac21280677e92f54aa63ae2a9e699644, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

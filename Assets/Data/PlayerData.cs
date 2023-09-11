@@ -10,7 +10,7 @@ public class PlayerData : ScriptableObject
     public Color color;
     public Sprite characterSprite;
     public LayerMask layerMask;
-    public AnimatorController controller;
+    public AnimatorOverrideController controller;
 
     [Header("Fighting")]
     public bool meleeAttack = true;

@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 6111922258600616197}
   - component: {fileID: 7058407985238748597}
   - component: {fileID: 5187843503557938093}
+  - component: {fileID: 454378740904723911}
   m_Layer: 0
   m_Name: Viseman
   m_TagString: Player
@@ -156,8 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec4b136aa50dc84fa4d6f19156944eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 4
-  FullHP: 4
 --- !u!114 &4985851986628420128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,12 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce56b9d4bec1c4648ba2cd8e7ef1472d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 339ad5951b8d1ea4eb6cf1f56ef2a0d8, type: 2}
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  groundCheckR: {fileID: 9080565011114001576}
-  groundCheckL: {fileID: 9080565010168562714}
   actionState: 0
 --- !u!114 &6111922258600616197
 MonoBehaviour:
@@ -189,9 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7acdef1f691d41a70a9651664f76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Data: {fileID: 11400000, guid: 339ad5951b8d1ea4eb6cf1f56ef2a0d8, type: 2}
-  bulletPositionRotation: {fileID: 3911410664036278509}
-  actualBulletPosition: {fileID: 754323570729661729}
 --- !u!114 &7058407985238748597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86cebee15e87694e8149182dc207388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultimateAbility: {fileID: 0}
   canEndEarlier: 0
 --- !u!114 &5187843503557938093
 MonoBehaviour:
@@ -219,6 +208,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
+--- !u!95 &454378740904723911
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151745410589795453}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe6d0f4b5e5a3d44d8de1ecb441e86e8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &837623222298175413
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +301,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9080565010883335554}
   - component: {fileID: 9080565010883335553}
-  - component: {fileID: 9080565010883335558}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -368,27 +377,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &9080565010883335558
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9080565010883335552}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fe6d0f4b5e5a3d44d8de1ecb441e86e8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9080565011114001559
 GameObject:
   m_ObjectHideFlags: 0
