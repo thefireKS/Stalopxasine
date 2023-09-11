@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AutoShooting : MonoBehaviour
 {
-    [SerializeField] private BulletFly bullet;
+    [SerializeField] private Projectile bullet;
     [SerializeField] private Transform BulletPosition;
     [SerializeField] private float AttackTime;
 
