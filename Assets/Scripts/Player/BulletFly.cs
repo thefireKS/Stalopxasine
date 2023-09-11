@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BulletFly : MonoBehaviour
 {
@@ -19,7 +16,7 @@ public class BulletFly : MonoBehaviour
 
     private void Update()
     {
-        transform.position += transform.right * speed * Time.deltaTime;
+        transform.position += transform.right * (speed * Time.deltaTime);
         Destroy(gameObject,seconds);
     }
     

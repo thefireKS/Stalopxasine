@@ -18,7 +18,7 @@ public class HolyAuraNew : UltimateAbility
 
     private void OnEnable()
     {
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
         _playerControls.Ultimates.HolyAura.started += AuraEvent;
         _playerControls.Ultimates.HolyAura.performed += AuraEvent;
     }

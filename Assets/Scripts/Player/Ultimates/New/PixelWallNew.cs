@@ -27,7 +27,7 @@ public class PixelWallNew : UltimateAbility
 
     private void OnEnable()
     {
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
         _playerControls.Ultimates.PixelWall.started += WallEvent;
         _playerControls.Ultimates.PixelWall.performed += WallEvent;
     }

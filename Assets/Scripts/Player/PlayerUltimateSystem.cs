@@ -27,7 +27,7 @@ public class PlayerUltimateSystem : MonoBehaviour
     public static Action<int, int> OnEnergyChanged;
     private void Awake()
     {
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
         _playerControls.Ultimates.Disable();
     }
 

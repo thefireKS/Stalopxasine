@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
 
         playerCollider = GetComponent<BoxCollider2D>();
         animator = GetComponentInChildren<Animator>();
@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
         //if (_autoFire) Attack();
         
         if (actionState != ActionStates.Attacking)
-            isDropping = moveY < 0 && currentOneWayPlatform != null && groundCheck();
+            isDropping = moveY < 0 && currentOneWayPlatform != null && GroundCheck();
         else
             isDropping = false;
         
@@ -183,27 +183,7 @@ public class PlayerController : MonoBehaviour
     private void Moving(Vector2 inputMovement)
     {
         float targetSpeed = inputMovement.x * _speed;
-        float currentVelocity = _rb2d.velocity.x;
-        if (targetSpeed * currentVelocity < 0)
-        {
-            _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
-        }
-
-        var acc = Mathf.Approximately(targetSpeed, 0f) ? _deceleration : _acceleration;
-        
-        if (currentVelocity < targetSpeed)
-        {
-            currentVelocity += acc * Time.fixedDeltaTime;
-            if (currentVelocity > targetSpeed)
-                currentVelocity = targetSpeed;
-        }
-        if (currentVelocity > targetSpeed)
-        {
-            currentVelocity -= acc * Time.fixedDeltaTime;
-            if (currentVelocity < targetSpeed) 
-                currentVelocity = targetSpeed;
-        }
-        _rb2d.velocity = new Vector2(currentVelocity, _rb2d.velocity.y);
+        _rb2d.velocity = new Vector2(targetSpeed, _rb2d.velocity.y);
     }
     private void ProcessInput()
     {
@@ -246,7 +226,7 @@ public class PlayerController : MonoBehaviour
         if (moveX != 0)
             sr.flipX = moveX < 0;
     }
-    private bool groundCheck()
+    private bool GroundCheck()
     {
         var bounds = playerCollider.bounds;
         Vector2 leftCorner = bounds.min;
@@ -271,7 +251,7 @@ public class PlayerController : MonoBehaviour
     {
         bufferTimer = _jumpBufferTime;
 
-        if (!groundCheck() && coyoteTimer < 0) return;
+        if (!GroundCheck() && coyoteTimer < 0) return;
         coyoteTimer = 0;
         if (bufferTimer < 0) return;
         
@@ -349,7 +329,7 @@ public class PlayerController : MonoBehaviour
             bufferTimer = 0f;
         }
 
-        if (groundCheck())
+        if (GroundCheck())
             movementState = MovementStates.Grounded;
     }
 
@@ -359,7 +339,7 @@ public class PlayerController : MonoBehaviour
         //attacksCounter = Data.possibleAttacks;
         coyoteTimer = _jumpCoyoteTime;
         
-        if (groundCheck())
+        if (GroundCheck())
         {
             if (bufferTimer > 0)
             {

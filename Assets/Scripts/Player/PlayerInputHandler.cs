@@ -1,17 +1,27 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerInputHandler : MonoBehaviour
 {
-    public static PlayerControls playerControls;
+    public static PlayerControls PlayerControls;
 
     private void Awake()
     {
-        playerControls = new PlayerControls();
-        playerControls.Enable();
+        PlayerControls = new PlayerControls();
+        PlayerControls.Enable();
+    }
+
+    public static event Action Interaction;
+
+    private void InvokeInteraction(InputAction.CallbackContext callbackContext)
+    {
+        Interaction?.Invoke();
     }
 
     private void OnEnable()
     {
+        PlayerControls.Player.Interact.performed += InvokeInteraction;
 
         //_playerControls.Player.Attack.started += Attack;
 
@@ -20,6 +30,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnDisable()
     {
+        PlayerControls.Player.Interact.performed -= InvokeInteraction;
 
         //_playerControls.Player.Attack.started -= Attack;
         
@@ -29,6 +40,6 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 MoveInput()
     {
         //Debug.Log(playerControls.Player.Move.ReadValue<Vector2>());
-        return playerControls.Player.Move.ReadValue<Vector2>();
+        return PlayerControls.Player.Move.ReadValue<Vector2>();
     }
 }

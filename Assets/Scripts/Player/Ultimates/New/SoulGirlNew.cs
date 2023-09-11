@@ -29,7 +29,7 @@ public class SoulGirlNew : UltimateAbility
 
     private void OnEnable()
     {
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
         _playerControls.Ultimates.SoulGirlAttack.performed += SoulGirlAttack;
     }
 

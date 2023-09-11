@@ -5,14 +5,15 @@ using UnityEngine;
 public class CharacterSelectionUI : MonoBehaviour
 {
     public CharacterSelectionData data;
-    private CharacterSelection[] selections;
+    private LevelSelection[] selections;
 
+    // TODO: снести нахуй
     public void Awake()
     {
-        selections = GetComponentsInChildren<CharacterSelection>();
+        selections = GetComponentsInChildren<LevelSelection>();
         for (int index = 0; index < data.characters.Length; index++)
         {
-            selections[index].Setup(data.characters[index],data);
+            //selections[index].Setup(data.characters[index],data);
         }
     }
 }

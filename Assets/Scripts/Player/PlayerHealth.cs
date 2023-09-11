@@ -5,14 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private Material matDamaged;
-    private Material matDefault;
-    private Rigidbody2D rb2d;
-    private PlayerController plc;
-    private Animator anim;
+    private Animator _animator;
     
     private const float DamageCoolDown = 1f; //damage getting cd
-    private float NextHitTime = 0; //timer to cd of damage
+    private float _nextHitTime; //timer to cd of damage
     private int _currentHealth;
     private int _maxHealth;
     public void SetMaxHealth(int maxHealth)
@@ -28,10 +24,7 @@ public class PlayerHealth : MonoBehaviour
     {
         GetMaxHealth();
         OnHealthChanged?.Invoke(_maxHealth);
-        plc = GetComponent<PlayerController>();
-        rb2d = GetComponent<Rigidbody2D>();
-        anim = GetComponentInChildren<Animator>();
-        matDamaged = Resources.Load("Damaged", typeof(Material)) as Material;
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void OnEnable()
@@ -46,21 +39,19 @@ public class PlayerHealth : MonoBehaviour
         Dieline.SetZeroHealth -= GetZeroHealth;
     }
 
-    private void Update()
+    private void CheckHealth()
     {
-        if (_currentHealth <= 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//restart
-        if (_currentHealth > _maxHealth)
-            _currentHealth = _maxHealth;
+        if (_currentHealth <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            if (Time.time >= NextHitTime)
+            if (Time.time >= _nextHitTime)
             {
                 StartCoroutine(GotDamaged());
-                NextHitTime = Time.time + DamageCoolDown;
+                _nextHitTime = Time.time + DamageCoolDown;
             }
         }
     }
@@ -80,26 +71,20 @@ public class PlayerHealth : MonoBehaviour
         if(collision.CompareTag("EnemyBullet"))
         {
             Destroy(collision.gameObject);
-            if (Time.time >= NextHitTime)
+            if (Time.time >= _nextHitTime)
             { 
                 StartCoroutine(GotDamaged()); 
-                NextHitTime = Time.time + DamageCoolDown;
+                _nextHitTime = Time.time + DamageCoolDown;
             }
         }
     }
     private IEnumerator GotDamaged()
     {
         _currentHealth--;
+        CheckHealth();
         OnHealthChanged?.Invoke(_currentHealth);
-        anim.SetBool("isHitted",true);
-        //rb2d.velocity = new Vector2(rb2d.velocity.x, plc.Data.jumpForce/1.6f);
-        /*sr.material = matDamaged;
+        _animator.SetBool("isHitted",true);
         yield return Blinking;
-        sr.material = matDefault;
-        yield return Blinking;
-        sr.material = matDamaged;*/
-        yield return Blinking;
-        //sr.material = matDefault;
-        anim.SetBool("isHitted",false);
+        _animator.SetBool("isHitted",false);
     }
 }

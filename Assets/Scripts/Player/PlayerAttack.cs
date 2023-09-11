@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
         //sr = GetComponentInChildren<SpriteRenderer>();
 
         _playerController = GetComponent<PlayerController>();
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
     }
 
     private void OnEnable()
@@ -83,7 +83,7 @@ public class PlayerAttack : MonoBehaviour
         
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation,transform);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
     
@@ -93,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
 
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation,transform);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
 
