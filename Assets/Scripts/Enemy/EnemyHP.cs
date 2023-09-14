@@ -37,20 +37,23 @@ public class EnemyHP : MonoBehaviour
         if(enemy!=null)
             enemy.enabled = true;
     }
-    
-    private void Start()
+
+    private void Awake()
     {
-        fullHP = HP;
-        HealthBar.SetMaxHealth(fullHP);
         enemy = GetComponent<Enemy>();
         enemyai = GetComponent<EnemyAI>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
+    private void Start()
+    {
+        fullHP = HP;
+        HealthBar.SetMaxHealth(fullHP);
+    }
+
     private void Update()
     {
-        HealthBar.SetHealth(HP);
-        if(HP<fullHP)
+        if (HP<fullHP)
             Bar.SetActive(true);
     }
 
@@ -86,11 +89,7 @@ public class EnemyHP : MonoBehaviour
             LevelLock.killedEnemies++;
             Destroy(gameObject);
         }
+
+        HealthBar.SetHealth(HP);
     }
-    /*private void Knockback(Transform attackedPosition)
-    {
-        var knockback = new Vector2(attackedPosition.position.x * knockbackScale * enemyai.speed /2 ,
-            attackedPosition.position.y * knockbackScale * enemyai.speed / 2);
-        rb2d.velocity = knockback;
-    } */
 }

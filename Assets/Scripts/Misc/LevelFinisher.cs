@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LevelFinisher : MonoBehaviour
 {
-    public CharacterSelectionData data;
+    //public CharacterSelectionData data;
     private Transform player;
     public Transform newLevelPosition;
     private GameMaster gamemaster;
@@ -14,7 +14,7 @@ public class LevelFinisher : MonoBehaviour
 
     private void Start()
     {
-        player = data.spawnedCharacter.GetComponent<Transform>();
+        //player = data.spawnedCharacter.GetComponent<Transform>();
         gamemaster = GameObject.FindGameObjectWithTag("GameMaster").GetComponent<GameMaster>();
     }
 
@@ -22,10 +22,10 @@ public class LevelFinisher : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         { 
-            SetMaxHealth?.Invoke();
+           SetMaxHealth?.Invoke();
            gamemaster.lastCheckPointPosition = newLevelPosition.position;
            player.position = newLevelPosition.position;
-           Globals.CharPositions[data.selectedCharacter] = newLevelPosition.position;
+           //Globals.CharPositions[data.selectedCharacter] = newLevelPosition.position;
            LevelLock.killedEnemies = 0;
            
         }

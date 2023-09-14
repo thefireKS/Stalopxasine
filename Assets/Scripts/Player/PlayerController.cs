@@ -1,29 +1,39 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
+    public void Initialize(float speed, float jumpBufferTime, float jumpForce, float fallGravityMultiplier, float jumpCoyoteTime, LayerMask layerMask)
+    {
+        this._speed = speed;
+        _jumpBufferTime = jumpBufferTime;
+        _jumpForce = jumpForce;
+        _fallGravityMultiplier = fallGravityMultiplier;
+        _jumpCoyoteTime = jumpCoyoteTime;
+        this.layerMask = layerMask;
+    }
+
     [Header("References")]
-    [FormerlySerializedAs("data")]
-    public PlayerData Data;
     private PlayerAttack atck;
     // TODO: delete animator
     private Animator animator;
+
+    private float _speed;
+    private float _jumpBufferTime;
+    private float _jumpForce;
+    private float _fallGravityMultiplier;
+    private float _jumpCoyoteTime;
     
     private Rigidbody2D _rb2d;
     private BoxCollider2D playerCollider;
     private SpriteRenderer sr;
     
     [Header("Collision Checkers")]
-    [SerializeField] private LayerMask layerMask;
-    // TODO: ground check with BB (BB - bounding box)
-    [SerializeField] private Transform groundCheckR, groundCheckL;
+    private LayerMask layerMask;
     private float rayDistance = 0.1f;
 
     private PlayerControls _playerControls;
-    private PlayerInputHandler _playerInputHandler;
         
     private GameObject currentOneWayPlatform;
     private float gravityScale;
@@ -64,17 +74,16 @@ public class PlayerController : MonoBehaviour
         Idle,
         Attacking
     }
-    public ActionStates actionState = ActionStates.Idle;
+    [HideInInspector] public ActionStates actionState = ActionStates.Idle;
     
     private void Awake()
     {
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
 
         playerCollider = GetComponent<BoxCollider2D>();
         animator = GetComponentInChildren<Animator>();
         sr = GetComponentInChildren<SpriteRenderer>();
         _rb2d = GetComponent<Rigidbody2D>();
-        _playerInputHandler = GetComponent<PlayerInputHandler>();
         atck = GetComponent<PlayerAttack>();
         gravityScale = _rb2d.gravityScale;
         DisablingCooldown = new WaitForSeconds(0.2f);
@@ -108,21 +117,48 @@ public class PlayerController : MonoBehaviour
         if (PlayerMeeting.DialogIsGoing)
             return;
 
-        //if(_playerControls.Player.Jump.IsPressed()) Jump();
-
         ProcessInput();
         
         MovementStateSwapper();
-
-        //if (_autoFire) Attack();
         
         if (actionState != ActionStates.Attacking)
-            isDropping = moveY < 0 && currentOneWayPlatform != null && groundCheck();
+            isDropping = moveY < 0 && currentOneWayPlatform != null && GroundCheck();
         else
             isDropping = false;
         
         ProcessAnimation();
     }
+
+    private void ProcessInput()
+    {
+        if (Time.timeScale < 0.2f) return;
+
+        var movement = _playerControls.Player.Move.ReadValue<Vector2>();
+
+        moveX = movement.x;
+        moveY = movement.y;
+
+        Flip();
+
+        if (isJumpPressed)
+            AddJumpHeight();
+    }
+
+    private void Flip()
+    {
+        if (moveX != 0)
+            sr.flipX = moveX < 0;
+    }
+
+    private void ProcessAnimation()
+    {
+        animator.SetBool("isGrounded", movementState == MovementStates.Grounded);
+
+        animator.SetBool("isGoing", moveX != 0 && movementState == MovementStates.Grounded);
+
+        animator.SetBool("isAttacking", actionState == ActionStates.Attacking);
+    }
+
     private void FixedUpdate()
     {
         if (PlayerMeeting.DialogIsGoing)
@@ -130,118 +166,52 @@ public class PlayerController : MonoBehaviour
         
         Controls();
     }
+
     private void Controls()
     {
-        Moving(_playerInputHandler.MoveInput());
+        Moving();
 
         if (isDropping)
             StartCoroutine(DisableCollision());
     }
     
-    private void Moving(Vector2 inputMovement)
+    private void Moving()
     {
-        float targetSpeed = inputMovement.x * Data.speed;
-        float currentVelocity = _rb2d.velocity.x;
-        if (targetSpeed * currentVelocity < 0)
-        {
-            _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
-        }
-
-        var acc = Mathf.Approximately(targetSpeed, 0f) ? Data.deceleration : Data.acceleration;
-        
-        if (currentVelocity < targetSpeed)
-        {
-            currentVelocity += acc * Time.fixedDeltaTime;
-            if (currentVelocity > targetSpeed)
-                currentVelocity = targetSpeed;
-        }
-        if (currentVelocity > targetSpeed)
-        {
-            currentVelocity -= acc * Time.fixedDeltaTime;
-            if (currentVelocity < targetSpeed) 
-                currentVelocity = targetSpeed;
-        }
-        _rb2d.velocity = new Vector2(currentVelocity, _rb2d.velocity.y);
-    }
-    private void ProcessInput()
-    {
-        if (Time.timeScale < 0.2f) return;
-
-        // Movement - From WASD separately, we now use unity's in built stuff to get 1 for right and -1 for left or up and down.
-        var movement = _playerControls.Player.Move.ReadValue<Vector2>();
-        
-        moveX = movement.x;
-        moveY = movement.y;
-        
-        
-        if(isJumpPressed)
-            AddJumpHeight();
-
-        /*if (_playerControls.Player.Jump.IsPressed())
-        {
-            Jump();
-        }*/
-
-        /*if (Input.GetKeyDown("space"))
-            bufferTimer = Data.jumpBufferTime;*/
-
-        /*if (Input.GetButtonDown("Fire1") && attacksCounter > 0 && actionState == ActionStates.Idle)
-            StartCoroutine(AttackOnClick());*/
+        float targetSpeed = moveX * _speed;
+        _rb2d.velocity = new Vector2(targetSpeed, _rb2d.velocity.y);
     }
     
-    private void ProcessAnimation()
+    private bool GroundCheck()
     {
-        Flip();
+        var bounds = playerCollider.bounds;
+        Vector2 leftCorner = bounds.min;
+        Vector2 rightCorner = bounds.max;
+        rightCorner.y -= bounds.size.y;
         
-        animator.SetBool("isGrounded", movementState == MovementStates.Grounded);
-        
-        animator.SetBool("isGoing", moveX != 0 && movementState == MovementStates.Grounded);
-        
-        animator.SetBool("isAttacking", actionState == ActionStates.Attacking);
-    }
-    private void Flip()
-    {
-        if (moveX != 0)
-            sr.flipX = moveX < 0;
-    }
-    private bool groundCheck()
-    {
-        return Physics2D.Raycast(groundCheckR.position, Vector2.down, rayDistance,
-            layerMask.value) || Physics2D.Raycast(groundCheckL.position, Vector2.down, rayDistance,
+        return Physics2D.Raycast(rightCorner, Vector2.down, rayDistance,
+            layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, rayDistance,
             layerMask.value);
     }
 
-    /*private void Jump()
-    {
-        {
-    //_rb2d.AddForce(Vector2.up * (Data.jumpForce * _currentJumpModif * Time.fixedDeltaTime), ForceMode2D.Impulse);
-            //_currentJumpModif -= jumpModifDec * Time.fixedDeltaTime;
-        }
-        
-    }*/
-
     private void JumpStart(InputAction.CallbackContext context)
     {
-        bufferTimer = Data.jumpBufferTime;
+        bufferTimer = _jumpBufferTime;
 
-        if (!groundCheck() && coyoteTimer < 0) return;
+        if (!GroundCheck() && coyoteTimer < 0) return;
         coyoteTimer = 0;
         if (bufferTimer < 0) return;
         
-        //Debug.Log("Jump started");
         isJumpPressed = true;
         movementState = MovementStates.Jumping;
     }
     
     private void AddJumpHeight()
     {
-        bufferTimer -= Time.deltaTime;
-        _rb2d.velocity = new Vector2(_rb2d.velocity.x, Data.jumpForce);
+        _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
     }
 
     private void JumpEnd(InputAction.CallbackContext context)
     {
-        //Debug.Log("Jump canceled");
         isJumpPressed = false;
         movementState = MovementStates.Falling;
     }
@@ -264,10 +234,6 @@ public class PlayerController : MonoBehaviour
         }
     }*/
 
-    private bool CanAttack()
-    {
-        return /*attacksCounter > 0 &&*/ actionState == ActionStates.Idle;
-    }
 
     private void SwitchAuto(InputAction.CallbackContext context)
     {
@@ -292,17 +258,11 @@ public class PlayerController : MonoBehaviour
     }
     private void falling()
     {
-        _rb2d.gravityScale = gravityScale * Data.fallGravityMultiplier;
+        _rb2d.gravityScale = gravityScale * _fallGravityMultiplier;
         bufferTimer -= Time.deltaTime;
         coyoteTimer -= Time.deltaTime;
 
-        if (coyoteTimer > 0 && bufferTimer > 0)
-        {
-            movementState = MovementStates.Jumping;
-            bufferTimer = 0f;
-        }
-
-        if (groundCheck())
+        if (GroundCheck())
             movementState = MovementStates.Grounded;
     }
 
@@ -310,9 +270,9 @@ public class PlayerController : MonoBehaviour
     {
         _rb2d.gravityScale = gravityScale;
         //attacksCounter = Data.possibleAttacks;
-        coyoteTimer = Data.jumpCoyoteTime;
+        coyoteTimer = _jumpCoyoteTime;
         
-        if (groundCheck())
+        if (GroundCheck())
         {
             if (bufferTimer > 0)
             {
@@ -328,7 +288,9 @@ public class PlayerController : MonoBehaviour
     }
     private void jumping()
     {
-        if(_rb2d.velocity.y < 0)
+        if(GroundCheck())
+            movementState = MovementStates.Grounded;
+        else if (_rb2d.velocity.y < 0)
             movementState = MovementStates.Falling;
     }
     #endregion
