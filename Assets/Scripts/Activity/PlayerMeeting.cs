@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
-using UnityEngine.InputSystem;
 
 public class PlayerMeeting : MonoBehaviour
 {
@@ -21,7 +19,6 @@ public class PlayerMeeting : MonoBehaviour
 
     private Animator _animator;
     private Camera mainCamera;
-    private PlayerControls _playerControls;
     
     private float originalCameraSize;
     private bool inZone=false;
@@ -34,8 +31,8 @@ public class PlayerMeeting : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _playerControls = PlayerInputHandler.playerControls;
     }
+    
 
     private void Start()
     {
@@ -44,9 +41,16 @@ public class PlayerMeeting : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnEnable() => _playerControls.Player.Interact.performed += DialogueInteraction;
-    
-    private void OnDisable() => _playerControls.Player.Interact.performed -= DialogueInteraction;
+
+    private void OnEnable()
+    {
+        PlayerInputHandler.Interaction += DialogueInteraction;
+    }
+
+    private void OnDisable()
+    { 
+        PlayerInputHandler.Interaction -= DialogueInteraction;
+    }
 
     private void Update()
     {
@@ -56,7 +60,7 @@ public class PlayerMeeting : MonoBehaviour
 
     #region Dialogue System
 
-    private void DialogueInteraction(InputAction.CallbackContext context)
+    private void DialogueInteraction()
     {
         if (!inZone) return;
 
@@ -135,7 +139,6 @@ public class PlayerMeeting : MonoBehaviour
     {
         if (other.gameObject != player) return;
         inZone = true;
-        _playerControls.Player.Attack.Disable();
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -143,6 +146,5 @@ public class PlayerMeeting : MonoBehaviour
         if (other.gameObject != player) return;
         inZone = false;
         _animator.Play(afkAnimName);
-        _playerControls.Player.Attack.Enable();
     }
 }

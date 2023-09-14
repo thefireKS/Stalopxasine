@@ -4,8 +4,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerUltimateSystem : MonoBehaviour
 {
+    public void Initialize(GameObject ultimateObject)
+    {
+        SetUltimateAbilityObject(ultimateObject);
+    }
     
-    [SerializeField] private GameObject ultimateAbility;
+    private GameObject _ultimateAbilityObject;
+
+    public void SetUltimateAbilityObject(GameObject ultimateAbility)
+    {
+        _ultimateAbilityObject = ultimateAbility;
+    }
 
     private int currentEnergy = 1;
     [HideInInspector] public bool canEndEarlier = false;
@@ -22,7 +31,7 @@ public class PlayerUltimateSystem : MonoBehaviour
     public static Action<int, int> OnEnergyChanged;
     private void Awake()
     {
-        _playerControls = PlayerInputHandler.playerControls;
+        _playerControls = PlayerInputHandler.PlayerControls;
         _playerControls.Ultimates.Disable();
     }
 
@@ -34,7 +43,7 @@ public class PlayerUltimateSystem : MonoBehaviour
 
     private void Start()
     {
-        _ultimateAbility = GetComponentInChildren<UltimateAbility>();
+        _ultimateAbility = Instantiate(_ultimateAbilityObject, transform).GetComponent<UltimateAbility>();
         fullEnergy = _ultimateAbility.fullEnergy;
         
         Debug.Log(_ultimateAbility);
