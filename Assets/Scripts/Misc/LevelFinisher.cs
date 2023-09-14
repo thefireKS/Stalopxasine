@@ -22,10 +22,10 @@ public class LevelFinisher : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         { 
-            SetMaxHealth?.Invoke();
+           SetMaxHealth?.Invoke();
            gamemaster.lastCheckPointPosition = newLevelPosition.position;
            player.position = newLevelPosition.position;
-          // Globals.CharPositions[data.selectedCharacter] = newLevelPosition.position;
+           //Globals.CharPositions[data.selectedCharacter] = newLevelPosition.position;
            LevelLock.killedEnemies = 0;
            
         }

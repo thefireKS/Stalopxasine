@@ -24,29 +24,36 @@ public class PlayerHealth : MonoBehaviour
     public static event Action<int> OnHealthChanged;
 
     private WaitForSeconds Blinking = new WaitForSeconds(0.5f);
-    
+
+    private void OnEnable()
+    {
+        LevelFinisher.SetMaxHealth += () => SetHealth(_maxHealth);
+        Dieline.SetZeroHealth += () => SetHealth(0);
+    }
+
     private void Start()
     {
-        GetMaxHealth();
+        SetHealth(_maxHealth);
         OnHealthChanged?.Invoke(_maxHealth);
         _animator = GetComponentInChildren<Animator>();
     }
 
-    private void OnEnable()
-    {
-        LevelFinisher.SetMaxHealth += GetMaxHealth;
-        Dieline.SetZeroHealth += GetZeroHealth;
-    }
-
     private void OnDisable()
     {
-        LevelFinisher.SetMaxHealth -= GetMaxHealth;
-        Dieline.SetZeroHealth -= GetZeroHealth;
+        LevelFinisher.SetMaxHealth -= () => SetHealth(_maxHealth);
+        Dieline.SetZeroHealth -= () => SetHealth(0);
     }
 
     private void CheckHealth()
     {
-        if (_currentHealth <= 0) SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (_currentHealth <= 0) 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void SetHealth(int value)
+    {
+        _currentHealth = value;
+        OnHealthChanged?.Invoke(_currentHealth);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -60,17 +67,7 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
-    private void GetMaxHealth()
-    {
-        _currentHealth = _maxHealth;
-        OnHealthChanged?.Invoke(_currentHealth);
-    }
-    
-    private void GetZeroHealth()
-    {
-        _currentHealth = 0;
-        OnHealthChanged?.Invoke(_currentHealth);
-    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("EnemyBullet"))
@@ -83,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
     private IEnumerator GotDamaged()
     {
         _currentHealth--;

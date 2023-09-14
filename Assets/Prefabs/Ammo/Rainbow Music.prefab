@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 145197155578215335}
   - component: {fileID: 8717852596718844868}
   - component: {fileID: 158155111834662925}
-  - component: {fileID: 7155596471904509021}
+  - component: {fileID: 2165204229513910492}
   m_Layer: 0
   m_Name: Rainbow Music
   m_TagString: RangedHitBox
@@ -88,14 +88,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1123760533343461035}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -103,11 +103,11 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
---- !u!114 &7155596471904509021
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!114 &2165204229513910492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,11 +116,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1123760533343461035}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd00e71c6c83d841bc2d27b17663e69, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a361a9a04d5e154c84da01e2d988044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
   seconds: 0.958
+  speed: 4
 --- !u!1 &4126231335609501233
 GameObject:
   m_ObjectHideFlags: 0
