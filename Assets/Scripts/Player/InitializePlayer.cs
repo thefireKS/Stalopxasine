@@ -29,7 +29,7 @@ namespace Player
         {
             var playerController = gameObject.AddComponent<PlayerController>();
 
-            playerController.PlayerControllerInitialize(playerData.speed, playerData.jumpBufferTime, playerData.jumpForce, playerData.fallGravityMultiplier, playerData.jumpCoyoteTime, playerData.layerMask);
+            playerController.Initialize(playerData.speed, playerData.jumpBufferTime, playerData.jumpForce, playerData.fallGravityMultiplier, playerData.jumpCoyoteTime, playerData.layerMask);
 
             Debug.Log("Initialize: Initialize PlayerController complete!");
             return Task.CompletedTask;
@@ -39,7 +39,7 @@ namespace Player
         private Task InitializePlayerHealth(PlayerData playerData)
         {
             var playerHealth = gameObject.AddComponent<PlayerHealth>();
-            playerHealth.SetMaxHealth(playerData.maxHealth);
+            playerHealth.Initialize(playerData.maxHealth);
             Debug.Log("Initialize: Initialize PlayerHealth complete!");
             return Task.CompletedTask;
         }
@@ -47,9 +47,7 @@ namespace Player
         private Task InitializePlayerAttack(PlayerData playerData)
         {
             var playerAttack = gameObject.AddComponent<PlayerAttack>();
-            playerAttack.SetBullet(playerData.bullet);
-            playerAttack.SetAttackTime(playerData.attackTime);
-            playerAttack.SetBulletPositionAndRotation();
+            playerAttack.Initialize(playerData.bullet, playerData.attackTime);
             Debug.Log("Initialize: Initialize PlayerAttack complete!");
             return Task.CompletedTask;
         }
@@ -57,7 +55,7 @@ namespace Player
         private Task InitializePlayerUltimateSystem(PlayerData playerData)
         {
             var playerUltimateSystem = gameObject.AddComponent<PlayerUltimateSystem>();
-            playerUltimateSystem.SetUltimateAbilityObject(playerData.ultimateObject);
+            playerUltimateSystem.Initialize(playerData.ultimateObject);
             Debug.Log("Initialize: Initialize PlayerUltimateSystem complete!");
             return Task.CompletedTask;
         }

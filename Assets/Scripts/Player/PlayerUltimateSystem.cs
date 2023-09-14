@@ -4,6 +4,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerUltimateSystem : MonoBehaviour
 {
+    public void Initialize(GameObject ultimateObject)
+    {
+        SetUltimateAbilityObject(ultimateObject);
+    }
     
     private GameObject _ultimateAbilityObject;
 

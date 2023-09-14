@@ -27,7 +27,7 @@ MonoBehaviour:
   bullet: {fileID: 1123760533343461035, guid: a28b6fca4c123c14598f6deebee5f848, type: 3}
   ultimateObject: {fileID: 3555862907523863139, guid: 557180cda0a79734f872b89a9a56181b,
     type: 3}
-  speed: 10
+  speed: 8
   acceleration: 30
   deceleration: 100
   jumpForce: 9

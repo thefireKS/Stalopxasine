@@ -4,6 +4,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public void Initialize(GameObject bullet, float attackTime)
+    {
+        SetBullet(bullet);
+        SetAttackTime(attackTime);
+        SetBulletPositionAndRotation();
+    }
+    
     [Space(10)]
     private Transform _bulletPositionRotation;
     private Transform _actualBulletPosition;

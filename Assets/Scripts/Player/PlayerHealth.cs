@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public void Initialize(int maxHealth)
+    {
+        SetMaxHealth(maxHealth);
+    }
+    
     private Animator _animator;
     
     private const float DamageCoolDown = 1f; //damage getting cd
