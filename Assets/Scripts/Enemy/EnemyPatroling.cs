@@ -17,7 +17,7 @@ public class EnemyPatroling : EnemyBase
     {
         _rigidbody = GetComponent<Rigidbody2D>();
 
-        _rigidbody.velocity = Vector2.right * speed;
+        _rigidbody.velocity = new Vector2( speed,_rigidbody.velocity.y);
 
         _collider = GetComponent<Collider2D>();
     }
@@ -53,7 +53,7 @@ public class EnemyPatroling : EnemyBase
         }
         
         var direction = _isGoingRight ? 1 : -1;
-        _rigidbody.velocity = Vector2.right * (direction * speed);
+        _rigidbody.velocity = new Vector2(direction * speed, _rigidbody.velocity.y);
     }
 
     protected virtual void Behavior()

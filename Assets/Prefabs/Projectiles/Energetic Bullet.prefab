@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8717852596718844868}
   - component: {fileID: 158155111834662925}
   - component: {fileID: 4282941838722060887}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Energetic Bullet
   m_TagString: RangedHitBox
   m_Icon: {fileID: 0}
@@ -119,7 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a361a9a04d5e154c84da01e2d988044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 0.375
+  damage: 1
+  lifeTimeSeconds: 1
   speed: 8
 --- !u!1 &8505919891396458587
 GameObject:
@@ -132,7 +133,7 @@ GameObject:
   - component: {fileID: 5253023506623772568}
   - component: {fileID: 1495683231005726797}
   - component: {fileID: 2195091381619891313}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

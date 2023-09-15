@@ -90,7 +90,9 @@ public class PlayerAttack : MonoBehaviour
         
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation,transform);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
+        if (bullet.TryGetComponent(out MeleeProjectile _))
+            bullet.transform.SetParent(transform);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
     
@@ -100,7 +102,9 @@ public class PlayerAttack : MonoBehaviour
 
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation,transform);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
+        if (bullet.TryGetComponent(out MeleeProjectile _))
+            bullet.transform.SetParent(transform);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
 
