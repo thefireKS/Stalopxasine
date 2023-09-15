@@ -6,12 +6,12 @@ public class EnemyPatroling : EnemyBase
 
     [SerializeField] private LayerMask layerMask;
 
-    [SerializeField] private float rayDistance;
+    [SerializeField] protected float rayDistance;
 
-    private Rigidbody2D _rigidbody;
-    private Collider2D _collider;
+    protected Rigidbody2D _rigidbody;
+    protected Collider2D _collider;
 
-    private bool _isGoingRight = true;
+    protected bool _isGoingRight = true;
 
     private void Awake()
     {
@@ -22,7 +22,7 @@ public class EnemyPatroling : EnemyBase
         _collider = GetComponent<Collider2D>();
     }
 
-    private bool CheckObstacles()
+    protected bool CheckObstacles()
     {
         var bounds = _collider.bounds;
         var rayPosition = new Vector3
@@ -45,11 +45,10 @@ public class EnemyPatroling : EnemyBase
     }
     
 
-    private void Patrol()
+    protected void Patrol()
     {
         if (CheckObstacles())
         {
-            Debug.Log("I found obstacle");
             _isGoingRight = !_isGoingRight;
         }
         
@@ -57,8 +56,13 @@ public class EnemyPatroling : EnemyBase
         _rigidbody.velocity = Vector2.right * (direction * speed);
     }
 
-    private void Update()
+    protected virtual void Behavior()
     {
         Patrol();
+    }
+
+    protected void Update()
+    {
+        Behavior();
     }
 }

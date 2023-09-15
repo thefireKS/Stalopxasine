@@ -1,14 +1,54 @@
+using UnityEngine;
+
 public class EnemyPursuing : EnemyPatroling
 {
-    // Start is called before the first frame update
-    void Start()
+    private Transform _target;
+
+    [SerializeField] private LayerMask targetMask;
+    
+    protected override void Behavior()
     {
-        
+        CheckForTarget();
+        if (_target)
+        {
+            var direction = transform.position - _target.position;
+            
+            if (direction.x > 0)
+            {
+                _rigidbody.velocity = -Vector2.right * speed;
+                _isGoingRight = false;
+            }
+            else
+            {
+                _rigidbody.velocity = Vector2.right * speed;
+                _isGoingRight = true;
+            }
+
+            if (CheckObstacles())
+            {
+                _target = null;
+            }
+            
+            return;
+        }
+
+        Patrol();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void CheckForTarget()
     {
+        var bounds = _collider.bounds;
+        var rayPosition = bounds.center;
+        var direction = _isGoingRight ? 1 : -1;
+        RaycastHit2D hit = Physics2D.Raycast(rayPosition, Vector2.right * direction,
+            rayDistance + (bounds.max.x - bounds.center.x), targetMask);
+        Debug.DrawRay(rayPosition, Vector3.right * (direction * rayDistance), Color.yellow);
         
+        if (!hit) return;
+        
+        if (hit.transform.CompareTag("Player"))
+        {
+            _target = hit.transform;
+        }
     }
 }

@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 584869469}
   - component: {fileID: 584869468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -499,6 +499,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
+      propertyPath: orthographic size
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.height
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -818,7 +843,7 @@ GameObject:
   - component: {fileID: 808742852}
   - component: {fileID: 808742851}
   - component: {fileID: 808742853}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Frost Melee Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,7 +859,7 @@ Transform:
   m_GameObject: {fileID: 808742845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.01, y: 11.52, z: 0}
+  m_LocalPosition: {x: -5.79, y: 7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -913,15 +938,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 808742845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e0f74e7bb8b9234a8460879df3c60b7, type: 3}
+  m_Script: {fileID: 11500000, guid: b6b1e4c5e96318a4eae15814244ce2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
   damage: 1
-  projectile: {fileID: 7161319479519569814, guid: c9317d9a7f467f94fb60f5d357ac3dfc,
-    type: 3}
-  timeBetweenShots: 1
-  shotPoint: {fileID: 1844039042}
+  speed: 0.5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  rayDistance: 1
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &921688844
 GameObject:
   m_ObjectHideFlags: 0
@@ -3366,7 +3395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1844039042}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShotPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
