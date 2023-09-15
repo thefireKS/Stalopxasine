@@ -29,6 +29,7 @@ public class PlayerUltimateSystem : MonoBehaviour
     private UltimateAbility _ultimateAbility;
     
     public static Action<int, int> OnEnergyChanged;
+    public static Action<int> AddEnergy;
     private void Awake()
     {
         _playerControls = PlayerInputHandler.PlayerControls;
@@ -37,7 +38,8 @@ public class PlayerUltimateSystem : MonoBehaviour
 
     private void OnEnable()
     {
-        EnemyHP.GiveEnergy += SetEnergy;
+        //EnemyHP.GiveEnergy += SetEnergy;
+        AddEnergy += SetEnergy;
         _playerControls.Player.UltimateSkill.started += StartUltimate;
     }
 
@@ -54,7 +56,8 @@ public class PlayerUltimateSystem : MonoBehaviour
 
     private void OnDisable()
     {
-        EnemyHP.GiveEnergy -= SetEnergy;
+        //EnemyHP.GiveEnergy -= SetEnergy;
+        AddEnergy -= SetEnergy;
         _playerControls.Player.UltimateSkill.started -= StartUltimate;
     }
 
@@ -63,21 +66,25 @@ public class PlayerUltimateSystem : MonoBehaviour
         /* if (currentUltimateExists)
             UltimateChecks(); */
     }
-    private void SetEnergy()
+    private void SetEnergy(int energyAmount)
     {
-        currentEnergy++;
+        currentEnergy+=energyAmount;
         if (currentEnergy > fullEnergy)
         {
             currentEnergy = fullEnergy;
         }
-        SetEnergy(currentEnergy);
+        if (currentEnergy < 0)
+        {
+            currentEnergy = 0;
+        }
+        OnEnergyChanged?.Invoke(currentEnergy, fullEnergy);
     }
 
     private void StartUltimate(InputAction.CallbackContext context)
     {
         if (currentEnergy < fullEnergy || PlayerMeeting.DialogIsGoing || currentUltimateExists) return;
         
-        SetEnergy(0);
+        SetEnergy(-fullEnergy);
         
         _playerControls.Ultimates.Enable();
         
@@ -88,11 +95,7 @@ public class PlayerUltimateSystem : MonoBehaviour
         _ultimateAbility.Activate();
     }
 
-    private void SetEnergy(int energyAmount)
-    {
-        currentEnergy = energyAmount;
-        OnEnergyChanged?.Invoke(currentEnergy, fullEnergy);
-    }
+
 
     public void EnableQuickTimeEvent() //Used in UltimateStart animation
     {

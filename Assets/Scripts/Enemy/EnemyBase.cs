@@ -5,6 +5,7 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable, IDealDamage
 {
     [SerializeField] private int health;
     [SerializeField] private int damage;
+    [SerializeField] private int energyOnDeath;
     
     public void TakeDamage(int dmg)
     {
@@ -23,6 +24,7 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable, IDealDamage
 
     private void Die()
     {
+        PlayerUltimateSystem.AddEnergy(energyOnDeath);
         Destroy(gameObject);
     }
 

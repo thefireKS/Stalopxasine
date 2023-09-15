@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e44758087bc9c04eaa8c3c0a1555759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullEnergy: 1
+  fullEnergy: 4
   ultimateEventTime: 8
   fireGuitar: {fileID: 443269489176464486, guid: 4ff1d9e4ac64b9e44b7ee55ea385ec8f,
     type: 3}

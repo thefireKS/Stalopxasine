@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   damage: 1
+  energyOnDeath: 1
   speed: 4
   layerMask:
     serializedVersion: 2
