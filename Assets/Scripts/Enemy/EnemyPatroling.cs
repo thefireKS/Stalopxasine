@@ -17,9 +17,23 @@ public class EnemyPatroling : EnemyBase
     {
         _rigidbody = GetComponent<Rigidbody2D>();
 
-        _rigidbody.velocity = new Vector2( speed,_rigidbody.velocity.y);
+        SetVelocityX(speed);
 
         _collider = GetComponent<Collider2D>();
+    }
+
+    protected void SetVelocityX(float speedX)
+    {
+        _rigidbody.velocity = new Vector2( speedX,_rigidbody.velocity.y);
+        SetSpriteRotation();
+    }
+
+    private void SetSpriteRotation()
+    {
+        var myTransform = transform;
+        var rotation = myTransform.rotation;
+        rotation = _isGoingRight ? new Quaternion(rotation.x, 0 ,rotation.z, rotation.w) : new Quaternion(rotation.x, 180 ,rotation.z, rotation.w);
+        myTransform.rotation = rotation;
     }
 
     protected bool CheckObstacles()
@@ -53,7 +67,7 @@ public class EnemyPatroling : EnemyBase
         }
         
         var direction = _isGoingRight ? 1 : -1;
-        _rigidbody.velocity = new Vector2(direction * speed, _rigidbody.velocity.y);
+        SetVelocityX(direction * speed);
     }
 
     protected virtual void Behavior()
