@@ -26,21 +26,14 @@ public abstract class EnemyBase : MonoBehaviour, IDamageable, IDealDamage
         Destroy(gameObject);
     }
 
-    public void DealDamage(int dmg, IDamageable target)
+    public void DealDamage(int dmg, IDamageable damageable)
     {
-        target.TakeDamage(dmg);
-    }
-
-    public void DealDamage(int dmg)
-    {
-        
+        damageable.TakeDamage(dmg);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            DealDamage(damage, other.gameObject.GetComponent<IDamageable>());
-        }
+        if (other.gameObject.TryGetComponent(out IDamageable damageable))
+            DealDamage(damage, damageable);
     }
 }

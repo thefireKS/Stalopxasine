@@ -34,9 +34,4 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     {
         target.TakeDamage(dmg);
     }
-
-    public void DealDamage(int dmg)
-    {
-        
-    }
 }
