@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpriteTrailRenderer
+namespace SpriteTrail
 {
     public enum SpawnType
     {
@@ -11,10 +11,6 @@ namespace SpriteTrailRenderer
 
     public class SpriteTrailRenderer : MonoBehaviour
     {
-        // time interval between spawns
-        // alpha between spawn
-        public Vector2 _startScale = Vector2.one;
-        public Vector2 _endScale = Vector2.one;
 
         public float _trailLifetime = 1;
         public SpawnType _spawnType;
@@ -61,8 +57,24 @@ namespace SpriteTrailRenderer
         // a rainbow color setting
         // a pool private List<SpriteTrailOject> _trailSprites;
 
+        public void Initialize(SpriteTrailData trailData)
+        {
+            _trailLifetime = trailData.trailLifetime;
+            _spawnType = trailData.spawnType;
 
-        private void Start()
+            _timeBetweenTrailSpawn = trailData.timeBetweenTrailSpawn;
+            _distanceBetweenTrailSpawn = trailData.distanceBetweenTrailSpawn;
+
+            _alphaUpdateOn = trailData.alphaUpdateOn;
+            _maxAlpha = trailData.maxAlpha;
+            _minAlpha = trailData.minAlpha;
+
+            _useSolidColors = trailData.useSolidColors;
+            _rainbowMode = trailData.rainbowMode;
+            _userSelectedColorPalette = trailData.userSelectedColorPalette;
+        }
+ 
+        private void Awake()
         {
             //_trailSprites = new List<SpriteTrailObject>();
             _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -104,7 +116,7 @@ namespace SpriteTrailRenderer
             newGameobject.GetComponent<SpriteRenderer>().flipX = true;
             newGameobject.transform.position = newPosition;
             newGameobject.transform.eulerAngles = transform.eulerAngles;
-            newGameobject.transform.localScale = transform.localScale;
+            //newGameobject.transform.localScale = transform.localScale;
 
             SpriteTrailObject trailObject = newGameobject.GetComponent<SpriteTrailObject>();
             trailObject.SetSpawnValues(_spriteRenderer, this, _rainbowMode ? _rainbowColors : _userSelectedColorPalette);
@@ -118,7 +130,7 @@ namespace SpriteTrailRenderer
 
             trailObject.transform.position = newPosition;
             trailObject.transform.eulerAngles = transform.eulerAngles;
-            trailObject.transform.localScale = transform.localScale;
+            //trailObject.transform.localScale = transform.localScale;
             trailObject.SetSpawnValues(_spriteRenderer, this, _rainbowMode ? _rainbowColors : _userSelectedColorPalette);
         }
     }

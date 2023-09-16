@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8717852596718844868}
   - component: {fileID: 158155111834662925}
   - component: {fileID: 8471222068857380515}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FireGuitarProjectile
   m_TagString: UltimateHitBox
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8108081121012145448}
   - component: {fileID: 7384124702404279264}
   - component: {fileID: 6970991328546080386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

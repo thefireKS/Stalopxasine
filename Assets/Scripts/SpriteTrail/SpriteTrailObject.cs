@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpriteTrailRenderer
+namespace SpriteTrail
 {
     public class SpriteTrailObject : MonoBehaviour, IPoolable
     {

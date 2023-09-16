@@ -86,30 +86,32 @@ public class PlayerController : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         atck = GetComponent<PlayerAttack>();
         gravityScale = _rb2d.gravityScale;
-        DisablingCooldown = new WaitForSeconds(0.2f);
+        DisablingCooldown = new WaitForSeconds(0.5f);
         PlayerMeeting.DialogIsGoing = false;
     }
 
     private void OnEnable()
     {
-        _playerControls.Player.Jump.started += JumpStart;
-        _playerControls.Player.Jump.performed += JumpEnd;
-        _playerControls.Player.Jump.canceled += JumpEnd;
-        
-        //_playerControls.Player.Attack.started += Attack;
+        _playerControls.Player.VerticalMovementUp.started += JumpStart;
+        _playerControls.Player.VerticalMovementUp.performed += JumpEnd;
+        _playerControls.Player.VerticalMovementUp.canceled += JumpEnd;
 
-        _playerControls.Player.AutoAttack.started += SwitchAuto;
+        _playerControls.Player.VerticalMovementDown.started += OneWayPlatformMovement;
+
+        //_playerControls.Player.Attack.started += Attack;
+        //_playerControls.Player.AutoAttack.started += SwitchAuto;
     }
 
     private void OnDisable()
     {
-        _playerControls.Player.Jump.started -= JumpStart;
-        _playerControls.Player.Jump.performed -= JumpEnd;
-        _playerControls.Player.Jump.canceled -= JumpEnd;
+        _playerControls.Player.VerticalMovementUp.started -= JumpStart;
+        _playerControls.Player.VerticalMovementUp.performed -= JumpEnd;
+        _playerControls.Player.VerticalMovementUp.canceled -= JumpEnd;
+        
+        _playerControls.Player.VerticalMovementDown.started -= OneWayPlatformMovement;
         
         //_playerControls.Player.Attack.started -= Attack;
-        
-        _playerControls.Player.AutoAttack.started -= SwitchAuto;
+        //_playerControls.Player.AutoAttack.started -= SwitchAuto;
     }
 
     private void Update()
@@ -120,12 +122,7 @@ public class PlayerController : MonoBehaviour
         ProcessInput();
         
         MovementStateSwapper();
-        
-        if (actionState != ActionStates.Attacking)
-            isDropping = moveY < 0 && currentOneWayPlatform != null && GroundCheck();
-        else
-            isDropping = false;
-        
+
         ProcessAnimation();
     }
 
@@ -133,7 +130,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Time.timeScale < 0.2f) return;
 
-        var movement = _playerControls.Player.Move.ReadValue<Vector2>();
+        var movement = _playerControls.Player.Movement.ReadValue<Vector2>();
 
         moveX = movement.x;
         moveY = movement.y;
@@ -170,9 +167,6 @@ public class PlayerController : MonoBehaviour
     private void Controls()
     {
         Moving();
-
-        if (isDropping)
-            StartCoroutine(DisableCollision());
     }
     
     private void Moving()
@@ -195,6 +189,8 @@ public class PlayerController : MonoBehaviour
 
     private void JumpStart(InputAction.CallbackContext context)
     {
+        if(isDropping) return;
+        
         bufferTimer = _jumpBufferTime;
 
         if (!GroundCheck() && coyoteTimer < 0) return;
@@ -207,6 +203,7 @@ public class PlayerController : MonoBehaviour
     
     private void AddJumpHeight()
     {
+        if(isDropping) return;
         _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
     }
 
@@ -214,6 +211,15 @@ public class PlayerController : MonoBehaviour
     {
         isJumpPressed = false;
         movementState = MovementStates.Falling;
+    }
+
+    private void OneWayPlatformMovement(InputAction.CallbackContext context)
+    {
+        if (currentOneWayPlatform != null && GroundCheck())
+        {
+            isDropping = true;
+            StartCoroutine(DisableCollision());
+        }
     }
 
     /*private void Attack(InputAction.CallbackContext context)
@@ -234,12 +240,6 @@ public class PlayerController : MonoBehaviour
         }
     }*/
 
-
-    private void SwitchAuto(InputAction.CallbackContext context)
-    {
-        _autoFire = !_autoFire;
-    }
-    
     #region States
     private void MovementStateSwapper()
     {
@@ -339,6 +339,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreCollision(playerCollider, platformCollider);
         yield return DisablingCooldown;
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
+        isDropping = false;
     }
     #endregion
 }

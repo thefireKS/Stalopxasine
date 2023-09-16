@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpriteTrailRenderer
+namespace SpriteTrail
 {
     public delegate void ReturnObjectToPool(GameObject objectToReturn);
 

@@ -57,8 +57,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerControls.Player.Move.started += SetShootingPoint;
-        _playerControls.Player.Move.performed += SetShootingPoint;
+        _playerControls.Player.Movement.started += SetShootingPoint;
+        _playerControls.Player.Movement.performed += SetShootingPoint;
         
         _playerControls.Player.Attack.started += PerformAttack;
         _playerControls.Player.AutoAttack.started += EnableAutoAttack;
@@ -66,8 +66,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerControls.Player.Move.started -= SetShootingPoint;
-        _playerControls.Player.Move.performed -= SetShootingPoint;
+        _playerControls.Player.Movement.started -= SetShootingPoint;
+        _playerControls.Player.Movement.performed -= SetShootingPoint;
 
         _playerControls.Player.Attack.started -= PerformAttack;
         _playerControls.Player.AutoAttack.started -= EnableAutoAttack;

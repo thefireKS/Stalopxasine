@@ -1,4 +1,4 @@
-﻿namespace SpriteTrailRenderer
+﻿namespace SpriteTrail
 {
     public interface IPoolable
     {
