@@ -12,3 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061ce0027524fa24b880eb67a23b62cb, type: 3}
   m_Name: DefaultGlitchTrail
   m_EditorClassIdentifier: 
+  trailLifetime: 0.3
+  spawnType: 0
+  timeBetweenTrailSpawn: 0.1
+  distanceBetweenTrailSpawn: 0
+  alphaUpdateOn: 0
+  maxAlpha: 0
+  minAlpha: 0
+  useSolidColors: 1
+  rainbowMode: 0
+  userSelectedColorPalette:
+  - serializedVersion: 2
+    rgba: 4278255615
+  - serializedVersion: 2
+    rgba: 4278255360
+  - serializedVersion: 2
+    rgba: 4278190335
+  - serializedVersion: 2
+    rgba: 4294901760

@@ -3,12 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
-    private LevelData _levelData;
-
+    public LevelData _levelData;
+    private static LevelSelection instance;
     public void SetLevelDataAndLoad(LevelData levelData)
     {
         _levelData = levelData;
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+            instance._levelData = levelData;
+        }
+        else
+        {
+            instance._levelData = levelData;
+            Destroy(this);
+        }
         SceneManager.LoadScene(_levelData.scene);
     }
 

@@ -13,23 +13,16 @@ MonoBehaviour:
   m_Name: Caramello
   m_EditorClassIdentifier: 
   maxHealth: 4
-  sceneName: Caramello beggining
-  color: {r: 0, g: 0.5882353, b: 0.8745099, a: 1}
-  characterSprite: {fileID: 21300000, guid: a6407461e32edc845af38ec9956bc604, type: 3}
+  controller: {fileID: 22100000, guid: 10f59c24d86072c48aac2751eaec7051, type: 2}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  controller: {fileID: 9100000, guid: ea95e4462bf18cc438f19e239cc662b9, type: 2}
-  meleeAttack: 1
+  trail: {fileID: 11400000, guid: 28e3c01c3368c0f488dbc70b8497c748, type: 2}
   attackTime: 0.33
-  attackForceScale: 0.6
-  possibleAttacks: 1
-  bullet: {fileID: 1123760533343461035, guid: 8abbba2251e27f44d8814bb144bf463b, type: 3}
-  ultimateObject: {fileID: 3555862907523863139, guid: 557180cda0a79734f872b89a9a56181b,
+  bullet: {fileID: 1123760533343461035, guid: a28b6fca4c123c14598f6deebee5f848, type: 3}
+  ultimateObject: {fileID: 3555862907523863139, guid: 829b206d9915934489a4e4c8c7f807c4,
     type: 3}
   speed: 8
-  acceleration: 30
-  deceleration: 100
   jumpForce: 9
   jumpCoyoteTime: 0.05
   jumpBufferTime: 0.33

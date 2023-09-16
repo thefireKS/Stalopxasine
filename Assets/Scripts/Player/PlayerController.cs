@@ -335,7 +335,7 @@ public class PlayerController : MonoBehaviour
     
     private IEnumerator DisableCollision()
     {
-        BoxCollider2D platformCollider = currentOneWayPlatform.GetComponent<BoxCollider2D>();
+        CompositeCollider2D platformCollider = currentOneWayPlatform.GetComponent<CompositeCollider2D>();
         Physics2D.IgnoreCollision(playerCollider, platformCollider);
         yield return DisablingCooldown;
         Physics2D.IgnoreCollision(playerCollider, platformCollider, false);

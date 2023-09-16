@@ -9,16 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03f3e4ea858d5ab47b34cd3b3f1d06ba, type: 3}
-  m_Name: A ee Player
+  m_Script: {fileID: 11500000, guid: 71d1896599c66f541baa4f1df0ac9a46, type: 3}
+  m_Name: VisemanTest
   m_EditorClassIdentifier: 
-  meleeAttack: 1
-  attackTime: 0
-  bullet: {fileID: 0}
-  speed: 16
-  acceleration: 24
-  deceleration: 32
-  jumpForce: 22
-  jumpCoyoteTime: 0.5
-  jumpBufferTime: 0.4
-  fallGravityMultiplier: 1.2
+  scene: DemoMainLevel
+  playerData: {fileID: 11400000, guid: 339ad5951b8d1ea4eb6cf1f56ef2a0d8, type: 2}
