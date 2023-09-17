@@ -1,32 +1,37 @@
 ﻿using UnityEngine;
 
-public abstract class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour, IDealDamage
 {
-    [SerializeField] protected float seconds;
+    [SerializeField] protected int damage;
+    [SerializeField] protected float lifeTimeSeconds;
 
-    protected Animator _animator;
-    protected Rigidbody2D _rb2d;
+    private Animator _animator;
 
     private void OnEnable()
     {
         _animator = GetComponentInChildren<Animator>();
-        _rb2d = GetComponent<Rigidbody2D>();
 
-        float angle = transform.eulerAngles.z % 5 == 0 ? 0f : 1f;
+        var angle = (int) transform.eulerAngles.z % 10f == 5f ? 1 : 0;
 
         _animator?.SetFloat("Angle", angle);
 
-        Destroy(gameObject,seconds);
+        Destroy(gameObject,lifeTimeSeconds);
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.name + " // " + other.tag);
 
-        //if (other.TryGetComponent<>)
-        //logic
+        if (other.TryGetComponent<IDamageable>(out IDamageable damageable))
+            damageable.TakeDamage(damage);
 
         if (other.CompareTag("Ground"))
             Destroy(gameObject);
+        //put some particles instead lol
+    }
+
+    public void DealDamage(int dmg, IDamageable target)
+    {
+        target.TakeDamage(dmg);
     }
 }

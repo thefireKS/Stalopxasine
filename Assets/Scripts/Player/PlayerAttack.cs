@@ -57,8 +57,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerControls.Player.Move.started += SetShootingPoint;
-        _playerControls.Player.Move.performed += SetShootingPoint;
+        _playerControls.Player.Movement.started += SetShootingPoint;
+        _playerControls.Player.Movement.performed += SetShootingPoint;
         
         _playerControls.Player.Attack.started += PerformAttack;
         _playerControls.Player.AutoAttack.started += EnableAutoAttack;
@@ -66,8 +66,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerControls.Player.Move.started -= SetShootingPoint;
-        _playerControls.Player.Move.performed -= SetShootingPoint;
+        _playerControls.Player.Movement.started -= SetShootingPoint;
+        _playerControls.Player.Movement.performed -= SetShootingPoint;
 
         _playerControls.Player.Attack.started -= PerformAttack;
         _playerControls.Player.AutoAttack.started -= EnableAutoAttack;
@@ -90,7 +90,9 @@ public class PlayerAttack : MonoBehaviour
         
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation,transform);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
+        if (bullet.TryGetComponent(out MeleeProjectile _))
+            bullet.transform.SetParent(transform);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
     
@@ -100,7 +102,9 @@ public class PlayerAttack : MonoBehaviour
 
         StartCoroutine(Attack());
         anim.SetFloat("attackDir",high);
-        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation,transform);
+        var bullet = Instantiate(_bullet, _actualBulletPosition.position, _bulletPositionRotation.rotation);
+        if (bullet.TryGetComponent(out MeleeProjectile _))
+            bullet.transform.SetParent(transform);
         //bullet.GetComponentInChildren<Animator>().SetFloat("Angle", bullet.transform.eulerAngles.z % 10 == 0 ? 0 : 1);
     }
 

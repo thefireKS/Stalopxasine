@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public void Initialize(int maxHealth)
     {
@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
         OnHealthChanged?.Invoke(_currentHealth);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    /* private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
@@ -66,9 +66,9 @@ public class PlayerHealth : MonoBehaviour
                 _nextHitTime = Time.time + DamageCoolDown;
             }
         }
-    }
+    } */
 
-    private void OnTriggerStay2D(Collider2D collision)
+    /*private void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.CompareTag("EnemyBullet"))
         {
@@ -79,15 +79,20 @@ public class PlayerHealth : MonoBehaviour
                 _nextHitTime = Time.time + DamageCoolDown;
             }
         }
-    }
+    } */
 
-    private IEnumerator GotDamaged()
+    private IEnumerator GotDamaged(int damage)
     {
-        _currentHealth--;
+        _currentHealth-=damage;
         CheckHealth();
         OnHealthChanged?.Invoke(_currentHealth);
         _animator.SetBool("isHitted",true);
         yield return Blinking;
         _animator.SetBool("isHitted",false);
+    }
+
+    public void TakeDamage(int dmg)
+    {
+        StartCoroutine(GotDamaged(dmg));
     }
 }

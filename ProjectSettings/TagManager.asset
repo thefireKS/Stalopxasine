@@ -22,8 +22,8 @@ TagManager:
   - 
   - 
   - Ground
-  - Action
-  - Enemies
+  - Player
+  - Enemy
   - Vision
   - 
   - Trails

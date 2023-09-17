@@ -21,9 +21,9 @@ public class HeartsGUI : MonoBehaviour
             health = NumberOfHearts;
         for(int i = 0; i < hearts.Length; i++)
         {
-            if (i < health)
-                hearts[i].sprite = fullHeart;
-            else
+            if (i >= health)
+                //hearts[i].sprite = fullHeart;
+            //else
                 hearts[i].sprite = emptyHeart;
             if (i < NumberOfHearts)
                 hearts[i].enabled = true;

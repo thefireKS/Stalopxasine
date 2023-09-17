@@ -13,6 +13,7 @@ namespace Player
             await InitializePlayerAttack(playerData);
             await InitializePlayerUltimateSystem(playerData);
             await InitializeAnimatorController(playerData);
+            //await InitializeSpriteTrailRenderer(playerData);
             Debug.Log("Initialize: Complete!");
             Destroy(this);
         }
@@ -34,7 +35,6 @@ namespace Player
             return Task.CompletedTask;
         }
         
-        // TODO: rework this SHIT!!! => CharacterHP.cs
         private Task InitializePlayerHealth(PlayerData playerData)
         {
             var playerHealth = gameObject.AddComponent<PlayerHealth>();
@@ -66,5 +66,14 @@ namespace Player
             Debug.Log("Initialize: Initialize AnimatorController complete!");
             return Task.CompletedTask;
         }
+
+        /* private Task InitializeSpriteTrailRenderer(PlayerData playerData)
+        {
+            var spriteTrail = gameObject.AddComponent<SpriteTrail.SpriteTrailRenderer>();
+            spriteTrail.Initialize(playerData.trail);
+            Debug.Log("Initialize: Initialize SpriteTrailRenderer complete!");
+            spriteTrail.enabled = false;
+            return Task.CompletedTask;
+        } */
     }
 }
