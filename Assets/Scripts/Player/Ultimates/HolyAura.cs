@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-public class HolyAuraNew : UltimateAbility
+public class HolyAura : UltimateAbility
 {
     [SerializeField] private Animator auraAnimator;
     [SerializeField] private int maximumUltimateSize = 8;

@@ -27,8 +27,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void OnEnable()
     {
-        LevelFinisher.SetMaxHealth += () => SetHealth(_maxHealth);
-        Dieline.SetZeroHealth += () => SetHealth(0);
+        //LevelFinisher.SetMaxHealth += () => SetHealth(_maxHealth);
+        //Dieline.SetZeroHealth += () => SetHealth(0);
     }
 
     private void Start()
@@ -40,8 +40,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void OnDisable()
     {
-        LevelFinisher.SetMaxHealth -= () => SetHealth(_maxHealth);
-        Dieline.SetZeroHealth -= () => SetHealth(0);
+        //LevelFinisher.SetMaxHealth -= () => SetHealth(_maxHealth);
+        //Dieline.SetZeroHealth -= () => SetHealth(0);
     }
 
     private void CheckHealth()

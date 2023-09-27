@@ -5,7 +5,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FireGuitarNew : UltimateAbility
+public class FireGuitar : UltimateAbility
 {
     [SerializeField] private GameObject fireGuitar;
     [SerializeField] private float fireGuitarSpeed;
