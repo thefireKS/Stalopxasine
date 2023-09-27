@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SoulGirlNew : UltimateAbility
+public class SoulGirl : UltimateAbility
 {
     [SerializeField] private GameObject soulGirlObject;
     [SerializeField] private float soulGirlSpeed;

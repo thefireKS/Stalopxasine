@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-public class PixelWallNew : UltimateAbility
+public class PixelWall : UltimateAbility
 {
     [SerializeField] private GameObject wallObject;
     [SerializeField] private float wallProjectileFlyingTime = 3f;
