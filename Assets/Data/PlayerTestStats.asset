@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95a9a9a3d70b9d14bb3a35946d121df2, type: 3}
+  m_Name: PlayerTestStats
+  m_EditorClassIdentifier: 
+  UpgradeName: 
+  Icon: {fileID: 21300000, guid: 5f0a6f78a6cab224e8ae27cc50a13fed, type: 3}
+  Description: Test stat Upgrade
+  RequiredInventorySpace: 1
+  PlayerStats:
+    Speed: 20
+    JumpForce: 20

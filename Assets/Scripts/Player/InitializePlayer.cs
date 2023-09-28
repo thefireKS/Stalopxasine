@@ -1,10 +1,24 @@
 using System.Threading.Tasks;
+using Memory_Slots;
 using UnityEngine;
 
 namespace Player
 {
     public class InitializePlayer : MonoBehaviour
     {
+        #if UNITY_EDITOR
+
+        [SerializeField] private PlayerData _playerData;
+
+        [SerializeField] private bool _useCustomData;
+
+        private void Awake()
+        {
+            FindObjectOfType<InitializeLevel>().enabled = false;
+            if(_useCustomData) Initialize(_playerData);
+        }
+
+        #endif
         public async void Initialize(PlayerData playerData)
         {
             await InitializePlayerInputHandler();
@@ -13,6 +27,7 @@ namespace Player
             await InitializePlayerAttack(playerData);
             await InitializePlayerUltimateSystem(playerData);
             await InitializeAnimatorController(playerData);
+            await InitializeUpgrades();
             //await InitializeSpriteTrailRenderer(playerData);
             Debug.Log("Initialize: Complete!");
             Destroy(this);
@@ -64,6 +79,14 @@ namespace Player
             var animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = playerData.controller;
             Debug.Log("Initialize: Initialize AnimatorController complete!");
+            return Task.CompletedTask;
+        }
+
+        private Task InitializeUpgrades()
+        {
+            var upgradeInventory = FindObjectOfType<UpgradeInventory>();
+            upgradeInventory.ApplyAllUpgrades();
+            Debug.Log("Initialize: Initialize Upgrades complete!");
             return Task.CompletedTask;
         }
 

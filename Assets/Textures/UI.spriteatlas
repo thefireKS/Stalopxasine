@@ -100,6 +100,7 @@ SpriteAtlas:
     - 0c918967e1d570c429ec4dd84fb62445: 21300000
     - b996ca67b07476e47ad50ac25029a935: 21300000
     - 1dacfb180f5873c40be576f119879868: 21300000
+    - 5f0a6f78a6cab224e8ae27cc50a13fed: 21300000
     - 53cf288808764a448a82c01dd16f2f5c: 21300000
     - c2ab9419e04fad24294f5342987864b2: 21300000
     - e05c79995c780564c9ecdfeabc381ef7: 21300000
@@ -194,6 +195,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0c918967e1d570c429ec4dd84fb62445, type: 3}
   - {fileID: 21300000, guid: b996ca67b07476e47ad50ac25029a935, type: 3}
   - {fileID: 21300000, guid: 1dacfb180f5873c40be576f119879868, type: 3}
+  - {fileID: 21300000, guid: 5f0a6f78a6cab224e8ae27cc50a13fed, type: 3}
   - {fileID: 21300000, guid: 53cf288808764a448a82c01dd16f2f5c, type: 3}
   - {fileID: 21300000, guid: c2ab9419e04fad24294f5342987864b2, type: 3}
   - {fileID: 21300000, guid: e05c79995c780564c9ecdfeabc381ef7, type: 3}
@@ -287,6 +289,7 @@ SpriteAtlas:
   - E
   - Caramello Heart
   - ButtonSquare
+  - TestIcon
   - BG Stalopxasine Viseman
   - HeroSelectionButtonRight
   - Empty Heart

@@ -169,6 +169,53 @@ Transform:
   - {fileID: 743329511}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &458199993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458199995}
+  - component: {fileID: 458199994}
+  m_Layer: 0
+  m_Name: UpgradeInvenoty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &458199994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458199993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548728e044e478048a05e8aa073697e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgrades:
+  - {fileID: 11400000, guid: 4674ab50d125d884599adf022011bed5, type: 2}
+  maxInventorySlots: 5
+--- !u!4 &458199995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458199993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &546591225
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0
+      value: 0.061802577
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -518,7 +565,7 @@ PrefabInstance:
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.875918
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -943,6 +990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   damage: 1
+  energyOnDeath: 0
   speed: 0.5
   layerMask:
     serializedVersion: 2
@@ -3493,6 +3541,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7578472542861945356, guid: 5827bd3d05c3b4f4cb5fdc53573750e2,
+        type: 3}
+      propertyPath: _playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 66f1e7b600e14ca4bbcbd414e0c01923,
+        type: 2}
+    - target: {fileID: 7578472542861945356, guid: 5827bd3d05c3b4f4cb5fdc53573750e2,
+        type: 3}
+      propertyPath: _useCustomData
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8449940761092549868, guid: 5827bd3d05c3b4f4cb5fdc53573750e2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3929,3 +3988,4 @@ SceneRoots:
   - {fileID: 546591226}
   - {fileID: 1209585187}
   - {fileID: 1102069051}
+  - {fileID: 458199995}

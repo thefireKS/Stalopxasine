@@ -240,6 +240,20 @@ public class PlayerController : MonoBehaviour
         }
     }*/
 
+    #region Upgrade
+
+    public void UpgradeSpeed(float amount)
+    {
+        _speed += amount;
+    }
+    
+    public void UpgradeJumpForce(float amount)
+    {
+        _jumpForce += amount;
+    }
+
+    #endregion
+
     #region States
     private void MovementStateSwapper()
     {
