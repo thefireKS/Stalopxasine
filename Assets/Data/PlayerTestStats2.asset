@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerTestStats2
   m_EditorClassIdentifier: 
   UpgradeName: 
-  Icon: {fileID: 21300000, guid: 5f0a6f78a6cab224e8ae27cc50a13fed, type: 3}
+  Icon: {fileID: 21300000, guid: e40ea505782504949b28799cb4e49e6c, type: 3}
   Description: Test stat Upgrade
-  RequiredInventorySpace: 1
+  RequiredInventorySpace: 3
   PlayerStats:
     Speed: 20
     JumpForce: 20
