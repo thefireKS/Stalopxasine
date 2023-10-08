@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
         _jumpForce = jumpForce;
         _fallGravityMultiplier = fallGravityMultiplier;
         _jumpCoyoteTime = jumpCoyoteTime;
-        this.layerMask = layerMask;
+        this._layerMask = layerMask;
     }
 
     [Header("References")]
@@ -26,19 +26,19 @@ public class PlayerController : MonoBehaviour
     private float _jumpCoyoteTime;
     
     private Rigidbody2D _rb2d;
-    private BoxCollider2D playerCollider;
-    private SpriteRenderer sr;
+    private BoxCollider2D _playerCollider;
+    private SpriteRenderer _spriteRenderer;
     
     [Header("Collision Checkers")]
-    private LayerMask layerMask;
-    private float rayDistance = 0.1f;
+    private LayerMask _layerMask;
+    private readonly float _rayDistance = 0.1f;
 
     private PlayerControls _playerControls;
         
-    private GameObject currentOneWayPlatform;
-    private float gravityScale;
+    private GameObject _currentOneWayPlatform;
+    private float _gravityScale;
     
-    private bool isDropping;
+    private bool _isDropping;
     //private int attacksCounter;
 
     private float moveX;
@@ -80,12 +80,12 @@ public class PlayerController : MonoBehaviour
     {
         _playerControls = PlayerInputHandler.PlayerControls;
 
-        playerCollider = GetComponent<BoxCollider2D>();
+        _playerCollider = GetComponent<BoxCollider2D>();
         animator = GetComponentInChildren<Animator>();
-        sr = GetComponentInChildren<SpriteRenderer>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _rb2d = GetComponent<Rigidbody2D>();
         atck = GetComponent<PlayerAttack>();
-        gravityScale = _rb2d.gravityScale;
+        _gravityScale = _rb2d.gravityScale;
         DisablingCooldown = new WaitForSeconds(0.5f);
         PlayerMeeting.DialogIsGoing = false;
     }
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
     private void Flip()
     {
         if (moveX != 0)
-            sr.flipX = moveX < 0;
+            _spriteRenderer.flipX = moveX < 0;
     }
 
     private void ProcessAnimation()
@@ -154,6 +154,8 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isGoing", moveX != 0 && movementState == MovementStates.Grounded);
 
         animator.SetBool("isAttacking", actionState == ActionStates.Attacking);
+        
+        animator.SetFloat("ySpeed", _rb2d.velocity.y);
     }
 
     private void FixedUpdate()
@@ -177,19 +179,19 @@ public class PlayerController : MonoBehaviour
     
     private bool GroundCheck()
     {
-        var bounds = playerCollider.bounds;
+        var bounds = _playerCollider.bounds;
         Vector2 leftCorner = bounds.min;
         Vector2 rightCorner = bounds.max;
         rightCorner.y -= bounds.size.y;
         
-        return Physics2D.Raycast(rightCorner, Vector2.down, rayDistance,
-            layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, rayDistance,
-            layerMask.value);
+        return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
+            _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
+            _layerMask.value);
     }
 
     private void JumpStart(InputAction.CallbackContext context)
     {
-        if(isDropping) return;
+        if(_isDropping) return;
         
         bufferTimer = _jumpBufferTime;
 
@@ -203,7 +205,7 @@ public class PlayerController : MonoBehaviour
     
     private void AddJumpHeight()
     {
-        if(isDropping) return;
+        if(_isDropping) return;
         _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
     }
 
@@ -215,9 +217,9 @@ public class PlayerController : MonoBehaviour
 
     private void OneWayPlatformMovement(InputAction.CallbackContext context)
     {
-        if (currentOneWayPlatform != null && GroundCheck())
+        if (_currentOneWayPlatform != null && GroundCheck())
         {
-            isDropping = true;
+            _isDropping = true;
             StartCoroutine(DisableCollision());
         }
     }
@@ -258,7 +260,7 @@ public class PlayerController : MonoBehaviour
     }
     private void falling()
     {
-        _rb2d.gravityScale = gravityScale * _fallGravityMultiplier;
+        _rb2d.gravityScale = _gravityScale * _fallGravityMultiplier;
         bufferTimer -= Time.deltaTime;
         coyoteTimer -= Time.deltaTime;
 
@@ -268,7 +270,7 @@ public class PlayerController : MonoBehaviour
 
     private void grounded()
     {
-        _rb2d.gravityScale = gravityScale;
+        _rb2d.gravityScale = _gravityScale;
         //attacksCounter = Data.possibleAttacks;
         coyoteTimer = _jumpCoyoteTime;
         
@@ -322,24 +324,24 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("GroundPlatforms"))
         {
-            currentOneWayPlatform = collision.gameObject;
+            _currentOneWayPlatform = collision.gameObject;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("GroundPlatforms"))
         {
-            currentOneWayPlatform = null;
+            _currentOneWayPlatform = null;
         }
     }
     
     private IEnumerator DisableCollision()
     {
-        CompositeCollider2D platformCollider = currentOneWayPlatform.GetComponent<CompositeCollider2D>();
-        Physics2D.IgnoreCollision(playerCollider, platformCollider);
+        CompositeCollider2D platformCollider = _currentOneWayPlatform.GetComponent<CompositeCollider2D>();
+        Physics2D.IgnoreCollision(_playerCollider, platformCollider);
         yield return DisablingCooldown;
-        Physics2D.IgnoreCollision(playerCollider, platformCollider, false);
-        isDropping = false;
+        Physics2D.IgnoreCollision(_playerCollider, platformCollider, false);
+        _isDropping = false;
     }
     #endregion
 }
