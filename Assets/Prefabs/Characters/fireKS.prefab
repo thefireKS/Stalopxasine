@@ -226,7 +226,6 @@ GameObject:
   - component: {fileID: 4494203290640204243}
   - component: {fileID: 5112237390209053743}
   - component: {fileID: 85171882242208426}
-  - component: {fileID: 4227066797836130055}
   - component: {fileID: 4486906149725000464}
   m_Layer: 0
   m_Name: fireKS
@@ -361,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7acdef1f691d41a70a9651664f76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bufferTime: 0.1
 --- !u!114 &85171882242208426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,19 +374,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canEndEarlier: 0
---- !u!114 &4227066797836130055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5943065303811168740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb15828eb31e21c49af5e3d973e51470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
 --- !u!95 &4486906149725000464
 Animator:
   serializedVersion: 5

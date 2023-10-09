@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2403606779123760824}
   - component: {fileID: 909770449054586636}
   - component: {fileID: 25460375895776966}
-  - component: {fileID: 4775878272130801007}
   - component: {fileID: 7989677926898270198}
   m_Layer: 9
   m_Name: Fridman
@@ -150,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7acdef1f691d41a70a9651664f76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bufferTime: 0.1
 --- !u!114 &25460375895776966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,19 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canEndEarlier: 0
---- !u!114 &4775878272130801007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3045586685101704632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb15828eb31e21c49af5e3d973e51470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
 --- !u!95 &7989677926898270198
 Animator:
   serializedVersion: 5
