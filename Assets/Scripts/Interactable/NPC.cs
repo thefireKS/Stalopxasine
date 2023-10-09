@@ -8,7 +8,7 @@ using UnityEngine.Localization.Components;
 namespace Interactable
 {
     
-    public class NPC: MonoBehaviour, IInteractable
+    public class NPC: Interactable
     {
         public static bool DialogIsGoing=false;
         
@@ -18,8 +18,7 @@ namespace Interactable
         [SerializeField] private LocalizedString[] replicas;
         
         [Space(10)] 
-        [SerializeField] private IInteractable.InteractionType InteractionType;
-        public IInteractable.InteractionType CurrentInteractionType => InteractionType;
+        
 
         private Animator _animator;
         private Camera mainCamera;
@@ -53,20 +52,16 @@ namespace Interactable
             else
                 mainCamera.orthographicSize *= 2;
         }
-
-        public void QuickInteract()
+        
+        public override void ContinuousInteract()
         {
-            Debug.Log("AHahahahaha");//test
-        }
-        public void ContinuousInteract()
-        {
+            base.ContinuousInteract();
             DialogueInteraction();
             CameraZoom();
         }
         
         private void DialogueInteraction()
         {
-            Debug.Log("UwU");
             if (!DialogIsGoing)
             {
                 SetupDialogue(true);

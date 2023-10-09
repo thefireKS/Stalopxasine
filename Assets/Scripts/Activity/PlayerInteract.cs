@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using Interactable;
+using UnityEngine;
 
 namespace Player
 {
     public class PlayerInteract : MonoBehaviour
     {
 
-        [SerializeField] private float interactRange = 1f;
+        /*[SerializeField] private float interactRange = 1f;
+
+        private IInteractable interactable;
         
         private void OnEnable()
         {
@@ -15,15 +19,22 @@ namespace Player
         {
             PlayerInputHandler.Interaction -= Interact;
         }
-        
+
+        private void Update()
+        {
+            interactable = GetInteractable();
+            
+            if (GetInteractable()==null)
+                InteractUI.InteractionMarker.Hide();
+            else InteractUI.InteractionMarker.Show();
+        }
+
         private void Interact()
         {
-            var interactable = GetInteractable();
-            
             interactable?.Interact(interactable.CurrentInteractionType);
         }
 
-        public IInteractable GetInteractable()
+        private IInteractable GetInteractable()
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactRange);
             foreach (var collider in colliders)
@@ -34,6 +45,6 @@ namespace Player
                 }
             }
             return null;
-        }
+        }*/
     }
 }

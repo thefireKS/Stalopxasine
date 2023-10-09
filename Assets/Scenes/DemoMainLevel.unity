@@ -11769,26 +11769,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Miha
       objectReference: {fileID: 0}
-    - target: {fileID: 6711442333987608732, guid: fd55b343ac2c5204f9367c6b3f500ef1,
+    - target: {fileID: 3379952988667705693, guid: fd55b343ac2c5204f9367c6b3f500ef1,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6711442333987608732, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: DialogWindow
-      value: 
-      objectReference: {fileID: 1682038478}
-    - target: {fileID: 6711442333987608732, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: _dialogueText
-      value: 
-      objectReference: {fileID: 1014496235}
-    - target: {fileID: 6711442333987608732, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: _localizeStringEvent
-      value: 
-      objectReference: {fileID: 1014496234}
     - target: {fileID: 7297193170134816642, guid: fd55b343ac2c5204f9367c6b3f500ef1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11841,54 +11826,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7759444624674597461, guid: fd55b343ac2c5204f9367c6b3f500ef1,
         type: 3}
-      propertyPath: DialogWindow
-      value: 
-      objectReference: {fileID: 1682038478}
-    - target: {fileID: 7759444624674597461, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: _dialogueText
-      value: 
-      objectReference: {fileID: 1014496235}
-    - target: {fileID: 7759444624674597461, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: replicas.Array.size
+      propertyPath: interactRange
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7759444624674597461, guid: fd55b343ac2c5204f9367c6b3f500ef1,
         type: 3}
-      propertyPath: _localizeStringEvent
-      value: 
-      objectReference: {fileID: 1014496234}
-    - target: {fileID: 7759444624674597461, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: replicas.Array.data[2].m_TableEntryReference.m_KeyId
-      value: 2322289803264
+      propertyPath: interactionType
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7759444624674597461, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: replicas.Array.data[2].m_TableReference.m_TableCollectionName
-      value: GUID:616137e6b2b7e9446aa714ad7d6df8df
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354664752694994205, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8354664752694994205, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: DialogWindow
-      value: 
-      objectReference: {fileID: 1682038478}
-    - target: {fileID: 8354664752694994205, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: _dialogueText
-      value: 
-      objectReference: {fileID: 1014496235}
-    - target: {fileID: 8354664752694994205, guid: fd55b343ac2c5204f9367c6b3f500ef1,
-        type: 3}
-      propertyPath: _localizeStringEvent
-      value: 
-      objectReference: {fileID: 1014496234}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

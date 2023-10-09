@@ -25,7 +25,7 @@ namespace Player
             await InitializePlayerAttack(playerData);
             await InitializePlayerUltimateSystem(playerData);
             await InitializeAnimatorController(playerData);
-            await InitializePlayerInteract();
+            //await InitializePlayerInteract();
             //await InitializeSpriteTrailRenderer(playerData);
             Debug.Log("Initialize: Complete!");
             Destroy(this);
@@ -91,11 +91,11 @@ namespace Player
             return Task.CompletedTask;
         } */
 
-        private Task InitializePlayerInteract()
+        /*private Task InitializePlayerInteract()
         {
             gameObject.AddComponent<PlayerInteract>();
             Debug.Log("Initalize: Initialize PlayerInteract complete!");
             return Task.CompletedTask;
-        }
+        }*/
     }
 }
