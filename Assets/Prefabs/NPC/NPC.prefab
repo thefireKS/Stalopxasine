@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4770934618467575179}
   - component: {fileID: 7429098656229159099}
   - component: {fileID: 691606083040152404}
-  - component: {fileID: 6089058111200024340}
+  - component: {fileID: 5538865154271107164}
   - component: {fileID: 554358647179972809}
   m_Layer: 0
   m_Name: NPC
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
---- !u!114 &6089058111200024340
+--- !u!114 &5538865154271107164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,15 +141,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2884683796679202009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 614eba103050794418ff735c635b5952, type: 3}
+  m_Script: {fileID: 11500000, guid: f3a59e08fa551124bb2ecbc2b883a6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  afkAnimName: 
-  GreetingAnimName: 
-  DialogWindow: {fileID: 0}
-  _dialogueText: {fileID: 0}
-  _localizeStringEvent: {fileID: 0}
   replicas: []
+  InteractionType: 1
   references:
     version: 2
     RefIds: []

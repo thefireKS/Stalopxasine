@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 4985851986628420128}
   - component: {fileID: 6111922258600616197}
   - component: {fileID: 7058407985238748597}
-  - component: {fileID: 5187843503557938093}
   - component: {fileID: 454378740904723911}
   m_Layer: 0
   m_Name: Viseman
@@ -182,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7acdef1f691d41a70a9651664f76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bufferTime: 0.1
 --- !u!114 &7058407985238748597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,19 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canEndEarlier: 0
---- !u!114 &5187843503557938093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 151745410589795453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb15828eb31e21c49af5e3d973e51470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 525d260d72ac0934b98281ee28d4d9ef, type: 2}
 --- !u!95 &454378740904723911
 Animator:
   serializedVersion: 5

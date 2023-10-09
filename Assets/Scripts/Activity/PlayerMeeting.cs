@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 
+//DEPRECATED
 public class PlayerMeeting : MonoBehaviour
 {
     [SerializeField] private string afkAnimName;

@@ -88,6 +88,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: afkAnimName
+      value: Miha afk
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: InteractionType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: GreetingAnimName
+      value: Miha talking
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 61929046016
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[1].m_TableEntryReference.m_KeyId
+      value: 2322289803264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[0].m_TableReference.m_TableCollectionName
+      value: GUID:616137e6b2b7e9446aa714ad7d6df8df
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[1].m_TableReference.m_TableCollectionName
+      value: GUID:616137e6b2b7e9446aa714ad7d6df8df
+      objectReference: {fileID: 0}
     - target: {fileID: 6089058111200024340, guid: 2789718e5d22c244c80e3d903b299fbd,
         type: 3}
       propertyPath: m_Enabled
@@ -154,55 +194,9 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6089058111200024340, guid: 2789718e5d22c244c80e3d903b299fbd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2884683796679202009, guid: 2789718e5d22c244c80e3d903b299fbd,
-        type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 6711442333987608732}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2789718e5d22c244c80e3d903b299fbd, type: 3}
---- !u!1 &1115030022037890768 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2884683796679202009, guid: 2789718e5d22c244c80e3d903b299fbd,
-    type: 3}
-  m_PrefabInstance: {fileID: 2842076224452653577}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6711442333987608732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115030022037890768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3a59e08fa551124bb2ecbc2b883a6b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  afkAnimName: Miha afk
-  GreetingAnimName: Miha talking
-  DialogWindow: {fileID: 0}
-  _dialogueText: {fileID: 0}
-  _localizeStringEvent: {fileID: 0}
-  replicas:
-  - m_TableReference:
-      m_TableCollectionName: GUID:616137e6b2b7e9446aa714ad7d6df8df
-    m_TableEntryReference:
-      m_KeyId: 61929046016
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  - m_TableReference:
-      m_TableCollectionName: GUID:616137e6b2b7e9446aa714ad7d6df8df
-    m_TableEntryReference:
-      m_KeyId: 2322289803264
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  references:
-    version: 2
-    RefIds: []

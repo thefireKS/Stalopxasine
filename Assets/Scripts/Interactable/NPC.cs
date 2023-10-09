@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -6,58 +7,69 @@ using UnityEngine.Localization.Components;
 
 namespace Interactable
 {
-    public class NPC: MonoBehaviour,IInteractable
-    {
-        [SerializeField] private string afkAnimName;
-        [SerializeField] private string GreetingAnimName;
     
+    public class NPC: MonoBehaviour, IInteractable
+    {
         public static bool DialogIsGoing=false;
-
-        [SerializeField] private GameObject DialogWindow;
-        [Space(10)] 
-        [SerializeField] private TextMeshProUGUI _dialogueText;
-        [SerializeField] private LocalizeStringEvent _localizeStringEvent;
+        
+        private GameObject DialogWindow;
+        private TextMeshProUGUI _dialogueText;
+        private LocalizeStringEvent _localizeStringEvent;
         [SerializeField] private LocalizedString[] replicas;
+        
+        [Space(10)] 
+        [SerializeField] private IInteractable.InteractionType InteractionType;
+        public IInteractable.InteractionType CurrentInteractionType => InteractionType;
 
         private Animator _animator;
         private Camera mainCamera;
     
         private float originalCameraSize;
-        private bool inZone=false;
+        
         private int currentReplica = 0;
 
         private readonly float typingSpeed = 0.04f;
-        private GameObject player;
+        
         private Coroutine displayTextCoroutine;
         
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            DialogWindow = GameObject.FindGameObjectWithTag("DialogueWindow");
+            _dialogueText = DialogWindow.GetComponentInChildren<TextMeshProUGUI>();
+            _localizeStringEvent = DialogWindow.GetComponentInChildren<LocalizeStringEvent>();
         }
         private void Start()
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            DialogWindow.SetActive(false);
+            mainCamera = Camera.main;
+            originalCameraSize = mainCamera.orthographicSize;
+            _animator.SetBool("isTalking", false);
+        }
+        private void CameraZoom()
+        {
+            if (mainCamera.orthographicSize == originalCameraSize)
+                mainCamera.orthographicSize /= 2;
+            else
+                mainCamera.orthographicSize *= 2;
         }
 
-        public void Interact()
+        public void QuickInteract()
+        {
+            Debug.Log("AHahahahaha");//test
+        }
+        public void ContinuousInteract()
         {
             DialogueInteraction();
+            CameraZoom();
         }
         
-        private void Update()
-        {
-            if(inZone && !DialogIsGoing)
-                _animator.Play(afkAnimName); //переделац на on triger enter
-        }
         private void DialogueInteraction()
         {
-            if (!inZone) return;
-
+            Debug.Log("UwU");
             if (!DialogIsGoing)
             {
-                DialogIsGoing = true;
-                _animator.Play(GreetingAnimName);
-                DialogWindow.SetActive(true);
+                SetupDialogue(true);
                 _localizeStringEvent.StringReference = replicas[currentReplica];
                 displayTextCoroutine = StartCoroutine(DisplayLine());
             }
@@ -73,27 +85,32 @@ namespace Interactable
 
                 currentReplica++;
                 if (currentReplica >= replicas.Length)
+                {
                     currentReplica = 0;
+                    SetupDialogue(false);
+                }
 
                 _localizeStringEvent.StringReference = replicas[currentReplica];
                 displayTextCoroutine = StartCoroutine(DisplayLine());
             }
         }
+
         private IEnumerator DisplayLine()
         {
             _dialogueText.maxVisibleCharacters = 0;
-        
+
             var isAddingRichTextTag = false;
 
             foreach (var letter in _dialogueText.text.ToCharArray())
             {
-                if (letter == '<' || isAddingRichTextTag) 
+                if (letter == '<' || isAddingRichTextTag)
                 {
                     isAddingRichTextTag = true;
                     if (letter == '>')
                     {
                         isAddingRichTextTag = false;
                     }
+
                     _dialogueText.maxVisibleCharacters++;
                 }
                 else
@@ -102,21 +119,14 @@ namespace Interactable
                     yield return new WaitForSeconds(typingSpeed);
                 }
             }
-
             displayTextCoroutine = null;
         }
-        
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.gameObject != player) return;
-            inZone = true;
-        }
 
-        private void OnTriggerExit2D(Collider2D other)
+        private void SetupDialogue(bool dialogueState)//хз может оно и не надо, но я решил вынести
         {
-            if (other.gameObject != player) return;
-            inZone = false;
-            _animator.Play(afkAnimName);
+            DialogIsGoing = dialogueState;
+            DialogWindow.SetActive(dialogueState);
+            _animator.SetBool("isTalking", dialogueState);
         }
     }
 }

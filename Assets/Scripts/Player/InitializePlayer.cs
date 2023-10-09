@@ -5,6 +5,18 @@ namespace Player
 {
     public class InitializePlayer : MonoBehaviour
     {
+        #if UNITY_EDITOR
+        [SerializeField] private PlayerData _playerData;
+
+        [SerializeField] private bool _useCustomData;
+
+        private void Awake()
+        {
+            FindObjectOfType<InitializeLevel>().enabled = false;
+            if (_useCustomData) Initialize(_playerData);
+        }
+        #endif
+        
         public async void Initialize(PlayerData playerData)
         {
             await InitializePlayerInputHandler();
@@ -13,28 +25,31 @@ namespace Player
             await InitializePlayerAttack(playerData);
             await InitializePlayerUltimateSystem(playerData);
             await InitializeAnimatorController(playerData);
+            await InitializePlayerInteract();
             //await InitializeSpriteTrailRenderer(playerData);
             Debug.Log("Initialize: Complete!");
             Destroy(this);
         }
 
         private Task InitializePlayerInputHandler()
-        { 
+        {
             gameObject.AddComponent<PlayerInputHandler>();
             Debug.Log("Initalize: Initialize PlayerInputHandler complete!");
             return Task.CompletedTask;
         }
 
+
         private Task InitializePlayerController(PlayerData playerData)
         {
             var playerController = gameObject.AddComponent<PlayerController>();
 
-            playerController.Initialize(playerData.speed, playerData.jumpBufferTime, playerData.jumpForce, playerData.fallGravityMultiplier, playerData.jumpCoyoteTime, playerData.layerMask);
+            playerController.Initialize(playerData.speed, playerData.jumpBufferTime, playerData.jumpForce,
+                playerData.fallGravityMultiplier, playerData.jumpCoyoteTime, playerData.layerMask);
 
             Debug.Log("Initialize: Initialize PlayerController complete!");
             return Task.CompletedTask;
         }
-        
+
         private Task InitializePlayerHealth(PlayerData playerData)
         {
             var playerHealth = gameObject.AddComponent<PlayerHealth>();
@@ -75,5 +90,12 @@ namespace Player
             spriteTrail.enabled = false;
             return Task.CompletedTask;
         } */
+
+        private Task InitializePlayerInteract()
+        {
+            gameObject.AddComponent<PlayerInteract>();
+            Debug.Log("Initalize: Initialize PlayerInteract complete!");
+            return Task.CompletedTask;
+        }
     }
 }

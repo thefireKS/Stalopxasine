@@ -7296,7 +7296,7 @@ PrefabInstance:
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9998752
+      value: 0.9971936
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -19217,11 +19217,11 @@ GameObject:
   - component: {fileID: 3699460016210818107}
   m_Layer: 5
   m_Name: Dialogue Window
-  m_TagString: Untagged
+  m_TagString: DialogueWindow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3699460016210818107
 MonoBehaviour:
   m_ObjectHideFlags: 0

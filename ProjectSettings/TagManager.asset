@@ -12,6 +12,7 @@ TagManager:
   - UltimateHitBox
   - Enemy
   - EnemyBullet
+  - DialogueWindow
   layers:
   - Default
   - TransparentFX
