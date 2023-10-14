@@ -6,7 +6,7 @@ namespace Enemy
     public abstract class Base : MonoBehaviour, IDamageable, IDealDamage
     {
         [SerializeField] private int health;
-        [SerializeField] private int damage;
+        [SerializeField] protected int damage;
         [SerializeField] private int energyOnDeath;
     
         public void TakeDamage(int dmg)

@@ -43,8 +43,8 @@ namespace Enemy
             var rayPosition = bounds.center;
             var direction = _isGoingRight ? 1 : -1;
             RaycastHit2D hit = Physics2D.Raycast(rayPosition, Vector2.right * direction,
-                rayDistance + (bounds.max.x - bounds.center.x), targetMask);
-            Debug.DrawRay(rayPosition, Vector3.right * (direction * rayDistance), Color.yellow);
+                rayDistanceToCheckObstacles + (bounds.max.x - bounds.center.x), targetMask);
+            Debug.DrawRay(rayPosition, Vector3.right * (direction * rayDistanceToCheckObstacles), Color.yellow);
         
             if (!hit) return;
         

@@ -8,7 +8,7 @@ namespace Enemy
 
         [SerializeField] private LayerMask layerMask;
 
-        [SerializeField] protected float rayDistance;
+        [SerializeField] protected float rayDistanceToCheckObstacles;
 
         protected Rigidbody2D _rigidbody;
         protected Collider2D _collider;
@@ -46,15 +46,15 @@ namespace Enemy
                 x = _isGoingRight ? bounds.max.x : bounds.min.x,
                 y = bounds.min.y //down position
             };
-            Debug.DrawRay(rayPosition, Vector3.down * rayDistance, Color.red);
+            Debug.DrawRay(rayPosition, Vector3.down * rayDistanceToCheckObstacles, Color.red);
             var direction = _isGoingRight ? 1 : -1;
-            RaycastHit2D hitDown = Physics2D.Raycast(rayPosition, Vector2.down, rayDistance, layerMask);
+            RaycastHit2D hitDown = Physics2D.Raycast(rayPosition, Vector2.down, rayDistanceToCheckObstacles, layerMask);
             bool isAnythingUnder = hitDown.transform != null;
 
             rayPosition = _isGoingRight ? bounds.max : bounds.min;
             rayPosition.y = bounds.center.y; //right position
-            Debug.DrawRay(rayPosition, Vector3.right * (direction * rayDistance), Color.green);
-            RaycastHit2D hitRight = Physics2D.Raycast(rayPosition, Vector2.right * direction, rayDistance, layerMask);
+            Debug.DrawRay(rayPosition, Vector3.right * (direction * rayDistanceToCheckObstacles), Color.green);
+            RaycastHit2D hitRight = Physics2D.Raycast(rayPosition, Vector2.right * direction, rayDistanceToCheckObstacles, layerMask);
             bool isAnythingForward = hitRight.transform != null;
         
             return !isAnythingUnder || isAnythingForward;

@@ -12,9 +12,19 @@ public class InitializeLevel : MonoBehaviour
     {
         var playerInitializer = FindObjectOfType<InitializePlayer>();
         Debug.Log("Level Initialization: Find InitializePlayer");
-        var levelData = FindObjectOfType<LevelSelection>().ReturnLevelData();
-        Debug.Log("Level Initialization: Find LevelData");
-        playerInitializer.Initialize(levelData.playerData);
-        Debug.Log("Level Initialization: Complete");
+        var levelSelection = FindObjectOfType<LevelSelection>();
+        LevelData levelData = null;
+        if (levelSelection )
+        {
+            levelData = levelSelection.ReturnLevelData();
+            Debug.Log("Level Initialization: Find LevelData");
+            playerInitializer.Initialize(levelData.playerData);
+            Debug.Log("Level Initialization: Complete");
+        }
+        else
+        {
+            Debug.LogWarning("Level Initialization: Can't find LevelData");
+        }
+        
     }
 }
