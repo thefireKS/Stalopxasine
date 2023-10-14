@@ -5,20 +5,22 @@ namespace Enemy
 {
     public class Turret : Base
     {
-        [SerializeField] private RangedProjectile projectile;
+        [SerializeField] protected RangedProjectile projectile;
 
-        [SerializeField] private float timeBetweenShots;
-        [SerializeField] private Transform shotPoint;
+        [SerializeField] protected float timeBetweenShots;
+        [SerializeField] protected Transform shotPoint;
 
-        private void Start()
+        protected virtual void Start()
         {
             StartCoroutine(Shoot());
         }
 
-        private IEnumerator Shoot()
-        {
+        protected virtual IEnumerator Shoot()
+        { 
             Instantiate(projectile, shotPoint.position, shotPoint.rotation);
+            
             yield return new WaitForSeconds(timeBetweenShots);
+            
             StartCoroutine(Shoot());
         }
     }

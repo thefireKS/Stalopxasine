@@ -5,6 +5,8 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     [SerializeField] protected int damage;
     [SerializeField] protected float lifeTimeSeconds;
 
+    [SerializeField] protected bool needToDestroyOnCollision = true;
+
     private Animator _animator;
 
     private void OnEnable()
@@ -14,17 +16,17 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
         var angle = (int) transform.eulerAngles.z % 10f == 5f ? 1 : 0;
 
         _animator?.SetFloat("Angle", angle);
-
-        Destroy(gameObject,lifeTimeSeconds);
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.name + " // " + other.tag);
-
+        Debug.Log($"Trigger by {other.transform.name}");
+        
         if (other.TryGetComponent<IDamageable>(out IDamageable damageable))
             damageable.TakeDamage(damage);
-
+        
+        if(!needToDestroyOnCollision) return;
+        
         if (other.CompareTag("Ground"))
             Destroy(gameObject);
         //put some particles instead lol
@@ -33,5 +35,10 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     public void DealDamage(int dmg, IDamageable target)
     {
         target.TakeDamage(dmg);
+    }
+
+    public float GetLifetime()
+    {
+        return lifeTimeSeconds;
     }
 }

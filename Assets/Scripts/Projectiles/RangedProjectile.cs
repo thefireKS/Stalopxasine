@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RangedProjectile : Projectile
@@ -8,6 +6,7 @@ public class RangedProjectile : Projectile
 
     private void Update()
     {
-        transform.position += transform.right * (speed * Time.deltaTime);
+        var myTransform = transform;
+        myTransform.position += myTransform.right * (speed * Time.deltaTime);
     }
 }
