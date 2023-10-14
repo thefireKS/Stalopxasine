@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     [Header("Collision Checkers")]
     private LayerMask _layerMask;
     private readonly float _rayDistance = 0.1f;
+    private readonly float _maxSlopeAngle = 70f;
 
     private PlayerControls _playerControls;
         
@@ -183,12 +184,27 @@ public class PlayerController : MonoBehaviour
         Vector2 leftCorner = bounds.min;
         Vector2 rightCorner = bounds.max;
         rightCorner.y -= bounds.size.y;
+
+        
+        RaycastHit2D downHit = Physics2D.CircleCast(transform.position,  0.5f*bounds.extents.magnitude, 
+            Vector2.down, bounds.extents.magnitude, _layerMask.value);
+        SlopeStand(Vector2.Angle(downHit.normal, Vector2.up));
         
         return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
             _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
             _layerMask.value);
     }
 
+    private void SlopeStand(float slopeAngle)
+    {
+        if (slopeAngle >= _maxSlopeAngle)
+        {
+            
+            //_rb2d.velocity = new Vector2(0, 0);
+        }
+        _rb2d.gravityScale = slopeAngle <= _maxSlopeAngle && slopeAngle!=0 ?  0f :_gravityScale ;
+        //_rb2d.drag = (slopeAngle >= _maxSlopeAngle && _playerControls.Player.Movement.ReadValue<Vector2>() == Vector2.zero) ? 100f : 0f;
+    }
     private void JumpStart(InputAction.CallbackContext context)
     {
         if(_isDropping) return;
