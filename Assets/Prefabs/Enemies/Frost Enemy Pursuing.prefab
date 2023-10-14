@@ -48,13 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b1e4c5e96318a4eae15814244ce2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
   damage: 1
+  health: 1
+  energyOnDeath: 0
   speed: 0.5
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  rayDistance: 1
+  rayDistanceToCheckObstacles: 1
   targetMask:
     serializedVersion: 2
     m_Bits: 512
