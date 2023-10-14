@@ -6,12 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public void Initialize(float speed, float jumpBufferTime, float jumpForce, float fallGravityMultiplier, float jumpCoyoteTime, LayerMask layerMask)
     {
-        this._speed = speed;
+        _speed = speed;
         _jumpBufferTime = jumpBufferTime;
         _jumpForce = jumpForce;
         _fallGravityMultiplier = fallGravityMultiplier;
         _jumpCoyoteTime = jumpCoyoteTime;
-        this._layerMask = layerMask;
+        _layerMask = layerMask;
     }
 
     [Header("References")]
