@@ -6,9 +6,15 @@ namespace Enemy
     {
         [SerializeField] private int damage;
     
-        public void DealDamage(int dmg, IDamageable target)
+        public void DealDamage(int dmg, IDamageable damageable)
         {
-            target.TakeDamage(dmg);
+            damageable.TakeDamage(dmg);
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.TryGetComponent(out IDamageable damageable))
+                DealDamage(damage, damageable);
         }
     }
 }

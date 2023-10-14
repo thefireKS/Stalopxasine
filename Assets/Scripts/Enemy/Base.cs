@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public abstract class Base : MonoBehaviour, IDamageable, IDealDamage
+    public abstract class Base : Obstacle, IDamageable
     {
         [SerializeField] private int health;
         [SerializeField] protected int damage;
@@ -28,17 +28,6 @@ namespace Enemy
         {
             PlayerUltimateSystem.AddEnergy(energyOnDeath);
             Destroy(gameObject);
-        }
-
-        public void DealDamage(int dmg, IDamageable damageable)
-        {
-            damageable.TakeDamage(dmg);
-        }
-
-        private void OnCollisionEnter2D(Collision2D other)
-        {
-            if (other.gameObject.TryGetComponent(out IDamageable damageable))
-                DealDamage(damage, damageable);
         }
     }
 }
