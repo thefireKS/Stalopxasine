@@ -12,18 +12,20 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     
     private Animator _animator;
     
-    private const float DamageCoolDown = 1f; //damage getting cd
-    private float _nextHitTime; //timer to cd of damage
+    //private const float DamageCoolDown = 1f; //damage getting cd
+    //private float _nextHitTime; //timer to cd of damage
+    private bool isTakingDamage = false;
     private int _currentHealth;
     private int _maxHealth;
-    public void SetMaxHealth(int maxHealth)
+
+    private void SetMaxHealth(int maxHealth)
     {
         _maxHealth = maxHealth;
     }
 
     public static event Action<int> OnHealthChanged;
 
-    private WaitForSeconds Blinking = new WaitForSeconds(0.5f);
+    private WaitForSeconds TakingDamage = new WaitForSeconds(1f);
 
     private void OnEnable()
     {
@@ -86,13 +88,18 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         _currentHealth-=damage;
         CheckHealth();
         OnHealthChanged?.Invoke(_currentHealth);
-        _animator.SetBool("isHitted",true);
-        yield return Blinking;
-        _animator.SetBool("isHitted",false);
+        isTakingDamage = true;
+        _animator.SetBool("isHitted", true);
+        yield return TakingDamage;
+        _animator.SetBool("isHitted", false);
+        isTakingDamage = false;
     }
 
     public void TakeDamage(int dmg)
     {
-        StartCoroutine(GotDamaged(dmg));
+        if (!isTakingDamage)
+        {
+            StartCoroutine(GotDamaged(dmg));
+        }
     }
 }
