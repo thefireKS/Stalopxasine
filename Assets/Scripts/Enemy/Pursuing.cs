@@ -13,16 +13,16 @@ namespace Enemy
             CheckForTarget();
             if (_target)
             {
-                var direction = transform.position - _target.position;
+                var direction = Mathf.Sign((transform.position - _target.position).x) ;
             
-                if (direction.x > 0)
+                if (direction > 0)
                 {
-                    _rigidbody.velocity = -Vector2.right * speed;
+                    SetVelocityX(-speed);
                     _isGoingRight = false;
                 }
                 else
                 {
-                    _rigidbody.velocity = Vector2.right * speed;
+                    SetVelocityX(speed);;
                     _isGoingRight = true;
                 }
 
