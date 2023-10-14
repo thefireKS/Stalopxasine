@@ -6,7 +6,6 @@ namespace Enemy
     public abstract class Base : Obstacle, IDamageable
     {
         [SerializeField] private int health;
-        [SerializeField] protected int damage;
         [SerializeField] private int energyOnDeath;
     
         public void TakeDamage(int dmg)

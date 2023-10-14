@@ -4,7 +4,7 @@ namespace Enemy
 {
     public class Obstacle : MonoBehaviour, IDealDamage
     {
-        [SerializeField] private int damage;
+        [SerializeField] protected int damage;
     
         public void DealDamage(int dmg, IDamageable damageable)
         {
