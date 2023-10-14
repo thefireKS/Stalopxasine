@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviour
         
         return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
             _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
-            _layerMask.value);
+            _layerMask.value) || downHit;
     }
 
     private void SlopeStand(float slopeAngle)

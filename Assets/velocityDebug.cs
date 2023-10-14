@@ -9,8 +9,7 @@ public class velocityDebug : MonoBehaviour
     private GameObject player;
     private Rigidbody2D _rigidbody2D;
 
-    [SerializeField]
-    private TextMeshProUGUI text;
+    [SerializeField] private TextMeshProUGUI text;
 
     private void Start()
     {
