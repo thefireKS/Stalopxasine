@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Enemy
@@ -10,10 +11,27 @@ namespace Enemy
 
         [SerializeField] protected float rayDistanceToCheckObstacles;
 
+        [SerializeField] protected float hittedTime;
+        private float _hittedTimer;
+
+        protected event Action UpdateTimer;
+
         protected Rigidbody2D _rigidbody;
         protected Collider2D _collider;
 
         protected bool _isGoingRight = true;
+
+        private void OnEnable()
+        {
+            OnTakeDamage += TakeHit;
+            UpdateTimer += HittedTimerApply;
+        }
+        
+        private void OnDisable()
+        {
+            OnTakeDamage -= TakeHit;
+            UpdateTimer -= HittedTimerApply;
+        }
 
         private void Awake()
         {
@@ -82,6 +100,7 @@ namespace Enemy
         
             var direction = _isGoingRight ? 1 : -1;
             SetVelocityX(direction * speed);
+            Debug.Log("Speed set");
         }
 
         protected virtual void Behavior()
@@ -89,9 +108,25 @@ namespace Enemy
             Patrol();
         }
 
+        private void TakeHit()
+        {
+            _hittedTimer += hittedTime;
+        }
+
+        private void HittedTimerApply()
+        {
+            if (_hittedTimer >= 0)
+            {
+                _hittedTimer -= Time.deltaTime;
+            }
+        }
+
         protected void Update()
         {
+            UpdateTimer?.Invoke();
+            
             if (!CheckUnder()) return;
+            if(_hittedTimer > 0) return;
             
             Behavior();
         }

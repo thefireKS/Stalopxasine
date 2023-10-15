@@ -7,6 +7,8 @@ namespace Enemy
     {
         [SerializeField] private int health;
         [SerializeField] private int energyOnDeath;
+
+        protected event Action OnTakeDamage; 
     
         public void TakeDamage(int dmg)
         {
@@ -16,6 +18,7 @@ namespace Enemy
             }
 
             health -= dmg;
+            OnTakeDamage?.Invoke();
         
             if (health <= 0)
             {

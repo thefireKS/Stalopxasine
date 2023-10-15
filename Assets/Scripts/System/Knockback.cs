@@ -21,7 +21,7 @@ namespace System
             var knockVector = knockForce;
             knockVector.x *= -Mathf.Sign(direction.x);
             Debug.Log(knockVector);
-            _rigidbody.AddForce(knockVector);
+            _rigidbody.AddForce(knockVector, ForceMode2D.Impulse);
         }
     }
 }

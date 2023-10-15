@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a62a0d64eee8b54fabe7c0b30c7db81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockForce: {x: 15, y: 15}
+  knockForce: {x: 3, y: 5}
 --- !u!1 &7360021260918687863
 GameObject:
   m_ObjectHideFlags: 0
