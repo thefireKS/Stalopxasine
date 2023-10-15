@@ -2837,6 +2837,11 @@ PrefabInstance:
       propertyPath: health
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6899637439646685813, guid: 100467cff03ddd947b0fa9ff6a9a9092,
+        type: 3}
+      propertyPath: hittedTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
