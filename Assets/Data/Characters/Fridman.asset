@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fridman
   m_EditorClassIdentifier: 
   maxHealth: 4
-  controller: {fileID: 9100000, guid: 53730c4a10b91e4489dc6aec90ead4f2, type: 2}
+  controller: {fileID: 22100000, guid: 7accb8e0793fe154ba8f41e4b3a759f4, type: 2}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
