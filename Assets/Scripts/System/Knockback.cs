@@ -15,12 +15,11 @@ namespace System
 
         public void ApplyKnockback(Vector3 knocker)
         {
-            Debug.Log("Knockback");
             var direction = (knocker - transform.position).normalized;
             Debug.Log(direction.x <= 0 ? "Left" : "Right");
             var knockVector = knockForce;
             knockVector.x *= -Mathf.Sign(direction.x);
-            Debug.Log(knockVector);
+            _rigidbody.velocity = Vector2.zero;
             _rigidbody.AddForce(knockVector, ForceMode2D.Impulse);
         }
     }

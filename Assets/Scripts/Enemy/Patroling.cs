@@ -104,7 +104,6 @@ namespace Enemy
         
             var direction = _isGoingRight ? 1 : -1;
             SetVelocityX(direction * speed);
-            Debug.Log("Speed set");
         }
 
         protected virtual void Behavior()
