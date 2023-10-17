@@ -11,8 +11,7 @@ namespace Enemy
 
         [SerializeField] protected float rayDistanceToCheckObstacles;
 
-        [SerializeField] protected float hittedTime;
-        private float _hittedTimer;
+        private bool _isHitted;
 
         protected event Action UpdateTimer;
 
@@ -23,14 +22,15 @@ namespace Enemy
 
         private void OnEnable()
         {
-            OnTakeDamage += TakeHit;
-            UpdateTimer += HittedTimerApply;
+            OnTakeDamage += () =>
+            {
+                _isHitted = true;
+            };
         }
         
         private void OnDisable()
         {
-            OnTakeDamage -= TakeHit;
-            UpdateTimer -= HittedTimerApply;
+
         }
 
         private void Awake()
@@ -89,7 +89,11 @@ namespace Enemy
             RaycastHit2D hitDown = Physics2D.Raycast(rayPosition, Vector2.down, 0.05f, layerMask);
             return hitDown.transform != null; //something under me = yes
         }
-    
+
+        protected override void CollisionBehavior(Collision2D other)
+        {
+            _isHitted = false;
+        }
 
         protected void Patrol()
         {
@@ -108,25 +112,14 @@ namespace Enemy
             Patrol();
         }
 
-        private void TakeHit()
-        {
-            _hittedTimer += hittedTime;
-        }
-
-        private void HittedTimerApply()
-        {
-            if (_hittedTimer >= 0)
-            {
-                _hittedTimer -= Time.deltaTime;
-            }
-        }
+        
 
         protected void Update()
         {
             UpdateTimer?.Invoke();
             
             if (!CheckUnder()) return;
-            if(_hittedTimer > 0) return;
+            if(_isHitted) return;
             
             Behavior();
         }
