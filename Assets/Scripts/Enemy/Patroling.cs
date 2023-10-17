@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Enemy
@@ -10,10 +11,27 @@ namespace Enemy
 
         [SerializeField] protected float rayDistanceToCheckObstacles;
 
+        private bool _isHitted;
+
+        protected event Action UpdateTimer;
+
         protected Rigidbody2D _rigidbody;
         protected Collider2D _collider;
 
         protected bool _isGoingRight = true;
+
+        private void OnEnable()
+        {
+            OnTakeDamage += () =>
+            {
+                _isHitted = true;
+            };
+        }
+        
+        private void OnDisable()
+        {
+
+        }
 
         private void Awake()
         {
@@ -41,13 +59,13 @@ namespace Enemy
         protected bool CheckObstacles()
         {
             var bounds = _collider.bounds;
+            var direction = _isGoingRight ? 1 : -1;
             var rayPosition = new Vector3
             {
                 x = _isGoingRight ? bounds.max.x : bounds.min.x,
                 y = bounds.min.y //down position
             };
             Debug.DrawRay(rayPosition, Vector3.down * rayDistanceToCheckObstacles, Color.red);
-            var direction = _isGoingRight ? 1 : -1;
             RaycastHit2D hitDown = Physics2D.Raycast(rayPosition, Vector2.down, rayDistanceToCheckObstacles, layerMask);
             bool isAnythingUnder = hitDown.transform != null;
 
@@ -56,10 +74,26 @@ namespace Enemy
             Debug.DrawRay(rayPosition, Vector3.right * (direction * rayDistanceToCheckObstacles), Color.green);
             RaycastHit2D hitRight = Physics2D.Raycast(rayPosition, Vector2.right * direction, rayDistanceToCheckObstacles, layerMask);
             bool isAnythingForward = hitRight.transform != null;
-        
             return !isAnythingUnder || isAnythingForward;
         }
-    
+
+        protected bool CheckUnder()
+        {
+            var bounds = _collider.bounds;
+            var rayPosition = new Vector3
+            {
+                x = bounds.center.x,
+                y = bounds.min.y //down position
+            };
+            Debug.DrawRay(rayPosition, Vector3.down * 0.05f, Color.magenta);
+            RaycastHit2D hitDown = Physics2D.Raycast(rayPosition, Vector2.down, 0.05f, layerMask);
+            return hitDown.transform != null; //something under me = yes
+        }
+
+        protected override void CollisionBehavior(Collision2D other)
+        {
+            _isHitted = false;
+        }
 
         protected void Patrol()
         {
@@ -77,8 +111,15 @@ namespace Enemy
             Patrol();
         }
 
+        
+
         protected void Update()
         {
+            UpdateTimer?.Invoke();
+            
+            if (!CheckUnder()) return;
+            if(_isHitted) return;
+            
             Behavior();
         }
     }

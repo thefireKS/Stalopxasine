@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   lifeTimeSeconds: 0.375
+  needToDestroyOnCollision: 0
 --- !u!1 &3922289031182873760
 GameObject:
   m_ObjectHideFlags: 0

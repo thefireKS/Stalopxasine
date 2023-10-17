@@ -11,10 +11,15 @@ namespace Enemy
             damageable.TakeDamage(dmg);
         }
 
+        protected virtual void CollisionBehavior(Collision2D other)
+        {
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.TryGetComponent(out IDamageable damageable))
                 DealDamage(damage, damageable);
+            CollisionBehavior(other);
         }
     }
 }

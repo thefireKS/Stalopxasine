@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4402801615229919495}
   - component: {fileID: 6543503129547495872}
   - component: {fileID: 2042798019010554454}
+  - component: {fileID: -6163346584419987499}
   m_Layer: 10
   m_Name: Frost Enemy Pursuing
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,13 +49,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b1e4c5e96318a4eae15814244ce2fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
   damage: 1
+  health: 1
+  energyOnDeath: 0
   speed: 0.5
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  rayDistance: 1
+  rayDistanceToCheckObstacles: 1
   targetMask:
     serializedVersion: 2
     m_Bits: 512
@@ -120,6 +122,19 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &-6163346584419987499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100797417284621344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a62a0d64eee8b54fabe7c0b30c7db81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockForce: {x: 3, y: 5}
 --- !u!1 &2561027317678701243
 GameObject:
   m_ObjectHideFlags: 0

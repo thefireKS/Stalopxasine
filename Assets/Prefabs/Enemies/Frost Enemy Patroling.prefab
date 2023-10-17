@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 6899637439646685813}
   - component: {fileID: 7242553940981960893}
   - component: {fileID: 5560571315334572804}
+  - component: {fileID: -2364210426954835517}
   m_Layer: 10
   m_Name: Frost Enemy Patroling
   m_TagString: Enemy
@@ -333,14 +334,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b29c7572dfbe20b4398c620e571320a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
   damage: 1
+  health: 2
   energyOnDeath: 1
   speed: 4
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  rayDistance: 0.3
+  rayDistanceToCheckObstacles: 1
 --- !u!50 &7242553940981960893
 Rigidbody2D:
   serializedVersion: 4
@@ -413,6 +414,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6359694, y: 0.73716277}
   m_EdgeRadius: 0
+--- !u!114 &-2364210426954835517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5560571315334572805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a62a0d64eee8b54fabe7c0b30c7db81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockForce: {x: 3, y: 5}
 --- !u!1 &7360021260918687863
 GameObject:
   m_ObjectHideFlags: 0
