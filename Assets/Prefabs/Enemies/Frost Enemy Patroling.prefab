@@ -341,7 +341,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  rayDistanceToCheckObstacles: 1
+  obstaclesCheckRayDistance: 0.5
+  floorCheckRayDistance: 0.5
 --- !u!50 &7242553940981960893
 Rigidbody2D:
   serializedVersion: 4
