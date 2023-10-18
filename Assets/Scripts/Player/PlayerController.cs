@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public void Initialize(float speed, float jumpBufferTime, float jumpForce, float fallGravityMultiplier, float jumpCoyoteTime, LayerMask layerMask)
+    public void Initialize(float speed, float jumpBufferTime, float jumpForce, float fallGravityMultiplier,
+        float jumpCoyoteTime, LayerMask layerMask)
     {
         _speed = speed;
         _jumpBufferTime = jumpBufferTime;
@@ -14,8 +16,8 @@ public class PlayerController : MonoBehaviour
         _layerMask = layerMask;
     }
 
-    [Header("References")]
-    private PlayerAttack atck;
+    [Header("References")] private PlayerAttack atck;
+
     // TODO: delete animator
     private Animator animator;
 
@@ -24,21 +26,20 @@ public class PlayerController : MonoBehaviour
     private float _jumpForce;
     private float _fallGravityMultiplier;
     private float _jumpCoyoteTime;
-    
+
     private Rigidbody2D _rb2d;
     private BoxCollider2D _playerCollider;
     private SpriteRenderer _spriteRenderer;
-    
-    [Header("Collision Checkers")]
-    private LayerMask _layerMask;
+
+    [Header("Collision Checkers")] private LayerMask _layerMask;
     private readonly float _rayDistance = 0.1f;
     private readonly float _maxSlopeAngle = 70f;
 
     private PlayerControls _playerControls;
-        
+
     private GameObject _currentOneWayPlatform;
     private float _gravityScale;
-    
+
     private bool _isDropping;
     //private int attacksCounter;
 
@@ -57,26 +58,31 @@ public class PlayerController : MonoBehaviour
     private bool _autoFire;
 
     private bool isJumpPressed;
-    
+
     // After groundCheck = false
     private float coyoteTimer = 0f;
+
     // Time to jump after press
     private float bufferTimer = 0f;
     private WaitForSeconds DisablingCooldown;
+
     private enum MovementStates
     {
         Grounded,
         Jumping,
         Falling,
     }
+
     private MovementStates movementState = MovementStates.Falling;
+
     public enum ActionStates
     {
         Idle,
         Attacking
     }
+
     [HideInInspector] public ActionStates actionState = ActionStates.Idle;
-    
+
     private void Awake()
     {
         _playerControls = PlayerInputHandler.PlayerControls;
@@ -108,9 +114,9 @@ public class PlayerController : MonoBehaviour
         _playerControls.Player.VerticalMovementUp.started -= JumpStart;
         _playerControls.Player.VerticalMovementUp.performed -= JumpEnd;
         _playerControls.Player.VerticalMovementUp.canceled -= JumpEnd;
-        
+
         _playerControls.Player.VerticalMovementDown.started -= OneWayPlatformMovement;
-        
+
         //_playerControls.Player.Attack.started -= Attack;
         //_playerControls.Player.AutoAttack.started -= SwitchAuto;
     }
@@ -122,8 +128,6 @@ public class PlayerController : MonoBehaviour
 
         ProcessInput();
         
-        MovementStateSwapper();
-
         ProcessAnimation();
     }
 
@@ -155,7 +159,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isGoing", moveX != 0 && movementState == MovementStates.Grounded);
 
         animator.SetBool("isAttacking", actionState == ActionStates.Attacking);
-        
+
         animator.SetFloat("ySpeed", _rb2d.velocity.y);
     }
 
@@ -163,65 +167,83 @@ public class PlayerController : MonoBehaviour
     {
         if (PlayerMeeting.DialogIsGoing)
             _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
-        
+
         Controls();
+        MovementStateSwapper();
+
     }
 
     private void Controls()
     {
         Moving();
     }
-    
+
     private void Moving()
     {
         float targetSpeed = moveX * _speed;
         _rb2d.velocity = new Vector2(targetSpeed, _rb2d.velocity.y);
     }
-    
+
     private bool GroundCheck()
     {
         var bounds = _playerCollider.bounds;
-        Vector2 leftCorner = bounds.min;
+        RaycastHit2D hitDown = Physics2D.BoxCast(transform.position,  bounds.size,
+            transform.rotation.z, Vector2.down, _rayDistance*2,_layerMask.value);
+        SlopeStand(Vector2.Angle(hitDown.normal, Vector2.up), hitDown.normal);
+        
+        //maybe 1 boxCast cheaper than 2 RayCast?
+        
+        /*Vector2 leftCorner = bounds.min;
         Vector2 rightCorner = bounds.max;
         rightCorner.y -= bounds.size.y;
 
-        
-        RaycastHit2D downHit = Physics2D.CircleCast(transform.position,  0.5f*bounds.extents.magnitude, 
-            Vector2.down, bounds.extents.magnitude, _layerMask.value);
-        SlopeStand(Vector2.Angle(downHit.normal, Vector2.up));
+        var rayPosition = new Vector3
+        {
+            x = bounds.center.x,
+            y = bounds.min.y //down position
+        };
         
         return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
             _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
-            _layerMask.value) || downHit;
+            _layerMask.value);*/
+        
+        return hitDown;
     }
 
-    private void SlopeStand(float slopeAngle)
+    private void SlopeStand(float slopeAngle, Vector2 normal)
     {
-        if (slopeAngle >= _maxSlopeAngle)
-        {
-            
-            //_rb2d.velocity = new Vector2(0, 0);
-        }
-        _rb2d.gravityScale = slopeAngle <= _maxSlopeAngle && slopeAngle!=0 ?  0f :_gravityScale ;
-        //_rb2d.drag = (slopeAngle >= _maxSlopeAngle && _playerControls.Player.Movement.ReadValue<Vector2>() == Vector2.zero) ? 100f : 0f;
+        if (slopeAngle >= _maxSlopeAngle || slopeAngle < 1f) return;
+        
+        var gravityVector = new Vector2(0f, -20f * _gravityScale * _rb2d.mass);
+        var frictionVector = -1 * (gravityVector +  normal.normalized * (gravityVector.magnitude * Mathf.Cos(slopeAngle* Mathf.Deg2Rad )));
+        
+        Debug.DrawRay(transform.position, frictionVector.normalized, Color.green);
+        _rb2d.AddForce(frictionVector);
     }
+
+    /*private Vector2 ProjectVector(Vector2 vector, Vector2 normal)
+    {
+        var projectedVector = Vector2.Dot(vector, normal) / (normal.magnitude * normal.magnitude) * normal;
+        return projectedVector;
+    }*/
+
     private void JumpStart(InputAction.CallbackContext context)
     {
-        if(_isDropping) return;
-        
+        if (_isDropping) return;
+
         bufferTimer = _jumpBufferTime;
 
         if (!GroundCheck() && coyoteTimer < 0) return;
         coyoteTimer = 0;
         if (bufferTimer < 0) return;
-        
+
         isJumpPressed = true;
         movementState = MovementStates.Jumping;
     }
-    
+
     private void AddJumpHeight()
     {
-        if(_isDropping) return;
+        if (_isDropping) return;
         _rb2d.velocity = new Vector2(_rb2d.velocity.x, _jumpForce);
     }
 
@@ -248,7 +270,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(AttackOnClick());
         }
     }
-    
+
     private void Attack()
     {
         if (Time.timeScale < 0.2f) return;
@@ -259,6 +281,7 @@ public class PlayerController : MonoBehaviour
     }*/
 
     #region States
+
     private void MovementStateSwapper()
     {
         switch (movementState)
@@ -274,6 +297,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
     private void falling()
     {
         _rb2d.gravityScale = _gravityScale * _fallGravityMultiplier;
@@ -289,7 +313,7 @@ public class PlayerController : MonoBehaviour
         _rb2d.gravityScale = _gravityScale;
         //attacksCounter = Data.possibleAttacks;
         coyoteTimer = _jumpCoyoteTime;
-        
+
         if (GroundCheck())
         {
             if (bufferTimer > 0)
@@ -302,18 +326,20 @@ public class PlayerController : MonoBehaviour
         {
             movementState = MovementStates.Falling;
         }
-           
     }
+
     private void jumping()
     {
-        if(GroundCheck())
+        if (GroundCheck())
             movementState = MovementStates.Grounded;
         else if (_rb2d.velocity.y < 0)
             movementState = MovementStates.Falling;
     }
+
     #endregion
 
     #region Attack
+
     /*private IEnumerator AttackOnClick()
     {
         actionState = ActionStates.Attacking;
@@ -321,21 +347,22 @@ public class PlayerController : MonoBehaviour
         //atck.PerformAttack();
         //attackDirectionSetter();
         yield return new WaitForSeconds(Data.attackTime);
-        
+
         actionState = ActionStates.Idle;
     }*/
-    
+
     /*private void attackDirectionSetter()
     {
         float groundCoefficient = groundCheck() ? 0.5f : 1f;
         Vector2 attackDirection = atck.AttackVector();
         Vector2 attackingVector = new Vector2(attackDirection.x * Data.speed * groundCoefficient, attackDirection.y * Data.jumpForce * groundCoefficient);
-        rb2d.velocity = attackingVector; 
+        rb2d.velocity = attackingVector;
     }*/
-    
+
     #endregion
 
     #region Dropping
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("GroundPlatforms"))
@@ -343,6 +370,7 @@ public class PlayerController : MonoBehaviour
             _currentOneWayPlatform = collision.gameObject;
         }
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("GroundPlatforms"))
@@ -350,7 +378,7 @@ public class PlayerController : MonoBehaviour
             _currentOneWayPlatform = null;
         }
     }
-    
+
     private IEnumerator DisableCollision()
     {
         CompositeCollider2D platformCollider = _currentOneWayPlatform.GetComponent<CompositeCollider2D>();
@@ -359,5 +387,6 @@ public class PlayerController : MonoBehaviour
         Physics2D.IgnoreCollision(_playerCollider, platformCollider, false);
         _isDropping = false;
     }
+
     #endregion
 }
