@@ -3202,10 +3202,15 @@ PrefabInstance:
       propertyPath: _useCustomData
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7836482535858423494, guid: 5827bd3d05c3b4f4cb5fdc53573750e2,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8449940761092549868, guid: 5827bd3d05c3b4f4cb5fdc53573750e2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0312452
+      value: 3.12
       objectReference: {fileID: 0}
     - target: {fileID: 8449940761092549868, guid: 5827bd3d05c3b4f4cb5fdc53573750e2,
         type: 3}
@@ -11278,12 +11283,12 @@ PrefabInstance:
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1.0004964
+      value: 0.9986588
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9986233
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
