@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1052611339421693410}
   - component: {fileID: 1052611339421693437}
   - component: {fileID: 1052611339421693436}
+  - component: {fileID: 3229856034219181425}
   - component: {fileID: 1052611339421693409}
   - component: {fileID: 1052611339421693408}
   - component: {fileID: 1052611339421693411}
@@ -33,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 1052611339421693439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: -10}
+  m_LocalPosition: {x: 7.000027, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -68,15 +69,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.25208336
     y: 0
-    width: 1
-    height: 1
+    width: 0.26666668
+    height: 0.26666665
   near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 4.565
+  orthographic size: 4.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -100,6 +101,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052611339421693439}
   m_Enabled: 1
+--- !u!114 &3229856034219181425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052611339421693439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba40a826bde2e3140aa573039fc410ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1052611339421693409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +291,7 @@ GameObject:
   - component: {fileID: 6236828366557059660}
   - component: {fileID: 9196764446353161872}
   - component: {fileID: 2933754078537667178}
+  - component: {fileID: 7791829268019644997}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -355,6 +369,23 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!114 &7791829268019644997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2320996025599020667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 2
+  m_FrequencyGain: 2
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &4033587651370080832
 GameObject:
   m_ObjectHideFlags: 0

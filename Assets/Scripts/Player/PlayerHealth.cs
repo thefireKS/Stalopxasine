@@ -11,12 +11,15 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
     
     private Animator _animator;
+    private CameraShaking _cameraShaking; 
     
     //private const float DamageCoolDown = 1f; //damage getting cd
     //private float _nextHitTime; //timer to cd of damage
     private bool isTakingDamage = false;
     private int _currentHealth;
     private int _maxHealth;
+    private static readonly float _takingDamageTime = 0.5f;
+    
 
     private void SetMaxHealth(int maxHealth)
     {
@@ -25,7 +28,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     public static event Action<int> OnHealthChanged;
 
-    private WaitForSeconds TakingDamage = new WaitForSeconds(1f);
+    private WaitForSeconds TakingDamage = new WaitForSeconds(_takingDamageTime);
 
     private void OnEnable()
     {
@@ -38,6 +41,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         SetHealth(_maxHealth);
         OnHealthChanged?.Invoke(_maxHealth);
         _animator = GetComponentInChildren<Animator>();
+        _cameraShaking = Camera.main.GetComponent<CameraShaking>();
+        Debug.Log(_cameraShaking);
     }
 
     private void OnDisable()
@@ -100,6 +105,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (!isTakingDamage)
         {
             StartCoroutine(GotDamaged(dmg));
+            _cameraShaking.Shake(_takingDamageTime, 2f);
         }
+        
     }
 }
