@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     private bool isTakingDamage = false;
     private int _currentHealth;
     private int _maxHealth;
-    private static readonly float _takingDamageTime = 1f;
+    private static readonly float _takingDamageTime = 0.5f;
     
 
     private void SetMaxHealth(int maxHealth)
