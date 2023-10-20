@@ -1,22 +1,20 @@
-using Enemy;
+using System.Mission.Objectives.Base;
 
 namespace System.Mission.Objectives
 {
-    public class KillEnemies : Objective
+    public class KillEnemies : QuantityObjective
     {
-        private Base[] _enemies;
-
-        private uint _enemiesCount;
-        private uint _deadEnemies;
+        private Enemy.Base[] _enemies;
 
         private void Awake()
         {
-            _enemies = FindObjectsOfType<Base>();
-            _enemiesCount = (uint)_enemies.Length;
+            // Note: can be expansive for many Enemies | Possible solution -> set enemies in the Inspector
+            _enemies = FindObjectsOfType<Enemy.Base>();
+            _targetCount = (uint)_enemies.Length;
 
             foreach (var enemy in _enemies)
             {
-                enemy.onDeath += AddDeadCount;
+                enemy.onDeath += AddCount;
             }
         }
 
@@ -24,21 +22,7 @@ namespace System.Mission.Objectives
         {
             foreach (var enemy in _enemies)
             {
-                enemy.onDeath -= AddDeadCount;
-            }
-        }
-
-        private void AddDeadCount()
-        {
-            _deadEnemies++;
-            CheckComplete();
-        }
-
-        protected override void CheckComplete()
-        {
-            if (_enemiesCount == _deadEnemies)
-            {
-                Complete();
+                enemy.onDeath -= AddCount;
             }
         }
     }
