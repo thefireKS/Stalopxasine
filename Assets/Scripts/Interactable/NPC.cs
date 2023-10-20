@@ -17,9 +17,10 @@ namespace Interactable
         private LocalizeStringEvent _localizeStringEvent;
         [SerializeField] private LocalizedString[] replicas;
         
-        [Space(10)] 
+        public event Action OnDialogueEnd;
         
-
+        [Space(10)]
+        
         private Animator _animator;
         private Camera mainCamera;
     
@@ -82,6 +83,7 @@ namespace Interactable
                 if (currentReplica >= replicas.Length)
                 {
                     currentReplica = 0;
+                    OnDialogueEnd?.Invoke();
                     SetupDialogue(false);
                 }
 

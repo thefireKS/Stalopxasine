@@ -45,7 +45,6 @@ namespace System.Mission.UI
         {
             if (_objective.isComplete)
             {
-                
                 progressText.text = "Completed";
             }
             else
@@ -59,6 +58,8 @@ namespace System.Mission.UI
                     progressText.text = "In Progress";
                 }
             }
+
+            Debug.Log($"Text Updated {transform.name}");
         }
     }
 }
