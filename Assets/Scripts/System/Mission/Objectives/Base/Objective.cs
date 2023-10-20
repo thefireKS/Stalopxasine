@@ -9,6 +9,19 @@ namespace System.Mission.Objectives.Base
             Main,
             Side
         }
+
+        [SerializeField] private string objectiveName;
+        [SerializeField] private Sprite objectiveImage;
+
+        public string GetObjectiveName()
+        {
+            return objectiveName;
+        }
+        
+        public Sprite GetObjectiveImage()
+        {
+            return objectiveImage;
+        }
         
         public event Action OnCompleted;
 

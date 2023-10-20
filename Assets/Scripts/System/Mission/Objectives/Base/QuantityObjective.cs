@@ -6,6 +6,8 @@ namespace System.Mission.Objectives.Base
     {
         protected uint _targetCount;
         protected uint _currentCount;
+
+        public event Action OnCountUpdate;
         
         public uint GetCurrentCount()
         {
@@ -25,6 +27,7 @@ namespace System.Mission.Objectives.Base
         protected void AddCount()
         {
             _currentCount++;
+            OnCountUpdate?.Invoke();
             Debug.Log(GetCompletePercentage());
             CheckComplete();
         }

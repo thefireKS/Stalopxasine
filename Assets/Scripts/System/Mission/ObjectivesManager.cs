@@ -11,15 +11,23 @@ namespace System.Mission
 
         private Objective[] _objectives;
 
+        public Objective[] GetObjectives()
+        {
+            return _objectives;
+        }
+
         private uint _numberOfMainObjectives;
         private uint _completedMainObjectives;
         
         private uint _numberOfSideObjectives;
         private uint _completedSideObjectives;
 
+        public static event Action OnFindObjectives;
+
         private void Awake()
         {
             _objectives = FindObjectsOfType<Objective>();
+            OnFindObjectives?.Invoke();
             
             foreach (var objective in _objectives)
             {

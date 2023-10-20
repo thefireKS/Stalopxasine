@@ -1,18 +1,20 @@
 using System.Mission.Objectives.Base;
+using UnityEngine;
 
 namespace System.Mission.Objectives
 {
     public class KillEnemies : QuantityObjective
     {
-        private Enemy.Base[] _enemies;
+        [SerializeField] private bool killAll;
+        [SerializeField] private Enemy.Base[] enemies;
 
         private void Awake()
         {
             // Note: can be expansive for many Enemies | Possible solution -> set enemies in the Inspector
-            _enemies = FindObjectsOfType<Enemy.Base>();
-            _targetCount = (uint)_enemies.Length;
+            if(killAll)enemies = FindObjectsOfType<Enemy.Base>();
+            _targetCount = (uint)enemies.Length;
 
-            foreach (var enemy in _enemies)
+            foreach (var enemy in enemies)
             {
                 enemy.onDeath += AddCount;
             }
@@ -20,7 +22,7 @@ namespace System.Mission.Objectives
 
         private void OnDisable()
         {
-            foreach (var enemy in _enemies)
+            foreach (var enemy in enemies)
             {
                 enemy.onDeath -= AddCount;
             }
