@@ -31,6 +31,11 @@ namespace System.Mission.UI
             ObjectivesManager.OnFindObjectives -= SpawnObjectives;
         }
 
+        private void ReadyCheck()
+        {
+            
+        }
+
         private void SpawnObjectives()
         {
             foreach (var objective in objectivesManager.GetObjectives())
@@ -47,6 +52,8 @@ namespace System.Mission.UI
                         throw new ArgumentOutOfRangeException();
                 }
             }
+
+            Debug.Log("Mission UI: Spawn all ObjectiveUI");
             
             SetPosition(mainObjectivesHandler, mainObjectivesCorner);
             SetPosition(sideObjectivesHandler, sideObjectivesCorner);

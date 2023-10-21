@@ -78,7 +78,6 @@ namespace Interactable
             {
                 if (collider.gameObject == _player)
                 {
-                    Debug.Log("Ya nashel tebya");
                     return true;
                 }
             }

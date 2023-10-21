@@ -38,6 +38,7 @@ namespace System.Mission.Objectives.Base
         {
             await Prepare();
             OnReady?.Invoke();
+            Debug.Log($"Objective: {objectiveName} ready");
         }
 
         protected virtual Task Prepare()

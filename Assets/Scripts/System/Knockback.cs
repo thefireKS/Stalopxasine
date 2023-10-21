@@ -10,7 +10,6 @@ namespace System
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
-            Debug.Log(_rigidbody);
         }
 
         public void ApplyKnockback(Vector3 knocker)

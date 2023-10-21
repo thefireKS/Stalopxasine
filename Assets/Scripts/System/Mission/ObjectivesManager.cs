@@ -28,6 +28,7 @@ namespace System.Mission
         private void Awake()
         {
             _objectives = FindObjectsOfType<Objective>();
+            Debug.Log("Objectives Manager: Find all objectives");
             OnFindObjectives?.Invoke();
             
             foreach (var objective in _objectives)

@@ -39,6 +39,8 @@ namespace System.Mission.UI
             
             image.sprite = _objective.GetObjectiveImage();
             transform.name = _objective.GetObjectiveName();
+
+            Debug.Log($"Objective UI: {name} initialized");
         }
 
         private void UpdateText()
@@ -59,7 +61,7 @@ namespace System.Mission.UI
                 }
             }
 
-            Debug.Log($"Text Updated {transform.name}");
+            Debug.Log($"Objective UI: {name} text updated");
         }
     }
 }
