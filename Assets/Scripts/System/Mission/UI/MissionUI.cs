@@ -24,6 +24,7 @@ namespace System.Mission.UI
         private void OnEnable()
         {
             objectivesManager.OnFindObjectives += SpawnObjectives;
+            Debug.Log("Subscribe");
         }
         
         private void OnDisable()
