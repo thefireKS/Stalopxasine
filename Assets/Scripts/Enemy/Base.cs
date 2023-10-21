@@ -8,7 +8,8 @@ namespace Enemy
         [SerializeField] private int health;
         [SerializeField] private int energyOnDeath;
 
-        protected event Action OnTakeDamage; 
+        protected event Action OnTakeDamage;
+        public event Action onDeath;
     
         public void TakeDamage(int dmg)
         {
@@ -29,6 +30,7 @@ namespace Enemy
         private void Die()
         {
             PlayerUltimateSystem.AddEnergy(energyOnDeath);
+            onDeath?.Invoke();
             Destroy(gameObject);
         }
     }
