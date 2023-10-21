@@ -13,7 +13,6 @@ namespace System.Mission.Objectives
         {
             if (killAll) enemies = FindObjectsOfType<Enemy.Base>();
             _targetCount = (uint)enemies.Length;
-            Debug.Log($"{GetObjectiveName()}: {_targetCount}");
             foreach (var enemy in enemies)
             {
                 enemy.onDeath += AddCount;
