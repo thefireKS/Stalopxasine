@@ -1,4 +1,5 @@
 using System.Mission.Objectives.Base;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,7 +26,7 @@ namespace System.Mission
 
         public event Action OnFindObjectives;
 
-        private void Awake()
+        public Task Initialize()
         {
             _objectives = FindObjectsOfType<Objective>();
             Debug.Log("Objectives Manager: Find all objectives");
@@ -52,6 +53,8 @@ namespace System.Mission
                         throw new ArgumentOutOfRangeException();
                 }
             }
+            
+            return Task.CompletedTask;
         }
 
         private void IncreaseCompletedMainObjectives()
