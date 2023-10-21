@@ -56,7 +56,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  rayDistanceToCheckObstacles: 1
+  obstaclesCheckRayDistance: 0.3
+  floorCheckRayDistance: 0.3
   targetMask:
     serializedVersion: 2
     m_Bits: 512
