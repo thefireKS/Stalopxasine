@@ -1,4 +1,5 @@
 using System.Mission.Objectives.Base;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace System.Mission.Objectives
@@ -8,9 +9,8 @@ namespace System.Mission.Objectives
         [SerializeField] private bool killAll;
         [SerializeField] private Enemy.Base[] enemies;
 
-        private void Awake()
+        protected override Task Prepare()
         {
-            // Note: can be expansive for many Enemies | Possible solution -> set enemies in the Inspector
             if(killAll)enemies = FindObjectsOfType<Enemy.Base>();
             _targetCount = (uint)enemies.Length;
 
@@ -18,6 +18,7 @@ namespace System.Mission.Objectives
             {
                 enemy.onDeath += AddCount;
             }
+            return Task.CompletedTask;
         }
 
         private void OnDisable()

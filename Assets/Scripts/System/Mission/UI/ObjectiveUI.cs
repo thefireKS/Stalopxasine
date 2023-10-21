@@ -20,15 +20,17 @@ namespace System.Mission.UI
 
         private void OnDisable()
         {
+            _objective.OnReady -= null;
             _objective.OnCompleted -= null;
             if (_objective is QuantityObjective quantityObjective)
             {
-                quantityObjective.OnCountUpdate -= UpdateText;
+                quantityObjective.OnCountUpdate -= null;
             }
         }
 
         private void Initialize()
         {
+            _objective.OnReady += UpdateText;
             _objective.OnCompleted += UpdateText;
             if (_objective is QuantityObjective quantityObjective)
             {

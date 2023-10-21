@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace System.Mission.Objectives.Base
@@ -25,11 +26,24 @@ namespace System.Mission.Objectives.Base
         
         public event Action OnCompleted;
 
+        public event Action OnReady;
+
         public bool isComplete;
 
         [SerializeField] protected ObjectiveType objectiveType;
 
         protected abstract void CheckComplete();
+
+        private async void Awake()
+        {
+            await Prepare();
+            OnReady?.Invoke();
+        }
+
+        protected virtual Task Prepare()
+        {
+            return Task.CompletedTask;
+        }
         
         protected void Complete()
         {

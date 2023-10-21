@@ -10,6 +10,7 @@ namespace System.Mission
         [SerializeField] private UnityEvent onCompleteSideObjectives;
 
         private Objective[] _objectives;
+        private uint _countIsReady;
 
         public Objective[] GetObjectives()
         {
