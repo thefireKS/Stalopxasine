@@ -23,18 +23,14 @@ namespace System.Mission.UI
 
         private void OnEnable()
         {
-            ObjectivesManager.OnFindObjectives += SpawnObjectives;
+            objectivesManager.OnFindObjectives += SpawnObjectives;
         }
         
         private void OnDisable()
         {
-            ObjectivesManager.OnFindObjectives -= SpawnObjectives;
+            objectivesManager.OnFindObjectives -= SpawnObjectives;
         }
-
-        private void ReadyCheck()
-        {
-            
-        }
+        
 
         private void SpawnObjectives()
         {

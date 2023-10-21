@@ -23,7 +23,7 @@ namespace System.Mission
         private uint _numberOfSideObjectives;
         private uint _completedSideObjectives;
 
-        public static event Action OnFindObjectives;
+        public event Action OnFindObjectives;
 
         private void Awake()
         {
