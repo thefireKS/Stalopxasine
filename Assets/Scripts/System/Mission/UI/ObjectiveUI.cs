@@ -39,8 +39,6 @@ namespace System.Mission.UI
             
             image.sprite = _objective.GetObjectiveImage();
             transform.name = _objective.GetObjectiveName();
-            
-            UpdateText();
         }
 
         private void UpdateText()
