@@ -9,16 +9,14 @@ namespace System.Mission.Objectives
         [SerializeField] private bool killAll;
         [SerializeField] private Enemy.Base[] enemies;
 
-        protected override Task Prepare()
+        protected override void InitializeJob()
         {
-            if(killAll)enemies = FindObjectsOfType<Enemy.Base>();
+            if (killAll) enemies = FindObjectsOfType<Enemy.Base>();
             _targetCount = (uint)enemies.Length;
-            Debug.Log($"{GetObjectiveName()}: {_targetCount}");
             foreach (var enemy in enemies)
             {
                 enemy.onDeath += AddCount;
             }
-            return Task.CompletedTask;
         }
 
         private void OnDisable()

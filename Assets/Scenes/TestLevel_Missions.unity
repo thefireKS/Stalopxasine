@@ -2820,6 +2820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 409246948}
+  - component: {fileID: 409246954}
   - component: {fileID: 409246950}
   - component: {fileID: 409246949}
   - component: {fileID: 409246952}
@@ -2963,6 +2964,20 @@ MonoBehaviour:
   isComplete: 0
   objectiveType: 0
   npc: {fileID: 1479504169}
+--- !u!114 &409246954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409246946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f07f9a41142d1c4091efddf7bd980e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectivesManager: {fileID: 409246950}
+  missionUI: {fileID: 142565001}
 --- !u!1001 &464391666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11585,6 +11600,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BackGroundColor.r
       value: 0.2264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
