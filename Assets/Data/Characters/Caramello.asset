@@ -23,7 +23,7 @@ MonoBehaviour:
   ultimateObject: {fileID: 3555862907523863139, guid: 829b206d9915934489a4e4c8c7f807c4,
     type: 3}
   speed: 8
-  jumpForce: 8
+  jumpForce: 9
   jumpCoyoteTime: 0.05
   jumpBufferTime: 0.33
   fallGravityMultiplier: 1.5
