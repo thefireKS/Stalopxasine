@@ -8,6 +8,7 @@ namespace Interactable
     {
         private GameObject _player;
         [SerializeField] private float interactRange = 1f;
+        private InteractUI _interactionMarker;
 
         private bool _canInteract = false;
 
@@ -22,11 +23,12 @@ namespace Interactable
         {
             _player = GameObject.FindGameObjectWithTag("Player");
             PlayerInputHandler.Interaction += Interact;
-            InteractUI.InteractionMarker.Hide();
+            _interactionMarker = GetComponentInChildren<InteractUI>();
+            _interactionMarker.Hide();
         }
         private void OnDisable()
         {
-            InteractUI.InteractionMarker.Hide();
+            _interactionMarker.Hide();
             PlayerInputHandler.Interaction -= Interact;
         }
 
@@ -34,12 +36,12 @@ namespace Interactable
         {
             if (IsPlayerNearby())
             {
-                InteractUI.InteractionMarker.Show();
+                _interactionMarker.Show();
                 _canInteract = true;
             }
             else
             {
-                InteractUI.InteractionMarker.Hide();
+                _interactionMarker.Hide();
                 _canInteract = false;
             }
         }

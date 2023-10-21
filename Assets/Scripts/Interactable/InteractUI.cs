@@ -8,13 +8,6 @@ namespace Interactable
     public class InteractUI : MonoBehaviour
     {
         [SerializeField] private GameObject Sprite;
-
-        public static InteractUI InteractionMarker;
-
-        private void Awake()
-        {
-            InteractionMarker = this;
-        }
         public void Show()
         {
             Sprite.SetActive(true);
