@@ -23,5 +23,7 @@ namespace System.Mission.Objectives
             if(isComplete) return;
             Complete();
         }
+
+        
     }
 }

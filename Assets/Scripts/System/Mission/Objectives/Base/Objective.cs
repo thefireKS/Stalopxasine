@@ -34,17 +34,24 @@ namespace System.Mission.Objectives.Base
 
         protected abstract void CheckComplete();
 
-        private async void Awake()
+        public async void Prepare()
         {
-            await Prepare();
+            await Initialize();
             OnReady?.Invoke();
             Debug.Log($"Objective: {objectiveName} ready");
         }
 
-        protected virtual Task Prepare()
+        private Task Initialize()
         {
+            InitializeJob();
             return Task.CompletedTask;
         }
+
+        protected virtual void InitializeJob()
+        {
+            
+        }
+        
         
         protected void Complete()
         {

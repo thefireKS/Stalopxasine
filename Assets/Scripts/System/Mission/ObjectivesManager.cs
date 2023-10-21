@@ -30,6 +30,11 @@ namespace System.Mission
             _objectives = FindObjectsOfType<Objective>();
             Debug.Log("Objectives Manager: Find all objectives");
             OnFindObjectives?.Invoke();
+
+            foreach (var objective in _objectives)
+            {
+                objective.Prepare();
+            }
             
             foreach (var objective in _objectives)
             {
