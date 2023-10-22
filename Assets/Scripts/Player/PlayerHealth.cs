@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         _animator = GetComponentInChildren<Animator>();
         _cameraShaking = Camera.main.GetComponent<CameraShaking>();
         _particleSystem = gameObject.GetComponentInChildren<ParticleSystem>();
-
+        _particleSystem.Stop();
     }
 
     private void OnDisable()
@@ -58,7 +58,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         if (_currentHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            _particleSystem.Pause();
+            _particleSystem.Stop();
         }
             
     }
