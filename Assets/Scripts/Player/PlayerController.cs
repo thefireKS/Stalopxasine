@@ -185,6 +185,8 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
+        if (_currentOneWayPlatform != null && MathF.Abs(_rb2d.velocity.y) > 0.2f) return false;
+        
         var bounds = _playerCollider.bounds;
         
         /*RaycastHit2D hitDown = Physics2D.BoxCast(transform.position, bounds.extents,
