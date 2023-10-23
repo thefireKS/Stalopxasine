@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Player.States;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -39,7 +40,7 @@ namespace Player
     
         private Animator _anim;
         private PlayerControls _playerControls;
-        private Controller _playerController;
+        private ActionState _actionState;
 
         [SerializeField] private float bufferTime = 0.1f;
         private float _bufferTimer;
@@ -55,7 +56,7 @@ namespace Player
         {
             _anim = GetComponentInChildren<Animator>();
 
-            _playerController = GetComponent<Controller>();
+            _actionState = GetComponent<ActionState>();
             _playerControls = PlayerInputHandler.PlayerControls;
         }
     
@@ -89,8 +90,8 @@ namespace Player
     
         private void PerformAttack()
         {
-            if(_playerController.actionState == Controller.ActionStates.Dialogue) return;
-            if(_playerController.actionState == Controller.ActionStates.Attacking) return;
+            if(_actionState.GetState() == ActionState.States.Dialogue) return;
+            if(_actionState.GetState() == ActionState.States.Attacking) return;
         
             StartCoroutine(Attack());
             _anim.SetFloat("attackDir",_high);
@@ -101,8 +102,8 @@ namespace Player
     
         private void PerformAttack(InputAction.CallbackContext context)
         {
-            if(_playerController.actionState == Controller.ActionStates.Dialogue) return;
-            if(_playerController.actionState == Controller.ActionStates.Attacking) return;
+            if(_actionState.GetState() == ActionState.States.Dialogue) return;
+            if(_actionState.GetState() == ActionState.States.Attacking) return;
 
             StartCoroutine(Attack());
             _anim.SetFloat("attackDir",_high);
@@ -115,11 +116,11 @@ namespace Player
         {
             if (PlayerMeeting.DialogIsGoing) yield break;
         
-            _playerController.actionState = Controller.ActionStates.Attacking;
+            _actionState.ChangeActionState(ActionState.States.Attacking);
         
             PerformAttack();
             yield return new WaitForSeconds(_attackTime);
-            _playerController.actionState = Controller.ActionStates.Idle;
+            _actionState.ChangeActionState(ActionState.States.Idle);
         }
         private void SetShootingPoint(Vector2 input)
         {

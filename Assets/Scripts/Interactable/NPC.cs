@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Player;
+using Player.States;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -18,7 +19,7 @@ namespace Interactable
         private LocalizeStringEvent _localizeStringEvent;
         [SerializeField] private LocalizedString[] replicas;
 
-        private Controller _playerController;
+        private ActionState _actionState;
         
         public event Action OnDialogueEnd;
         
@@ -42,7 +43,7 @@ namespace Interactable
             _dialogueText = _dialogWindow.GetComponentInChildren<TextMeshProUGUI>();
             _localizeStringEvent = _dialogWindow.GetComponentInChildren<LocalizeStringEvent>();
 
-            _playerController = FindObjectOfType<Controller>();
+            _actionState = FindObjectOfType<ActionState>();
         }
         private void Start()
         {
@@ -131,11 +132,11 @@ namespace Interactable
             
             if (dialogueState)
             {
-                _playerController.ChangeActionState(Controller.ActionStates.Dialogue);
+                _actionState.ChangeActionState(ActionState.States.Dialogue);
             }
             else
             {
-                _playerController.ChangeActionState(Controller.ActionStates.Idle);
+                _actionState.ChangeActionState(ActionState.States.Idle);
                 OnDialogueEnd?.Invoke();
             }
         }

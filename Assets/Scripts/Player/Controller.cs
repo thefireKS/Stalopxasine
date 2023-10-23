@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Player.States;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -67,26 +68,13 @@ namespace Player
 
         private MovementStates _movementState = MovementStates.Falling;
 
-        public enum ActionStates
-        {
-            Idle,
-            Attacking,
-            Dialogue
-        }
-        
-        public void ChangeActionState(ActionStates newActionState)
-        {
-            actionState = newActionState;
-            OnActionStateChanged?.Invoke(actionState);
-        }
-
-        [HideInInspector] public ActionStates actionState = ActionStates.Idle;
-
-        public static event Action<ActionStates> OnActionStateChanged;
+        private ActionState _actionState;
 
         private void Awake()
         {
             _playerControls = PlayerInputHandler.PlayerControls;
+
+            _actionState = GetComponent<ActionState>();
 
             _playerCollider = GetComponent<BoxCollider2D>();
             _animator = GetComponentInChildren<Animator>();
@@ -130,7 +118,7 @@ namespace Player
         {
             if (Time.timeScale < 0.2f) return;
 
-            if (actionState != ActionStates.Dialogue)
+            if (_actionState.GetState() != ActionState.States.Dialogue)
             {
                 var movement = _playerControls.Player.Movement.ReadValue<Vector2>();
 
@@ -155,7 +143,7 @@ namespace Player
 
             _animator.SetBool("isGoing", _moveX != 0 && _movementState == MovementStates.Grounded);
 
-            _animator.SetBool("isAttacking", actionState == ActionStates.Attacking);
+            _animator.SetBool("isAttacking", _actionState.GetState() == ActionState.States.Attacking);
 
             _animator.SetFloat("ySpeed", _rb2d.velocity.y);
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using Interactable;
+using Player.States;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,12 +33,12 @@ namespace Player
 
         private void OnEnable()
         {
-            Controller.OnActionStateChanged += ProcessStateChange;
+            ActionState.OnActionStateChanged += ProcessStateChange;
         }
 
         private void OnDisable()
         {
-            Controller.OnActionStateChanged -= ProcessStateChange;
+            ActionState.OnActionStateChanged -= ProcessStateChange;
         }
 
         private void Start()
@@ -82,9 +83,9 @@ namespace Player
             }
         }
 
-        private void ProcessStateChange(Controller.ActionStates actionStates)
+        private void ProcessStateChange(ActionState.States actionStates)
         {
-            _isImmortal = actionStates == Controller.ActionStates.Dialogue;
+            _isImmortal = actionStates == ActionState.States.Dialogue;
         }
     }
 }
