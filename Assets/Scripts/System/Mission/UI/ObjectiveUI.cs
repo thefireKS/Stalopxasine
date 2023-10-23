@@ -20,7 +20,6 @@ namespace System.Mission.UI
 
         private void OnDisable()
         {
-            _objective.OnReady -= null;
             _objective.OnCompleted -= null;
             if (_objective is QuantityObjective quantityObjective)
             {
@@ -30,7 +29,6 @@ namespace System.Mission.UI
 
         private void Initialize()
         {
-            _objective.OnReady += UpdateText;
             _objective.OnCompleted += UpdateText;
             if (_objective is QuantityObjective quantityObjective)
             {
@@ -39,6 +37,10 @@ namespace System.Mission.UI
             
             image.sprite = _objective.GetObjectiveImage();
             transform.name = _objective.GetObjectiveName();
+            
+            UpdateText();
+
+            Debug.Log($"Objective UI: {name} initialized");
         }
 
         private void UpdateText()
@@ -59,7 +61,7 @@ namespace System.Mission.UI
                 }
             }
 
-            Debug.Log($"Text Updated {transform.name}");
+            Debug.Log($"Objective UI: {name} text updated");
         }
     }
 }

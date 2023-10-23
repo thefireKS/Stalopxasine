@@ -1,4 +1,5 @@
 using System.Mission.Objectives.Base;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace System.Mission.UI
@@ -19,19 +20,7 @@ namespace System.Mission.UI
 
         [SerializeField] private RectTransform mainObjectivesHandler, sideObjectivesHandler;
         [SerializeField] private Corner mainObjectivesCorner, sideObjectivesCorner;
-        
-
-        private void OnEnable()
-        {
-            ObjectivesManager.OnFindObjectives += SpawnObjectives;
-        }
-        
-        private void OnDisable()
-        {
-            ObjectivesManager.OnFindObjectives -= SpawnObjectives;
-        }
-
-        private void SpawnObjectives()
+        public Task Initialize()
         {
             foreach (var objective in objectivesManager.GetObjectives())
             {
@@ -47,9 +36,13 @@ namespace System.Mission.UI
                         throw new ArgumentOutOfRangeException();
                 }
             }
+
+            Debug.Log("Mission UI: Spawn all ObjectiveUI");
             
             SetPosition(mainObjectivesHandler, mainObjectivesCorner);
             SetPosition(sideObjectivesHandler, sideObjectivesCorner);
+            
+            return Task.CompletedTask;
         }
 
         private void SpawnObjective(Transform parent, Objective objective)

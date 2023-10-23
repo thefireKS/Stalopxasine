@@ -1,4 +1,5 @@
 using System.Mission.Objectives.Base;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,12 +24,18 @@ namespace System.Mission
         private uint _numberOfSideObjectives;
         private uint _completedSideObjectives;
 
-        public static event Action OnFindObjectives;
+        public event Action OnFindObjectives;
 
-        private void Awake()
+        public Task Initialize()
         {
             _objectives = FindObjectsOfType<Objective>();
+            Debug.Log("Objectives Manager: Find all objectives");
             OnFindObjectives?.Invoke();
+
+            foreach (var objective in _objectives)
+            {
+                objective.Prepare();
+            }
             
             foreach (var objective in _objectives)
             {
@@ -46,6 +53,8 @@ namespace System.Mission
                         throw new ArgumentOutOfRangeException();
                 }
             }
+            
+            return Task.CompletedTask;
         }
 
         private void IncreaseCompletedMainObjectives()
