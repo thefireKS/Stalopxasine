@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2534149488064146689}
   - component: {fileID: 4402801615229919495}
-  - component: {fileID: 3131774431566012995}
   - component: {fileID: 2042798019010554454}
   - component: {fileID: -6163346584419987499}
+  - component: {fileID: 5636467317995037192}
   m_Layer: 10
   m_Name: Frost Enemy Pursuing
   m_TagString: Enemy
@@ -56,8 +56,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  obstaclesCheckRayDistance: 0.3
-  floorCheckRayDistance: 0.3
+  obstaclesCheckRayDistance: 0.5
+  floorCheckRayDistance: 0.5
   targetMask:
     serializedVersion: 2
     m_Bits: 512

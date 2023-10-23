@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
 
     [Header("Collision Checkers")] private LayerMask _layerMask;
-    private readonly float _rayDistance = 0.1f;
+    private readonly float _rayDistance = 0.2f;
     private readonly float _maxSlopeAngle = 70f;
 
     private PlayerControls _playerControls;
@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         ProcessInput();
-        
+
         ProcessAnimation();
     }
 
@@ -170,7 +170,6 @@ public class PlayerController : MonoBehaviour
 
         Controls();
         MovementStateSwapper();
-
     }
 
     private void Controls()
@@ -186,37 +185,47 @@ public class PlayerController : MonoBehaviour
 
     private bool GroundCheck()
     {
+        if (_currentOneWayPlatform != null && MathF.Abs(_rb2d.velocity.y) > 0.2f) return false;
+        
         var bounds = _playerCollider.bounds;
-        RaycastHit2D hitDown = Physics2D.BoxCast(transform.position,  bounds.size,
-            transform.rotation.z, Vector2.down, _rayDistance*2,_layerMask.value);
-        SlopeStand(Vector2.Angle(hitDown.normal, Vector2.up), hitDown.normal);
         
-        //maybe 1 boxCast cheaper than 2 RayCast?
-        
-        /*Vector2 leftCorner = bounds.min;
+        /*RaycastHit2D hitDown = Physics2D.BoxCast(transform.position, bounds.extents,
+            transform.rotation.z, Vector2.down, _rayDistance * 2, _layerMask.value);
+        SlopeStand(Vector2.Angle(hitDown.normal, Vector2.up), hitDown.normal);*/
+
+        //is 1 boxCast cheaper than 2 RayCast?
+
+        Vector2 leftCorner = bounds.min;
         Vector2 rightCorner = bounds.max;
         rightCorner.y -= bounds.size.y;
+        
+        var leftRay = Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
+            _layerMask.value);
+        var rightRay = Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
+            _layerMask.value);
+        
+        SlopeStand(Vector2.Angle((leftRay.transform != null? leftRay : rightRay).normal, Vector2.up), 
+            (leftRay.transform != null? leftRay : rightRay).normal);
+        
+        
 
-        var rayPosition = new Vector3
-        {
-            x = bounds.center.x,
-            y = bounds.min.y //down position
-        };
+           /* return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
+                _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
+                _layerMask.value);*/
         
-        return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
-            _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
-            _layerMask.value);*/
-        
-        return hitDown;
+        return leftRay || rightRay;
+        //return hitDown;
     }
 
     private void SlopeStand(float slopeAngle, Vector2 normal)
     {
         if (slopeAngle >= _maxSlopeAngle || slopeAngle < 1f) return;
-        
+
         var gravityVector = new Vector2(0f, -20f * _gravityScale * _rb2d.mass);
-        var frictionVector = -1 * (gravityVector +  normal.normalized * (gravityVector.magnitude * Mathf.Cos(slopeAngle* Mathf.Deg2Rad )));
-        
+        var frictionVector = -1 * (gravityVector +
+                                   normal.normalized *
+                                   (gravityVector.magnitude * Mathf.Cos(slopeAngle * Mathf.Deg2Rad)));
+
         Debug.DrawRay(transform.position, frictionVector.normalized, Color.green);
         _rb2d.AddForce(frictionVector);
     }

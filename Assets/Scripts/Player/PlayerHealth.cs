@@ -11,7 +11,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     }
     
     private Animator _animator;
-    private CameraShaking _cameraShaking; 
+    private CameraShaking _cameraShaking;
+    private ParticleSystem _particleSystem;
     
     //private const float DamageCoolDown = 1f; //damage getting cd
     //private float _nextHitTime; //timer to cd of damage
@@ -42,7 +43,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         OnHealthChanged?.Invoke(_maxHealth);
         _animator = GetComponentInChildren<Animator>();
         _cameraShaking = Camera.main.GetComponent<CameraShaking>();
-        Debug.Log(_cameraShaking);
+        _particleSystem = gameObject.GetComponentInChildren<ParticleSystem>();
+        _particleSystem.Stop();
     }
 
     private void OnDisable()
@@ -53,8 +55,12 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private void CheckHealth()
     {
-        if (_currentHealth <= 0) 
+        if (_currentHealth <= 0)
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            _particleSystem.Stop();
+        }
+            
     }
 
     private void SetHealth(int value)
@@ -106,6 +112,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             StartCoroutine(GotDamaged(dmg));
             _cameraShaking.Shake(_takingDamageTime, 2f);
+            _particleSystem.Play();
         }
         
     }
