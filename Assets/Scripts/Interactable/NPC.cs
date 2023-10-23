@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -10,48 +11,52 @@ namespace Interactable
     
     public class NPC: Interactable
     {
-        public static bool DialogIsGoing=false;
+        private static bool _dialogIsGoing;
         
-        private GameObject DialogWindow;
+        private GameObject _dialogWindow;
         private TextMeshProUGUI _dialogueText;
         private LocalizeStringEvent _localizeStringEvent;
         [SerializeField] private LocalizedString[] replicas;
+
+        private Controller _playerController;
         
         public event Action OnDialogueEnd;
         
         [Space(10)]
         
         private Animator _animator;
-        private Camera mainCamera;
+        private Camera _mainCamera;
     
-        private float originalCameraSize;
+        private float _originalCameraSize;
         
-        private int currentReplica = 0;
+        private int _currentReplica;
 
-        private readonly float typingSpeed = 0.04f;
-        
-        private Coroutine displayTextCoroutine;
+        private const float TypingSpeed = 0.04f;
+
+        private Coroutine _displayTextCoroutine;
         
         private void Awake()
         {
             _animator = GetComponent<Animator>();
-            DialogWindow = GameObject.FindGameObjectWithTag("DialogueWindow");
-            _dialogueText = DialogWindow.GetComponentInChildren<TextMeshProUGUI>();
-            _localizeStringEvent = DialogWindow.GetComponentInChildren<LocalizeStringEvent>();
+            _dialogWindow = GameObject.FindGameObjectWithTag("DialogueWindow");
+            _dialogueText = _dialogWindow.GetComponentInChildren<TextMeshProUGUI>();
+            _localizeStringEvent = _dialogWindow.GetComponentInChildren<LocalizeStringEvent>();
+
+            _playerController = FindObjectOfType<Controller>();
         }
         private void Start()
         {
-            DialogWindow.SetActive(false);
-            mainCamera = Camera.main;
-            originalCameraSize = mainCamera.orthographicSize;
+            _dialogWindow.SetActive(false);
+            _mainCamera = Camera.main;
+            if (_mainCamera != null) _originalCameraSize = _mainCamera.orthographicSize;
             _animator.SetBool("isTalking", false);
         }
         private void CameraZoom()
         {
-            if (mainCamera.orthographicSize == originalCameraSize)
-                mainCamera.orthographicSize /= 2;
+            if (_mainCamera.orthographicSize == _originalCameraSize)
+                _mainCamera.orthographicSize /= 2;
             else
-                mainCamera.orthographicSize *= 2;
+                _mainCamera.orthographicSize *= 2;
         }
         
         public override void ContinuousInteract()
@@ -63,32 +68,31 @@ namespace Interactable
         
         private void DialogueInteraction()
         {
-            if (!DialogIsGoing)
+            if (!_dialogIsGoing)
             {
                 SetupDialogue(true);
-                _localizeStringEvent.StringReference = replicas[currentReplica];
-                displayTextCoroutine = StartCoroutine(DisplayLine());
+                _localizeStringEvent.StringReference = replicas[_currentReplica];
+                _displayTextCoroutine = StartCoroutine(DisplayLine());
             }
             else
             {
-                if (displayTextCoroutine != null)
+                if (_displayTextCoroutine != null)
                 {
-                    StopCoroutine(displayTextCoroutine);
+                    StopCoroutine(_displayTextCoroutine);
                     _dialogueText.maxVisibleCharacters = _dialogueText.text.Length;
-                    displayTextCoroutine = null;
+                    _displayTextCoroutine = null;
                     return;
                 }
 
-                currentReplica++;
-                if (currentReplica >= replicas.Length)
+                _currentReplica++;
+                if (_currentReplica >= replicas.Length)
                 {
-                    currentReplica = 0;
-                    OnDialogueEnd?.Invoke();
+                    _currentReplica = 0;
                     SetupDialogue(false);
                 }
 
-                _localizeStringEvent.StringReference = replicas[currentReplica];
-                displayTextCoroutine = StartCoroutine(DisplayLine());
+                _localizeStringEvent.StringReference = replicas[_currentReplica];
+                _displayTextCoroutine = StartCoroutine(DisplayLine());
             }
         }
 
@@ -113,17 +117,27 @@ namespace Interactable
                 else
                 {
                     _dialogueText.maxVisibleCharacters++;
-                    yield return new WaitForSeconds(typingSpeed);
+                    yield return new WaitForSeconds(TypingSpeed);
                 }
             }
-            displayTextCoroutine = null;
+            _displayTextCoroutine = null;
         }
 
         private void SetupDialogue(bool dialogueState)//хз может оно и не надо, но я решил вынести
         {
-            DialogIsGoing = dialogueState;
-            DialogWindow.SetActive(dialogueState);
+            _dialogIsGoing = dialogueState;
+            _dialogWindow.SetActive(dialogueState);
             _animator.SetBool("isTalking", dialogueState);
+            
+            if (dialogueState)
+            {
+                _playerController.ChangeActionState(Controller.ActionStates.Dialogue);
+            }
+            else
+            {
+                _playerController.ChangeActionState(Controller.ActionStates.Idle);
+                OnDialogueEnd?.Invoke();
+            }
         }
     }
 }

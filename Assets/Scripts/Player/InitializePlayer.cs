@@ -41,7 +41,7 @@ namespace Player
 
         private Task InitializePlayerController(PlayerData playerData)
         {
-            var playerController = gameObject.AddComponent<PlayerController>();
+            var playerController = gameObject.AddComponent<Controller>();
 
             playerController.Initialize(playerData.speed, playerData.jumpBufferTime, playerData.jumpForce,
                 playerData.fallGravityMultiplier, playerData.jumpCoyoteTime, playerData.layerMask);
@@ -52,7 +52,7 @@ namespace Player
 
         private Task InitializePlayerHealth(PlayerData playerData)
         {
-            var playerHealth = gameObject.AddComponent<PlayerHealth>();
+            var playerHealth = gameObject.AddComponent<Health>();
             playerHealth.Initialize(playerData.maxHealth);
             Debug.Log("Initialize: Initialize PlayerHealth complete!");
             return Task.CompletedTask;
@@ -60,7 +60,7 @@ namespace Player
 
         private Task InitializePlayerAttack(PlayerData playerData)
         {
-            var playerAttack = gameObject.AddComponent<PlayerAttack>();
+            var playerAttack = gameObject.AddComponent<Combat>();
             playerAttack.Initialize(playerData.bullet, playerData.attackTime);
             Debug.Log("Initialize: Initialize PlayerAttack complete!");
             return Task.CompletedTask;
