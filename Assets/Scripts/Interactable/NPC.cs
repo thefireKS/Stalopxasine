@@ -29,7 +29,7 @@ namespace Interactable
     
         private float _originalCameraSize;
         
-        private int _currentReplica;
+        private int _currentReplica = 0;
 
         private const float TypingSpeed = 0.04f;
 

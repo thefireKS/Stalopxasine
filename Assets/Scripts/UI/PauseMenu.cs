@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerControls.Player.Pause.started += ChangeState;
+        _playerControls.Player.Pause.started -= ChangeState;
     }
     
     private void ChangeState(InputAction.CallbackContext callbackContext)
