@@ -63,13 +63,11 @@ namespace Player
         private void OnEnable()
         {
             _playerControls.Player.Attack.started += PerformAttack;
-            _playerControls.Player.AutoAttack.started += EnableAutoAttack;
         }
 
         private void OnDisable()
         {
             _playerControls.Player.Attack.started -= PerformAttack;
-            _playerControls.Player.AutoAttack.started -= EnableAutoAttack;
         }
 
         private void Update()
