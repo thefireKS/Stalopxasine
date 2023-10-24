@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Player.States;
 using UnityEngine;
 
 namespace Player
@@ -20,6 +21,7 @@ namespace Player
         public async void Initialize(PlayerData playerData)
         {
             await InitializePlayerInputHandler();
+            await InitializeActionState();
             await InitializePlayerController(playerData);
             await InitializePlayerHealth(playerData);
             await InitializePlayerAttack(playerData);
@@ -34,7 +36,14 @@ namespace Player
         private Task InitializePlayerInputHandler()
         {
             gameObject.AddComponent<PlayerInputHandler>();
-            Debug.Log("Initalize: Initialize PlayerInputHandler complete!");
+            Debug.Log("Initialize: Initialize PlayerInputHandler complete!");
+            return Task.CompletedTask;
+        }
+        
+        private Task InitializeActionState()
+        {
+            gameObject.AddComponent<ActionState>();
+            Debug.Log("Initialize: Initialize ActionState complete!");
             return Task.CompletedTask;
         }
 
@@ -49,6 +58,8 @@ namespace Player
             Debug.Log("Initialize: Initialize PlayerController complete!");
             return Task.CompletedTask;
         }
+
+        
 
         private Task InitializePlayerHealth(PlayerData playerData)
         {
