@@ -16,6 +16,8 @@ namespace Player
     
         private Animator _animator;
         private CameraShaking _cameraShaking; 
+        
+        private ParticleSystem _particleSystem;
     
         private bool _isImmortal;
         private int _currentHealth;
@@ -47,13 +49,18 @@ namespace Player
             OnHealthChanged?.Invoke(_maxHealth);
             _animator = GetComponentInChildren<Animator>();
             if (Camera.main != null) _cameraShaking = Camera.main.GetComponent<CameraShaking>();
-            Debug.Log(_cameraShaking);
+            _particleSystem = gameObject.GetComponentInChildren<ParticleSystem>();
+            _particleSystem.Stop();
         }
 
         private void CheckHealth()
         {
-            if (_currentHealth <= 0) 
+            if (_currentHealth <= 0)
+            {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                _particleSystem.Stop();
+            }
+               
         }
 
         private void SetHealth(int value)
@@ -80,6 +87,7 @@ namespace Player
             {
                 StartCoroutine(GotDamaged(dmg));
                 _cameraShaking.Shake(TakingDamageTime, 2f);
+                _particleSystem.Play();
             }
         }
 

@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
 namespace Interactable
 {
@@ -10,7 +8,7 @@ namespace Interactable
         [SerializeField] private float interactRange = 1f;
         private InteractUI _interactionMarker;
 
-        private bool _canInteract = false;
+        private bool _canInteract;
 
         private enum InteractionType
         {

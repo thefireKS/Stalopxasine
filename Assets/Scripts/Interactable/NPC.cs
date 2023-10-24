@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using Player;
 using Player.States;
 using TMPro;
 using UnityEngine;
@@ -12,7 +11,7 @@ namespace Interactable
     
     public class NPC: Interactable
     {
-        private static bool _dialogIsGoing;
+        public bool _dialogIsGoing;
         
         private GameObject _dialogWindow;
         private TextMeshProUGUI _dialogueText;
@@ -69,6 +68,7 @@ namespace Interactable
         
         private void DialogueInteraction()
         {
+            if(PauseMenu.IsPaused) return;
             if (!_dialogIsGoing)
             {
                 SetupDialogue(true);
@@ -89,6 +89,7 @@ namespace Interactable
                 if (_currentReplica >= replicas.Length)
                 {
                     _currentReplica = 0;
+                    OnDialogueEnd?.Invoke();
                     SetupDialogue(false);
                 }
 
@@ -137,7 +138,6 @@ namespace Interactable
             else
             {
                 _actionState.ChangeActionState(ActionState.States.Idle);
-                OnDialogueEnd?.Invoke();
             }
         }
     }

@@ -93,6 +93,8 @@ namespace Player
             _playerControls.Player.VerticalMovementUp.canceled += JumpEnd;
 
             _playerControls.Player.VerticalMovementDown.started += OneWayPlatformMovement;
+
+            ActionState.OnActionStateChanged += ProcessStateChange;
         }
 
         private void OnDisable()
@@ -102,16 +104,30 @@ namespace Player
             _playerControls.Player.VerticalMovementUp.canceled -= JumpEnd;
 
             _playerControls.Player.VerticalMovementDown.started -= OneWayPlatformMovement;
+
+            ActionState.OnActionStateChanged -= ProcessStateChange;
+        }
+
+        private void ProcessStateChange(ActionState.States state)
+        {
+            switch(state)
+            {
+                case ActionState.States.Dialogue:
+                    
+                    _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
+                    Debug.Log("Set velocity 0");
+                    break;
+            }
         }
 
         private void Update()
         {
+            ProcessAnimation();
+            
             if (PlayerMeeting.DialogIsGoing)
                 return;
 
             ProcessInput();
-        
-            ProcessAnimation();
         }
 
         private void ProcessInput()
@@ -141,7 +157,7 @@ namespace Player
         {
             _animator.SetBool("isGrounded", _movementState == MovementStates.Grounded);
 
-            _animator.SetBool("isGoing", _moveX != 0 && _movementState == MovementStates.Grounded);
+            _animator.SetBool("isGoing", MathF.Abs(_rb2d.velocity.x) >= 0.0001 && _movementState == MovementStates.Grounded);
 
             _animator.SetBool("isAttacking", _actionState.GetState() == ActionState.States.Attacking);
 
@@ -159,35 +175,47 @@ namespace Player
 
         private void Moving()
         {
+            if (_actionState.GetState() == ActionState.States.Dialogue)
+            {
+                _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
+                return;
+            }
             float targetSpeed = _moveX * _speed;
             _rb2d.velocity = new Vector2(targetSpeed, _rb2d.velocity.y);
         }
 
         private bool GroundCheck()
         {
+            if (_currentOneWayPlatform != null && MathF.Abs(_rb2d.velocity.y) > 0.2f) return false;
+        
             var bounds = _playerCollider.bounds;
-            var myTransform = transform;
-            RaycastHit2D hitDown = Physics2D.BoxCast(myTransform.position,  bounds.size,
-                myTransform.rotation.z, Vector2.down, _rayDistance*2,_layerMask.value);
-            SlopeStand(Vector2.Angle(hitDown.normal, Vector2.up), hitDown.normal);
         
-            //maybe 1 boxCast cheaper than 2 RayCast?
-        
-            /*Vector2 leftCorner = bounds.min;
-        Vector2 rightCorner = bounds.max;
-        rightCorner.y -= bounds.size.y;
+            /*RaycastHit2D hitDown = Physics2D.BoxCast(transform.position, bounds.extents,
+                transform.rotation.z, Vector2.down, _rayDistance * 2, _layerMask.value);
+            SlopeStand(Vector2.Angle(hitDown.normal, Vector2.up), hitDown.normal);*/
 
-        var rayPosition = new Vector3
-        {
-            x = bounds.center.x,
-            y = bounds.min.y //down position
-        };
+            //is 1 boxCast cheaper than 2 RayCast?
+
+            Vector2 leftCorner = bounds.min;
+            Vector2 rightCorner = bounds.max;
+            rightCorner.y -= bounds.size.y;
         
-        return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
-            _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
-            _layerMask.value);*/
+            var leftRay = Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
+                _layerMask.value);
+            var rightRay = Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
+                _layerMask.value);
         
-            return hitDown;
+            SlopeStand(Vector2.Angle((leftRay.transform != null? leftRay : rightRay).normal, Vector2.up), 
+                (leftRay.transform != null? leftRay : rightRay).normal);
+        
+        
+
+            /* return Physics2D.Raycast(rightCorner, Vector2.down, _rayDistance,
+                 _layerMask.value) || Physics2D.Raycast(leftCorner, Vector2.down, _rayDistance,
+                 _layerMask.value);*/
+        
+            return leftRay || rightRay;
+            //return hitDown;
         }
 
         private void SlopeStand(float slopeAngle, Vector2 normal)
