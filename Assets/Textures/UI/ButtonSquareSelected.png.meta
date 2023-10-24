@@ -1,40 +1,7 @@
 fileFormatVersion: 2
-guid: 4d9371082c1d5c9409f911173b304896
+guid: b773a666f8d465f48b4e6adbef9e1fed
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -9082332255981058810
-    second: Viseman attack_0
-  - first:
-      213: -2329965981363044797
-    second: Viseman attack_1
-  - first:
-      213: -7375834038137276759
-    second: Viseman attack_2
-  - first:
-      213: -1597621343296717146
-    second: Viseman attack_3
-  - first:
-      213: -4225606741959796571
-    second: Viseman attack_4
-  - first:
-      213: 2820008388909221127
-    second: Viseman attack_5
-  - first:
-      213: 6548911306739934482
-    second: Viseman attack_6
-  - first:
-      213: -1754418701256725998
-    second: Viseman attack_7
-  - first:
-      213: -5505134529967622021
-    second: Viseman attack_8
-  - first:
-      213: -4496885936922443883
-    second: Viseman attack_9
-  - first:
-      213: 9189941251116130886
-    second: Viseman attack_10
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -76,16 +43,16 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 5, y: 5, z: 5, w: 5}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
@@ -98,24 +65,11 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 128
+    maxTextureSize: 32
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -128,10 +82,23 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -141,10 +108,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,7 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 128
+    maxTextureSize: 32
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -169,316 +136,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Viseman attack_0
+      name: GlitchParticleFlipbook_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.45833334, y: 0.33333334}
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6054d26fee215f180800000000000000
-      internalID: -9082332255981058810
+      spriteID: 52b46aa5d3da33149a86f15d7ef557f0
+      internalID: -26002138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_1
+      name: GlitchParticleFlipbook_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 96
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
+        x: 4
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 34e7c1ed84c4aafd0800000000000000
-      internalID: -2329965981363044797
+      spriteID: 19144eb1c38686c45adf500464718afc
+      internalID: -98821906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_2
+      name: GlitchParticleFlipbook_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
+        x: 8
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a6b79a6506c3a990800000000000000
-      internalID: -7375834038137276759
+      spriteID: c2df6292bfece9447aa6dc2d5b4b3a36
+      internalID: -1612718407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_3
+      name: GlitchParticleFlipbook_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
+        x: 12
+        y: 12
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae77335adb14d9e0800000000000000
-      internalID: -1597621343296717146
+      spriteID: da3e725e9a3beda408d9182c599c36d0
+      internalID: 682868981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_4
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 72
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a89df07e01ab55c0800000000000000
-      internalID: -4225606741959796571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Viseman attack_5
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 72
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.2916667, y: 0.33333334}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7054e8c40bea22720800000000000000
-      internalID: 2820008388909221127
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Viseman attack_6
+      name: GlitchParticleFlipbook_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33333334}
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 215e5c7c22862ea50800000000000000
-      internalID: 6548911306739934482
+      spriteID: b76bad65b7204ef47bbcc2fc37d2990d
+      internalID: 1903329428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_7
+      name: GlitchParticleFlipbook_5
       rect:
         serializedVersion: 2
-        x: 24
-        y: 48
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
+        x: 4
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21a6a4c8c7d07a7e0800000000000000
-      internalID: -1754418701256725998
+      spriteID: 65edb9c4fcba99e4b854943ac31653cc
+      internalID: 691906402
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_8
+      name: GlitchParticleFlipbook_6
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
+        x: 8
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b78fa8cff45d993b0800000000000000
-      internalID: -5505134529967622021
+      spriteID: e5ffac3806750d04cbdc9591b94ed5a1
+      internalID: -1994304975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_9
+      name: GlitchParticleFlipbook_7
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 8
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77192aa671a7ddd4593d7dff1f58b8fe
+      internalID: 642208596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlitchParticleFlipbook_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 24
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.45833334, y: 0.45833334}
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59fb94ed01ad791c0800000000000000
-      internalID: -4496885936922443883
+      spriteID: 8850fbe362db0a14ba8f30461d5aac81
+      internalID: -248186264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_10
+      name: GlitchParticleFlipbook_9
       rect:
         serializedVersion: 2
-        x: 24
-        y: 24
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.375}
+        x: 4
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6426c73a0ea398f70800000000000000
-      internalID: 9189941251116130886
+      spriteID: 5d6f0fcaa984f504b8026e9ee0553e1f
+      internalID: -620073350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_11
+      name: GlitchParticleFlipbook_10
       rect:
         serializedVersion: 2
-        x: 48
-        y: 24
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
+        x: 8
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5c785844dacde142b5f10b8d96e9b9d
-      internalID: 834261828
+      spriteID: 676cb90adf65e4b4a931f3983bd73e22
+      internalID: -1688450518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_12
+      name: GlitchParticleFlipbook_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 4
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bac0d893b9dc5d47a45110c573df1d6
+      internalID: -1173336523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlitchParticleFlipbook_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.5, y: 0.33333334}
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce80c3477f7c8684d84876eff978f898
-      internalID: 2113354501
+      spriteID: ff887fdc6d11aa44d9df44f1750b3342
+      internalID: 610026523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_13
+      name: GlitchParticleFlipbook_13
       rect:
         serializedVersion: 2
-        x: 24
+        x: 4
         y: 0
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.6666667}
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d91c1f6a011ac954aaf8174c935a4e45
-      internalID: 2010603978
+      spriteID: af2623377cc73c54e834c5e4ff70773b
+      internalID: -497148020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Viseman attack_14
+      name: GlitchParticleFlipbook_14
       rect:
         serializedVersion: 2
-        x: 48
+        x: 8
         y: 0
-        width: 24
-        height: 24
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.6666667}
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3d84a6939e405d4a94a6ef444a1ba59
-      internalID: -1990287492
+      spriteID: 59717ab624b372642ba7d9c23291ce50
+      internalID: 1370862562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlitchParticleFlipbook_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6db622fe08f6ecc44b560c40760a7478
+      internalID: -524211283
       vertices: []
       indices: 
       edges: []
@@ -487,28 +475,29 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Viseman attack_0: -9082332255981058810
-      Viseman attack_1: -2329965981363044797
-      Viseman attack_10: 9189941251116130886
-      Viseman attack_11: 834261828
-      Viseman attack_12: 2113354501
-      Viseman attack_13: 2010603978
-      Viseman attack_14: -1990287492
-      Viseman attack_2: -7375834038137276759
-      Viseman attack_3: -1597621343296717146
-      Viseman attack_4: -4225606741959796571
-      Viseman attack_5: 2820008388909221127
-      Viseman attack_6: 6548911306739934482
-      Viseman attack_7: -1754418701256725998
-      Viseman attack_8: -5505134529967622021
-      Viseman attack_9: -4496885936922443883
+      GlitchParticleFlipbook_0: -26002138
+      GlitchParticleFlipbook_1: -98821906
+      GlitchParticleFlipbook_10: -1688450518
+      GlitchParticleFlipbook_11: -1173336523
+      GlitchParticleFlipbook_12: 610026523
+      GlitchParticleFlipbook_13: -497148020
+      GlitchParticleFlipbook_14: 1370862562
+      GlitchParticleFlipbook_15: -524211283
+      GlitchParticleFlipbook_2: -1612718407
+      GlitchParticleFlipbook_3: 682868981
+      GlitchParticleFlipbook_4: 1903329428
+      GlitchParticleFlipbook_5: 691906402
+      GlitchParticleFlipbook_6: -1994304975
+      GlitchParticleFlipbook_7: 642208596
+      GlitchParticleFlipbook_8: -248186264
+      GlitchParticleFlipbook_9: -620073350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

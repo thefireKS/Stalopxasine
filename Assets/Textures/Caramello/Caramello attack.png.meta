@@ -53,11 +53,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -96,6 +97,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
   cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
@@ -108,6 +110,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -120,6 +123,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -132,6 +136,7 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -144,6 +149,20 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 128
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -154,11 +173,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
+        y: 96
         width: 24
         height: 24
       alignment: 9
-      pivot: {x: 0.625, y: 0.45833334}
+      pivot: {x: 0.5833334, y: 0.45833334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 72
+        y: 96
         width: 24
         height: 24
       alignment: 9
@@ -196,7 +215,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 72
+        y: 96
         width: 24
         height: 24
       alignment: 9
@@ -217,11 +236,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 72
         width: 24
         height: 24
       alignment: 9
-      pivot: {x: 0.5, y: 0.33333334}
+      pivot: {x: 0.5833334, y: 0.4166667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -238,7 +257,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 48
+        y: 72
         width: 24
         height: 24
       alignment: 9
@@ -259,11 +278,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 48
+        y: 72
         width: 24
         height: 24
       alignment: 9
-      pivot: {x: 0.5, y: 0.5833334}
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -280,11 +299,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 24
+        y: 48
         width: 24
         height: 24
       alignment: 9
-      pivot: {x: 0.5, y: 0.625}
+      pivot: {x: 0.625, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,11 +320,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 24
+        y: 48
         width: 24
         height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.33333334}
+      pivot: {x: 0.5, y: 0.625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -322,11 +341,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 24
+        y: 48
         width: 24
         height: 24
       alignment: 9
-      pivot: {x: 0.33333334, y: 0.33333334}
+      pivot: {x: 0.5, y: 0.625}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,11 +362,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 24
         width: 24
         height: 24
       alignment: 9
-      pivot: {x: 0.375, y: 0.33333334}
+      pivot: {x: 0.5833334, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,7 +383,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 0
+        y: 24
         width: 24
         height: 24
       alignment: 9
@@ -380,6 +399,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Caramello attack_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 24
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.33333334, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d5390a65ee32646a3037876cc5178c
+      internalID: 328687220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.5833334, y: 0.4166667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33b4063334173244a50d8e3c203591e
+      internalID: 1504502520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_13
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.375, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd5111db5b17d2c4fac9e06dd35a7d9d
+      internalID: -1671578657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Caramello attack_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 24
+      alignment: 9
+      pivot: {x: 0.375, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0cad1c583433749a5808d897f0ec9b
+      internalID: -163414882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -391,20 +494,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caramello attack_5: -504241129610570226
       Caramello attack_0: 1322908530982922405
-      Caramello attack_2: -1842878600942244695
-      Caramello attack_10: -5400983108762152147
       Caramello attack_1: 4861995352835967242
-      Caramello attack_4: 4228540447515371191
-      Caramello attack_6: 2017317254271802597
+      Caramello attack_10: -5400983108762152147
+      Caramello attack_11: 328687220
+      Caramello attack_12: 1504502520
+      Caramello attack_13: -1671578657
+      Caramello attack_14: -163414882
+      Caramello attack_2: -1842878600942244695
       Caramello attack_3: -6193387779555034030
+      Caramello attack_4: 4228540447515371191
+      Caramello attack_5: -504241129610570226
+      Caramello attack_6: 2017317254271802597
+      Caramello attack_7: -7712253611580591606
       Caramello attack_8: 1456285248360036951
       Caramello attack_9: -7983624162828719747
-      Caramello attack_7: -7712253611580591606
-  spritePackingTag: 
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
