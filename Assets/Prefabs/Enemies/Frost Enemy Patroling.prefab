@@ -337,7 +337,7 @@ MonoBehaviour:
   damage: 1
   health: 2
   energyOnDeath: 1
-  speed: 4
+  speed: 2
   layerMask:
     serializedVersion: 2
     m_Bits: 256
