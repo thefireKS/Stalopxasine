@@ -2489,6 +2489,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9101406279368143025, guid: a4cd18f9b7d579d40829430d9b8d9c37,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101406279855981202, guid: a4cd18f9b7d579d40829430d9b8d9c37,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101406279855981202, guid: a4cd18f9b7d579d40829430d9b8d9c37,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101406279855981202, guid: a4cd18f9b7d579d40829430d9b8d9c37,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101406280017508772, guid: a4cd18f9b7d579d40829430d9b8d9c37,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101406280017508772, guid: a4cd18f9b7d579d40829430d9b8d9c37,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101406280017508772, guid: a4cd18f9b7d579d40829430d9b8d9c37,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11264,12 +11299,12 @@ PrefabInstance:
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 1.0000001
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693437, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.99970996
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}

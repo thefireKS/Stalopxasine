@@ -128,13 +128,14 @@ GameObject:
   - component: {fileID: 9101406279368143037}
   - component: {fileID: 9101406279368143026}
   - component: {fileID: 9101406279368143027}
+  - component: {fileID: 1461399963502984587}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9101406279368143024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -206,6 +207,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5553f9959c0c3fc4693749d583f4921c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1461399963502984587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9101406279368143025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a7915cd9aa97142bd72b3d54f8cce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryButton: {fileID: 9101406280017508772}
 --- !u!1 &9101406279750228236
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,10 +446,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 9101406280017508772}
+    m_SelectOnDown: {fileID: 9101406280017508772}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -607,10 +621,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 9101406279855981202}
+    m_SelectOnDown: {fileID: 9101406279855981202}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
