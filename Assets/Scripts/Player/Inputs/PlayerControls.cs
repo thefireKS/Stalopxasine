@@ -64,15 +64,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""AutoAttack"",
-                    ""type"": ""Button"",
-                    ""id"": ""1b8c1a2f-f633-4b3c-addb-72e54d8dbd02"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""UltimateSkill"",
                     ""type"": ""Button"",
                     ""id"": ""458c0e94-9154-44d8-90c3-222ee6ca0935"",
@@ -85,6 +76,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""933017fc-4e35-4efd-9931-d2ad2871b7aa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3220d96-2f02-4775-ba14-c8754cebcd0b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -303,28 +303,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""8938bb22-958d-4947-bbf6-6e9c8d62401f"",
-                    ""path"": ""<Keyboard>/u"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AutoAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f6a1d71a-36df-4430-ad9b-e83d0ed24f3a"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AutoAttack"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""3e3f4439-ebe1-43cd-96ab-25c5a496fd53"",
                     ""path"": ""<Keyboard>/x"",
                     ""interactions"": """",
@@ -359,7 +337,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3a55227f-418f-4be4-9344-53b718b87bb7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -465,6 +443,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""VerticalMovementDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fedeb5bd-b254-42bf-8858-5f27d3a38a2b"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba682259-131b-4815-a246-a8a1224f93a5"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1255,9 +1255,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_VerticalMovementUp = m_Player.FindAction("VerticalMovementUp", throwIfNotFound: true);
         m_Player_VerticalMovementDown = m_Player.FindAction("VerticalMovementDown", throwIfNotFound: true);
         m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
-        m_Player_AutoAttack = m_Player.FindAction("AutoAttack", throwIfNotFound: true);
         m_Player_UltimateSkill = m_Player.FindAction("UltimateSkill", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         // Ultimates
         m_Ultimates = asset.FindActionMap("Ultimates", throwIfNotFound: true);
         m_Ultimates_HolyAura = m_Ultimates.FindAction("HolyAura", throwIfNotFound: true);
@@ -1331,9 +1331,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_VerticalMovementUp;
     private readonly InputAction m_Player_VerticalMovementDown;
     private readonly InputAction m_Player_Attack;
-    private readonly InputAction m_Player_AutoAttack;
     private readonly InputAction m_Player_UltimateSkill;
     private readonly InputAction m_Player_Interact;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -1342,9 +1342,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @VerticalMovementUp => m_Wrapper.m_Player_VerticalMovementUp;
         public InputAction @VerticalMovementDown => m_Wrapper.m_Player_VerticalMovementDown;
         public InputAction @Attack => m_Wrapper.m_Player_Attack;
-        public InputAction @AutoAttack => m_Wrapper.m_Player_AutoAttack;
         public InputAction @UltimateSkill => m_Wrapper.m_Player_UltimateSkill;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1366,15 +1366,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Attack.started += instance.OnAttack;
             @Attack.performed += instance.OnAttack;
             @Attack.canceled += instance.OnAttack;
-            @AutoAttack.started += instance.OnAutoAttack;
-            @AutoAttack.performed += instance.OnAutoAttack;
-            @AutoAttack.canceled += instance.OnAutoAttack;
             @UltimateSkill.started += instance.OnUltimateSkill;
             @UltimateSkill.performed += instance.OnUltimateSkill;
             @UltimateSkill.canceled += instance.OnUltimateSkill;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1391,15 +1391,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Attack.started -= instance.OnAttack;
             @Attack.performed -= instance.OnAttack;
             @Attack.canceled -= instance.OnAttack;
-            @AutoAttack.started -= instance.OnAutoAttack;
-            @AutoAttack.performed -= instance.OnAutoAttack;
-            @AutoAttack.canceled -= instance.OnAutoAttack;
             @UltimateSkill.started -= instance.OnUltimateSkill;
             @UltimateSkill.performed -= instance.OnUltimateSkill;
             @UltimateSkill.canceled -= instance.OnUltimateSkill;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1518,9 +1518,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnVerticalMovementUp(InputAction.CallbackContext context);
         void OnVerticalMovementDown(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
-        void OnAutoAttack(InputAction.CallbackContext context);
         void OnUltimateSkill(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IUltimatesActions
     {
