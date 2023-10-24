@@ -29,7 +29,6 @@ namespace System.Mission.Objectives.Base
         {
             _currentCount++;
             OnCountUpdate?.Invoke();
-            Debug.Log(GetCompletePercentage());
             CheckComplete();
         }
         

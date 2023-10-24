@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,8 +14,8 @@ public class HeartsGUI : MonoBehaviour
     [SerializeField] private Image[] hearts;
     [SerializeField] private Sprite fullHeart;
     [SerializeField] private Sprite emptyHeart;
-    private void OnEnable() => PlayerHealth.OnHealthChanged += UpdateHearts;
-    private void OnDisable() => PlayerHealth.OnHealthChanged -= UpdateHearts;
+    private void OnEnable() => Health.OnHealthChanged += UpdateHearts;
+    private void OnDisable() => Health.OnHealthChanged -= UpdateHearts;
     private void UpdateHearts(int health)
     {
         if (health > NumberOfHearts)

@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using Player.States;
 using UnityEngine;
 
 namespace Player
@@ -20,6 +21,7 @@ namespace Player
         public async void Initialize(PlayerData playerData)
         {
             await InitializePlayerInputHandler();
+            await InitializeActionState();
             await InitializePlayerController(playerData);
             await InitializePlayerHealth(playerData);
             await InitializePlayerAttack(playerData);
@@ -34,14 +36,21 @@ namespace Player
         private Task InitializePlayerInputHandler()
         {
             gameObject.AddComponent<PlayerInputHandler>();
-            Debug.Log("Initalize: Initialize PlayerInputHandler complete!");
+            Debug.Log("Initialize: Initialize PlayerInputHandler complete!");
+            return Task.CompletedTask;
+        }
+        
+        private Task InitializeActionState()
+        {
+            gameObject.AddComponent<ActionState>();
+            Debug.Log("Initialize: Initialize ActionState complete!");
             return Task.CompletedTask;
         }
 
 
         private Task InitializePlayerController(PlayerData playerData)
         {
-            var playerController = gameObject.AddComponent<PlayerController>();
+            var playerController = gameObject.AddComponent<Controller>();
 
             playerController.Initialize(playerData.speed, playerData.jumpBufferTime, playerData.jumpForce,
                 playerData.fallGravityMultiplier, playerData.jumpCoyoteTime, playerData.layerMask);
@@ -50,9 +59,11 @@ namespace Player
             return Task.CompletedTask;
         }
 
+        
+
         private Task InitializePlayerHealth(PlayerData playerData)
         {
-            var playerHealth = gameObject.AddComponent<PlayerHealth>();
+            var playerHealth = gameObject.AddComponent<Health>();
             playerHealth.Initialize(playerData.maxHealth);
             Debug.Log("Initialize: Initialize PlayerHealth complete!");
             return Task.CompletedTask;
@@ -60,7 +71,7 @@ namespace Player
 
         private Task InitializePlayerAttack(PlayerData playerData)
         {
-            var playerAttack = gameObject.AddComponent<PlayerAttack>();
+            var playerAttack = gameObject.AddComponent<Combat>();
             playerAttack.Initialize(playerData.bullet, playerData.attackTime);
             Debug.Log("Initialize: Initialize PlayerAttack complete!");
             return Task.CompletedTask;

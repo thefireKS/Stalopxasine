@@ -1,4 +1,5 @@
 ﻿using System;
+using Player.States;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,6 +27,8 @@ public class PlayerUltimateSystem : MonoBehaviour
     private float realTimeElapsed = 0f;
 
     private PlayerControls _playerControls;
+    private ActionState _actionState;
+    
     private UltimateAbility _ultimateAbility;
     
     public static Action<int, int> OnEnergyChanged;
@@ -34,6 +37,8 @@ public class PlayerUltimateSystem : MonoBehaviour
     {
         _playerControls = PlayerInputHandler.PlayerControls;
         _playerControls.Ultimates.Disable();
+        
+        _actionState = GetComponent<ActionState>();
     }
 
     private void OnEnable()
@@ -82,6 +87,7 @@ public class PlayerUltimateSystem : MonoBehaviour
 
     private void StartUltimate(InputAction.CallbackContext context)
     {
+        if (_actionState.GetState() == ActionState.States.Dialogue) return;
         if (currentEnergy < fullEnergy || PlayerMeeting.DialogIsGoing || currentUltimateExists) return;
         
         SetEnergy(-fullEnergy);
