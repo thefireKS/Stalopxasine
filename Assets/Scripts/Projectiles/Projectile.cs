@@ -1,4 +1,5 @@
 ﻿using System;
+using Enemy;
 using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour, IDealDamage
@@ -25,10 +26,21 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out IDamageable damageable))
+        {
             damageable.TakeDamage(damage);
+            
+            if (damageable as Base)
+            {
+                var hitImpact = other.GetComponent<HitImpact>();
+                hitImpact.Flash();
+            }
+        }
+            
         
         if(other.TryGetComponent(out Knockback knockback))
             knockback.ApplyKnockback(transform.position);
+        
+        
         
         if(!needToDestroyOnCollision) return;
 
