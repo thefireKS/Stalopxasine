@@ -121,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   lifeTimeSeconds: 0.625
+  needToDestroyOnCollision: 1
+  hitsToDestroy: 2
   speed: 4
 --- !u!1 &4126231335609501233
 GameObject:
