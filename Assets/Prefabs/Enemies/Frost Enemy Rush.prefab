@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 368745019449743133}
   - component: {fileID: 5769499620931403850}
   - component: {fileID: 2082332150880907618}
+  - component: {fileID: 1539918277730743646}
   m_Layer: 10
   m_Name: Frost Enemy Rush
   m_TagString: Enemy
@@ -171,7 +172,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0044528246, y: -0.11887112}
+  m_Offset: {x: 0, y: -0.065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -182,7 +183,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6359694, y: 0.73716277}
+  m_Size: {x: 0.75, y: 0.875}
   m_EdgeRadius: 0
 --- !u!114 &5769499620931403850
 MonoBehaviour:
@@ -231,6 +232,27 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 324c8acd21f15df469528eac764c05eb, type: 2}
   duration: 0.25
   spriteRenderer: {fileID: 4673253714386070374}
+--- !u!95 &1539918277730743646
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654607273124630967}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8db8dbb1164cf2d4a8e1d6e143afbe39, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2154050106502462599
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +263,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6247113312258973878}
   - component: {fileID: 4673253714386070374}
-  - component: {fileID: 6524944445748227}
   m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
@@ -305,8 +326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -239602769498150587, guid: 87ff9bd428e655f41a5eba338c5e188a,
-    type: 3}
+  m_Sprite: {fileID: -1022932134, guid: 211460d42bcb25f4d9932aa106bf1e0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -317,27 +337,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6524944445748227
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2154050106502462599}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c2fc5da3e23ce2f42bd40db08bc7cd56, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4631613317280160390
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,6 +122,7 @@ MonoBehaviour:
   damage: 1
   lifeTimeSeconds: 0.375
   needToDestroyOnCollision: 0
+  hitsToDestroy: 0
 --- !u!1 &3922289031182873760
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,8 +196,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -450475073758537646, guid: 42f6ae2b22ff8034fb393b7bbd7a05fe,
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 2984003930164137941, guid: 42f6ae2b22ff8034fb393b7bbd7a05fe,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

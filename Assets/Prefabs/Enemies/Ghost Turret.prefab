@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &894548611460407446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,8 +456,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8650599223624117138}
   - component: {fileID: 8650599223624117137}
-  - component: {fileID: 499711411319207453}
-  - component: {fileID: 8650599223624117136}
   - component: {fileID: 3866668783423972261}
   m_Layer: 10
   m_Name: Ghost Turret
@@ -536,38 +534,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &499711411319207453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8650599223624117143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b176833e440c2b448ab374b346af8c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HasKnockback: 0
-  knockbackScale: 0
-  HP: 1
-  HealthBar: {fileID: 7909162149371089009}
-  Bar: {fileID: 0}
---- !u!114 &8650599223624117136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8650599223624117143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 756e6692cf7643440981078a3412905a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 4827085400582434355, guid: 7415b1bd3ad5c084691adbdbcd81c7b4, type: 3}
-  BulletPosition: {fileID: 8650599223828209858}
-  AttackTime: 3
 --- !u!61 &3866668783423972261
 BoxCollider2D:
   m_ObjectHideFlags: 0

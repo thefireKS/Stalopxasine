@@ -16,8 +16,8 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     {
         _animator = GetComponentInChildren<Animator>();
 
-        var angle = (int) transform.eulerAngles.z % 10f == 5f ? 1 : 0;
-
+        var angle = Mathf.RoundToInt(transform.eulerAngles.z % 10f) == 5 ? 1 : 0;
+        
         _animator?.SetFloat("Angle", angle);
         
         Destroy(gameObject, lifeTimeSeconds);
