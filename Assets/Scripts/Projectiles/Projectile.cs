@@ -7,6 +7,7 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     [SerializeField] protected float lifeTimeSeconds;
 
     [SerializeField] protected bool needToDestroyOnCollision = true;
+    [SerializeField] protected int hitsToDestroy;
 
     private Animator _animator;
 
@@ -30,6 +31,13 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
             knockback.ApplyKnockback(transform.position);
         
         if(!needToDestroyOnCollision) return;
+
+        hitsToDestroy--;
+        if (hitsToDestroy <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
         
         if (other.CompareTag("Ground"))
             Destroy(gameObject);
