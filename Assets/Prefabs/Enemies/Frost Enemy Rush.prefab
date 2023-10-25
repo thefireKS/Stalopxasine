@@ -84,9 +84,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7387969435459876194}
-  - component: {fileID: 5769499620931403850}
   - component: {fileID: 1242168626646014696}
   - component: {fileID: 368745019449743133}
+  - component: {fileID: 5769499620931403850}
+  - component: {fileID: 2082332150880907618}
   m_Layer: 10
   m_Name: Frost Enemy Rush
   m_TagString: Enemy
@@ -111,37 +112,6 @@ Transform:
   - {fileID: 6247113312258973878}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5769499620931403850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654607273124630967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e39ece50523da04a8b333dd5a16df46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  damage: 1
-  energyOnDeath: 1
-  speed: 1
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 256
-  rayDistanceToCheckObstacles: 1
-  rayDistanceToCheckPlayer: 5
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  rayDistanceToCheckAnything: 0.1
-  excludeEnemy:
-    serializedVersion: 2
-    m_Bits: 11063
-  timeToWarmup: 2
-  timeInStun: 2
-  speedInRush: 10
 --- !u!50 &1242168626646014696
 Rigidbody2D:
   serializedVersion: 4
@@ -214,6 +184,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6359694, y: 0.73716277}
   m_EdgeRadius: 0
+--- !u!114 &5769499620931403850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654607273124630967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e39ece50523da04a8b333dd5a16df46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  health: 1
+  energyOnDeath: 1
+  speed: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  obstaclesCheckRayDistance: 0
+  floorCheckRayDistance: 0
+  rayDistanceToCheckPlayer: 5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  rayDistanceToCheckAnything: 0.1
+  excludeEnemy:
+    serializedVersion: 2
+    m_Bits: 11063
+  timeToWarmup: 2
+  timeInStun: 2
+  speedInRush: 10
+--- !u!114 &2082332150880907618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654607273124630967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267255643e552a24d9f4fc62e497c239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 324c8acd21f15df469528eac764c05eb, type: 2}
+  duration: 0.25
+  spriteRenderer: {fileID: 4673253714386070374}
 --- !u!1 &2154050106502462599
 GameObject:
   m_ObjectHideFlags: 0

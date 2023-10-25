@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2534149488064146689}
   - component: {fileID: 4402801615229919495}
   - component: {fileID: 2042798019010554454}
-  - component: {fileID: -6163346584419987499}
   - component: {fileID: 3131774431566012995}
+  - component: {fileID: -6163346584419987499}
+  - component: {fileID: 8491002969473715417}
   m_Layer: 10
   m_Name: Frost Enemy Pursuing
   m_TagString: Enemy
@@ -88,19 +89,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &-6163346584419987499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100797417284621344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a62a0d64eee8b54fabe7c0b30c7db81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockForce: {x: 3, y: 5}
 --- !u!61 &3131774431566012995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,6 +134,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43773317, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6163346584419987499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100797417284621344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a62a0d64eee8b54fabe7c0b30c7db81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockForce: {x: 3, y: 5}
+--- !u!114 &8491002969473715417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100797417284621344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267255643e552a24d9f4fc62e497c239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 324c8acd21f15df469528eac764c05eb, type: 2}
+  duration: 0.25
+  spriteRenderer: {fileID: 7408553941928725581}
 --- !u!1 &2561027317678701243
 GameObject:
   m_ObjectHideFlags: 0
