@@ -87,8 +87,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8650599223624117138}
   - component: {fileID: 8650599223624117137}
-  - component: {fileID: 7239585144366208426}
   - component: {fileID: 4979891045684845132}
+  - component: {fileID: 7239585144366208426}
+  - component: {fileID: 1573764936980219475}
   m_Layer: 10
   m_Name: Frozen Turret
   m_TagString: Untagged
@@ -165,24 +166,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7239585144366208426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8650599223624117143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e0f74e7bb8b9234a8460879df3c60b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 1
-  damage: 0
-  projectile: {fileID: 7161319479519569814, guid: c9317d9a7f467f94fb60f5d357ac3dfc,
-    type: 3}
-  timeBetweenShots: 1
-  shotPoint: {fileID: 8650599223828209858}
 --- !u!61 &4979891045684845132
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -228,6 +211,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.87551785, y: 0.87547016}
   m_EdgeRadius: 0
+--- !u!114 &7239585144366208426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650599223624117143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e0f74e7bb8b9234a8460879df3c60b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  health: 1
+  energyOnDeath: 0
+  projectile: {fileID: 7161319479519569814, guid: c9317d9a7f467f94fb60f5d357ac3dfc,
+    type: 3}
+  timeBetweenShots: 1
+  shotPoint: {fileID: 8650599223828209858}
+--- !u!114 &1573764936980219475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8650599223624117143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 267255643e552a24d9f4fc62e497c239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: 324c8acd21f15df469528eac764c05eb, type: 2}
+  duration: 0.25
+  spriteRenderer: {fileID: 8650599223624117137}
 --- !u!1 &8650599223828209857
 GameObject:
   m_ObjectHideFlags: 0
