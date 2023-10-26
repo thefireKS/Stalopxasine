@@ -23,12 +23,14 @@ namespace Enemy
         [SerializeField] private float speedInRush;
 
         private float _normalSpeed;
+        private Animator _animator;
 
         public static event Action OnSpotPlayer;
         
         private void Start()
         {
             _normalSpeed = speed;
+            _animator = GetComponent<Animator>();
         }
 
         private bool _inRush;
@@ -88,17 +90,22 @@ namespace Enemy
         {
             Debug.Log("Start WarmUp");
             SetVelocityX(0);
+            _animator.SetTrigger("IsInWarmup");
             yield return new WaitForSeconds(timeToWarmup);
             var direction = _isGoingRight ? 1 : -1;
             SetVelocityX(speedInRush*direction);
             Debug.Log("RUSH!");
+            _animator.SetBool("IsInRush",true);
         }
         
         private IEnumerator Stun()
         {
+            _animator.SetBool("IsInRush",false);
+            _animator.SetBool("IsInStun", true);
             _inStun = true;
             SetVelocityX(0);
             yield return new WaitForSeconds(timeInStun);
+            _animator.SetBool("IsInStun", false);
             var direction = _isGoingRight ? 1 : -1;
             SetVelocityX(_normalSpeed*direction);
             _inStun = false;

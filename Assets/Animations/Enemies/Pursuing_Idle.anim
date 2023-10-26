@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: CircusE
+  m_Name: Pursuing_Idle
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 8658897686711123612, guid: ede03d878fdac9d47b0aa694544ff9a7,
-        type: 3}
+      value: {fileID: -1437823722, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
     - time: 0.125
-      value: {fileID: -5824292785622560295, guid: ede03d878fdac9d47b0aa694544ff9a7,
-        type: 3}
+      value: {fileID: 977514398, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
+    - time: 0.25
+      value: {fileID: -1899772424, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
+    - time: 0.375
+      value: {fileID: -107273347, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,14 +50,16 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 8658897686711123612, guid: ede03d878fdac9d47b0aa694544ff9a7, type: 3}
-    - {fileID: -5824292785622560295, guid: ede03d878fdac9d47b0aa694544ff9a7, type: 3}
+    - {fileID: -1437823722, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
+    - {fileID: 977514398, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
+    - {fileID: -1899772424, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
+    - {fileID: -107273347, guid: 8eb82da56439e044c92aeb818363fe8e, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.25
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
