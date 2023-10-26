@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactRange: 2
   interactionType: 1
+  _dialogIsGoing: 0
   replicas: []
   references:
     version: 2

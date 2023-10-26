@@ -7,6 +7,7 @@ namespace Enemy
         private Transform _target;
 
         [SerializeField] private LayerMask targetMask;
+        [SerializeField] private float targetCheckRayDistance = 2f;
     
         protected override void Behavior()
         {
@@ -43,8 +44,8 @@ namespace Enemy
             var rayPosition = bounds.center;
             var direction = _isGoingRight ? 1 : -1;
             RaycastHit2D hit = Physics2D.Raycast(rayPosition, Vector2.right * direction,
-                obstaclesCheckRayDistance + (bounds.max.x - bounds.center.x), targetMask);
-            Debug.DrawRay(rayPosition, Vector3.right * (direction * obstaclesCheckRayDistance), Color.yellow);
+                targetCheckRayDistance, targetMask);
+            Debug.DrawRay(rayPosition, Vector3.right * (direction * targetCheckRayDistance), Color.yellow);
         
             if (!hit) return;
         
