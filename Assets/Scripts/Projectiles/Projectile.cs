@@ -1,4 +1,5 @@
 ﻿using System;
+using Enemy;
 using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour, IDealDamage
@@ -7,6 +8,7 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     [SerializeField] protected float lifeTimeSeconds;
 
     [SerializeField] protected bool needToDestroyOnCollision = true;
+    [SerializeField] protected int hitsToDestroy;
 
     private Animator _animator;
 
@@ -14,8 +16,8 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     {
         _animator = GetComponentInChildren<Animator>();
 
-        var angle = (int) transform.eulerAngles.z % 10f == 5f ? 1 : 0;
-
+        var angle = Mathf.RoundToInt(transform.eulerAngles.z % 10f) == 5 ? 1 : 0;
+        
         _animator?.SetFloat("Angle", angle);
         
         Destroy(gameObject, lifeTimeSeconds);
@@ -24,12 +26,30 @@ public abstract class Projectile : MonoBehaviour, IDealDamage
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.TryGetComponent(out IDamageable damageable))
+        {
             damageable.TakeDamage(damage);
+            
+            if (damageable as Base)
+            {
+                var hitImpact = other.GetComponent<HitImpact>();
+                hitImpact.Flash();
+            }
+        }
+            
         
         if(other.TryGetComponent(out Knockback knockback))
             knockback.ApplyKnockback(transform.position);
         
+        
+        
         if(!needToDestroyOnCollision) return;
+
+        hitsToDestroy--;
+        if (hitsToDestroy <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
         
         if (other.CompareTag("Ground"))
             Destroy(gameObject);

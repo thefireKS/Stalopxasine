@@ -26,6 +26,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 691606083040152404, guid: 2789718e5d22c244c80e3d903b299fbd,
         type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 691606083040152404, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.125
       objectReference: {fileID: 0}
@@ -83,6 +88,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 2400933003264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[1].m_TableEntryReference.m_KeyId
+      value: 2468373217280
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[0].m_TableReference.m_TableCollectionName
+      value: GUID:616137e6b2b7e9446aa714ad7d6df8df
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[1].m_TableReference.m_TableCollectionName
+      value: GUID:616137e6b2b7e9446aa714ad7d6df8df
       objectReference: {fileID: 0}
     - target: {fileID: 6089058111200024340, guid: 2789718e5d22c244c80e3d903b299fbd,
         type: 3}

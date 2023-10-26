@@ -76,8 +76,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
         type: 3}
-      propertyPath: interactionType
-      value: 0
+      propertyPath: replicas.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[0].m_TableEntryReference.m_KeyId
+      value: 2767590670336
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[1].m_TableEntryReference.m_KeyId
+      value: 2941968859136
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[0].m_TableReference.m_TableCollectionName
+      value: GUID:616137e6b2b7e9446aa714ad7d6df8df
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538865154271107164, guid: 2789718e5d22c244c80e3d903b299fbd,
+        type: 3}
+      propertyPath: replicas.Array.data[1].m_TableReference.m_TableCollectionName
+      value: GUID:616137e6b2b7e9446aa714ad7d6df8df
       objectReference: {fileID: 0}
     - target: {fileID: 6089058111200024340, guid: 2789718e5d22c244c80e3d903b299fbd,
         type: 3}
