@@ -22,7 +22,7 @@ MonoBehaviour:
   bullet: {fileID: 1123760533343461035, guid: a28b6fca4c123c14598f6deebee5f848, type: 3}
   ultimateObject: {fileID: 3555862907523863139, guid: 829b206d9915934489a4e4c8c7f807c4,
     type: 3}
-  speed: 8
+  speed: 9
   jumpForce: 9
   jumpCoyoteTime: 0.05
   jumpBufferTime: 0.33
