@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8402179622190486073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4979891045684845132, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.6858748
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979891045684845132, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.15706258
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239585144366208426, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 3176466940169255359, guid: c5481d983c9efe7449d231881cac6383,
+        type: 3}
+    - target: {fileID: 8650599223624117137, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 28365f8a253df744b9918f811b83cf4e,
+        type: 3}
+    - target: {fileID: 8650599223624117137, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117138, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650599223624117143, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_Name
+      value: Pixel Turret 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781511807223937047, guid: 995f78a9b86c8664a923167f52083805,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.191
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 995f78a9b86c8664a923167f52083805, type: 3}
