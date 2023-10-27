@@ -176,7 +176,7 @@ MonoBehaviour:
       m_Y: 48
       m_Width: 16
       m_Height: 16
-    m_Scale: 1.8
+    m_Scale: 1.3
     m_AtlasIndex: 0
     m_ClassDefinitionType: 0
     sprite: {fileID: -2048384380, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
