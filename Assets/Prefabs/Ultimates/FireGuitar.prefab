@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullEnergy: 4
-  ultimateEventTime: 8
+  ultimateEventTime: 10
   fireGuitar: {fileID: 443269489176464486, guid: 4ff1d9e4ac64b9e44b7ee55ea385ec8f,
     type: 3}
   fireGuitarSpeed: 5

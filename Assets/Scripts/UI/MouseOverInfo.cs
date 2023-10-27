@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MouseOverInfo : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class MouseOverInfo : MonoBehaviour, ISelectHandler, IDeselectHandler
 {
     public GameObject showing;
-    void Start()
-    {
-        showing.SetActive(false);
-    }
-    public void OnPointerEnter(PointerEventData eventData)
+
+    public void OnSelect(BaseEventData eventData)
     {
         showing.SetActive(true);
     }
-    public void OnPointerExit(PointerEventData eventData)
+
+    public void OnDeselect(BaseEventData eventData)
     {
         showing.SetActive(false);
     }

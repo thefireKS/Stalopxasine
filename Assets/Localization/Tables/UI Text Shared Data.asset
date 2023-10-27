@@ -27,6 +27,26 @@ MonoBehaviour:
     m_Key: MainMenuButton
     m_Metadata:
       m_Items: []
+  - m_Id: 88309895059648512
+    m_Key: BasicControlsDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320028200316928
+    m_Key: CaramelloControlsDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320100208128000
+    m_Key: PixelControlsDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320129232711680
+    m_Key: FridmanControlsDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320160237006848
+    m_Key: VisemanControlsDescription
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

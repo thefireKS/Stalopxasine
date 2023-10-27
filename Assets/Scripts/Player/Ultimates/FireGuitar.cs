@@ -72,7 +72,7 @@ public class FireGuitar : UltimateAbility
         Time.timeScale = 0.25f;
         cachedFireGuitar.SetActive(true);
         isAbleToMove = true;
-        yield return new WaitForSecondsRealtime(ultimateEventTime);
+        yield return new WaitForSeconds(ultimateEventTime * Time.timeScale);
         StartCoroutine(Deactivate());
     }
     
@@ -93,18 +93,19 @@ public class FireGuitar : UltimateAbility
     
     private void Update()
     {
+        //made by worst solutions inc. - thefireKS
         inputVector = _playerControls.Ultimates.FireGuitar.ReadValue<Vector2>();
         FireGuitarMovement();
     }
 
     private void FireGuitarMovement()
     {
+        if(PauseMenu.IsPaused) return;
         if(!isAbleToMove) return;
+        if (Time.timeScale != 0.25f)
+            Time.timeScale = 0.25f;
         cachedFireGuitar.transform.position +=
             new Vector3(inputVector.x * fireGuitarSpeed * Time.unscaledDeltaTime, inputVector.y * fireGuitarSpeed * Time.unscaledDeltaTime);
-
-        //var scaleX = inputVector.x > 0 ? 1 : -1;
-        //cachedFireGuitar.transform.localScale = new Vector3(scaleX, 1);
     }
     
     private void FireGuitarAttack(InputAction.CallbackContext context)

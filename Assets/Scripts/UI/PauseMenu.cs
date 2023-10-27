@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,11 @@ public class PauseMenu : MonoBehaviour
     private void OnEnable()
     {
         _playerControls.Player.Pause.started += ChangeState;
+    }
+
+    private void Start()
+    {
+        pauseMenu.SetActive(false);
     }
 
     private void OnDisable()

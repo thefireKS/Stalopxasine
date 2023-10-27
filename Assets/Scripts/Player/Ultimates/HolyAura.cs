@@ -7,12 +7,13 @@ public class HolyAura : UltimateAbility
     [SerializeField] private Animator auraAnimator;
     [SerializeField] private int maximumUltimateSize = 8;
 
-    private int ultimateSize = 0;
+    private int ultimateSize = 0, defaultSortingLayer;
 
     private float newAngle = 0, oldAngle = 0, angleDifference = 0;
 
     private Rigidbody2D _rigidbody2D;
     private Animator _playerAnimator;
+    private SpriteRenderer _spriteRenderer;
 
     private Coroutine currentAuraCoroutine;
 
@@ -32,14 +33,16 @@ public class HolyAura : UltimateAbility
     public override void Initialize()
     {
         _rigidbody2D = GetComponentInParent<Rigidbody2D>();
-        
         _playerAnimator = GetComponentInParent<Animator>();
+
+        _spriteRenderer = _playerAnimator.GetComponentInChildren<SpriteRenderer>();
+        defaultSortingLayer = _spriteRenderer.sortingOrder;
     }
 
     public override void Activate()
     {
         ultimateSize = 0;
-
+        _spriteRenderer.sortingOrder = 6;
         _playerAnimator.SetBool("isUlting",true);
         auraAnimator.gameObject.SetActive(true);
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeAll;
@@ -52,7 +55,7 @@ public class HolyAura : UltimateAbility
     {
         yield return new WaitForSeconds(0.875f);
         Time.timeScale = 0.25f;
-        yield return new WaitForSecondsRealtime(ultimateEventTime);
+        yield return new WaitForSeconds(ultimateEventTime * Time.timeScale);
         StartCoroutine(Deactivate());
     }
 
@@ -61,6 +64,7 @@ public class HolyAura : UltimateAbility
         Time.timeScale = 1f;
         _playerAnimator.SetBool("isUlting",false);
         yield return new WaitForSeconds(0.875f); //default animation length
+        _spriteRenderer.sortingOrder = defaultSortingLayer;
         _rigidbody2D.constraints = RigidbodyConstraints2D.FreezeRotation;
         _playerControls.Player.Enable();
         _playerControls.Ultimates.Disable();
@@ -69,6 +73,8 @@ public class HolyAura : UltimateAbility
 
     private void AuraEvent(InputAction.CallbackContext context)
     {
+        if(PauseMenu.IsPaused) return;
+        
         var inputVector = context.ReadValue<Vector2>();
         newAngle = Mathf.Atan2(inputVector.y,inputVector.x) * Mathf.Rad2Deg;
 

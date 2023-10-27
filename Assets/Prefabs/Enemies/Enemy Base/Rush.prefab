@@ -204,8 +204,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  obstaclesCheckRayDistance: 0
-  floorCheckRayDistance: 0
+  obstaclesCheckRayDistance: 0.3
+  floorCheckRayDistance: 0.8
   rayDistanceToCheckPlayer: 5
   playerLayer:
     serializedVersion: 2
@@ -325,7 +325,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

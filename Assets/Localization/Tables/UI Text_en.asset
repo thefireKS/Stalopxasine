@@ -30,6 +30,58 @@ MonoBehaviour:
     m_Localized: Go to main menu
     m_Metadata:
       m_Items: []
+  - m_Id: 88309895059648512
+    m_Localized: Use <sprite="controls_keyboard" name="controls_keyboard_WASD">,
+      <sprite="controls_keyboard" name="controls_keyboard_Arrows">, <sprite="controls_xbox"
+      name="controls_xbox_LeftStick"> or <sprite="controls_xbox" name="controls_xbox_Dpad">
+      to move and select the direction of attack. Attack with <sprite="controls_keyboard"
+      name="controls_keyboard_Enter"> or <sprite="controls_xbox" name="controls_xbox_B">.
+      Jump with <sprite="controls_keyboard" name="controls_keyboard_Space">, <sprite="controls_xbox"
+      name="controls_xbox_A"> or descend from platforms with <sprite="controls_keyboard"
+      name="controls_keyboard_Down"> + <sprite="controls_keyboard" name="controls_keyboard_Space">,
+      <sprite="controls_xbox" name="controls_xbox_Dpad_down"> + <sprite="controls_xbox"
+      name="controls_xbox_A">. When the bar in the upper left corner is full - press
+      <sprite="controls_keyboard" name="controls_keyboard_X"> or <sprite="controls_xbox"
+      name="controls_xbox_Y"> to activate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320028200316928
+    m_Localized: 'During the ability, rotate <sprite="controls_xbox" name="controls_xbox_LeftStick">
+      clockwise or use <sprite="controls_keyboard" name="controls_keyboard_WASD">,<sprite="controls_keyboard"
+      name="controls_keyboard_Arrows">,<sprite="controls_xbox" name="controls_xbox_Dpad">
+      by pressing them in the order: up-right-down-left-up-.... and so on
+
+      This
+      will increase the size of the ultimate ability!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320100208128000
+    m_Localized: During the ability, press <sprite="controls_keyboard" name="controls_keyboard_W">
+      - <sprite="controls_keyboard" name="controls_keyboard_S">, <sprite="controls_keyboard"
+      name="controls_keyboard_Up"> - <sprite="controls_keyboard" name="controls_keyboard_Down">
+      in turn, <sprite="controls_xbox" name="controls_xbox_Dpad_up"> - <sprite="controls_xbox"
+      name="controls_xbox_Dpad_down"> or <sprite="controls_xbox" name="controls_xbox_LeftStick">
+      to increase the size of your special projectile and <sprite="controls_keyboard"
+      name="controls_keyboard_A"> - <sprite="controls_keyboard" name="controls_keyboard_D">,
+      <sprite="controls_keyboard" name="controls_keyboard_Left"> - <sprite="controls_keyboard"
+      name="controls_keyboard_Right">, <sprite="controls_xbox" name="controls_xbox_Dpad_left">
+      - <sprite="controls_xbox" name="controls_xbox_Dpad_right"> for selecting the
+      direction of the projectile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320129232711680
+    m_Localized: Use the shift keys to control the guitar in space. When the guitar
+      is turned in the desired direction - press <sprite="controls_keyboard" name="controls_keyboard_Enter">
+      or <sprite="controls_xbox" name="controls_xbox_B"> to attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 88320160237006848
+    m_Localized: Use the movement keys to control the spirit in space. When you see
+      fit, press <sprite="controls_keyboard" name="controls_keyboard_Enter"> or <sprite="controls_xbox"
+      name="controls_xbox_B"> to attack. Spirit attacks in 4 directions, so the attack
+      can hit additional targets.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

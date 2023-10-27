@@ -287,8 +287,7 @@ MonoBehaviour:
   damage: 1
   health: 1
   energyOnDeath: 1
-  projectile: {fileID: 8763291102459355901, guid: e334a77b8fd4ba2469650089c840f2cb,
-    type: 3}
+  projectile: {fileID: 0}
   timeBetweenShots: 3
   shotPoint: {fileID: 2891815577099210027}
   groundMask:
@@ -472,7 +471,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
