@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Mission.Objectives.Base;
 using System.Threading.Tasks;
+using Interactable;
 using UnityEngine;
 
 namespace System.Mission.UI
@@ -20,6 +22,19 @@ namespace System.Mission.UI
 
         [SerializeField] private RectTransform mainObjectivesHandler, sideObjectivesHandler;
         [SerializeField] private Corner mainObjectivesCorner, sideObjectivesCorner;
+
+        private List<GameObject> missionObjects = new List<GameObject>();
+
+        private void OnEnable()
+        {
+            NPC.OnDialogueSignal += MissionVisibilityManager;
+        }
+
+        private void OnDisable()
+        {
+            NPC.OnDialogueSignal -= MissionVisibilityManager;
+        }
+
         public Task Initialize()
         {
             foreach (var objective in objectivesManager.GetObjectives())
@@ -49,6 +64,7 @@ namespace System.Mission.UI
         {
             var objectiveUI = Instantiate(objectiveUIPrefab, parent).GetComponent<ObjectiveUI>();
             objectiveUI.SetObjective(objective);
+            missionObjects.Add(objectiveUI.gameObject);
         }
 
         private void SetPosition(RectTransform rectTransform,Corner corner)
@@ -77,6 +93,15 @@ namespace System.Mission.UI
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(corner), corner, null);
+            }
+        }
+
+        private void MissionVisibilityManager(bool shouldBeDisabled)
+        {
+            foreach (var missionObject in missionObjects)
+            {
+                missionObject.SetActive(shouldBeDisabled);
+                Debug.Log(missionObject);
             }
         }
     }

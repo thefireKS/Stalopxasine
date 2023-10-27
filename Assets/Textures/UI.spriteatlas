@@ -68,6 +68,7 @@ SpriteAtlas:
     - 75db80105f3fc1c4fb4d674037bc62bd: -6753412988777811171
     - 75db80105f3fc1c4fb4d674037bc62bd: 2808927058995399182
     - 75db80105f3fc1c4fb4d674037bc62bd: -8986648202134481059
+    - 1e40ad80c8f151d4db636f9fe744cb4a: 21300000
     - c36cc941c97ee6943922af182bffb9cd: 21300000
     - 4023cf610c3ba1e47a08f649356031ea: -3958064244258043085
     - 4023cf610c3ba1e47a08f649356031ea: -4668147880964556397
@@ -97,6 +98,7 @@ SpriteAtlas:
     - d02b5ba5f5f08434b8ecdf7c1ee628b0: 21300000
     - 84797fb5662ae004d8a9326aab3caf45: 21300000
     - e2cac7e56978b1a46a21ba1566e5b4b6: 21300000
+    - f58a1106360a9784898a6427f7890416: 21300000
     - b773a666f8d465f48b4e6adbef9e1fed: 21300000
     - 0c918967e1d570c429ec4dd84fb62445: 21300000
     - b996ca67b07476e47ad50ac25029a935: 21300000
@@ -104,6 +106,7 @@ SpriteAtlas:
     - 53cf288808764a448a82c01dd16f2f5c: 21300000
     - c2ab9419e04fad24294f5342987864b2: 21300000
     - e05c79995c780564c9ecdfeabc381ef7: 21300000
+    - a3fe91f91cf346f40988c4d06626cd28: 21300000
     - d2e78f0a90aa5c540a8050ffbba088ac: 21300000
     - c10f090bf411cc74c98961dfe1cb5119: 21300000
     - 3931e25bcc536b44cbae91620d0eeda9: 529580301208756905
@@ -164,6 +167,7 @@ SpriteAtlas:
   - {fileID: -6753412988777811171, guid: 75db80105f3fc1c4fb4d674037bc62bd, type: 3}
   - {fileID: 2808927058995399182, guid: 75db80105f3fc1c4fb4d674037bc62bd, type: 3}
   - {fileID: -8986648202134481059, guid: 75db80105f3fc1c4fb4d674037bc62bd, type: 3}
+  - {fileID: 21300000, guid: 1e40ad80c8f151d4db636f9fe744cb4a, type: 3}
   - {fileID: 21300000, guid: c36cc941c97ee6943922af182bffb9cd, type: 3}
   - {fileID: -3958064244258043085, guid: 4023cf610c3ba1e47a08f649356031ea, type: 3}
   - {fileID: -4668147880964556397, guid: 4023cf610c3ba1e47a08f649356031ea, type: 3}
@@ -193,6 +197,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: d02b5ba5f5f08434b8ecdf7c1ee628b0, type: 3}
   - {fileID: 21300000, guid: 84797fb5662ae004d8a9326aab3caf45, type: 3}
   - {fileID: 21300000, guid: e2cac7e56978b1a46a21ba1566e5b4b6, type: 3}
+  - {fileID: 21300000, guid: f58a1106360a9784898a6427f7890416, type: 3}
   - {fileID: 21300000, guid: b773a666f8d465f48b4e6adbef9e1fed, type: 3}
   - {fileID: 21300000, guid: 0c918967e1d570c429ec4dd84fb62445, type: 3}
   - {fileID: 21300000, guid: b996ca67b07476e47ad50ac25029a935, type: 3}
@@ -200,6 +205,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 53cf288808764a448a82c01dd16f2f5c, type: 3}
   - {fileID: 21300000, guid: c2ab9419e04fad24294f5342987864b2, type: 3}
   - {fileID: 21300000, guid: e05c79995c780564c9ecdfeabc381ef7, type: 3}
+  - {fileID: 21300000, guid: a3fe91f91cf346f40988c4d06626cd28, type: 3}
   - {fileID: 21300000, guid: d2e78f0a90aa5c540a8050ffbba088ac, type: 3}
   - {fileID: 21300000, guid: c10f090bf411cc74c98961dfe1cb5119, type: 3}
   - {fileID: 529580301208756905, guid: 3931e25bcc536b44cbae91620d0eeda9, type: 3}
@@ -259,6 +265,7 @@ SpriteAtlas:
   - BG Stalopxasine Caramello Leaving_7
   - BG Stalopxasine Caramello Leaving_4
   - BG Stalopxasine Caramello Leaving_5
+  - NPCLogos
   - Caramello
   - BG Stalopxasine Fridman Leaving_9
   - BG Stalopxasine Fridman Leaving_8
@@ -288,6 +295,7 @@ SpriteAtlas:
   - BG Stalopxasine Caramello
   - HeroSelectionButtonLeft
   - Fill
+  - HitMarker
   - ButtonSquareSelected
   - E
   - Caramello Heart
@@ -295,6 +303,7 @@ SpriteAtlas:
   - BG Stalopxasine Viseman
   - HeroSelectionButtonRight
   - Empty Heart
+  - EnemiesLogos
   - FrameOfHeroSelectionButtonClick
   - Energy Bar Mask
   - BG Stalopxasine Viseman Leaving_12

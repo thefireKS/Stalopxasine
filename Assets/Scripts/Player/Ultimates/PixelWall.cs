@@ -85,7 +85,7 @@ public class PixelWall : UltimateAbility
         cachedWallObject.SetActive(true);
         cachedWallObject.transform.rotation = Quaternion.Euler(Vector3.zero);
         SetWallPosition();
-        yield return new WaitForSecondsRealtime(ultimateEventTime);
+        yield return new WaitForSeconds(ultimateEventTime / Time.timeScale);
         currentProjectileCoroutine = StartCoroutine(Deactivate());
     }
 
@@ -126,6 +126,8 @@ public class PixelWall : UltimateAbility
 
     private void WallEvent(InputAction.CallbackContext context)
     {
+        if(PauseMenu.IsPaused) return;
+        
         var inputVector = context.ReadValue<Vector2>();
 
         if ((inputVector.y > 0 && !isNextMoveDown) || (inputVector.y < 0 && isNextMoveDown))

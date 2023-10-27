@@ -19,7 +19,8 @@ namespace Interactable
         [SerializeField] private LocalizedString[] replicas;
 
         private ActionState _actionState;
-        
+
+        public static event Action<bool> OnDialogueSignal;
         public event Action OnDialogueEnd;
         
         [Space(10)]
@@ -71,6 +72,7 @@ namespace Interactable
             if(PauseMenu.IsPaused) return;
             if (!_dialogIsGoing)
             {
+                OnDialogueSignal?.Invoke(false);
                 SetupDialogue(true);
                 _localizeStringEvent.StringReference = replicas[_currentReplica];
                 _displayTextCoroutine = StartCoroutine(DisplayLine());
@@ -90,6 +92,7 @@ namespace Interactable
                 {
                     _currentReplica = 0;
                     OnDialogueEnd?.Invoke();
+                    OnDialogueSignal?.Invoke(true);
                     SetupDialogue(false);
                 }
 

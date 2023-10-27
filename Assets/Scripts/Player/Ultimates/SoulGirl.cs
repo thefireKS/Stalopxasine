@@ -73,7 +73,7 @@ public class SoulGirl : UltimateAbility
         Time.timeScale = 0.25f;
         cachedSoulGirlObject.SetActive(true);
         isAbleToMove = true;
-        yield return new WaitForSecondsRealtime(ultimateEventTime);
+        yield return new WaitForSeconds(ultimateEventTime / Time.timeScale);
         StartCoroutine(Deactivate());
     }
 
@@ -100,7 +100,10 @@ public class SoulGirl : UltimateAbility
 
     private void SoulGirlMovement()
     {
+        if(PauseMenu.IsPaused) return;
         if(!isAbleToMove) return;
+        if (Time.timeScale != 0.25f)
+            Time.timeScale = 0.25f;
         cachedSoulGirlObject.transform.position +=
             new Vector3(inputVector.x * soulGirlSpeed * Time.unscaledDeltaTime, inputVector.y * soulGirlSpeed * Time.unscaledDeltaTime);
 
