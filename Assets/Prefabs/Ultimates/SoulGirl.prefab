@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullEnergy: 4
-  ultimateEventTime: 8
+  ultimateEventTime: 10
   soulGirlObject: {fileID: 5059600372363778621, guid: 9557140a9d9e0314eab232b1f61eef5e,
     type: 3}
   soulGirlSpeed: 5

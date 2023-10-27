@@ -55,7 +55,7 @@ public class HolyAura : UltimateAbility
     {
         yield return new WaitForSeconds(0.875f);
         Time.timeScale = 0.25f;
-        yield return new WaitForSeconds(ultimateEventTime / Time.timeScale);
+        yield return new WaitForSeconds(ultimateEventTime * Time.timeScale);
         StartCoroutine(Deactivate());
     }
 

@@ -204,8 +204,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  obstaclesCheckRayDistance: 0
-  floorCheckRayDistance: 0
+  obstaclesCheckRayDistance: 0.2
+  floorCheckRayDistance: 0.5
   rayDistanceToCheckPlayer: 5
   playerLayer:
     serializedVersion: 2

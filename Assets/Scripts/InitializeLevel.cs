@@ -1,5 +1,6 @@
 using Player;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 
 public class InitializeLevel : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class InitializeLevel : MonoBehaviour
             Debug.Log("Level Initialization: Find LevelData");
             playerInitializer.Initialize(levelData.playerData);
             Debug.Log("Level Initialization: Complete");
+            GameObject.Find("Character tips").GetComponent<LocalizeStringEvent>().StringReference =
+                levelData.playerData.uiDescription;
         }
         else
         {

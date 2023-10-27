@@ -85,7 +85,7 @@ public class PixelWall : UltimateAbility
         cachedWallObject.SetActive(true);
         cachedWallObject.transform.rotation = Quaternion.Euler(Vector3.zero);
         SetWallPosition();
-        yield return new WaitForSeconds(ultimateEventTime / Time.timeScale);
+        yield return new WaitForSeconds(ultimateEventTime * Time.timeScale);
         currentProjectileCoroutine = StartCoroutine(Deactivate());
     }
 

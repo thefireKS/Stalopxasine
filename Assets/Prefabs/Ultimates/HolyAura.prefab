@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullEnergy: 4
-  ultimateEventTime: 6
+  ultimateEventTime: 10
   auraAnimator: {fileID: 3074427162584101425}
   maximumUltimateSize: 8
 --- !u!1 &6125493913486861874

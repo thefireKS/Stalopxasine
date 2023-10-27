@@ -73,7 +73,7 @@ public class SoulGirl : UltimateAbility
         Time.timeScale = 0.25f;
         cachedSoulGirlObject.SetActive(true);
         isAbleToMove = true;
-        yield return new WaitForSeconds(ultimateEventTime / Time.timeScale);
+        yield return new WaitForSeconds(ultimateEventTime * Time.timeScale);
         StartCoroutine(Deactivate());
     }
 

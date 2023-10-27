@@ -72,7 +72,7 @@ public class FireGuitar : UltimateAbility
         Time.timeScale = 0.25f;
         cachedFireGuitar.SetActive(true);
         isAbleToMove = true;
-        yield return new WaitForSeconds(ultimateEventTime / Time.timeScale);
+        yield return new WaitForSeconds(ultimateEventTime * Time.timeScale);
         StartCoroutine(Deactivate());
     }
     

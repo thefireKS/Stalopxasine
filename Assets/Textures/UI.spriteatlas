@@ -94,6 +94,17 @@ SpriteAtlas:
     - f4432644fb16661409cea47a0670aff4: 21300000
     - a032dfa47efb7b74494dd8a3f2337e8a: 21300000
     - 6f735be420982a648be519c41603c4ca: 21300000
+    - a900a225c1860474fbc9f3a157e16e4a: 874668433
+    - a900a225c1860474fbc9f3a157e16e4a: 1032497674
+    - a900a225c1860474fbc9f3a157e16e4a: -516263375
+    - a900a225c1860474fbc9f3a157e16e4a: -1778682951
+    - a900a225c1860474fbc9f3a157e16e4a: -2048384380
+    - a900a225c1860474fbc9f3a157e16e4a: -2127837612
+    - a900a225c1860474fbc9f3a157e16e4a: -1365499098
+    - a900a225c1860474fbc9f3a157e16e4a: 1364268107
+    - a900a225c1860474fbc9f3a157e16e4a: -276278017
+    - a900a225c1860474fbc9f3a157e16e4a: -1346808288
+    - a900a225c1860474fbc9f3a157e16e4a: -870289636
     - 8d9a5535df18e5d49a5feeb7fc4340c3: 21300000
     - d02b5ba5f5f08434b8ecdf7c1ee628b0: 21300000
     - 84797fb5662ae004d8a9326aab3caf45: 21300000
@@ -146,6 +157,20 @@ SpriteAtlas:
     - e0540e2ef1671aa41a33cd12faa4d34c: 1970815872521385343
     - e0540e2ef1671aa41a33cd12faa4d34c: 4986020030096430249
     - e0540e2ef1671aa41a33cd12faa4d34c: 7220513618998605507
+    - 01469e5e562b44644886440648038818: -1214831204
+    - 01469e5e562b44644886440648038818: -984342430
+    - 01469e5e562b44644886440648038818: -292012945
+    - 01469e5e562b44644886440648038818: -1349334536
+    - 01469e5e562b44644886440648038818: -1056442358
+    - 01469e5e562b44644886440648038818: -885785541
+    - 01469e5e562b44644886440648038818: -2008660293
+    - 01469e5e562b44644886440648038818: -1019366997
+    - 01469e5e562b44644886440648038818: 1810846585
+    - 01469e5e562b44644886440648038818: -1121941037
+    - 01469e5e562b44644886440648038818: 1154679539
+    - 01469e5e562b44644886440648038818: 1558252590
+    - 01469e5e562b44644886440648038818: -278542543
+    - 01469e5e562b44644886440648038818: 1319464155
     - 2d32b0be945b6014884c099b018d7c16: 21300000
     - ee188c7fd6cde9048a83e9345c762ca7: 21300000
     - fe48d4ff33f8bc74ca7b4552c0bc3022: 21300000
@@ -193,6 +218,17 @@ SpriteAtlas:
   - {fileID: 21300000, guid: f4432644fb16661409cea47a0670aff4, type: 3}
   - {fileID: 21300000, guid: a032dfa47efb7b74494dd8a3f2337e8a, type: 3}
   - {fileID: 21300000, guid: 6f735be420982a648be519c41603c4ca, type: 3}
+  - {fileID: 874668433, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: 1032497674, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -516263375, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -1778682951, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -2048384380, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -2127837612, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -1365499098, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: 1364268107, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -276278017, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -1346808288, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
+  - {fileID: -870289636, guid: a900a225c1860474fbc9f3a157e16e4a, type: 3}
   - {fileID: 21300000, guid: 8d9a5535df18e5d49a5feeb7fc4340c3, type: 3}
   - {fileID: 21300000, guid: d02b5ba5f5f08434b8ecdf7c1ee628b0, type: 3}
   - {fileID: 21300000, guid: 84797fb5662ae004d8a9326aab3caf45, type: 3}
@@ -245,6 +281,20 @@ SpriteAtlas:
   - {fileID: 1970815872521385343, guid: e0540e2ef1671aa41a33cd12faa4d34c, type: 3}
   - {fileID: 4986020030096430249, guid: e0540e2ef1671aa41a33cd12faa4d34c, type: 3}
   - {fileID: 7220513618998605507, guid: e0540e2ef1671aa41a33cd12faa4d34c, type: 3}
+  - {fileID: -1214831204, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -984342430, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -292012945, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -1349334536, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -1056442358, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -885785541, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -2008660293, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -1019366997, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: 1810846585, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -1121941037, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: 1154679539, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: 1558252590, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: -278542543, guid: 01469e5e562b44644886440648038818, type: 3}
+  - {fileID: 1319464155, guid: 01469e5e562b44644886440648038818, type: 3}
   - {fileID: 21300000, guid: 2d32b0be945b6014884c099b018d7c16, type: 3}
   - {fileID: 21300000, guid: ee188c7fd6cde9048a83e9345c762ca7, type: 3}
   - {fileID: 21300000, guid: fe48d4ff33f8bc74ca7b4552c0bc3022, type: 3}
@@ -291,6 +341,17 @@ SpriteAtlas:
   - firekeks
   - BG Stalopxasine Fridman
   - Energy Bar
+  - controls_xbox_Dpad_up
+  - controls_xbox_Dpad_right
+  - controls_xbox_Dpad_left
+  - controls_xbox_Dpad
+  - controls_xbox_LeftStick
+  - controls_xbox_B
+  - controls_xbox_A
+  - controls_xbox_X
+  - controls_xbox_Y
+  - controls_xbox_Dpad_down
+  - controls_xbox_RightStick
   - Logo
   - BG Stalopxasine Caramello
   - HeroSelectionButtonLeft
@@ -343,6 +404,20 @@ SpriteAtlas:
   - BG Stalopxasine fireKS Leaving_3
   - BG Stalopxasine fireKS Leaving_0
   - BG Stalopxasine fireKS Leaving_1
+  - controls_keyboard_Space
+  - controls_keyboard_WASD
+  - controls_keyboard_Left
+  - controls_keyboard_Up
+  - controls_keyboard_Right
+  - controls_keyboard_D
+  - controls_keyboard_E
+  - controls_keyboard_A
+  - controls_keyboard_X
+  - controls_keyboard_W
+  - controls_keyboard_S
+  - controls_keyboard_Arrows
+  - controls_keyboard_Enter
+  - controls_keyboard_Down
   - ButtonRectSelected
   - Energy
   - Dialog window

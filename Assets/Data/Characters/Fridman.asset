@@ -18,6 +18,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   trail: {fileID: 11400000, guid: 28e3c01c3368c0f488dbc70b8497c748, type: 2}
+  uiDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:f321c834a14c1684da746de8354ae7f9
+    m_TableEntryReference:
+      m_KeyId: 88320129232711680
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   attackTime: 0.5
   bullet: {fileID: 1123760533343461035, guid: 27aa5915d309fad43888c5fd25269b87, type: 3}
   ultimateObject: {fileID: 3555862907523863139, guid: 557180cda0a79734f872b89a9a56181b,
@@ -27,3 +36,6 @@ MonoBehaviour:
   jumpCoyoteTime: 0.05
   jumpBufferTime: 0.33
   fallGravityMultiplier: 1.5
+  references:
+    version: 2
+    RefIds: []

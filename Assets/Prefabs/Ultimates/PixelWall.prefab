@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fullEnergy: 4
-  ultimateEventTime: 3
+  ultimateEventTime: 10
   wallObject: {fileID: 3356064313509271090, guid: a0da02f2bfcdf78438053252f8dc1324,
     type: 3}
   wallProjectileFlyingTime: 3
