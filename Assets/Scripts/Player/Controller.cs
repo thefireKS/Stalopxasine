@@ -70,6 +70,10 @@ namespace Player
 
         private ActionState _actionState;
 
+        public bool _isGoingRight;
+
+        public static event Action OnTurned;
+
         private void Awake()
         {
             _playerControls = PlayerInputHandler.PlayerControls;
@@ -143,14 +147,22 @@ namespace Player
                 if (_isJumpPressed)
                     AddJumpHeight();
             }
-            
-            Flip();
+
+            if (_moveX < 0 && _isGoingRight)
+            {
+                Flip();
+            }
+            else if(_moveX > 0 && !_isGoingRight)
+            {
+                Flip();
+            }
         }
 
         private void Flip()
         {
-            if (_moveX != 0)
-                _spriteRenderer.flipX = _moveX < 0;
+            _isGoingRight = !_isGoingRight;
+            _spriteRenderer.flipX = !_isGoingRight;
+            OnTurned?.Invoke();
         }
 
         private void ProcessAnimation()
