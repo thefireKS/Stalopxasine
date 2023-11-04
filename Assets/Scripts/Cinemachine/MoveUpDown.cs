@@ -7,7 +7,10 @@ namespace Cinemachine
     public class MoveUpDown : MonoBehaviour
     {
         public float speed = 2.0f;
+        
         private float _speedFactor;
+        [SerializeField] private float backSpeedFactor = 3f;
+        
         public float cameraAdjustment = 10.0f;
 
         private CinemachineFramingTransposer _cinemachineFramingTransposer;
@@ -66,7 +69,7 @@ namespace Cinemachine
             else
             {
                 _timer.StopTimer();
-                _speedFactor = 3;
+                _speedFactor = backSpeedFactor;
                 _targetOffset = _defaultOffset;
             }
 
