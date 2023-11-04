@@ -46,7 +46,7 @@ namespace Player
         private bool _isDropping;
 
         private float _moveX;
-        //private float _moveY;
+        private float _moveY;
 
         private bool _autoFire;
 
@@ -117,7 +117,6 @@ namespace Player
             switch(state)
             {
                 case ActionState.States.Dialogue:
-                    
                     _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
                     Debug.Log("Set velocity 0");
                     break;
@@ -143,6 +142,7 @@ namespace Player
                 var movement = _playerControls.Player.Movement.ReadValue<Vector2>();
 
                 _moveX = movement.x;
+                _moveY = movement.y;
                 
                 if (_isJumpPressed)
                     AddJumpHeight();
@@ -280,6 +280,11 @@ namespace Player
                 _isDropping = true;
                 StartCoroutine(DisableCollision());
             }
+        }
+
+        public Vector2 GetMove()
+        {
+            return new Vector2(_moveX, _moveY);
         }
 
         /*private void Attack(InputAction.CallbackContext context)
