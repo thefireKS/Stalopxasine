@@ -2498,7 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7c2c2c97d141b043925830d6a448bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flipRotationTime: 0.75
+  flipRotationTime: 0.5
 --- !u!1001 &346283914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12890,7 +12890,7 @@ PrefabInstance:
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.943555
+      value: 7.4435735
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -12954,13 +12954,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2933754078537667178, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933754078537667178, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
       propertyPath: m_LookaheadTime
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2933754078537667178, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
+      propertyPath: m_SoftZoneWidth
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933754078537667178, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
       propertyPath: m_TrackedObjectOffset.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791829268019644997, guid: 53b27cc63f2093a4cbf9e4db02596257,
+        type: 3}
+      propertyPath: m_AmplitudeGain
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1052611339421693409, guid: 53b27cc63f2093a4cbf9e4db02596257, type: 3}
@@ -12990,9 +13005,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5586e2d89b7bf0e43a2afbc55c20dd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeTime: 2
-  cameraAdjustment: 10
-  timeToStartMove: 3
+  speed: 3
+  backSpeedFactor: 3
+  cameraAdjustment: 3
+  timeToStartMove: 1
 --- !u!1 &1524645518
 GameObject:
   m_ObjectHideFlags: 0

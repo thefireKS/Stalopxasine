@@ -78,7 +78,7 @@ namespace Cinemachine
                 _targetOffset = _defaultOffset + _currentDirection * cameraAdjustment;
             }
             
-            if(Math.Abs(_cinemachineFramingTransposer.m_TrackedObjectOffset.y - _targetOffset) < 0.05) return;
+            if(Math.Abs(_cinemachineFramingTransposer.m_TrackedObjectOffset.y - _targetOffset) < 0.001f) return;
 
             var direction = Mathf.Sign(_targetOffset - _cinemachineFramingTransposer.m_TrackedObjectOffset.y);
             _cinemachineFramingTransposer.m_TrackedObjectOffset.y += speed * direction * Time.deltaTime * _speedFactor;
