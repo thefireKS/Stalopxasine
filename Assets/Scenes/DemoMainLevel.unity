@@ -139,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.4435735
+      value: 7.943555
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -236,11 +236,7 @@ PrefabInstance:
     - {fileID: 1052611339421693436, guid: 53b27cc63f2093a4cbf9e4db02596257, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 13687241}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b27cc63f2093a4cbf9e4db02596257, type: 3}
 --- !u!4 &13687239 stripped
 Transform:
@@ -248,35 +244,13 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 13687238}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &13687240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
-    type: 3}
-  m_PrefabInstance: {fileID: 13687238}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &13687241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13687240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5586e2d89b7bf0e43a2afbc55c20dd6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  backSpeedFactor: 3
-  cameraAdjustment: 3
-  timeToStartMove: 1
 --- !u!114 &13687242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1052611339421693408, guid: 53b27cc63f2093a4cbf9e4db02596257,
     type: 3}
   m_PrefabInstance: {fileID: 13687238}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13687240}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
@@ -12770,12 +12744,12 @@ PrefabInstance:
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.12
+      value: 7.943555
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0073175
+      value: 2.2426798
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -12867,11 +12841,7 @@ PrefabInstance:
     - {fileID: 1052611339421693436, guid: 53b27cc63f2093a4cbf9e4db02596257, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1722981417}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53b27cc63f2093a4cbf9e4db02596257, type: 3}
 --- !u!1 &1232939907
 GameObject:
@@ -13172,12 +13142,12 @@ PrefabInstance:
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.12
+      value: 7.943555
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2426825
+      value: 2.2426798
       objectReference: {fileID: 0}
     - target: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
         type: 3}
@@ -14179,6 +14149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1697047027}
   - component: {fileID: 1697047026}
+  - component: {fileID: 1697047028}
   m_Layer: 0
   m_Name: Cameras
   m_TagString: Untagged
@@ -14201,8 +14172,10 @@ MonoBehaviour:
   cameraDictionary:
   - cameraName: Gameplay
     camera: {fileID: 1425104203}
-  - cameraName: Look UpDown
+  - cameraName: Up
     camera: {fileID: 13687242}
+  - cameraName: Down
+    camera: {fileID: 1722981418}
   elevatedPriority: 15
   loweredPriority: 10
 --- !u!4 &1697047027
@@ -14223,34 +14196,37 @@ Transform:
   - {fileID: 1722981416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1722981415 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1052611339421693439, guid: 53b27cc63f2093a4cbf9e4db02596257,
-    type: 3}
-  m_PrefabInstance: {fileID: 1224557677}
+--- !u!114 &1697047028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697047025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5586e2d89b7bf0e43a2afbc55c20dd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToStartMove: 1
 --- !u!4 &1722981416 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1052611339421693410, guid: 53b27cc63f2093a4cbf9e4db02596257,
     type: 3}
   m_PrefabInstance: {fileID: 1224557677}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1722981417
+--- !u!114 &1722981418 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1052611339421693408, guid: 53b27cc63f2093a4cbf9e4db02596257,
+    type: 3}
+  m_PrefabInstance: {fileID: 1224557677}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1722981415}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5586e2d89b7bf0e43a2afbc55c20dd6b, type: 3}
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  backSpeedFactor: 3
-  cameraAdjustment: 3
-  timeToStartMove: 1
 --- !u!1 &1762365365
 GameObject:
   m_ObjectHideFlags: 0
