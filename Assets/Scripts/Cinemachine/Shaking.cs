@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
@@ -5,19 +6,29 @@ namespace Cinematine
 {
     public class Shaking : MonoBehaviour
     {
-        private CinemachineVirtualCamera _cinemachine;
+        private List<CinemachineVirtualCamera> _cinemachines = new List<CinemachineVirtualCamera>();
         private CinemachineBasicMultiChannelPerlin _perlin;
 
         private float timer = 0f;
         private void Start()
         {
-            _cinemachine = GetComponent<CinemachineVirtualCamera>();
-            _perlin = _cinemachine.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            _cinemachines.AddRange(FindObjectsOfType<CinemachineVirtualCamera>());
+            GetActiveVirtualCamera();
             StopShake();
+        }
+
+        private void GetActiveVirtualCamera()
+        {
+            foreach (var cinemachine in _cinemachines)
+            {
+                if (CinemachineCore.Instance.IsLive(cinemachine))
+                    _perlin = cinemachine.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            }
         }
 
         public void Shake(float duration, float intensity)
         {
+            GetActiveVirtualCamera();
             _perlin.m_AmplitudeGain = intensity;
             timer = duration;
         }
