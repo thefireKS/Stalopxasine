@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Cinematine;
 using Interactable;
 using Player.States;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Player
         }
     
         private Animator _animator;
-        private CameraShaking _cameraShaking; 
+        private Shaking _shaking; 
         
         private ParticleSystem _particleSystem;
     
@@ -48,7 +49,7 @@ namespace Player
             SetHealth(_maxHealth);
             OnHealthChanged?.Invoke(_maxHealth);
             _animator = GetComponentInChildren<Animator>();
-            if (Camera.main != null) _cameraShaking = Camera.main.GetComponent<CameraShaking>();
+            if (Camera.main != null) _shaking = Camera.main.GetComponent<Shaking>();
             _particleSystem = gameObject.GetComponentInChildren<ParticleSystem>();
             _particleSystem.Stop();
         }
@@ -86,7 +87,7 @@ namespace Player
             if (!_isImmortal)
             {
                 StartCoroutine(GotDamaged(dmg));
-                _cameraShaking.Shake(TakingDamageTime, 2f);
+                _shaking.Shake(TakingDamageTime, 2f);
                 _particleSystem.Play();
             }
         }

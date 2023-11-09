@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Player.States;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace Player
         [SerializeField] private PlayerData _playerData;
 
         [SerializeField] private bool _useCustomData;
+
+        public static event Action OnInitialized;
 
         private void Awake()
         {
@@ -30,6 +33,7 @@ namespace Player
             //await InitializePlayerInteract();
             //await InitializeSpriteTrailRenderer(playerData);
             Debug.Log("Initialize: Complete!");
+            OnInitialized?.Invoke();
             Destroy(this);
         }
 
