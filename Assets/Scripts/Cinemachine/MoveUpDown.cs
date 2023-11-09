@@ -29,7 +29,7 @@ namespace Cinemachine
         {
             var move = _controller.GetMove();
 
-            if (move.y != 0)
+            if (move.y != 0 && move.x == 0)
             {
                 _currentDirection = (int)Mathf.Sign(move.y);
 
