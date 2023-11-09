@@ -24,13 +24,16 @@ namespace Cinemachine
 
         private int _lastDirection;
         private int _currentDirection;
-
-
+        
+        private CameraPriorityControl _cameraPriorityControl;
+        
         [SerializeField] private float timeToStartMove;
         private Timer _timer;
 
         private void Start()
         {
+            _cameraPriorityControl = FindObjectOfType<CameraPriorityControl>();
+            
             _controller = FindObjectOfType<Controller>();
 
             _timer = gameObject.AddComponent<Timer>();
@@ -57,6 +60,8 @@ namespace Cinemachine
                 {
                     _timer.RestartTimer();
                     _timer.StartTimer();
+                    
+                    _cameraPriorityControl.SetCamerasPriority("Look UpDown");
                 }
 
                 if (_lastDirection != _currentDirection)
@@ -71,6 +76,8 @@ namespace Cinemachine
                 _timer.StopTimer();
                 _speedFactor = backSpeedFactor;
                 _targetOffset = _defaultOffset;
+
+                _cameraPriorityControl.SetCamerasPriority("Gameplay");
             }
 
             if (_timer.GetCompleteStatus())
