@@ -37,7 +37,10 @@ namespace Cinemachine
                 {
                     _timer.RestartTimer();
                     _timer.StartTimer();
+                }
 
+                if (_timer.GetCompleteStatus())
+                {
                     _cameraPriorityControl.SetCamerasPriority(_currentDirection > 0 ? "Up" : "Down");
                 }
 
