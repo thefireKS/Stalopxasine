@@ -11,15 +11,15 @@ namespace Player
         [SerializeField] private PlayerData _playerData;
 
         [SerializeField] private bool _useCustomData;
-
-        public static event Action OnInitialized;
-
+        
         private void Awake()
         {
             FindObjectOfType<InitializeLevel>().enabled = false;
             if (_useCustomData) Initialize(_playerData);
         }
         #endif
+        
+        public static event Action OnInitialized;
         
         public async void Initialize(PlayerData playerData)
         {
