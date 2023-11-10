@@ -118,7 +118,11 @@ namespace Player
             {
                 case ActionState.States.Dialogue:
                     _rb2d.velocity = new Vector2(0, _rb2d.velocity.y);
+                    _rb2d.bodyType = RigidbodyType2D.Kinematic;
                     Debug.Log("Set velocity 0");
+                    break;
+                case ActionState.States.Idle:
+                    _rb2d.bodyType = RigidbodyType2D.Dynamic;
                     break;
             }
         }
