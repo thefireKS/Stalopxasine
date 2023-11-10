@@ -33,6 +33,10 @@ public class PlayerUltimateSystem : MonoBehaviour
     
     public static Action<int, int> OnEnergyChanged;
     public static Action<int> AddEnergy;
+
+    public static Action OnUltimateStarted;
+    public static Action OnUltimateEnded;
+    
     private void Awake()
     {
         _playerControls = PlayerInputHandler.PlayerControls;
@@ -99,6 +103,8 @@ public class PlayerUltimateSystem : MonoBehaviour
         _playerControls.Player.Disable();
         */
         _ultimateAbility.Activate();
+        
+        OnUltimateStarted?.Invoke();
     }
 
 
@@ -133,6 +139,7 @@ public class PlayerUltimateSystem : MonoBehaviour
         Time.timeScale = 1f;
         anim.SetBool("isUlting",false);
         */
+        OnUltimateEnded?.Invoke();
     }
 
     public void DisableQuickTimeEvent() //Used in UltimateEnd animation

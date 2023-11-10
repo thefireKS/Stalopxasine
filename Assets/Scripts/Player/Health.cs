@@ -37,11 +37,15 @@ namespace Player
         private void OnEnable()
         {
             ActionState.OnActionStateChanged += ProcessStateChange;
+            PlayerUltimateSystem.OnUltimateStarted += MakeImmortal;
+            PlayerUltimateSystem.OnUltimateEnded += RemoveImmortal;
         }
 
         private void OnDisable()
         {
             ActionState.OnActionStateChanged -= ProcessStateChange;
+            PlayerUltimateSystem.OnUltimateStarted -= MakeImmortal;
+            PlayerUltimateSystem.OnUltimateEnded -= RemoveImmortal;
         }
 
         private void Start()
@@ -90,6 +94,16 @@ namespace Player
                 _shaking.Shake(TakingDamageTime, 2f);
                 _particleSystem.Play();
             }
+        }
+
+        public void MakeImmortal()
+        {
+            _isImmortal = true;
+        }
+        
+        public void RemoveImmortal()
+        {
+            _isImmortal = false;
         }
 
         private void ProcessStateChange(ActionState.States actionStates)
