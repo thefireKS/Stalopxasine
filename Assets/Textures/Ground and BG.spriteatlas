@@ -494,6 +494,7 @@ SpriteAtlas:
     - c243923b1507e2c4cbe9c704a7d45fef: 21300000
     - ea08dd7c4664494409cc1805abed0d04: 21300000
     - 00f5bdbc22e5cc24683edefcc1d0af2e: 21300000
+    - bf9a65fcc51f3a341be2f7c1a15ba0e7: 21300000
     - dc83ce8d248be1e4885b681eb648aa32: 21300000
     - 9a6082ced8353564e9ce5abfa6a71bcf: 21300000
     - 6e6c29ce7b6d66945b5bdeb27c5a7a25: 21300000
@@ -1328,6 +1329,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c243923b1507e2c4cbe9c704a7d45fef, type: 3}
   - {fileID: 21300000, guid: ea08dd7c4664494409cc1805abed0d04, type: 3}
   - {fileID: 21300000, guid: 00f5bdbc22e5cc24683edefcc1d0af2e, type: 3}
+  - {fileID: 21300000, guid: bf9a65fcc51f3a341be2f7c1a15ba0e7, type: 3}
   - {fileID: 21300000, guid: dc83ce8d248be1e4885b681eb648aa32, type: 3}
   - {fileID: 21300000, guid: 9a6082ced8353564e9ce5abfa6a71bcf, type: 3}
   - {fileID: 21300000, guid: 6e6c29ce7b6d66945b5bdeb27c5a7a25, type: 3}
@@ -2161,6 +2163,7 @@ SpriteAtlas:
   - Caramello parallax Upper
   - Viseman parallax Upper 2
   - fireKS parallax filler
+  - NightSkyPurpleblue
   - Fridman parallax filler
   - Caramello parallax Clouds
   - Viseman parallax Lower
