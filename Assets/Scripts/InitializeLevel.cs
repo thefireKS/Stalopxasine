@@ -28,6 +28,6 @@ public class InitializeLevel : MonoBehaviour
         {
             Debug.LogWarning("Level Initialization: Can't find LevelData");
         }
-        
+        Time.timeScale = 1f;
     }
 }
