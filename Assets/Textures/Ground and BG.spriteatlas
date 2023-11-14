@@ -23,7 +23,7 @@ SpriteAtlas:
     platformSettings:
     - serializedVersion: 3
       m_BuildTarget: DefaultTexturePlatform
-      m_MaxTextureSize: 2048
+      m_MaxTextureSize: 4096
       m_ResizeAlgorithm: 0
       m_TextureFormat: -1
       m_TextureCompression: 0
@@ -251,6 +251,9 @@ SpriteAtlas:
     - a1965761e5b3e5f438563ff6aa3a90b4: -459595079
     - a1965761e5b3e5f438563ff6aa3a90b4: 1229297754
     - a1965761e5b3e5f438563ff6aa3a90b4: -268730340
+    - c166437125afa594b8d0dd674efa5fde: 342857318
+    - c166437125afa594b8d0dd674efa5fde: 448696142
+    - c166437125afa594b8d0dd674efa5fde: 46386427
     - 34cca8f10e015854683327ca37ab6c86: 21300000
     - 1e25b41211b44044881190b5a8906ca9: 21300000
     - fee628a2d9b044c4b983696413e4c47d: 21300000
@@ -1086,6 +1089,9 @@ SpriteAtlas:
   - {fileID: -459595079, guid: a1965761e5b3e5f438563ff6aa3a90b4, type: 3}
   - {fileID: 1229297754, guid: a1965761e5b3e5f438563ff6aa3a90b4, type: 3}
   - {fileID: -268730340, guid: a1965761e5b3e5f438563ff6aa3a90b4, type: 3}
+  - {fileID: 342857318, guid: c166437125afa594b8d0dd674efa5fde, type: 3}
+  - {fileID: 448696142, guid: c166437125afa594b8d0dd674efa5fde, type: 3}
+  - {fileID: 46386427, guid: c166437125afa594b8d0dd674efa5fde, type: 3}
   - {fileID: 21300000, guid: 34cca8f10e015854683327ca37ab6c86, type: 3}
   - {fileID: 21300000, guid: 1e25b41211b44044881190b5a8906ca9, type: 3}
   - {fileID: 21300000, guid: fee628a2d9b044c4b983696413e4c47d, type: 3}
@@ -1920,6 +1926,9 @@ SpriteAtlas:
   - Tilemap_new_79
   - Tilemap_new_65
   - Tilemap_new_15
+  - CityBackground_2
+  - CityBackground_1
+  - CityBackground_0
   - Fridman parallax Upper
   - Caramello parallax Lower
   - Fridman parallax Lower 2
