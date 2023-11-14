@@ -27,7 +27,7 @@ public class ParallaxObject : MonoBehaviour
         var myTransform = transform;
         var position = myTransform.position;
         float backgroundTargetX = position.x + parallaxHorizontal;
-        float backgroundTargetY = position.y + parallaxHorizontal;
+        float backgroundTargetY = position.y + parallaxVertical;
         Vector3 backgroundTargetPos = new Vector3(backgroundTargetX, backgroundTargetY, position.z);
         transform.position = Vector3.Lerp(position, backgroundTargetPos, smoothing * Time.deltaTime);
         _previousCamPos = camPosition;
