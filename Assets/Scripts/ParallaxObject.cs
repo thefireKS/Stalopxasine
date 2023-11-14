@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ParallaxObject : MonoBehaviour
 {
-    public float parallaxScale = 1f;
+    public float parallaxScaleHorizontal = 1f, parallaxScaleVertical = 1f;
     public float smoothing = 1f;
 
     private Transform _cam;
@@ -21,11 +22,13 @@ public class ParallaxObject : MonoBehaviour
     private void Update()
     {
         var camPosition = _cam.position;
-        float parallax = (_previousCamPos.x - camPosition.x) * parallaxScale;
+        float parallaxHorizontal = (_previousCamPos.x - camPosition.x) * parallaxScaleHorizontal;
+        float parallaxVertical = (_previousCamPos.y - camPosition.y) * parallaxScaleVertical;
         var myTransform = transform;
         var position = myTransform.position;
-        float backgroundTargetX = position.x + parallax;
-        Vector3 backgroundTargetPos = new Vector3(backgroundTargetX, position.y, position.z);
+        float backgroundTargetX = position.x + parallaxHorizontal;
+        float backgroundTargetY = position.y + parallaxHorizontal;
+        Vector3 backgroundTargetPos = new Vector3(backgroundTargetX, backgroundTargetY, position.z);
         transform.position = Vector3.Lerp(position, backgroundTargetPos, smoothing * Time.deltaTime);
         _previousCamPos = camPosition;
     }
